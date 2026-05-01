@@ -437,6 +437,9 @@ window.SubscriptionsManager = (function () {
     if (adminConferencePanel) {
       adminConferencePanel.hidden = active !== 'conference';
     }
+    if (panel) {
+      panel.classList.toggle('is-conference-tab', active === 'conference');
+    }
   };
 
   const switchAdminPanelTab = (tab) => {
