@@ -54,24 +54,6 @@
     }
   }
 
-  async function loadLocalSecretPayloadFromDisk() {
-    if (!isLocalDebugHost()) return null;
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 1200);
-    try {
-      const res = await fetch(getLocalApiUrl('/api/local/secret'), {
-        cache: 'no-store',
-        signal: controller.signal,
-      });
-      if (!res.ok) return null;
-      const data = await res.json().catch(() => null);
-      if (!data || !data.ok || !data.exists || !data.payload) return null;
-      return data.payload;
-    } finally {
-      clearTimeout(timeout);
-    }
-  }
-
   async function saveLocalSecretPayloadToDisk(payload, secretPlain) {
     if (!isLocalDebugHost()) return false;
     const body = { payload };
@@ -91,15 +73,9 @@
     return true;
   }
 
-  async function loadLocalSecretPayloadPreferred() {
+  async function loadLocalSecretPayloadPreferred(staticPayload) {
     if (!isLocalDebugHost()) return null;
-    try {
-      const diskPayload = await loadLocalSecretPayloadFromDisk();
-      if (diskPayload) return diskPayload;
-    } catch (e) {
-      console.warn('[SECRET] 读取本地磁盘 secret.private 失败，回退 localStorage：', e);
-    }
-    return loadLocalSecretPayload();
+    return staticPayload || loadLocalSecretPayload();
   }
 
   const setAccessMode = (mode, detail) => {
@@ -1024,15 +1000,12 @@
         unlockBtn.disabled = true;
         guestBtn.disabled = true;
         try {
-          const localPayload = await loadLocalSecretPayloadPreferred();
-          let payload = localPayload;
-          if (!payload) {
-            const resp = await fetch(SECRET_FILE_URL, { cache: 'no-store' });
-            if (!resp.ok) {
-              throw new Error(`获取 secret.private 失败，HTTP ${resp.status}`);
-            }
-            payload = await resp.json();
+          const resp = await fetch(SECRET_FILE_URL, { cache: 'no-store' });
+          if (!resp.ok) {
+            throw new Error(`获取 secret.private 失败，HTTP ${resp.status}`);
           }
+          const staticPayload = await resp.json();
+          const payload = await loadLocalSecretPayloadPreferred(staticPayload);
           const secret = await decryptSecret(pwd, payload);
           // 将解密后的配置保存在内存中，不落盘，同时记住密码以便下次自动解锁
           window.decoded_secret_private = secret;
@@ -1982,35 +1955,26 @@
       // 初始化早期兜底入口失败时，后续 setupOverlay 仍会尝试注册正式入口。
     }
 
-    const savedPwdAtInit = loadSavedPassword();
-    let initialUnlockShown = false;
-    if (!savedPwdAtInit) {
-      setupOverlay(true);
-      openSecretOverlay(overlay);
-      initialUnlockShown = true;
-    }
-
     // 检查是否已经存在 secret.private（用于区分“解锁”与“初始化”）
     (async () => {
       try {
-        const localPayload = await loadLocalSecretPayloadPreferred();
-        let resp = null;
-        let hasSecret = Boolean(localPayload);
-        if (!hasSecret) {
-          resp = await fetch(SECRET_FILE_URL, {
-            method: 'GET',
-            cache: 'no-store',
-          });
-        }
-        if (!hasSecret && resp && resp.ok) {
+        let staticPayload = null;
+        const resp = await fetch(SECRET_FILE_URL, {
+          method: 'GET',
+          cache: 'no-store',
+        });
+        let hasSecret = false;
+        if (resp && resp.ok) {
           try {
             // 不再依赖 content-type，只要能成功解析为 JSON，就认为是合法的 secret.private
-            await resp.clone().json();
+            staticPayload = await resp.clone().json();
             hasSecret = true;
           } catch {
             hasSecret = false;
           }
         }
+        const localPayload = await loadLocalSecretPayloadPreferred(staticPayload);
+        hasSecret = hasSecret || Boolean(localPayload);
 
         window.DPR_ACCESS_MODE = 'locked';
 
@@ -2057,10 +2021,8 @@
             }
           }
           // 没有保存的密码或自动解锁失败：展示解锁/游客界面
-          if (!initialUnlockShown) {
-            setupOverlay(true);
-            openSecretOverlay(overlay);
-          }
+          setupOverlay(true);
+          openSecretOverlay(overlay);
         } else {
           // 不存在 secret.private：始终展示初始化向导
           setupOverlay(false);
