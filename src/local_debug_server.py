@@ -17,6 +17,11 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
+try:
+    import yaml  # type: ignore
+except Exception:  # pragma: no cover
+    yaml = None
+
 ROOT_DIR = Path(__file__).resolve().parents[1]
 RUNS_DIR = ROOT_DIR / ".local-runs"
 
@@ -30,10 +35,26 @@ class RunStore:
         self._lock = threading.Lock()
         self._runs: dict[str, dict[str, Any]] = {}
 
-    def create(self, workflow_key: str, workflow_file: str, inputs: dict[str, str], command: list[str]) -> dict[str, Any]:
+    def create(
+        self,
+        workflow_key: str,
+        workflow_file: str,
+        inputs: dict[str, str],
+        command: list[str],
+        config: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
         run_id = uuid.uuid4().hex[:12]
         run_dir = RUNS_DIR / run_id
         run_dir.mkdir(parents=True, exist_ok=True)
+        config_path = ""
+        if config:
+            if yaml is None:
+                raise RuntimeError("本地调试后端缺少 PyYAML，无法写入浏览器缓存配置。")
+            config_path = str(run_dir / "config.yaml")
+            Path(config_path).write_text(
+                yaml.safe_dump(config, allow_unicode=True, sort_keys=False, width=10**9),
+                encoding="utf-8",
+            )
         run = {
             "id": run_id,
             "run_number": len(self._runs) + 1,
@@ -48,6 +69,7 @@ class RunStore:
             "started_at": None,
             "completed_at": None,
             "log_path": str(run_dir / "run.log"),
+            "config_path": config_path,
         }
         with self._lock:
             self._runs[run_id] = run
@@ -90,10 +112,15 @@ class RunStore:
         env = os.environ.copy()
         env.setdefault("PYTHONUNBUFFERED", "1")
         env.setdefault("MKL_THREADING_LAYER", "GNU")
+        config_path = str(run.get("config_path") or "")
+        if config_path:
+            env["DPR_CONFIG_FILE"] = config_path
         try:
             with log_path.open("w", encoding="utf-8") as log:
                 log.write(f"[local-debug] started_at={utc_now()}\n")
                 log.write(f"[local-debug] cwd={ROOT_DIR}\n")
+                if config_path:
+                    log.write(f"[local-debug] config={config_path}\n")
                 log.write(f"[local-debug] command={' '.join(run['command'])}\n\n")
                 log.flush()
                 proc = subprocess.run(
@@ -216,8 +243,9 @@ class Handler(SimpleHTTPRequestHandler):
             workflow_file = str(payload.get("workflowFile") or "")
             inputs = payload.get("inputs") if isinstance(payload.get("inputs"), dict) else {}
             inputs = {str(k): str(v) for k, v in inputs.items() if v is not None}
+            config = payload.get("config") if isinstance(payload.get("config"), dict) else None
             cmd = build_command(workflow_key, workflow_file, inputs)
-            run = RUN_STORE.create(workflow_key, workflow_file, inputs, cmd)
+            run = RUN_STORE.create(workflow_key, workflow_file, inputs, cmd, config=config)
             return self._json({"ok": True, "run": run})
         except Exception as exc:
             return self._json({"ok": False, "error": str(exc)}, status=400)

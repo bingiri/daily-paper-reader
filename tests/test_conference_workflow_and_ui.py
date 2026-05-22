@@ -54,6 +54,10 @@ class ConferenceWorkflowAndUiTest(unittest.TestCase):
         self.assertIn("/api/local/workflows/dispatch", runner)
         self.assertIn("DPR_LOCAL_API_BASE", runner)
         self.assertIn(":8000${path}", runner)
+        self.assertIn("loadLocalConfigOverride", runner)
+        self.assertIn("config: localConfigOverride", runner)
+        github_token = (root / "app" / "subscriptions.github-token.js").read_text(encoding="utf-8")
+        self.assertIn("loadLocalConfigOverride", github_token)
         self.assertIn("192\\.168", runner)
         self.assertTrue((root / "src" / "local_debug_server.py").exists())
         self.assertTrue((root / "scripts" / "local_debug.sh").exists())
@@ -65,6 +69,20 @@ class ConferenceWorkflowAndUiTest(unittest.TestCase):
         self.assertIn("runConferenceRetrieval(conf, years)", manager)
         self.assertIn("会议论文检索", manager)
         self.assertNotIn("runConferenceMaintain(conf, years)", manager)
+
+    def test_local_debug_uses_browser_config_override(self):
+        root = pathlib.Path(__file__).resolve().parents[1]
+        server = (root / "src" / "local_debug_server.py").read_text(encoding="utf-8")
+        main = (root / "src" / "main.py").read_text(encoding="utf-8")
+        bm25 = (root / "src" / "2.1.retrieval_papers_bm25.py").read_text(encoding="utf-8")
+        embedding = (root / "src" / "2.2.retrieval_papers_embedding.py").read_text(encoding="utf-8")
+        fetch_arxiv = (root / "src" / "maintain" / "fetchers" / "fetch_arxiv.py").read_text(encoding="utf-8")
+
+        self.assertIn("DPR_CONFIG_FILE", server)
+        self.assertIn("config.yaml", server)
+        self.assertIn("payload.get(\"config\")", server)
+        for text in [main, bm25, embedding, fetch_arxiv]:
+            self.assertIn("DPR_CONFIG_FILE", text)
 
 
 if __name__ == "__main__":

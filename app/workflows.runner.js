@@ -293,12 +293,17 @@ window.DPRWorkflowRunner = (function () {
     activeRun = null;
     setStatus(`正在触发本地调试任务：${wf.name || workflowFile} ...`, '#666', { waiting: true });
     runsEl.innerHTML = '<div style="color:#999;">正在请求本地后端，请稍候...</div>';
+    const localConfigOverride = window.SubscriptionsGithubToken &&
+      typeof window.SubscriptionsGithubToken.loadLocalConfigOverride === 'function'
+      ? window.SubscriptionsGithubToken.loadLocalConfigOverride()
+      : null;
     const data = await localApiFetch('/api/local/workflows/dispatch', {
       method: 'POST',
       body: JSON.stringify({
         workflowKey: wf.key || '',
         workflowFile,
         inputs: dispatchInputs || {},
+        config: localConfigOverride && localConfigOverride.config ? localConfigOverride.config : null,
       }),
     });
     const run = data.run || {};

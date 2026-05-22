@@ -629,6 +629,7 @@ window.SubscriptionsGithubToken = (function () {
   return {
     init,
     loadGithubToken,
+    loadLocalConfigOverride,
     loadConfig,
     updateConfig,
     saveConfig,
