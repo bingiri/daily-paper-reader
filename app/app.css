@@ -6744,7 +6744,7 @@ body.dpr-sidebar-v2 .content {
   top: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  left: 280px !important;
+  left: var(--dpr-sidebar-width, 280px) !important;
   margin: 0 !important;
   width: auto !important;
   transition: none !important;
@@ -6760,7 +6760,7 @@ body.dpr-sidebar-v2 .content {
 #dpr-sidebar-v2 {
   position: fixed;
   inset: 0 auto 0 0;
-  width: 280px;
+  width: var(--dpr-sidebar-width, 280px);
   background: #ffffff;
   border-right: 1px solid #e5e7eb;
   display: flex;
@@ -6768,6 +6768,25 @@ body.dpr-sidebar-v2 .content {
   z-index: 30;
   font-family: var(--dpr-sidebar-font, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif);
   color: #1f2937;
+}
+.dpr-sidebar-resizer {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  bottom: 0;
+  width: 6px;
+  cursor: col-resize;
+  z-index: 3;
+  background: transparent;
+  transition: background .12s ease;
+}
+.dpr-sidebar-resizer:hover,
+#dpr-sidebar-v2.is-resizing .dpr-sidebar-resizer {
+  background: rgba(99, 102, 241, 0.22);
+}
+body.dpr-sidebar-resizing {
+  cursor: col-resize;
+  user-select: none;
 }
 #dpr-sidebar-v2 .dpr-sidebar-loading,
 #dpr-sidebar-v2 .dpr-sidebar-error {
@@ -6812,6 +6831,9 @@ body.dpr-sidebar-v2 .content {
     height: 2px;
     background: #1f2937;
     border-radius: 2px;
+  }
+  .dpr-sidebar-resizer {
+    display: none;
   }
 }
 
@@ -7077,6 +7099,17 @@ body.dpr-sidebar-v2 .content {
   color: #94a3b8;
   font-size: 10.5px;
   font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1px;
+  flex-shrink: 0;
+}
+.dpr-sidebar-axis-tab-unread {
+  color: #ef4444;
+  font-weight: 650;
+}
+.dpr-sidebar-axis-tab.is-active .dpr-sidebar-axis-tab-unread {
+  color: #dc2626;
 }
 .dpr-sidebar-axis-content {
   padding-bottom: 2px;
@@ -7117,7 +7150,7 @@ body.dpr-sidebar-v2 .content {
 .dpr-sidebar-axis-section.is-expanded > .dpr-sidebar-axis-section-header .dpr-sidebar-day-arrow {
   transform: rotate(90deg);
 }
-.dpr-sidebar-axis-section-label span {
+.dpr-sidebar-axis-section-label > .dpr-sidebar-day-counts {
   margin-left: auto;
   color: #94a3b8;
   font-weight: 500;
@@ -7226,14 +7259,65 @@ body.dpr-sidebar-v2 .content {
 .dpr-sidebar-paper.is-active[data-read-status="orange"] {
   background: #f3e8ff;
 }
+.dpr-sidebar-paper-main {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
 .dpr-sidebar-paper-link {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 7px 10px 7px 14px;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 7px 4px 7px 14px;
   text-decoration: none;
   color: #1f2937;
   cursor: pointer;
+}
+.dpr-sidebar-paper-actions {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 18px);
+  gap: 3px;
+  align-self: center;
+  padding: 6px 6px 6px 0;
+}
+.dpr-sidebar-paper-status-btn {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 650;
+}
+.dpr-sidebar-paper-status-btn:hover,
+.dpr-sidebar-paper-status-btn:focus-visible {
+  border-color: #6366f1;
+  color: #3730a3;
+  outline: none;
+}
+.dpr-sidebar-paper-status-btn.is-active {
+  color: #ffffff;
+  border-color: transparent;
+}
+.dpr-sidebar-paper-status-good.is-active {
+  background: #22c55e;
+}
+.dpr-sidebar-paper-status-blue.is-active {
+  background: #3b82f6;
+}
+.dpr-sidebar-paper-status-orange.is-active {
+  background: #8b5cf6;
+}
+.dpr-sidebar-paper-status-bad.is-active {
+  background: #ef4444;
 }
 .dpr-sidebar-paper-title {
   font-size: 13px;
@@ -7279,17 +7363,14 @@ body.dpr-sidebar-v2 .content {
   color: #4338ca;
 }
 .dpr-sidebar-paper-evidence {
-  display: none;
+  display: block;
   padding: 4px 12px 8px 14px;
   font-size: 11px;
   line-height: 1.45;
   color: #6b7280;
   background: #f8fafc;
   border-radius: 0 0 6px 6px;
-}
-.dpr-sidebar-paper:hover .dpr-sidebar-paper-evidence,
-.dpr-sidebar-paper.is-active .dpr-sidebar-paper-evidence {
-  display: block;
+  overflow-wrap: anywhere;
 }
 
 /* footer */

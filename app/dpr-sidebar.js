@@ -20,6 +20,16 @@
   var SEARCH_DEBOUNCE_MS = 200;
   var FILTER_KEY = 'dpr_sidebar_filter_v2';
   var COLLAPSE_KEY = 'dpr_sidebar_collapse_v2';
+  var WIDTH_KEY = 'dpr_sidebar_width_v2';
+  var DEFAULT_SIDEBAR_WIDTH = 280;
+  var MIN_SIDEBAR_WIDTH = 240;
+  var MAX_SIDEBAR_WIDTH = 520;
+  var MARK_STATUSES = [
+    { key: 'good', label: '1', title: '标记 1：重点 / 好' },
+    { key: 'blue', label: '2', title: '标记 2：蓝色' },
+    { key: 'orange', label: '3', title: '标记 3：紫色' },
+    { key: 'bad', label: '4', title: '标记 4：暂不看 / 差' },
+  ];
 
   // ---------- 工具 ----------
   function $(sel, root) {
@@ -156,6 +166,22 @@
     if (value === 'good' || value === 'bad' || value === 'blue' || value === 'orange') return value;
     return '';
   }
+  function statusForMarkIndex(value) {
+    var n = String(value == null ? '' : value).trim();
+    if (n === '1') return 'good';
+    if (n === '2') return 'blue';
+    if (n === '3') return 'orange';
+    if (n === '4') return 'bad';
+    return '';
+  }
+  function shouldAutoMarkRead(status) {
+    return !normalizeReadStatus(status);
+  }
+  function clampSidebarWidth(width) {
+    var n = parseInt(width, 10);
+    if (!isFinite(n)) n = DEFAULT_SIDEBAR_WIDTH;
+    return Math.max(MIN_SIDEBAR_WIDTH, Math.min(MAX_SIDEBAR_WIDTH, n));
+  }
 
   // ---------- 阅读状态（包一层，方便切换 Supabase / localStorage） ----------
   var ReadState = {
@@ -167,9 +193,40 @@
         var raw = window.localStorage && window.localStorage.getItem(READ_STORAGE_KEY);
         if (!raw) return {};
         var obj = JSON.parse(raw);
-        return obj && typeof obj === 'object' ? obj : {};
+        if (!obj || typeof obj !== 'object') return {};
+        var normalized = {};
+        Object.keys(obj).forEach(function (key) {
+          var status = normalizeReadStatus(obj[key]);
+          if (status) normalized[key] = status;
+        });
+        return normalized;
       } catch (e) {
         return {};
+      }
+    },
+    saveAll: function (map) {
+      try {
+        window.localStorage && window.localStorage.setItem(READ_STORAGE_KEY, JSON.stringify(map || {}));
+      } catch (e) {}
+    },
+    mark: function (paperId, status) {
+      if (!paperId) return '';
+      var st = normalizeReadStatus(status) || 'read';
+      var map = this.getAll();
+      map[paperId] = st;
+      this.saveAll(map);
+      if (window.DPRReadStateSync && window.DPRReadStateSync.isActive && window.DPRReadStateSync.isActive()) {
+        window.DPRReadStateSync.markRead(paperId, st);
+      }
+      return st;
+    },
+    clear: function (paperId) {
+      if (!paperId) return;
+      var map = this.getAll();
+      delete map[paperId];
+      this.saveAll(map);
+      if (window.DPRReadStateSync && window.DPRReadStateSync.isActive && window.DPRReadStateSync.isActive()) {
+        window.DPRReadStateSync.clearRead(paperId);
       }
     },
     isRead: function (paperId) {
@@ -177,6 +234,31 @@
       return !!normalizeReadStatus(this.getAll()[paperId]);
     },
   };
+
+  function dispatchReadStateChanged(paperId, status) {
+    if (!document || typeof document.dispatchEvent !== 'function') return;
+    try {
+      document.dispatchEvent(new CustomEvent('dpr-paper-read-state-changed', {
+        detail: { paperId: paperId, status: status || null },
+      }));
+    } catch (e) {
+      try {
+        var event = document.createEvent('CustomEvent');
+        event.initCustomEvent('dpr-paper-read-state-changed', false, false, {
+          paperId: paperId,
+          status: status || null,
+        });
+        document.dispatchEvent(event);
+      } catch (ignored) {}
+    }
+  }
+
+  function markPaperStatus(paperId, status, options) {
+    var st = ReadState.mark(paperId, status);
+    if (!st) return '';
+    if (!options || options.notify !== false) dispatchReadStateChanged(paperId, st);
+    return st;
+  }
 
   // ---------- 数据解析 ----------
   // 把 docs/_sidebar.md 文本解析成 model
@@ -419,7 +501,7 @@
 
   function addTab(tabs, seen, key, label) {
     if (!key || seen[key]) return;
-    seen[key] = { key: key, label: label || key, count: 0 };
+    seen[key] = { key: key, label: label || key, count: 0, unreadCount: 0 };
     tabs.push(seen[key]);
   }
 
@@ -493,14 +575,18 @@
   }
 
   function buildResultView(groups, options) {
+    var opts = resolveResultOptions(options);
     var total = 0;
+    var unread = 0;
     groups.forEach(function (group) {
       total += (group.papers || []).length;
+      group.unreadCount = countUnreadPapers(group.papers || [], opts.readMap);
+      unread += group.unreadCount;
     });
     return {
       activeKey: '__results__',
       resultMode: true,
-      tabs: [{ key: '__results__', label: resultTabLabel(options), count: total }],
+      tabs: [{ key: '__results__', label: resultTabLabel(opts), count: total, unreadCount: unread }],
       groups: groups,
       totalCount: total,
     };
@@ -626,12 +712,14 @@
     return '';
   }
 
-  function buildDailyDateView(model, activeKey) {
+  function buildDailyDateView(model, activeKey, readMap) {
+    var map = readMap || {};
     var tabs = [];
     var seen = {};
     (model && model.daily || []).forEach(function (day) {
       addTab(tabs, seen, day.dateKey, day.dateLabel || formatDateLabel(day.dateKey));
       seen[day.dateKey].count = (day.papers || []).length;
+      seen[day.dateKey].unreadCount = countUnreadPapers(day.papers || [], map);
     });
     var active = activeKey && seen[activeKey] ? activeKey : (tabs[0] && tabs[0].key) || '';
     var groups = [];
@@ -641,12 +729,14 @@
         key: day.dateKey,
         label: day.dateLabel || formatDateLabel(day.dateKey),
         papers: day.papers || [],
+        unreadCount: countUnreadPapers(day.papers || [], map),
       });
     });
     return { activeKey: active, tabs: tabs, groups: groups };
   }
 
-  function buildDailyTagView(model, activeKey) {
+  function buildDailyTagView(model, activeKey, readMap) {
+    var map = readMap || {};
     var records = flattenDailyPapers(model);
     var tabs = [];
     var seen = {};
@@ -654,6 +744,7 @@
       paperTagLabels(record.paper).forEach(function (tag) {
         addTab(tabs, seen, tag, tag);
         seen[tag].count += 1;
+        if (!paperReadStatus(record.paper, map)) seen[tag].unreadCount += 1;
       });
     });
     var active = activeKey && seen[activeKey] ? activeKey : (tabs[0] && tabs[0].key) || '';
@@ -666,23 +757,31 @@
           key: record.dateKey,
           label: record.dateLabel,
           papers: [],
+          unreadCount: 0,
         };
         order.push(record.dateKey);
       }
       byDate[record.dateKey].papers.push(record.paper);
+      if (!paperReadStatus(record.paper, map)) byDate[record.dateKey].unreadCount += 1;
     });
     return { activeKey: active, tabs: tabs, groups: order.map(function (key) { return byDate[key]; }) };
   }
 
-  function buildConferenceConfView(model, activeKey) {
+  function buildConferenceConfView(model, activeKey, readMap) {
+    var map = readMap || {};
     var tabs = [];
     var seen = {};
     (model && model.conferences || []).forEach(function (conf) {
       var key = conferenceKey(conf);
       addTab(tabs, seen, key, conf.label || key);
       var count = 0;
-      (conf.topics || []).forEach(function (topic) { count += (topic.papers || []).length; });
+      var unread = 0;
+      (conf.topics || []).forEach(function (topic) {
+        count += (topic.papers || []).length;
+        unread += countUnreadPapers(topic.papers || [], map);
+      });
       seen[key].count = count;
+      seen[key].unreadCount = unread;
     });
     var active = activeKey && seen[activeKey] ? activeKey : (tabs[0] && tabs[0].key) || '';
     var groups = [];
@@ -693,13 +792,15 @@
           key: active + ':' + (topic.label || 'General'),
           label: topic.label || 'General',
           papers: topic.papers || [],
+          unreadCount: countUnreadPapers(topic.papers || [], map),
         });
       });
     });
     return { activeKey: active, tabs: tabs, groups: groups };
   }
 
-  function buildConferenceTagView(model, activeKey) {
+  function buildConferenceTagView(model, activeKey, readMap) {
+    var map = readMap || {};
     var records = flattenConferencePapers(model);
     var tabs = [];
     var seen = {};
@@ -707,6 +808,7 @@
       paperTagLabels(record.paper).forEach(function (tag) {
         addTab(tabs, seen, tag, tag);
         seen[tag].count += 1;
+        if (!paperReadStatus(record.paper, map)) seen[tag].unreadCount += 1;
       });
     });
     var active = activeKey && seen[activeKey] ? activeKey : (tabs[0] && tabs[0].key) || '';
@@ -720,10 +822,12 @@
           key: key,
           label: record.confLabel + ' / ' + record.topicLabel,
           papers: [],
+          unreadCount: 0,
         };
         groups.push(byGroup[key]);
       }
       byGroup[key].papers.push(record.paper);
+      if (!paperReadStatus(record.paper, map)) byGroup[key].unreadCount += 1;
     });
     return { activeKey: active, tabs: tabs, groups: groups };
   }
@@ -756,6 +860,7 @@
     activeDailyTag: '',
     activeConference: '',
     activeConferenceTag: '',
+    sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
   };
 
   function loadPersistedFilter() {
@@ -797,6 +902,27 @@
       window.localStorage && window.localStorage.setItem(COLLAPSE_KEY, JSON.stringify(payload));
     } catch (e) {}
   }
+  function loadPersistedSidebarWidth() {
+    try {
+      var raw = window.localStorage && window.localStorage.getItem(WIDTH_KEY);
+      return clampSidebarWidth(raw || DEFAULT_SIDEBAR_WIDTH);
+    } catch (e) {
+      return DEFAULT_SIDEBAR_WIDTH;
+    }
+  }
+  function applySidebarWidth(width) {
+    var nextWidth = clampSidebarWidth(width);
+    state.sidebarWidth = nextWidth;
+    if (document.documentElement && document.documentElement.style) {
+      document.documentElement.style.setProperty('--dpr-sidebar-width', nextWidth + 'px');
+    }
+    return nextWidth;
+  }
+  function persistSidebarWidth(width) {
+    try {
+      window.localStorage && window.localStorage.setItem(WIDTH_KEY, String(clampSidebarWidth(width)));
+    } catch (e) {}
+  }
 
   // ---------- 路由 / active ----------
   function currentRouteHref() {
@@ -810,7 +936,10 @@
   // ---------- 渲染 ----------
   function ensureRoot() {
     var existing = $('#dpr-sidebar-v2');
-    if (existing) return existing;
+    if (existing) {
+      document.body.classList.add('dpr-sidebar-v2');
+      return existing;
+    }
     var aside = document.createElement('aside');
     aside.id = 'dpr-sidebar-v2';
     aside.className = 'dpr-sidebar';
@@ -854,7 +983,8 @@
       '<nav class="dpr-sidebar-body" aria-label="论文导航"></nav>' +
       '<div class="dpr-sidebar-footer">' +
       '  <button type="button" class="dpr-sidebar-refresh" title="刷新侧边栏">↻ 刷新</button>' +
-      '</div>';
+      '</div>' +
+      '<div class="dpr-sidebar-resizer" role="separator" aria-orientation="vertical" title="拖动调整侧栏宽度"></div>';
     state.bodyEl = $('.dpr-sidebar-body', root);
     state.searchInput = $('.dpr-sidebar-search', root);
     state.unreadCountEl = $('.dpr-sidebar-unread-count', root);
@@ -897,8 +1027,8 @@
       var conferenceView = resultMode
         ? buildConferenceResultView(model, resultOptions)
         : (vs.conferenceViewMode === 'tag'
-          ? buildConferenceTagView(model, vs.activeConferenceTag)
-          : buildConferenceConfView(model, vs.activeConference));
+          ? buildConferenceTagView(model, vs.activeConferenceTag, vs.readMap)
+          : buildConferenceConfView(model, vs.activeConference, vs.readMap));
       var conferenceTotal = resultMode ? countPapersInView(conferenceView) : summary.conference.papers;
       var conferenceUnread = resultMode ? countUnreadInView(conferenceView, vs.readMap) : summary.conference.unread;
       if (!resultMode || conferenceTotal > 0) {
@@ -921,8 +1051,8 @@
       var dailyView = resultMode
         ? buildDailyResultView(model, resultOptions)
         : (vs.dailyViewMode === 'tag'
-          ? buildDailyTagView(model, vs.activeDailyTag)
-          : buildDailyDateView(model, vs.activeDailyDate));
+          ? buildDailyTagView(model, vs.activeDailyTag, vs.readMap)
+          : buildDailyDateView(model, vs.activeDailyDate, vs.readMap));
       var dailyTotal = resultMode ? countPapersInView(dailyView) : summary.daily.papers;
       var dailyUnread = resultMode ? countUnreadInView(dailyView, vs.readMap) : summary.daily.unread;
       if (!resultMode || dailyTotal > 0) {
@@ -1009,9 +1139,10 @@
     html.push('  <div class="dpr-sidebar-axis-tabs" role="tablist">');
     (view.tabs || []).forEach(function (tab) {
       var active = tab.key === view.activeKey ? ' is-active' : '';
+      var unread = typeof tab.unreadCount === 'number' ? tab.unreadCount : tab.count;
       html.push('    <button type="button" class="dpr-sidebar-axis-tab' + active + '" data-axis-tab="' + safeAttr(group) + '" data-axis-key="' + safeAttr(tab.key) + '" title="' + safeAttr(tab.label) + '">');
       html.push('      <span class="dpr-sidebar-axis-tab-label">' + safeText(tab.label) + '</span>');
-      html.push('      <span class="dpr-sidebar-axis-tab-count">' + safeText(tab.count) + '</span>');
+      html.push('      <span class="dpr-sidebar-axis-tab-count"><span class="dpr-sidebar-axis-tab-unread">' + safeText(unread) + '</span>/<span class="dpr-sidebar-axis-tab-total">' + safeText(tab.count) + '</span></span>');
       html.push('    </button>');
     });
     html.push('  </div>');
@@ -1030,10 +1161,11 @@
       var stateKey = axisSectionStateKey(group, mode, item.key);
       var isExpanded = !collapsed.has(stateKey);
       var expandedClass = isExpanded ? ' is-expanded' : '';
+      var unread = typeof item.unreadCount === 'number' ? item.unreadCount : (item.papers || []).length;
       html.push('<section class="dpr-sidebar-axis-section' + sectionClass + expandedClass + '" data-axis-section="' + safeAttr(item.key) + '" data-axis-section-key="' + safeAttr(stateKey) + '">');
       html.push('  <button type="button" class="dpr-sidebar-axis-section-header" data-axis-section-toggle="' + safeAttr(stateKey) + '" aria-expanded="' + (isExpanded ? 'true' : 'false') + '">');
       html.push('    <span class="dpr-sidebar-day-arrow" aria-hidden="true">▸</span>');
-      html.push('    <span class="dpr-sidebar-axis-section-label">' + safeText(item.label) + ' <span>' + safeText((item.papers || []).length) + '</span></span>');
+      html.push('    <span class="dpr-sidebar-axis-section-label">' + safeText(item.label) + ' <span class="dpr-sidebar-day-counts"><span class="dpr-sidebar-day-unread">' + safeText(unread) + '</span>/<span class="dpr-sidebar-day-total">' + safeText((item.papers || []).length) + '</span></span></span>');
       html.push('  </button>');
       html.push('  <ul class="dpr-sidebar-axis-papers">');
       (item.papers || []).forEach(function (paper) {
@@ -1062,12 +1194,23 @@
     var evidence = p.evidence
       ? '<div class="dpr-sidebar-paper-evidence">' + safeText(p.evidence) + '</div>'
       : '';
+    var actions = MARK_STATUSES.map(function (item) {
+      return (
+        '<button type="button" class="dpr-sidebar-paper-status-btn dpr-sidebar-paper-status-' + safeAttr(item.key) + '" ' +
+        'data-paper-id="' + safeAttr(paperId) + '" data-paper-status="' + safeAttr(item.key) + '" title="' + safeAttr(item.title) + '">' +
+        safeText(item.label) +
+        '</button>'
+      );
+    }).join('');
     return (
       '<li class="dpr-sidebar-paper' + sectionClass + '" ' + dataAttrs + '>' +
-      '  <a class="dpr-sidebar-paper-link" href="' + safeAttr(p.href) + '">' +
-      '    <span class="dpr-sidebar-paper-title">' + safeText(p.title) + '</span>' +
-      '    <span class="dpr-sidebar-paper-meta">' + stars + (tagBits ? '<span class="dpr-sidebar-paper-tags">' + tagBits + '</span>' : '') + '</span>' +
-      '  </a>' +
+      '  <div class="dpr-sidebar-paper-main">' +
+      '    <a class="dpr-sidebar-paper-link" href="' + safeAttr(p.href) + '">' +
+      '      <span class="dpr-sidebar-paper-title">' + safeText(p.title) + '</span>' +
+      '      <span class="dpr-sidebar-paper-meta">' + stars + (tagBits ? '<span class="dpr-sidebar-paper-tags">' + tagBits + '</span>' : '') + '</span>' +
+      '    </a>' +
+      '    <div class="dpr-sidebar-paper-actions" aria-label="论文标记">' + actions + '</div>' +
+      '  </div>' +
       evidence +
       '</li>'
     );
@@ -1083,6 +1226,9 @@
       var status = normalizeReadStatus(id && readMap[id]);
       li.setAttribute('data-read', status ? '1' : '0');
       li.setAttribute('data-read-status', status);
+      $$('.dpr-sidebar-paper-status-btn', li).forEach(function (btn) {
+        btn.classList.toggle('is-active', btn.getAttribute('data-paper-status') === status);
+      });
     });
     $$('.dpr-sidebar-panel', state.bodyEl).forEach(function (panel) {
       var panelKey = panel.getAttribute('data-panel');
@@ -1156,6 +1302,13 @@
     }
     if (!li) return;
     li.classList.add('is-active');
+    var currentPaperHref = findCurrentPaperHrefFromModel(state.model, href);
+    var currentPaperId = currentPaperHref ? paperIdFromHref(currentPaperHref) : '';
+    var readMap = ReadState.getAll();
+    if (currentPaperId && shouldAutoMarkRead(readMap[currentPaperId])) {
+      markPaperStatus(currentPaperId, 'read');
+      return;
+    }
     // 居中滚动
     centerOn(li);
   }
@@ -1269,6 +1422,20 @@
         rerenderSidebarBody({ syncActive: false });
         return;
       }
+      var statusButton = e.target.closest('.dpr-sidebar-paper-status-btn');
+      if (statusButton) {
+        e.preventDefault();
+        e.stopPropagation();
+        var statusPaperId = statusButton.getAttribute('data-paper-id') || '';
+        var nextStatus = normalizeReadStatus(statusButton.getAttribute('data-paper-status'));
+        if (statusPaperId && nextStatus) {
+          var readMap = ReadState.getAll();
+          var currentStatus = normalizeReadStatus(readMap[statusPaperId]);
+          markPaperStatus(statusPaperId, currentStatus === nextStatus ? 'read' : nextStatus);
+        }
+        if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+        return;
+      }
       var sectionToggle = e.target.closest('.dpr-sidebar-axis-section-header');
       if (sectionToggle) {
         var sectionKey = sectionToggle.getAttribute('data-axis-section-toggle') || '';
@@ -1310,6 +1477,31 @@
       }
     });
 
+    root.addEventListener('mousedown', function (e) {
+      var handle = e.target.closest('.dpr-sidebar-resizer');
+      if (!handle) return;
+      e.preventDefault();
+      var startX = e.clientX;
+      var startWidth = state.sidebarWidth || loadPersistedSidebarWidth();
+      root.classList.add('is-resizing');
+      document.body.classList.add('dpr-sidebar-resizing');
+      document.body.classList.add('sidebar-resizing');
+      function onMove(moveEvent) {
+        var delta = moveEvent.clientX - startX;
+        applySidebarWidth(startWidth + delta);
+      }
+      function onUp() {
+        persistSidebarWidth(state.sidebarWidth);
+        root.classList.remove('is-resizing');
+        document.body.classList.remove('dpr-sidebar-resizing');
+        document.body.classList.remove('sidebar-resizing');
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onUp);
+      }
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
+    });
+
     state.searchInput.addEventListener('input', debounce(function () {
       state.search = state.searchInput.value || '';
       rerenderSidebarBody({ syncActive: false });
@@ -1317,7 +1509,7 @@
 
     window.addEventListener('hashchange', function () { syncActive(); });
     document.addEventListener('dpr-paper-read-state-changed', function () {
-      rerenderSidebarBody({ syncActive: false });
+      rerenderSidebarBody({ syncActive: true });
     });
 
     document.addEventListener('visibilitychange', function () {
@@ -1357,6 +1549,7 @@
         if (!state.rootEl) {
           state.rootEl = ensureRoot();
         }
+        applySidebarWidth(state.sidebarWidth || loadPersistedSidebarWidth());
         renderShell(state.rootEl);
         if (!state._eventsBound) {
           bindEvents(state.rootEl);
@@ -1390,6 +1583,7 @@
   function start() {
     state.filter = loadPersistedFilter();
     state.rootEl = ensureRoot();
+    applySidebarWidth(loadPersistedSidebarWidth());
     state.rootEl.innerHTML = '<div class="dpr-sidebar-loading">加载中…</div>';
     loadAndRender();
   }
@@ -1397,7 +1591,7 @@
   var DPRSidebarApi = {
     refresh: function () { return loadAndRender(); },
     syncActive: syncActive,
-    notifyReadStateChanged: function () { rerenderSidebarBody({ syncActive: false }); },
+    notifyReadStateChanged: function () { rerenderSidebarBody({ syncActive: true }); },
     getReadState: function () { return ReadState.getAll(); },
     getPaperHrefs: function () { return collectPaperHrefsFromModel(state.model); },
     getReportHrefs: function () { return collectReportHrefsFromModel(state.model); },
@@ -1431,6 +1625,9 @@
         axisSectionStateKey: axisSectionStateKey,
         renderBodyHtml: renderBodyHtml,
         normalizeReadStatus: normalizeReadStatus,
+        statusForMarkIndex: statusForMarkIndex,
+        shouldAutoMarkRead: shouldAutoMarkRead,
+        clampSidebarWidth: clampSidebarWidth,
       },
     };
   }
