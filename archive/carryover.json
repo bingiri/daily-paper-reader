@@ -1,6 +1,384 @@
 {
-  "generated_at": "2026-03-06T19:11:18.471356+00:00",
-  "updated_date": "20260306",
+  "generated_at": "2026-07-07T03:34:31.057959+00:00",
+  "updated_date": "20260628-20260707",
   "carryover_days": 9,
-  "items": []
+  "tag_states": {
+    "mm-reasoning": {
+      "updated_date": "20260628-20260707",
+      "carryover_days": 9,
+      "items": [
+        {
+          "id": "2606.31285v2",
+          "source": "arxiv",
+          "title": "Spatial Reasoning via Modality Switching Between Language and Symbolic Representation",
+          "abstract": "Human reasoning is inherently multimodal: when problems become difficult, we rarely think in words alone. We often externalize our reasoning by sketching diagrams or drawing grids to understand the underlying conceptual structure and avoid mistakes. Building on this premise, our research investigates: (a) whether grounding multi-hop textual-spatial stories into geometry-aware modalities, such as layouts or grids, improves reasoning compared to natural language-based inference; and (b) whether a model can decide when to rely on natural language reasoning and when to switch to a structured modality. We address these questions by introducing a switching metric based on trustworthiness and complexity signals, which estimates when grounding a spatial story into structure is likely to improve performance. This takes a first step toward principled modality selection in Large Language Model (LLM) reasoning. Across our settings, switching from natural language-based reasoning to a grid-based representation improves LLM performance by up to 42%, highlighting the importance of modality choice in shaping reasoning outcomes.",
+          "authors": [
+            "Shreya Rajpal",
+            "Tanawan Premsri",
+            "Parisa Kordjamshidi"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI"
+          ],
+          "published": "2026-06-30T08:02:07+00:00",
+          "link": "https://arxiv.org/pdf/2606.31285v2",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "directly studies multimodal reasoning via modality switching",
+          "llm_evidence_cn": "直接研究通过模态切换进行多模态推理",
+          "llm_evidence": "直接研究通过模态切换进行多模态推理",
+          "canonical_evidence": "直接研究通过模态切换进行多模态推理",
+          "llm_tldr_en": "Studies whether grounding multi-hop spatial stories into geometry-aware modalities improves reasoning and whether models can decide when to switch.",
+          "llm_tldr_cn": "人类推理本质上是多模态的，该研究探讨将多跳文本-空间故事转化为几何感知模态（如网格）是否能提升推理能力，并探索模型能否自主决定何时切换到结构化模态。提出基于信任度和复杂度的切换度量，为多模态推理提供新思路。",
+          "llm_tldr": "人类推理本质上是多模态的，该研究探讨将多跳文本-空间故事转化为几何感知模态（如网格）是否能提升推理能力，并探索模型能否自主决定何时切换到结构化模态。提出基于信任度和复杂度的切换度量，为多模态推理提供新思路。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "multimodal reasoning",
+          "matched_requirement_id": "req-1",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.31285v2",
+          "carry_days": 1
+        },
+        {
+          "id": "2606.31599v1",
+          "source": "arxiv",
+          "title": "Token-Sparse Medical Multimodal Reasoning via Dual-Stream Reinforcement Learning",
+          "abstract": "Vision-language models (VLMs) combining reinforcement learning (RL) ignite remarkable progress in multimodal reasoning, yet still struggle with medical images, which typically exhibit extremely sparse visual evidence to inform clinical decision-making. We recognize that pruning visual tokens outside the grounding region greatly enhances medical reasoning. However, a united RL framework for active visual token pruning (VTP) and medical multimodal reasoning remains unestablished. Here, we propose a dual-stream RL framework, ViToS, to fulfill token pruning and question answering. ViToS trains one policy model with two task branches, where one focuses on grounding while the other conducts token-sparse reasoning after VTP. Furthermore, we solve the coupled policy learning problem by introducing the cross-feedback sequential optimization, avoiding gradient conflict and facilitating convergence of the shared policy model. Evaluated on seven medical benchmarks, our method reduces visual tokens to 77% of the original sequence length while achieving a 108.27% relative performance on Lingshu-7B and 104.16% relative performance on HuatuoGPT-Vision-7B. Overall, ViToS delivers superior performance and inference speedup, establishing an efficient paradigm for medical multimodal reasoning.",
+          "authors": [
+            "Kaitao Chen",
+            "Weiqian Zhao",
+            "Jiamin Wu",
+            "Qihao Zheng",
+            "Shangquan Sun",
+            "Chunfeng Song",
+            "Xiaosong Wang",
+            "Mu Zhou",
+            "Mianxin Liu"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "published": "2026-06-30T12:47:30+00:00",
+          "link": "https://arxiv.org/pdf/2606.31599v1",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "proposes token-sparse medical multimodal reasoning method",
+          "llm_evidence_cn": "提出基于令牌稀疏的医学多模态推理方法",
+          "llm_evidence": "提出基于令牌稀疏的医学多模态推理方法",
+          "canonical_evidence": "提出基于令牌稀疏的医学多模态推理方法",
+          "llm_tldr_en": "Proposes ViToS, a dual-stream RL framework for active visual token pruning and medical multimodal reasoning.",
+          "llm_tldr_cn": "视觉语言模型在医学图像多模态推理中面临视觉证据稀疏的问题。本文提出ViToS，一个双流强化学习框架，同时进行视觉令牌剪枝和问答推理，分别处理定位和稀疏推理，有效提升医学多模态推理性能。",
+          "llm_tldr": "视觉语言模型在医学图像多模态推理中面临视觉证据稀疏的问题。本文提出ViToS，一个双流强化学习框架，同时进行视觉令牌剪枝和问答推理，分别处理定位和稀疏推理，有效提升医学多模态推理性能。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "multimodal reasoning",
+          "matched_requirement_id": "req-1",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.31599v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2607.00685v1",
+          "source": "arxiv",
+          "title": "M2Note: Continual Evolution of Vision Language Models via Mistake Notebook Learning",
+          "abstract": "Vision Language Models (VLMs) have demonstrated remarkable capabilities in multimodal reasoning tasks, yet they still suffer from recurring failures, such as skipping key visual checks, misapplying domain rules, and hallucinating unsupported concepts. Most existing solutions rely on supervised fine-tuning (SFT) and reinforcement learning (RL), which are expensive to iterate and can be brittle under distribution shift. To this end, we propose Multimodal Mistake Notebook Learning (M2Note), a training-free continual evolution framework that externalizes learning into an editable memory. M2Note transforms failed trajectories into compact subject-guidance notes: the subject summarizes the underlying domain and concept, while the guidance provides actionable verification steps that can be reused in future inference. At test time, M2Note retrieves relevant notes via multimodal retrieval-augmented generation (RAG) and appends them to the model context, steering reasoning away from previously observed pitfalls. To stabilize continual evolution, we adopt batch-level post-verification with rollback, which commits notebook edits only if they improve performance on the same batch, reducing noisy updates and preventing regressions. M2Note supports both self-evolving, where the same VLM acts as solver and supervisor, and cross-model evolving, where a stronger supervisor guides a weaker solver, enabling capability transfer without weight updates. Experiments on six multimodal reasoning benchmarks show consistent improvements across domains and backbones, while achieving strong cost and sample efficiency and remaining complementary to Chain-of-Thought (CoT) prompting.",
+          "authors": [
+            "Haiwen Li",
+            "Jing Tang",
+            "Rui Chen",
+            "Lei Sun",
+            "Xiangxiang Chu"
+          ],
+          "primary_category": "cs.MA",
+          "categories": [
+            "cs.MA"
+          ],
+          "published": "2026-07-01T09:30:10+00:00",
+          "link": "https://arxiv.org/pdf/2607.00685v1",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "addresses multimodal reasoning failures in VLMs",
+          "llm_evidence_cn": "解决视觉语言模型的多模态推理失败问题",
+          "llm_evidence": "解决视觉语言模型的多模态推理失败问题",
+          "canonical_evidence": "解决视觉语言模型的多模态推理失败问题",
+          "llm_tldr_en": "Proposes M2Note, a training-free continual evolution framework that externalizes learning into editable memory for VLMs.",
+          "llm_tldr_cn": "视觉语言模型在多模态推理中常出现跳过关键视觉检查、误用规则等重复性失败。本文提出M2Note，一种免训练的持续演化框架，将失败轨迹转化为可编辑的主题-指导笔记，实现无需微调或强化学习的模型改进。",
+          "llm_tldr": "视觉语言模型在多模态推理中常出现跳过关键视觉检查、误用规则等重复性失败。本文提出M2Note，一种免训练的持续演化框架，将失败轨迹转化为可编辑的主题-指导笔记，实现无需微调或强化学习的模型改进。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "multimodal reasoning",
+          "matched_requirement_id": "req-1",
+          "selection_source": "carryover_cache",
+          "paper_id": "2607.00685v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2607.00461v1",
+          "source": "arxiv",
+          "title": "Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning",
+          "abstract": "Multimodal Large Language Models (MLLMs) are often constrained by a language-space bottleneck, forcing complex visual reasoning into discrete tokens which can lose perceptual nuance. A promising alternative is continuous latent reasoning, where the goal is to discover implicit reasoning pathways that bridge the multimodal query and the final answer. However, this introduces a severe train-inference mismatch: a training-time posterior, conditioned on the ground-truth answer, can exploit answer-dependent shortcuts. Standard variational training then forces the inference-time prior to mimic a posterior that has access to information unavailable at test time, leading to poor performance. To address this, we propose Asymmetric Mutual Variational Learning (AMVL), a framework that resolves this mismatch via a bidirectional calibration objective. A forward KL divergence trains the target-agnostic prior to match the posterior, while a novel reverse KL divergence simultaneously regularizes the posterior, preventing it from collapsing into inference-incompatible regions and mitigating this ``answer leakage''. We provide theoretical analysis formalizing this leakage as prior contamination and prove that our dual-KL objective reduces it. We instantiate AMVL in a latent-integrated MLLM and show that it consistently outperforms strong discrete and latent-reasoning baselines, improving the average score on the complex BLINK benchmark by +10.83 and achieving gains of up to +32.00 on individual reasoning tasks, with analyses confirming improved latent-space stability.",
+          "authors": [
+            "Shijie Li",
+            "Yilin Gao",
+            "Siyuan Yang",
+            "Tieyuan Chen",
+            "Chaofan Gan",
+            "Zhihao He",
+            "Zicheng Zhao",
+            "Yuyu Guo",
+            "Weiyao Lin",
+            "Hang Yu"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV"
+          ],
+          "published": "2026-07-01T05:29:02+00:00",
+          "link": "https://arxiv.org/pdf/2607.00461v1",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "directly focuses on multimodal continuous reasoning",
+          "llm_evidence_cn": "直接关注多模态连续推理",
+          "llm_evidence": "直接关注多模态连续推理",
+          "canonical_evidence": "直接关注多模态连续推理",
+          "llm_tldr_en": "Proposes Asymmetric Mutual Variational Learning to address train-inference mismatch in continuous latent reasoning.",
+          "llm_tldr_cn": "多模态大模型受语言空间瓶颈限制，连续潜在推理是一个有前景的替代方案，但存在训练-推理不匹配问题。本文提出非对称互变分学习，通过双向KL散度约束分离后验与先验，避免答案依赖的捷径，提升多模态推理可靠性。",
+          "llm_tldr": "多模态大模型受语言空间瓶颈限制，连续潜在推理是一个有前景的替代方案，但存在训练-推理不匹配问题。本文提出非对称互变分学习，通过双向KL散度约束分离后验与先验，避免答案依赖的捷径，提升多模态推理可靠性。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "multimodal reasoning",
+          "matched_requirement_id": "req-1",
+          "selection_source": "carryover_cache",
+          "paper_id": "2607.00461v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2606.31825v1",
+          "source": "arxiv",
+          "title": "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning",
+          "abstract": "Recent multimodal large language models have shown great promise in clinical image reasoning, but existing post-training pipelines remain predominantly outcome-centric, relying on final answer correctness or sequence-level preferences. This suffers from sparse credit assignment, making it difficult to optimize the reasoning process essential for clinical applications. Our analysis reveals that cascading errors from early-stage reasoning failures are a leading cause of incorrect predictions in medical visual question answering (VQA) benchmarks. Motivated by this, we propose Medical Reasoning-aware Policy Optimization (MRPO), an RL algorithm that incorporates step-wise process rewards. When the final answer is incorrect, MRPO assigns exponentially larger penalties to tokens in earlier invalid reasoning steps, breaking failure cascades without compromising successful paths. Across three multimodal LLM backbones, MRPO consistently outperforms standard GRPO and a recent RL baseline, and on Qwen3-VL-8B-Instruct even surpasses substantially larger medical MLLMs such as HuatuoGPT-Vision-34B by 2.79 points. Moreover, MRPO reduces early-stage reasoning failures from 64.0% to 13.0%, showing that targeted mitigation of cascading failures improves both reasoning quality and final answer accuracy. Our code is available at https://github.com/dmis-lab/MRPO",
+          "authors": [
+            "Junha Jung",
+            "Minbyul Jeong",
+            "Suhyeon Lim",
+            "Sungwook Jung",
+            "Jaehoon Yun",
+            "Taeyun Roh",
+            "Mujeen Sung",
+            "Jaewoo Kang"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "published": "2026-06-30T15:35:19+00:00",
+          "link": "https://arxiv.org/pdf/2606.31825v1",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "step-aware RL for medical multimodal reasoning",
+          "llm_evidence_cn": "面向医学多模态推理的步骤感知强化学习",
+          "llm_evidence": "面向医学多模态推理的步骤感知强化学习",
+          "canonical_evidence": "面向医学多模态推理的步骤感知强化学习",
+          "llm_tldr_en": "Proposes MRPO, a step-aware RL algorithm with process rewards for medical multimodal reasoning.",
+          "llm_tldr_cn": "医学多模态推理中错误级联是主要问题，现有方法仅关注最终答案。本文提出MRPO，引入步骤级过程奖励，在错误发生时精确分配负奖励，有效阻断错误传播，提升医学VQA推理的准确性和可解释性。",
+          "llm_tldr": "医学多模态推理中错误级联是主要问题，现有方法仅关注最终答案。本文提出MRPO，引入步骤级过程奖励，在错误发生时精确分配负奖励，有效阻断错误传播，提升医学VQA推理的准确性和可解释性。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "multimodal reasoning",
+          "matched_requirement_id": "req-1",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.31825v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2606.31903v1",
+          "source": "arxiv",
+          "title": "Attend, Transform, or Silence: Operator-Level Visual Skipping for Efficient Multimodal LLM Inference",
+          "abstract": "Multimodal large language models (MLLMs) increasingly process long visual-token sequences, increasing the overall inference computation. Existing acceleration methods usually remove visual tokens or skip visual-token updates in entire layers, but these coarse strategies may discard fine-grained evidence or suppress useful operators together with redundant ones. In this paper, we study visual-token computation from an answer-observable perspective and find that late visual-token updates can remain large while having little effect on answer-token representations. Motivated by this answer-silent redundancy, we decompose each Transformer layer into attention and FFN operators and show that useful visual computation is often operator-dominant and layer-dependent. We propose an operator-level visual-token skipping framework that preserves the full visual-token sequence while selectively bypassing redundant attention, FFN, or both. Experiments across three MLLM architectures and 10 VQA benchmarks show that our method achieves strong efficiency-accuracy trade-offs, reducing \\textbf{33.7\\%} TFLOPs on Qwen3-VL while retaining \\textbf{99.5\\%} of the vanilla model performance.",
+          "authors": [
+            "Zhaoyang Luo",
+            "Runmin Dong",
+            "Miao Yang",
+            "Fan Wei",
+            "Yushan Lai",
+            "Bin Luo",
+            "Haohuan Fu"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "published": "2026-06-30T16:08:29+00:00",
+          "link": "https://arxiv.org/pdf/2606.31903v1",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "efficient multimodal LLM inference",
+          "llm_evidence_cn": "高效多模态大模型推理",
+          "llm_evidence": "高效多模态大模型推理",
+          "canonical_evidence": "高效多模态大模型推理",
+          "llm_tldr_en": "Proposes operator-level visual skipping for efficient multimodal LLM inference by decomposing layers and skipping redundant updates.",
+          "llm_tldr_cn": "该论文针对多模态大模型处理长视觉token序列导致计算开销大的问题，从答案可观测角度发现视觉token更新冗余，提出操作符级别的视觉跳过方法，在保持性能的同时显著加速推理。实验验证了该方法的有效性和通用性。",
+          "llm_tldr": "该论文针对多模态大模型处理长视觉token序列导致计算开销大的问题，从答案可观测角度发现视觉token更新冗余，提出操作符级别的视觉跳过方法，在保持性能的同时显著加速推理。实验验证了该方法的有效性和通用性。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "multimodal reasoning",
+          "matched_requirement_id": "req-1",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.31903v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2606.31543v1",
+          "source": "arxiv",
+          "title": "Modality-Driven Search with Holistic Trace Judging for ARC-AGI-2",
+          "abstract": "Large language models can produce fluent, internally coherent reasoning traces for abstract reasoning tasks while still being confidently wrong - making selection among candidates, not just generation, the central challenge. I present a solver for ARC-AGI-2, a few-shot visual reasoning benchmark, built around two principles: (i) treating reasoning modalities as search operators, generating diverse candidates independently across text, image, and code channels, and (ii) context-preserving holistic judging, in which a judge model jointly compares all candidate reasoning traces within a single long-context prompt. Unlike self-consistency or majority voting, this approach reliably recovers correct minority hypotheses on tasks where the modal answer is wrong.   On the ARC Prize semi-private evaluation set, the solver achieves 72.9 percent at USD 38.99 per task - the highest score on the verified leaderboard at the time of writing, exceeding the best standalone frontier models, GPT-5.2 Pro at 54.2 percent and Gemini 3 Pro at 54.0 percent, by +18.7 percentage points. On the public evaluation set, it achieves 76.1 percent at USD 19.69 per task. I release the full source code and document extensive negative results, including the finding that prescriptive prompting templates and iterative refinement systematically reduce hypothesis diversity and degrade performance.",
+          "authors": [
+            "Johan Land"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI",
+            "cs.CL",
+            "cs.LG"
+          ],
+          "published": "2026-06-30T11:55:33+00:00",
+          "link": "https://arxiv.org/pdf/2606.31543v1",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "visual reasoning on ARC-AGI-2",
+          "llm_evidence_cn": "在ARC-AGI-2上的视觉推理",
+          "llm_evidence": "在ARC-AGI-2上的视觉推理",
+          "canonical_evidence": "在ARC-AGI-2上的视觉推理",
+          "llm_tldr_en": "Presents a solver for ARC-AGI-2 visual reasoning benchmark using modality-driven search and holistic trace judging.",
+          "llm_tldr_cn": "该论文面向ARC-AGI-2少样本视觉推理基准，提出基于模态驱动搜索和整体痕迹判断的求解器，通过跨文本、图像和代码通道生成多样化候选，并借助长上下文提示联合评判。在多个困难任务上可靠地恢复正确假设。",
+          "llm_tldr": "该论文面向ARC-AGI-2少样本视觉推理基准，提出基于模态驱动搜索和整体痕迹判断的求解器，通过跨文本、图像和代码通道生成多样化候选，并借助长上下文提示联合评判。在多个困难任务上可靠地恢复正确假设。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "visual reasoning",
+          "matched_requirement_id": "req-2",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.31543v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2607.00606v1",
+          "source": "arxiv",
+          "title": "Retrieved Images as Visual Thought: Training-Free Multimodal In-Context Learning for the Open-vs-Closed Gap",
+          "abstract": "Recent work on Thinking with Images makes vision a dynamic part of reasoning, but does so through generation: the model invokes external tools, synthesizes code, or imagines new imagery, each at the cost of a tool protocol, brittle code, or an expensive training pipeline. A fourth route makes vision dynamic without generating anything, by retrieving labeled exemplar images and reasoning over them, yet it remains underexplored despite being train-free. We present ReVisIT, a train-free framework that realizes this retrieval-based route by treating each retrieved image-label pair as a unit of visual thought. ReVisIT combines structured class definitions, per-query multimodal retrieval of exemplars, and alternating user/assistant injection of those exemplars before joint multi-attribute decoding, and degrades gracefully to whichever components a task admits. On VL-ICL Bench Fast Open MiniImageNet, Qwen3-VL-30B-A3B with ReVisIT reaches 98.5% at 4-shot, statistically indistinguishable from the 72B LLaVA-OneVision SOTA (98.7%) on this near-saturated task at about 1/2.4 the parameters, while the same backbone without the scaffold sits at chance. The turns layer alone adds 26.1 points to GPT-4.1 on free-form concept induction (Bongard-OpenWorld), and the full stack yields a 4-6 point macro gain across three backbones on MAAC-Bench, a new license-clean 27-class, 5-attribute benchmark, significant by paired bootstrap on the curator-derived attributes. Component analysis shows that retrieval-plus-turns is the universal lever while structured definitions are need-adaptive, and that 83% of the retrieval gain comes from retrieval quality rather than from the presence of exemplars. MAAC-Bench is released with a rubric-grounded LLM verification protocol that replaces author spot-check on subjective attributes.",
+          "authors": [
+            "Bingchen Huang",
+            "Zhiling Wang",
+            "Yifu Chen",
+            "Yuanchao Du"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV"
+          ],
+          "published": "2026-07-01T08:31:09+00:00",
+          "link": "https://arxiv.org/pdf/2607.00606v1",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "training-free visual reasoning via retrieval",
+          "llm_evidence_cn": "通过检索实现免训练的视觉推理",
+          "llm_evidence": "通过检索实现免训练的视觉推理",
+          "canonical_evidence": "通过检索实现免训练的视觉推理",
+          "llm_tldr_en": "ReVisIT is a training-free framework that treats retrieved image-label pairs as visual thought units for multimodal in-context learning.",
+          "llm_tldr_cn": "针对现有思维可视化方法依赖工具或训练的问题，本文提出ReVisIT，一种免训练框架，将检索到的图像-标签对作为视觉思维单元，通过结构化类定义和逐查询多模态检索，实现开放集与闭集之间的高效推理，无需任何训练。",
+          "llm_tldr": "针对现有思维可视化方法依赖工具或训练的问题，本文提出ReVisIT，一种免训练框架，将检索到的图像-标签对作为视觉思维单元，通过结构化类定义和逐查询多模态检索，实现开放集与闭集之间的高效推理，无需任何训练。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "visual reasoning",
+          "matched_requirement_id": "req-2",
+          "selection_source": "carryover_cache",
+          "paper_id": "2607.00606v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2607.02490v1",
+          "source": "arxiv",
+          "title": "Visually Grounded Self-Reflection for Vision-Language Models via Reinforcement Learning",
+          "abstract": "Large vision-language models can reason over multimodal inputs by generating textual chains of thought (CoT). A key capability exhibited in CoT reasoning is self-reflection: revisiting earlier decisions and correcting previous errors. However, existing LVLMs often fail to properly attend to visual inputs during reflection, limiting their ability to translate feedback into grounded corrections, especially for out-of-distribution images. To address this issue, we propose a novel reinforcement learning training framework VRRL, with two components explicitly designed to elicit visually grounded self-reflection. First, we randomly mask trajectory prefixes during training to emphasize recovery from incorrect intermediate predictions rather than making early mistakes. Second, we introduce buffered roll-ins from an experience replay buffer to expose the model to diverse failure states that it must learn to correct. We evaluate our approach on visual grounding tasks involving tables and charts, as well as spatial navigation benchmarks. While off-the-shelf and conventionally fine-tuned models degrade substantially under distribution shift, our method substantially improves average out-of-distribution accuracy over standard RL and reflection-oriented fine-tuning baselines by using self-reflection effectively.",
+          "authors": [
+            "Liyan Tang",
+            "Fangcong Yin",
+            "Greg Durrett"
+          ],
+          "primary_category": "cs.CL",
+          "categories": [
+            "cs.CL",
+            "cs.CV"
+          ],
+          "published": "2026-07-02T17:53:15+00:00",
+          "link": "https://arxiv.org/pdf/2607.02490v1",
+          "tags": [
+            "keyword:mm-reasoning",
+            "query:mm-reasoning"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "enhances multimodal reasoning through visually grounded self-reflection",
+          "llm_evidence_cn": "通过视觉接地自反思增强多模态推理",
+          "llm_evidence": "通过视觉接地自反思增强多模态推理",
+          "canonical_evidence": "通过视觉接地自反思增强多模态推理",
+          "llm_tldr_en": "Proposes VRRL, a reinforcement learning framework for visually grounded self-reflection in vision-language models",
+          "llm_tldr_cn": "现有视觉语言模型在自反思时往往忽视视觉输入，导致纠正错误时不够准确。本文提出VRRL框架，通过随机掩码轨迹前缀和强化训练来鼓励视觉接地的自反思。实验表明VRRL显著提升了模型在复杂推理任务中的纠错能力，尤其在分布外场景下效果明显，推动了多模态推理的鲁棒性。",
+          "llm_tldr": "现有视觉语言模型在自反思时往往忽视视觉输入，导致纠正错误时不够准确。本文提出VRRL框架，通过随机掩码轨迹前缀和强化训练来鼓励视觉接地的自反思。实验表明VRRL显著提升了模型在复杂推理任务中的纠错能力，尤其在分布外场景下效果明显，推动了多模态推理的鲁棒性。",
+          "llm_tags": [
+            "query:mm-reasoning"
+          ],
+          "matched_query_tag": "query:mm-reasoning",
+          "matched_query_text": "multimodal reasoning",
+          "matched_requirement_id": "req-1",
+          "selection_source": "carryover_cache",
+          "paper_id": "2607.02490v1",
+          "carry_days": 1
+        }
+      ]
+    }
+  }
 }

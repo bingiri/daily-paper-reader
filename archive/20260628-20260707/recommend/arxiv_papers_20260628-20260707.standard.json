@@ -1,0 +1,836 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-07T03:34:31.056183+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 23,
+    "deep_cap": 6,
+    "deep_selected": 9,
+    "quick_candidates": 27,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2606.29812v1",
+      "source": "arxiv",
+      "title": "Consistency as Inductive Bias: Learning Cross-View Invariance for Robust Multimodal Reasoning",
+      "abstract": "Inductive biases steer learning toward generalizable solutions by encoding task structure. In this work, we identify a crucial missing bias in MLLMs: cross-view consistency, \\textit{i.e.}, semantically invariant views of the same instance should lead to the same answer. Standard reinforcement learning with verifiable rewards (RLVR) objectives do not impose this constraint, but instead assign pointwise rewards to each visual input. Even with data augmentation (DA), transformed views are typically rewarded independently, providing little signal once within-view rewards saturate. We propose \\textbf{ConsistRoll}, a simple but effective method that injects cross-view consistency into RLVR training by reusing the group-sampling mechanism of GRPO. Specifically, ConsistRoll places original and semantically invariant transformed views in the same generation group, and assigns a joint reward only when paired completions are both correct and consistent. In this way, ConsistRoll turns consistency into an online credit-assignment signal, \\textbf{without extra generation overhead and annotations}. Theoretically, we show that cross-view consistency is a valid inductive bias, and ConsistRoll introduces a cross-view correction term absent from DA, penalizing view dependence and alleviating advantage collapse. Comprehensive benchmarks across math, general-purpose, hallucination domains confirm that ConsistRoll achieves robust improvements in multimodal reasoning.",
+      "authors": [
+        "Xin Zou",
+        "Haolin Deng",
+        "Yibo Yan",
+        "Shuliang Liu",
+        "Kening Zheng",
+        "Zhiwei Jin",
+        "Chen Chen",
+        "Haonan Lu",
+        "Xuming Hu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-29T05:45:18+00:00",
+      "link": "https://arxiv.org/pdf/2606.29812v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "directly addresses multimodal reasoning with cross-view consistency",
+      "llm_evidence_cn": "直接针对多模态推理中的跨视图一致性",
+      "llm_evidence": "直接针对多模态推理中的跨视图一致性",
+      "canonical_evidence": "直接针对多模态推理中的跨视图一致性",
+      "llm_tldr_en": "Proposes ConsistRoll to inject cross-view consistency into RLVR training for robust multimodal reasoning",
+      "llm_tldr_cn": "本文发现多模态大模型缺乏跨视图一致性的归纳偏置，标准强化学习奖励无法约束同一实例的不同视图应产生相同答案。作者提出ConsistRoll方法，通过重用组采样机制将跨视图一致性注入RLVR训练。实验表明该方法显著提升了多模态推理的鲁棒性和泛化能力，尤其在分布外场景下表现突出。",
+      "llm_tldr": "本文发现多模态大模型缺乏跨视图一致性的归纳偏置，标准强化学习奖励无法约束同一实例的不同视图应产生相同答案。作者提出ConsistRoll方法，通过重用组采样机制将跨视图一致性注入RLVR训练。实验表明该方法显著提升了多模态推理的鲁棒性和泛化能力，尤其在分布外场景下表现突出。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.30168v1",
+      "source": "arxiv",
+      "title": "Latent Noise Mask for Reducing Visual Redundancy in Multimodal Large Language Models",
+      "abstract": "Multimodal large language models (MLLMs) often fail in fine-grained visual reasoning, as question-relevant visual cues are diluted by dense and redundant image tokens. Recent multimodal reasoning methods usually extend chain-of-thought from language models into visual or latent spaces, seeking to add intermediate reasoning states while overlooking the negative impact of redundant visual tokens. We propose LatEnt Noise maSk (Lens), a question-conditioned visual evidence purification framework that empowers MLLMs to reason with cleaner visual cues in latent space. Lens introduces a lightweight Lens Evidence Token (LET) to score which visual tokens support the current question and preserve them during decoding. Guided by the LET scores, it injects adaptive latent noise into low-relevance tokens, softly suppressing distractors without changing the model backbone or token sequence. With only one temporary learnable control token and a lightweight noise generator, Lens adds minimal overhead while improving the base MLLM by 2.4-6.4 points on most VQA datasets and by 4.1-6.4 points on grounding tasks. These results show that multimodal reasoning can benefit more directly from cleaner question-relevant visual evidence than from simply extending the reasoning trace.",
+      "authors": [
+        "Kai Jiang",
+        "Ruishu Zhu",
+        "Siqi Huang",
+        "Hongyuan Zhang",
+        "Xuelong Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-29T11:44:09+00:00",
+      "link": "https://arxiv.org/pdf/2606.30168v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes a visual evidence purification framework for multimodal large language models to improve fine-grained visual reasoning",
+      "llm_evidence_cn": "提出视觉证据纯化框架，增强多模态大语言模型的细粒度视觉推理",
+      "llm_evidence": "提出视觉证据纯化框架，增强多模态大语言模型的细粒度视觉推理",
+      "canonical_evidence": "提出视觉证据纯化框架，增强多模态大语言模型的细粒度视觉推理",
+      "llm_tldr_en": "Lens introduces a lightweight Lens Evidence Token to score and preserve question-relevant visual tokens, enabling cleaner visual cues in latent space for improved fine-grained visual reasoning in MLLMs.",
+      "llm_tldr_cn": "多模态大语言模型在细粒度视觉推理中常因冗余图像令牌稀释相关视觉线索而失败。本文提出LatEnt Noise maSk（Lens），通过轻量级Lens证据令牌对视觉令牌进行问题条件化评分，保留相关令牌并抑制冗余。该方法在潜空间纯化视觉证据，无需额外监督，显著提升视觉推理准确性。",
+      "llm_tldr": "多模态大语言模型在细粒度视觉推理中常因冗余图像令牌稀释相关视觉线索而失败。本文提出LatEnt Noise maSk（Lens），通过轻量级Lens证据令牌对视觉令牌进行问题条件化评分，保留相关令牌并抑制冗余。该方法在潜空间纯化视觉证据，无需额外监督，显著提升视觉推理准确性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.30189v1",
+      "source": "arxiv",
+      "title": "DAIN: Dynamic Agent-Based Interaction Network for Efficient and Collaborative Multimodal Reasoning",
+      "abstract": "Current multimodal fusion approaches, particularly those based on static Mixture-of-Experts (MoE) architectures, often struggle to provide the adaptive and efficient collaborative reasoning required by complex real-world applications. We introduce the Dynamic Agent-based Interaction Network (DAIN), which reconceptualizes multimodal fusion as a dynamic, multi-agent collaborative process. DAIN employs a context-aware Meta-Controller that dynamically schedules sparse activation of specialized interaction agents and orchestrates compressed inter-agent communication for consensus-building. The framework is guided by a multi-objective loss function that jointly optimizes task accuracy, agent specialization, and operational efficiency through sparse activation and communication regularization. Comprehensive evaluations across five diverse benchmarks -- ADNI, MIMIC-IV, MM-IMDB, CMU-MOSI, and ENRICO -- establish DAIN as a new state-of-the-art, delivering significant performance improvements including a 2.6\\% accuracy gain on ADNI. Ablation studies verify the critical roles of both dynamic scheduling and agent communication. Furthermore, DAIN offers enhanced interpretability by exposing context-dependent agent roles and collaboration patterns while maintaining computational efficiency through sample-wise sparse agent activation. Our work demonstrates the promise of dynamic, agent-based paradigms for multimodal reasoning.",
+      "authors": [
+        "Xinxin Chen",
+        "Yuchen Li",
+        "Zihan Wang",
+        "Haoyu Zhang",
+        "Ruixin Liu",
+        "Mingyuan Zhao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-29T12:04:01+00:00",
+      "link": "https://arxiv.org/pdf/2606.30189v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal reasoning via dynamic agent interaction",
+      "llm_evidence_cn": "通过动态代理交互实现多模态推理",
+      "llm_evidence": "通过动态代理交互实现多模态推理",
+      "canonical_evidence": "通过动态代理交互实现多模态推理",
+      "llm_tldr_en": "DAIN reconceptualizes multimodal fusion as dynamic multi-agent collaboration, using a Meta-Controller to schedule agents and inter-agent communication.",
+      "llm_tldr_cn": "针对静态专家混合架构难以适应复杂多模态推理的问题，本文提出DAIN，将多模态融合重新定义为动态多代理协作过程。通过上下文感知的元控制器调度稀疏激活的交互代理，并利用压缩的代理间通信达成共识，在准确率和效率上均取得提升。",
+      "llm_tldr": "针对静态专家混合架构难以适应复杂多模态推理的问题，本文提出DAIN，将多模态融合重新定义为动态多代理协作过程。通过上下文感知的元控制器调度稀疏激活的交互代理，并利用压缩的代理间通信达成共识，在准确率和效率上均取得提升。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.30217v1",
+      "source": "arxiv",
+      "title": "Before Thinking, Learn to Decide: Proactive Routing for Efficient Visual Reasoning",
+      "abstract": "Large multimodal models have achieved strong reasoning on complex visual tasks, but their inference efficiency is often restricted by long chains of thought. A promising solution is to pair a small draft model with a large target model, enabling cooperative inference employing a routing signal that adaptively routes queries to either the draft or target model based on their difficulties for optimal efficiency and accuracy. Yet, the remaining bottleneck is to establish a reliable query difficulty signal under multimodal settings. Existing approaches designed for language models either rely on post-hoc token probabilities, which fall short in multimodal scenarios, or depend on supervised fine-tuning, which is a data-sensitive strategy. Both paradigms perform routing only after a complete output, and ignore whether the target model can actually solve the routed instances. To address this, we propose PRP, a Proactive Routing Paradigm that enables early decision-making by jointly evaluating the competence of both the draft and target models. Our Draft Rating Learning (DRL) equips the draft model with an internal confidence estimator, while Joint Rating Learning (JRL) predicts how well the target model can handle a given query, thereby prioritizing the allocation of samples it excels at rather than the hardest ones. These ratings enable fine-grained, instance-level \\textbf{Proactive Routing} and substantially accelerate inference without compromising overall performance. Extensive experiments across multiple multimodal reasoning benchmarks validate our effectiveness and efficiency.",
+      "authors": [
+        "Yinan Zhou",
+        "Haokun Lin",
+        "Yichen Wu",
+        "Caifeng Shan",
+        "Zhenan Sun",
+        "Yuxin Chen",
+        "Teng Wang",
+        "Chen Ma",
+        "Li Zhu",
+        "Ying Shan"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-29T12:30:24+00:00",
+      "link": "https://arxiv.org/pdf/2606.30217v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "visual reasoning efficiency routing",
+      "llm_evidence_cn": "视觉推理效率路由",
+      "llm_evidence": "视觉推理效率路由",
+      "canonical_evidence": "视觉推理效率路由",
+      "llm_tldr_en": "Proposes a proactive routing framework that pairs a small draft model with a large target model for efficient visual reasoning under multimodal settings.",
+      "llm_tldr_cn": "该论文针对多模态大模型在复杂视觉任务中推理效率低的问题，提出了一种主动路由框架，通过将小模型与大模型配对，并根据查询难度自适应路由到合适模型，在保持推理准确性的同时大幅提升效率。实验表明该方法在多模态视觉推理基准上优于现有方案。",
+      "llm_tldr": "该论文针对多模态大模型在复杂视觉任务中推理效率低的问题，提出了一种主动路由框架，通过将小模型与大模型配对，并根据查询难度自适应路由到合适模型，在保持推理准确性的同时大幅提升效率。实验表明该方法在多模态视觉推理基准上优于现有方案。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.30217v2",
+      "source": "arxiv",
+      "title": "Before Thinking, Learn to Decide: Proactive Routing for Efficient Visual Reasoning",
+      "abstract": "Large multimodal models have achieved strong reasoning on complex visual tasks, but their inference efficiency is often restricted by long chains of thought. A promising solution is to pair a small draft model with a large target model, enabling cooperative inference employing a routing signal that adaptively routes queries to either the draft or target model based on their difficulties for optimal efficiency and accuracy. Yet, the remaining bottleneck is to establish a reliable query difficulty signal under multimodal settings. Existing approaches designed for language models either rely on post-hoc token probabilities, which fall short in multimodal scenarios, or depend on supervised fine-tuning, which is a data-sensitive strategy. Both paradigms perform routing only after a complete output, and ignore whether the target model can actually solve the routed instances. To address this, we propose PRP, a Proactive Routing Paradigm that enables early decision-making by jointly evaluating the competence of both the draft and target models. Our Draft Rating Learning (DRL) equips the draft model with an internal confidence estimator, while Joint Rating Learning (JRL) predicts how well the target model can handle a given query, thereby prioritizing the allocation of samples it excels at rather than the hardest ones. These ratings enable fine-grained, instance-level \\textbf{Proactive Routing} and substantially accelerate inference without compromising overall performance. Extensive experiments across multiple multimodal reasoning benchmarks validate our effectiveness and efficiency.",
+      "authors": [
+        "Yinan Zhou",
+        "Haokun Lin",
+        "Yichen Wu",
+        "Yuxin Chen",
+        "Teng Wang",
+        "Caifeng Shan",
+        "Zhenan Sun",
+        "Chen Ma",
+        "Li Zhu",
+        "Ying Shan"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-29T12:30:24+00:00",
+      "link": "https://arxiv.org/pdf/2606.30217v2",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "visual reasoning efficiency routing",
+      "llm_evidence_cn": "视觉推理效率路由",
+      "llm_evidence": "视觉推理效率路由",
+      "canonical_evidence": "视觉推理效率路由",
+      "llm_tldr_en": "Proposes a proactive routing framework that pairs a small draft model with a large target model for efficient visual reasoning under multimodal settings.",
+      "llm_tldr_cn": "该论文针对多模态大模型在复杂视觉任务中推理效率低的问题，提出了一种主动路由框架，通过将小模型与大模型配对，并根据查询难度自适应路由到合适模型，在保持推理准确性的同时大幅提升效率。实验表明该方法在多模态视觉推理基准上优于现有方案。",
+      "llm_tldr": "该论文针对多模态大模型在复杂视觉任务中推理效率低的问题，提出了一种主动路由框架，通过将小模型与大模型配对，并根据查询难度自适应路由到合适模型，在保持推理准确性的同时大幅提升效率。实验表明该方法在多模态视觉推理基准上优于现有方案。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.31645v1",
+      "source": "arxiv",
+      "title": "Technical Report of RoboSpatial Challenge at CVPR 2026: Selective Reasoning Activation and Reference-Frame Disambiguation for Embodied Spatial Reasoning",
+      "abstract": "Vision-language models achieve strong general perception but often struggle with the spatial reasoning required for embodied tasks. We present RoboSpatialBrain, our submission to the RoboSpatial Challenge at the Embodied Reasoning in Action Workshop, CVPR 2026, built on RoboBrain2.5-8B-NV. RoboSpatialBrain combines two training-free, inference-time mechanisms: a forced <think> prefix activation strategy paired with a task-specific post-prompt that elicits deliberate reasoning on context and compatibility tasks, and an explicit reference-frame redirection pipeline that resolves camera-centric and object-centric ambiguity for context tasks. We additionally explore fine-tuning RoboBrain2.5 on compatibility data and present a detailed analysis of its interaction with prompting. RoboSpatialBrain achieved first place in the RoboSpatial Challenge, with an overall success rate of 80.9\\% on RoboSpatial-Home. Code is available at https://github.com/YuxiangXie2003/RoboSpatialBrain.",
+      "authors": [
+        "Yuxiang Xie",
+        "Qi Lv",
+        "Jianming Xing",
+        "Zijian Hong",
+        "Xiang Deng",
+        "Weili Guan",
+        "Liqiang Nie"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-30T13:25:59+00:00",
+      "link": "https://arxiv.org/pdf/2606.31645v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "spatial reasoning for embodied tasks",
+      "llm_evidence_cn": "面向具身任务的空间推理",
+      "llm_evidence": "面向具身任务的空间推理",
+      "canonical_evidence": "面向具身任务的空间推理",
+      "llm_tldr_en": "RoboSpatialBrain combines selective reasoning activation and reference-frame disambiguation for embodied spatial reasoning, submitted to CVPR 2026 workshop.",
+      "llm_tldr_cn": "针对具身任务中视觉语言模型空间推理不足的问题，本文提出RoboSpatialBrain，结合强制思考前缀激活和参考帧重定向管道，在CVPR 2026挑战中获得优异表现，有效改善了相机中心和物体中心的歧义。",
+      "llm_tldr": "针对具身任务中视觉语言模型空间推理不足的问题，本文提出RoboSpatialBrain，结合强制思考前缀激活和参考帧重定向管道，在CVPR 2026挑战中获得优异表现，有效改善了相机中心和物体中心的歧义。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.31986v1",
+      "source": "arxiv",
+      "title": "CoLT: Teaching Multi-Modal Models to Think with Chain of Latent Thoughts",
+      "abstract": "Chain-of-thought (CoT) reasoning has enabled multi-modal large language models (MLLMs) to tackle complex visual reasoning tasks by generating explicit intermediate reasoning steps in natural language. However, this text-based reasoning paradigm is inherently slow at inference time with even thousands of tokens and fundamentally constrained by the expressiveness of natural language. In this paper, we propose CoLT, (Chain of Latent Thoughts), a novel framework that teaches multi-modal models to reason through a chain of latent thought representations instead of verbose text tokens, which can perform thinking with as few as 3 steps. Naively forcing the model to think with latent states easily produces meaningless semantics and makes training unstable. To effectively regulate the latent reasoning process, we introduce a lightweight external decoder that provides step-level supervision for each latent reasoning step in two complementary directions: a forward mode that decodes latent thoughts into the textual reasoning of the next step, and a backward mode that aligns decoder hidden states with the model's latent thoughts given preceding textual context. We further incorporate internal supervision that encourages coherent step-by-step latent transitions. The decoder and internal supervision are removed during inference to maintain high efficiency of latent reasoning. Extensive experiments on eight benchmarks demonstrate that CoLT not only outperforms existing latent reasoning methods such as CODI and SIM-CoT, but also surpasses latent visual reasoning approaches that rely on auxiliary images with costly annotation requirements. Compared to text CoT methods, CoLT can notably reduce the inference time by 10.1$\\times$ and text decoding time by 22.6$\\times$. Code is released at https://github.com/hulianyuyy/CoLT.",
+      "authors": [
+        "Lianyu Hu",
+        "Shengqian Qin",
+        "Zeqin Liao",
+        "Qing Guo",
+        "Liang Wan",
+        "Wei Feng",
+        "Yang Liu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-30T17:24:40+00:00",
+      "link": "https://arxiv.org/pdf/2606.31986v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal reasoning with latent thoughts",
+      "llm_evidence_cn": "基于潜在思维的多模态推理",
+      "llm_evidence": "基于潜在思维的多模态推理",
+      "canonical_evidence": "基于潜在思维的多模态推理",
+      "llm_tldr_en": "Proposes CoLT, a framework teaching multimodal models to reason with chain of latent thoughts rather than verbose text tokens.",
+      "llm_tldr_cn": "该论文针对文本思维链推理速度慢且受限于自然语言表达力的问题，提出CoLT框架，引导多模态模型通过潜在思维链进行推理，仅需很少步骤即可完成复杂视觉推理任务。实验表明CoLT在效率和准确性上均取得显著提升。",
+      "llm_tldr": "该论文针对文本思维链推理速度慢且受限于自然语言表达力的问题，提出CoLT框架，引导多模态模型通过潜在思维链进行推理，仅需很少步骤即可完成复杂视觉推理任务。实验表明CoLT在效率和准确性上均取得显著提升。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.00434v1",
+      "source": "arxiv",
+      "title": "Information-Regularized Attention for Visual-Centric Reasoning",
+      "abstract": "Vision-language models (VLMs) have become a paradigm for multimodal learning, yet remain unstable due to object hallucination, weak visual grounding, and catastrophic forgetting after full-parameter instruction tuning. We claim these failures result from a lack of explicit control over visual representation learning during the standard next-token prediction objective. As a result, visual embeddings thus become passively optimized and prone to injecting redundant or spurious signals. To counter this, we introduce Information-Regularized Attention (IRA), a stochastic attention mechanism that explicitly regulates the amount of visual information injected into the hidden states of intermediate transformer layers. This local reparameterization translates uncertainty about visual representations into local noise that is independent across data points. Beyond evaluating model performance, we also quantify embedding properties, where IRA produces smoother curvature trajectories and suppresses attention-sink across all layers, indicating a more stable transformation of the visual signal. Our results suggest that stochastic attention is not merely a regularizer but a key contributor to representation learning in a generative architecture, offering a new direction for building more reliable VLMs.",
+      "authors": [
+        "Guohao Sun",
+        "Xiaofang Wang",
+        "Yash Patel",
+        "Mengchen Liu",
+        "Zhiqiang Tao",
+        "Praveen Krishnan"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-07-01T04:45:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.00434v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes a stochastic attention mechanism for visual-centric reasoning in vision-language models",
+      "llm_evidence_cn": "提出随机注意力机制，用于视觉语言模型的以视觉为中心的推理",
+      "llm_evidence": "提出随机注意力机制，用于视觉语言模型的以视觉为中心的推理",
+      "canonical_evidence": "提出随机注意力机制，用于视觉语言模型的以视觉为中心的推理",
+      "llm_tldr_en": "IRA introduces an information-regularized stochastic attention mechanism that explicitly controls the amount of visual information in hidden states, reducing hallucination and improving visual grounding in VLMs.",
+      "llm_tldr_cn": "视觉语言模型在标准下一令牌预测中缺乏对视觉表示学习的显式控制，导致幻觉和弱视觉基础。本文提出信息正则化注意力（IRA），一种随机注意力机制，在中间层显式调节注入的视觉信息量。通过局部重新参数化处理不确定性，有效增强视觉中心推理的稳定性。",
+      "llm_tldr": "视觉语言模型在标准下一令牌预测中缺乏对视觉表示学习的显式控制，导致幻觉和弱视觉基础。本文提出信息正则化注意力（IRA），一种随机注意力机制，在中间层显式调节注入的视觉信息量。通过局部重新参数化处理不确定性，有效增强视觉中心推理的稳定性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.00881v1",
+      "source": "arxiv",
+      "title": "OmniView-Space: Reinforcing Spatial Reasoning via Multi-Perspective Spatial Mapping",
+      "abstract": "Spatial intelligence remains a persistent challenge for Multimodal Large Language Models (MLLMs), as it requires coherent spatial scene representations beyond basic object recognition. Existing methods typically build such representations through textual reasoning or 3D reconstruction. However, they often falter during multi-step reasoning, particularly when required to dynamically re-anchor evidence to the specific camera-, object-, or direction-centric reference frames demanded by complex queries. To address this, we propose OmniView-Space, a framework designed to maintain spatial consistency through multimodal egocentric evidence. Our approach consists of three core components: (1) Multi-Perspective Spatial Mapping (MPSM), which re-anchors reconstructed geometry into a query-aligned visual cognitive map and a textual spatial graph; (2) Tool-Guided Egocentric Reasoning, an interleaved policy trained to actively select the ego anchor required by the query and request the corresponding MPSM evidence; and (3) Cognitive-Map Distillation, which uses MPSM-generated trajectories and ego-frame rewards to train the model to reason with self-generated cognitive maps. Experiments on single- and multi-image spatial reasoning benchmarks show that OmniView-Space achieves state-of-the-art performance. Furthermore, the distilled model maintains this performance while reducing reliance on external geometry pipelines.",
+      "authors": [
+        "Xudong Li",
+        "Mengdan Zhang",
+        "Peixian Chen",
+        "Jiaxi Tan",
+        "Zihao Huang",
+        "Jingyuan Zheng",
+        "Yan Zhang",
+        "Xiawu Zheng",
+        "Xing Sun",
+        "Rongrong Ji"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-01T12:45:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.00881v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "spatial reasoning via multi-perspective mapping",
+      "llm_evidence_cn": "通过多视角映射实现空间推理",
+      "llm_evidence": "通过多视角映射实现空间推理",
+      "canonical_evidence": "通过多视角映射实现空间推理",
+      "llm_tldr_en": "OmniView-Space reinforces spatial reasoning in MLLMs by multi-perspective spatial mapping and egocentric evidence, maintaining consistency across reference frames.",
+      "llm_tldr_cn": "针对多模态大语言模型在多步空间推理中参考帧动态重锚困难的问题，本文提出OmniView-Space框架，通过多视角空间映射（MPSM）和多模态自我中心证据，维持跨相机、物体和方向参考帧的空间一致性，显著提升复杂空间查询的推理性能。",
+      "llm_tldr": "针对多模态大语言模型在多步空间推理中参考帧动态重锚困难的问题，本文提出OmniView-Space框架，通过多视角空间映射（MPSM）和多模态自我中心证据，维持跨相机、物体和方向参考帧的空间一致性，显著提升复杂空间查询的推理性能。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.29267v1",
+      "source": "arxiv",
+      "title": "Enhancing Part-Level Point Grounding for Any Open-Source MLLMs",
+      "abstract": "Visual grounding aims to associate free-form textual queries with specific regions in an image. While recent Multimodal Large Language Models (MLLMs) have demonstrated promising capabilities in this domain, they primarily excel at object-level grounding and often struggle with part-level grounding-an essential requirement for fine-grained tasks such as robotic manipulation. In this work, we introduce a general approach that equips any open-source MLLMs with accurate 2D part-level point grounding, offering a more direct alternative to conventional grounding representations. Our method leverages the attention mechanisms inherently present in MLLMs. By synthesizing text-conditioned, grounding-aware queries within intermediate layers via the proposed Q-Synth Module, we capture target-relevant attention patterns and refine them with a lightweight Attention-to-Point Decoder, which converts these patterns into a point-centric heatmap for final prediction. Notably, all original MLLM parameters are frozen, ensuring full preservation of their pre-trained capabilities. Experiments show that our design consistently improves part-level grounding accuracy across datasets and can be seamlessly integrated into any open-source MLLMs.",
+      "authors": [
+        "Jin-Cheng Jhang",
+        "Fu-En Wang",
+        "Xin Yang",
+        "Nan Qiao",
+        "Lu Xia",
+        "Min Sun",
+        "Cheng-Hao Kuo"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-28T08:32:35+00:00",
+      "link": "https://arxiv.org/pdf/2606.29267v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "enhances part-level point grounding for any open-source MLLMs, providing open-source implementation",
+      "llm_evidence_cn": "增强任意开源MLLMs的部分级点定位，提供开源实现",
+      "llm_evidence": "增强任意开源MLLMs的部分级点定位，提供开源实现",
+      "canonical_evidence": "增强任意开源MLLMs的部分级点定位，提供开源实现",
+      "llm_tldr_en": "This work equips any open-source MLLM with accurate part-level point grounding by synthesizing grounding-aware queries via attention mechanisms, offering a direct alternative for fine-grained tasks.",
+      "llm_tldr_cn": "现有MLLMs擅长物体级定位，但在部分级定位（如机器人操作所需）上表现不佳。本文提出一种通用方法，利用MLLMs内在注意力机制，通过Q-Synth模块合成文本条件化的定位感知查询，使任何开源MLLM具备精确的2D部分级点定位能力。该方法无需额外训练，可即插即用。",
+      "llm_tldr": "现有MLLMs擅长物体级定位，但在部分级定位（如机器人操作所需）上表现不佳。本文提出一种通用方法，利用MLLMs内在注意力机制，通过Q-Synth模块合成文本条件化的定位感知查询，使任何开源MLLM具备精确的2D部分级点定位能力。该方法无需额外训练，可即插即用。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning open source implementation",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.29672v2",
+      "source": "arxiv",
+      "title": "How LLMs See Creativity: Zero-Shot Scoring of Visual Creativity with Interpretable Reasoning",
+      "abstract": "Evaluating the originality of visual images poses enduring challenges for creativity assessment. Automated scoring using AI models has proven effective in the verbal domain, yet key questions remain about evaluating visual creativity and understanding how models arrive at their ratings. The present research asks whether multimodal large language models (LLMs) can serve as judges of visual creativity zero-shot (without any fine-tuning or examples of human ratings) and whether their \"reasoning\" output offers an interpretable window into their evaluation process. We tested six multimodal LLMs (Gemini 3 Flash, Gemma 4 31B IT, GPT-5.4 Mini, GLM-5v Turbo, Kimi K2.5, and Qwen 3.6 Plus) on 992 AI-generated images (based on human-written prompts) and 1,500 hand-drawn sketches scored for creativity by human raters. In Study 1, all models showed substantial alignment with human creativity ratings on both datasets (r = .57-.68 on AI-generated images; r = .29-68 on sketches). In Study 2, we analyzed the step-by-step reasoning processes of three LLMs evaluating the same images and drawings. Although reasoning made model evaluations interpretable -- showing what they attend to, how they balance originality vs. quality, and how they justify their ratings -- reasoning did not improve alignment with human ratings. In sum, our findings indicate that multimodal LLMs can match human judgments of visual creativity without any additional training, and that their reasoning reveals how AI models evaluate creativity. An open scoring app implementing this pipeline is available at https://review-visual-eval-scoring.hf.space.",
+      "authors": [
+        "William Orwig",
+        "Roger E. Beaty"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-29T00:39:22+00:00",
+      "link": "https://arxiv.org/pdf/2606.29672v2",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "focuses on visual creativity assessment with interpretable reasoning",
+      "llm_evidence_cn": "关注视觉创造力评估中的可解释推理",
+      "llm_evidence": "关注视觉创造力评估中的可解释推理",
+      "canonical_evidence": "关注视觉创造力评估中的可解释推理",
+      "llm_tldr_en": "Tests six multimodal LLMs for zero-shot visual creativity scoring with interpretable reasoning output",
+      "llm_tldr_cn": "本研究探究多模态大模型能否在零样本条件下作为视觉创造力评分者，并输出可解释的推理过程。作者在992张AI生成图像上测试了六个模型，发现某些模型能够有效评估原创性，其推理文本提供了对人类判断的洞察。这项工作为视觉推理与创造力评估交叉领域提供了新视角。",
+      "llm_tldr": "本研究探究多模态大模型能否在零样本条件下作为视觉创造力评分者，并输出可解释的推理过程。作者在992张AI生成图像上测试了六个模型，发现某些模型能够有效评估原创性，其推理文本提供了对人类判断的洞察。这项工作为视觉推理与创造力评估交叉领域提供了新视角。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.29672v1",
+      "source": "arxiv",
+      "title": "How LLMs See Creativity: Zero-Shot Scoring of Visual Creativity with Interpretable Reasoning",
+      "abstract": "Evaluating the originality of visual images poses enduring challenges for creativity assessment. Automated scoring using AI models has proven effective in the verbal domain, yet key questions remain about evaluating visual creativity and understanding how models arrive at their ratings. The present research asks whether multimodal large language models (LLMs) can serve as judges of visual creativity zero-shot (without any fine-tuning or examples of human ratings) and whether their \"reasoning\" output offers an interpretable window into their evaluation process. We tested six multimodal LLMs (Gemini 3 Flash, Gemma 4 31B IT, GPT-5.4 Mini, GLM-5v Turbo, Kimi K2.5, and Qwen 3.6 Plus) on 992 AI-generated images (based on human-written prompts) and 1,500 hand-drawn sketches scored for creativity by human raters. In Study 1, all models showed substantial alignment with human creativity ratings on both datasets (r = .57-.68 on AI-generated images; r = .29-68 on sketches). In Study 2, we analyzed the step-by-step reasoning processes of three LLMs evaluating the same images and drawings. Although reasoning made model evaluations interpretable -- showing what they attend to, how they balance originality vs. quality, and how they justify their ratings -- reasoning did not improve alignment with human ratings. In sum, our findings indicate that multimodal LLMs can match human judgments of visual creativity without any additional training, and that their reasoning reveals how AI models evaluate creativity. An open scoring app implementing this pipeline is available at https://review-visual-eval-scoring.hf.space.",
+      "authors": [
+        "William Orwig",
+        "Roger E. Beaty"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-29T00:39:22+00:00",
+      "link": "https://arxiv.org/pdf/2606.29672v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "zero-shot scoring of visual creativity with reasoning",
+      "llm_evidence_cn": "基于推理的视觉创造力零样本评分",
+      "llm_evidence": "基于推理的视觉创造力零样本评分",
+      "canonical_evidence": "基于推理的视觉创造力零样本评分",
+      "llm_tldr_en": "Tests whether multimodal LLMs can serve as zero-shot judges of visual creativity with interpretable reasoning.",
+      "llm_tldr_cn": "视觉创造力评估面临自动打分挑战。本文研究多模态大模型能否零样本评估图像创造力，并利用其推理输出解释评分依据。实验在992张AI生成图像上测试了6种模型，揭示其推理过程的解释潜力。",
+      "llm_tldr": "视觉创造力评估面临自动打分挑战。本文研究多模态大模型能否零样本评估图像创造力，并利用其推理输出解释评分依据。实验在992张AI生成图像上测试了6种模型，揭示其推理过程的解释潜力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.29399v1",
+      "source": "arxiv",
+      "title": "LLM-Guided Planning for Multi-hop Reasoning over Multimodal Nuclear Regulatory Documents",
+      "abstract": "Reviewing nuclear regulatory documents requires multi-hop reasoning across tens of thousands of pages, where judgments depend on evidence assembled across multiple chapters. We frame this task as planning: an LLM-based agent observes the evidence collected so far, picks the next document fragment to inspect, and stops when the evidence is sufficient. The agent operates over a vectorless document tree using browse, read, and search tools, and maintains a dynamic knowledge graph (KG) as state. On a 200-question benchmark over NuScale Final Safety Analysis Report (FSAR) documents, the system reaches 81.5% accuracy with a RAGAS Faithfulness of 0.93. The dominant performance factor is planning: against PageIndex, which uses the same document tree without state-conditioned action selection, the gap is +38.0pp (43.5% to 81.5%, p<0.001). The system also outperforms LightRAG (73.0%, p<0.05), HippoRAG (70.5%, p<0.01), and GraphRAG (49.5%, p<0.001), and matches RAPTOR (75.5%, p=0.11) without offline indexing. Edge inference adds 2.8x cost without raising accuracy; we retain it as a traceability module. Of 7,391 inferred edges, 3 Violates edges (0.04%) flag scope boundaries (Q058) and partial conformance (Q176) as typed annotations that a human reviewer can audit.",
+      "authors": [
+        "Mingyu Jeon",
+        "Bokyeong Kim",
+        "Suwan Cho",
+        "Jae Young Suh",
+        "Yonggyun Yu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-28T13:45:59+00:00",
+      "link": "https://arxiv.org/pdf/2606.29399v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multi-hop reasoning over multimodal documents",
+      "llm_evidence_cn": "多模态文档的多跳推理",
+      "llm_evidence": "多模态文档的多跳推理",
+      "canonical_evidence": "多模态文档的多跳推理",
+      "llm_tldr_en": "LLM-guided planning for multi-hop reasoning over nuclear regulatory documents, using a vectorless document tree and dynamic KG, achieving 81.5% accuracy.",
+      "llm_tldr_cn": "针对核监管文档多跳推理需要跨章节收集证据的问题，本文将其形式化为规划问题，基于LLM的代理观察已收集证据并选择下一文档片段，使用无向量文档树和动态知识图谱作为状态，在基准上达到81.5%准确率和高忠实度。",
+      "llm_tldr": "针对核监管文档多跳推理需要跨章节收集证据的问题，本文将其形式化为规划问题，基于LLM的代理观察已收集证据并选择下一文档片段，使用无向量文档树和动态知识图谱作为状态，在基准上达到81.5%准确率和高忠实度。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.30251v1",
+      "source": "arxiv",
+      "title": "TACO: Tool-Augmented Credit Optimization for Agentic Tool Use",
+      "abstract": "Agentic multimodal models perform diverse operations on an image via code and reason over the returned view, an effective paradigm for fine-grained visual question answering. However, code operations can be useful, redundant, or misleading. Outcome-only rewards cannot precisely distinguish these cases, and existing process rewards either fail to attribute final correctness to individual tool calls, or require an external judge model. To address this, we introduce Tool-Augmented Credit Optimization (TACO), a GRPO variant for code-tool agents built on two coupled advantage channels. The first, Differential Answer-Probe Reward (DAPR), is a self-supervised, judge-free tool-contribution advantage that credits each tool call by its own effect on answering correctly. Probe tokens inserted into the model's reasoning elicit its predictions with and without the tool, and the difference in outcome reward is taken as the call's value: positive for a useful call, negative for a misleading one, and zero for one that changes nothing. This reuses the existing answer checker with no auxiliary judge, and, being a difference rather than an absolute probe score, is naturally robust to probe-hacking. The second is the outcome advantage from the final answer, distributed by Outcome-Gated Advantage Routing (OGAR): a parameter-free rule that, conditioned on the call's outcome, delivers this credit only to the responsible segments, suppressing wasted tool calls without any cost term. We train TACO through a two-stage SFT+RL pipeline. Extensive experiments across perception, reasoning, and general multimodal benchmarks show that it yields consistent accuracy gains and learns to invoke its tools only when they help.",
+      "authors": [
+        "Mingkuan Feng",
+        "Jinyang Wu",
+        "Hao Gu",
+        "Fangrui Lv",
+        "Ruihan Jin",
+        "Chuyuan Zhang",
+        "Zhengqi Wen",
+        "Jianhua Tao"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-06-29T13:01:05+00:00",
+      "link": "https://arxiv.org/pdf/2606.30251v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal agentic tool use for visual reasoning",
+      "llm_evidence_cn": "多模态代理工具使用进行视觉推理",
+      "llm_evidence": "多模态代理工具使用进行视觉推理",
+      "canonical_evidence": "多模态代理工具使用进行视觉推理",
+      "llm_tldr_en": "Introduces TACO, a GRPO variant for code-tool agents, using Differential Answer-Probe Reward to credit each tool call in fine-grained visual question answering.",
+      "llm_tldr_cn": "针对多模态代理中工具调用贡献难以精确归因的问题，本文提出TACO框架，一种基于GRPO的变体，通过差分答案探针奖励（DAPR）自监督地评估每个工具调用的贡献，无需外部评判模型，在细粒度视觉问答任务上显著提升效果。",
+      "llm_tldr": "针对多模态代理中工具调用贡献难以精确归因的问题，本文提出TACO框架，一种基于GRPO的变体，通过差分答案探针奖励（DAPR）自监督地评估每个工具调用的贡献，无需外部评判模型，在细粒度视觉问答任务上显著提升效果。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.31383v1",
+      "source": "arxiv",
+      "title": "MS-Resampler: Multi-Scope Visual Resampling for Efficient Multimodal LLMs",
+      "abstract": "Multimodal large language models (MLLMs) typically employ resampling-based projectors to transform dense visual features into a compact token sequence for language modeling. Most existing resamplers adopt a single, fixed aggregation scope via global cross-attention, which can blur fine-grained local evidence and limit the ability to capture both local details and global context within a fixed token budget. In this work, we propose MS-Resampler, a multi-scope visual resampling framework for MLLMs. MS-Resampler instantiates multiple scope-specific resamplers by injecting explicit spatial scope priors into the resampling attention, enabling each branch to aggregate visual information at a particular granularity from local to global. The outputs of these scope-specific resamplers are then adaptively fused to produce the final visual representations for language modeling. Extensive experiments on ten public multimodal benchmarks show that MS-Resampler consistently improves visual understanding and multimodal reasoning over conventional single-scope resamplers, while introducing only minimal computational overhead.",
+      "authors": [
+        "Zhongyang Li",
+        "Yaqian Li",
+        "Faming Fang",
+        "Rinyoichi Takezoe",
+        "Zi-Hao Bo",
+        "Cheng Qian",
+        "Mo Guang",
+        "Guixu Zhang",
+        "Kaiwen Long"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-30T09:11:50+00:00",
+      "link": "https://arxiv.org/pdf/2606.31383v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "improves multimodal LLMs via multi-scope visual resampling",
+      "llm_evidence_cn": "通过多范围视觉重采样改进多模态大语言模型",
+      "llm_evidence": "通过多范围视觉重采样改进多模态大语言模型",
+      "canonical_evidence": "通过多范围视觉重采样改进多模态大语言模型",
+      "llm_tldr_en": "Proposes MS-Resampler with multiple scope-specific resamplers for better visual representation in MLLMs",
+      "llm_tldr_cn": "多模态大语言模型通常使用重采样投影仪将视觉特征转化为令牌序列，但现有方法采用单一固定聚合范围，丢失局部细节。本文提出MS-Resampler，通过注入显式空间范围先验，实例化多个不同粒度的重采样器，同时捕获局部与全局信息。该方法在保持令牌预算的同时提升了多模态理解性能，为多模态推理提供了更优的视觉表示基础。",
+      "llm_tldr": "多模态大语言模型通常使用重采样投影仪将视觉特征转化为令牌序列，但现有方法采用单一固定聚合范围，丢失局部细节。本文提出MS-Resampler，通过注入显式空间范围先验，实例化多个不同粒度的重采样器，同时捕获局部与全局信息。该方法在保持令牌预算的同时提升了多模态理解性能，为多模态推理提供了更优的视觉表示基础。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.29648v1",
+      "source": "arxiv",
+      "title": "Hybrid Retriever Evolution for Multimodal Document Reasoning Agents",
+      "abstract": "Different retrievers, including lexical, semantic, and multimodal approaches, provide highly complementary strengths for multimodal document understanding, yet most systems combine them through fixed pipelines that cannot adapt to the demands of individual reasoning steps. In this work, we ask whether retrieval orchestration itself can be learned as part of the reasoning process. We introduce a failure-driven evolution framework in which a meta-agent autonomously discovers how a tool-using task agent should coordinate diverse retrievers during multi-step document question answering. The meta-agent analyzes incorrect reasoning trajectories, actively probes the same tool environment to diagnose root causes, and iteratively rewrites the task agent's instructions, turning retrieval from a fixed front-end stage into an adaptive, step-wise reasoning decision. The evolved agent learns when to invoke each retriever, how to combine them, and how to compose evidence across modalities and pages. On MMLongBench-Doc and DocBench, the evolved agent achieves gains of up to +19.6 points over the unevolved baseline and consistently outperforms recent systems including MACT, MDocAgent, and SimpleDoc. Detailed retrieval analyses confirm that these improvements arise from adaptive routing and evidence composition rather than reliance on any hard coded retrieval mode, and evolution dynamics reveal a progressive shift from narrow lexical behavior to rich multi-tool coordination. These findings establish autonomous multi-agent coordination as a promising paradigm for multimodal document reasoning.",
+      "authors": [
+        "Bohan Yao",
+        "Shruthan Radhakrishna",
+        "Vikas Yadav"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-06-28T23:36:34+00:00",
+      "link": "https://arxiv.org/pdf/2606.29648v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multimodal document reasoning with hybrid retriever",
+      "llm_evidence_cn": "多模态文档推理中的混合检索器",
+      "llm_evidence": "多模态文档推理中的混合检索器",
+      "canonical_evidence": "多模态文档推理中的混合检索器",
+      "llm_tldr_en": "Proposes a failure-driven evolution framework that learns to orchestrate diverse retrievers during multimodal document reasoning.",
+      "llm_tldr_cn": "该论文针对多模态文档推理中检索器组合方式固定无法自适应的问题，提出失败驱动进化框架，让元智能体自动发现任务智能体如何协调不同检索器，通过分析错误轨迹和主动探查工具环境迭代优化指令。实验表明该方法提升多步文档问答性能。",
+      "llm_tldr": "该论文针对多模态文档推理中检索器组合方式固定无法自适应的问题，提出失败驱动进化框架，让元智能体自动发现任务智能体如何协调不同检索器，通过分析错误轨迹和主动探查工具环境迭代优化指令。实验表明该方法提升多步文档问答性能。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.30378v1",
+      "source": "arxiv",
+      "title": "OmniCoT: A Benchmark for Global and Multi-Step Panoramic Reasoning",
+      "abstract": "Multimodal Large Language Models (MLLMs) have demonstrated promising spatial reasoning capabilities, while these abilities remain underexplored in the emerging visual modality of panoramic imagery. The full 360°$\\times$180° field of view of panoramas essentially supports complex global multi-step reasoning, which is also the fundamental advantage of panoramas in applications such as embodied intelligence. However, existing panoramic benchmarks largely focus on simplistic queries that rely on local cues or single-/few-step reasoning, thereby ignoring the fundamental advantage of panoramas and failing to fully exploit their potential. To address this gap, we introduce OmniCoT, a panoramic spatial reasoning suite designed to enable MLLMs to use global evidence and perform multi-step inference across viewpoints. It includes OmniCoT-B (6.7K data) for evaluation, which measures both answer accuracy and reasoning quality, OmniCoT-Real (1K data) as a manually annotated real-world subset to quantify the Sim-to-Real gap. For training, OmniCoT-T (14.3K data) is purpose-built with structured stepwise Chain-of-Thought annotations that explicitly link intermediate reasoning steps to panoramic evidence. Based on OmniCoT-T, we introduce OmniCoT-R1 and adopt a two-stage training strategy tailored to the geometrically complex panoramic space, where Supervised Fine-tuning (SFT) anchors reasoning to panoramic evidence (e.g., bearings, proximity) and GRPO penalizes geometrically incoherent paths to consolidate global 360° spatial consistency. Through OmniCoT, we aim to recalibrate the difficulty of panoramic spatial reasoning to better align with the intrinsic capabilities of panoramic imagery, thereby fostering meaningful progress in this research area.",
+      "authors": [
+        "Haocong He",
+        "Chenfei Liao",
+        "Zichen Wen",
+        "Zihao Dongfang",
+        "Xu Zheng",
+        "Bin Ren",
+        "Chang Su",
+        "Zixin Zhang",
+        "Harold Haodong Chen",
+        "Hongfei Zhang",
+        "Weijia Li",
+        "Kailun Yang",
+        "Conghui He",
+        "Xuming Hu",
+        "Nicu Sebe",
+        "Linfeng Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-29T14:38:20+00:00",
+      "link": "https://arxiv.org/pdf/2606.30378v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "introduces a benchmark for panoramic multimodal reasoning",
+      "llm_evidence_cn": "引入全景多模态推理基准",
+      "llm_evidence": "引入全景多模态推理基准",
+      "canonical_evidence": "引入全景多模态推理基准",
+      "llm_tldr_en": "Introduces OmniCoT, a panoramic spatial reasoning benchmark requiring global multi-step multimodal reasoning",
+      "llm_tldr_cn": "现有全景图像基准仅关注局部线索或单步推理，未能利用全景的优势。本文提出OmniCoT，一个需要全局多步推理的全景空间推理套件。它迫使多模态大模型使用全局证据进行复杂推理。实验表明当前模型在该基准上仍面临巨大挑战，揭示了全景推理的独特难度，为多模态推理研究提供了新方向。",
+      "llm_tldr": "现有全景图像基准仅关注局部线索或单步推理，未能利用全景的优势。本文提出OmniCoT，一个需要全局多步推理的全景空间推理套件。它迫使多模态大模型使用全局证据进行复杂推理。实验表明当前模型在该基准上仍面临巨大挑战，揭示了全景推理的独特难度，为多模态推理研究提供了新方向。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.31800v1",
+      "source": "arxiv",
+      "title": "Evo-PI: Aligning Medical Reasoning via Evolving Principle-Guided Supervision",
+      "abstract": "Despite recent progress, the reasoning capabilities of large multimodal language models (MLLMs) remain fundamentally constrained by static supervision, where fixed prompts, rules, or reward models provide non-adaptive guidance throughout training. Such static signals are often sufficient to enforce output formats, but fail to shape the underlying reasoning process, leading to brittle generalization and performance saturation in complex decision-making tasks. We propose Evo-PI, a principle-centric learning framework that treats reasoning principles as explicit, language-based supervision signals that can be generated, evaluated, and iteratively evolved. Instead of relying on fixed rewards, Evo-PI enables a co-evolutionary loop in which principles guide model reasoning, while model behaviors in turn refine the principles that supervise them. This dynamic alignment mechanism allows supervision to progressively adapt to the model's reasoning deficiencies. We instantiate Evo-PI in medical visual question answering as a high-stakes testbed requiring structured visual-textual reasoning. Across eight benchmarks and multiple model backbones, Evo-PI consistently improves reasoning accuracy, achieving gains of up to 24.6%. Our results suggest that evolving principle-guided supervision offers a scalable and general paradigm for training expert-aligned reasoning in MLLMs. Code is available at https://github.com/zhengxianda/Evo_PI.",
+      "authors": [
+        "Xianda Zheng",
+        "Huan Gao",
+        "Meng-Fen Chiang",
+        "Michael Witbrock",
+        "Kaiqi Zhao",
+        "Shangyang Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-30T15:19:26+00:00",
+      "link": "https://arxiv.org/pdf/2606.31800v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "addresses multimodal reasoning in medical domain with evolving principle-guided supervision",
+      "llm_evidence_cn": "通过进化原则引导的监督，解决医学领域的多模态推理问题",
+      "llm_evidence": "通过进化原则引导的监督，解决医学领域的多模态推理问题",
+      "canonical_evidence": "通过进化原则引导的监督，解决医学领域的多模态推理问题",
+      "llm_tldr_en": "Evo-PI proposes a principle-centric learning framework that treats reasoning principles as explicit, iteratively evolving supervision signals to improve MLLMs in complex medical decision-making.",
+      "llm_tldr_cn": "多模态大语言模型推理受限于静态监督，无法自适应塑造推理过程。本文提出Evo-PI，一种以原则为中心的学习框架，将推理原则作为显式、可进化的语言监督信号。通过共同进化循环，原则指导模型推理并随训练更新，提升医学推理泛化能力。",
+      "llm_tldr": "多模态大语言模型推理受限于静态监督，无法自适应塑造推理过程。本文提出Evo-PI，一种以原则为中心的学习框架，将推理原则作为显式、可进化的语言监督信号。通过共同进化循环，原则指导模型推理并随训练更新，提升医学推理泛化能力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.29984v1",
+      "source": "arxiv",
+      "title": "Be Faithful When Response: Returning Fluent and Grounded Answers for Vision-Language Models Reinforcement Learning",
+      "abstract": "Reinforcement Learning (RL) is an important paradigm for improving the reasoning capabilities of Vision-Language Models (VLMs). However, directly applying RL to rollout multimodal reasoning can lead to instability, due to the exploitation of language priors, the neglect of visual evidence, and the generation of reasoning traces that are fluent yet not visually grounded. The question arises: Can initially steer the policy toward visually faithful reasoning regime before applying reinforcement learning? To this end, we propose a Faithful Warm-Start (FWS) strategy that first curates samples with explicit vision-language causal relationships from six general VQA benchmarks to construct the FaithfulQA dataset, where each of the image-question pairs gains a certain degree of visual observations, question requirements, commonsense knowledge, domain knowledge, and the final answer. Subsequently, a VLM-based judge is employed to further purify the dataset, ensuring strong causal consistency and visual faithfulness. This warm-start stage equips the model with the capability to understand causally grounded vision-language patterns before subsequent RL optimization under sparse answer-level rewards. Experimental results show that such faithful supervision improves answer accuracy, stabilizes RL training, and reduces visually unsupported reasoning.",
+      "authors": [
+        "Peng",
+        "Lee",
+        "Yin Zhang",
+        "Yanglin Zhang",
+        "Haonan Wu",
+        "Zishan Liu",
+        "Ruoxi Zang",
+        "Xin Zhu",
+        "Jiayin Zheng",
+        "Jian Yao",
+        "Zefeng Ji",
+        "Fei Ma"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-29T08:58:33+00:00",
+      "link": "https://arxiv.org/pdf/2606.29984v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "improves visual grounding and faithfulness in vision-language model reasoning via reinforcement learning",
+      "llm_evidence_cn": "通过强化学习提升视觉语言模型推理中的视觉基础和忠实性",
+      "llm_evidence": "通过强化学习提升视觉语言模型推理中的视觉基础和忠实性",
+      "canonical_evidence": "通过强化学习提升视觉语言模型推理中的视觉基础和忠实性",
+      "llm_tldr_en": "FWS proposes a Faithful Warm-Start strategy that curates vision-language causal samples to steer policy toward visually faithful reasoning before applying reinforcement learning, mitigating instability.",
+      "llm_tldr_cn": "直接对视觉语言模型应用强化学习优化多模态推理会导致不稳定，如忽视视觉证据。本文提出忠实热启动（FWS）策略，先构建具有显式视觉语言因果关系的FaithfulQA数据集，通过监督训练预热策略，使其进入视觉忠实推理域，再应用强化学习。该方法有效提升推理的视觉基础。",
+      "llm_tldr": "直接对视觉语言模型应用强化学习优化多模态推理会导致不稳定，如忽视视觉证据。本文提出忠实热启动（FWS）策略，先构建具有显式视觉语言因果关系的FaithfulQA数据集，通过监督训练预热策略，使其进入视觉忠实推理域，再应用强化学习。该方法有效提升推理的视觉基础。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.31285v1",
+      "source": "arxiv",
+      "title": "Spatial Reasoning via Modality Switching Between Language and Symbolic Representation",
+      "abstract": "Human reasoning is inherently multimodal: when problems become difficult, we rarely think in words alone. We often externalize our reasoning by sketching diagrams or drawing grids to understand the underlying conceptual structure and avoid mistakes. Building on this premise, our research investigates: (a) whether grounding multi-hop textual-spatial stories into geometry-aware modalities, such as layouts or grids, improves reasoning compared to natural language-based inference; and (b) whether a model can decide when to rely on natural language reasoning and when to switch to a structured modality. We address these questions by introducing a switching metric based on trustworthiness and complexity signals, which estimates when grounding a spatial story into structure is likely to improve performance. This takes a first step toward principled modality selection in Large Language Model (LLM) reasoning. Across our settings, switching from natural language-based reasoning to a grid-based representation improves LLM performance by up to 42\\%, highlighting the importance of modality choice in shaping reasoning outcomes.",
+      "authors": [
+        "Shreya Rajpal",
+        "Tanawan Premsri",
+        "Parisa Kordjamshidi"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-30T08:02:07+00:00",
+      "link": "https://arxiv.org/pdf/2606.31285v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "addresses spatial reasoning with modality switching, a form of visual reasoning",
+      "llm_evidence_cn": "通过模态切换解决空间推理问题，属于视觉推理范畴",
+      "llm_evidence": "通过模态切换解决空间推理问题，属于视觉推理范畴",
+      "canonical_evidence": "通过模态切换解决空间推理问题，属于视觉推理范畴",
+      "llm_tldr_en": "Investigates modality switching between language and symbolic representation for spatial reasoning improvement",
+      "llm_tldr_cn": "人类在困难问题中常借助图表等外部表征。本文探究是否将多跳文本空间故事接地到几何感知模态（如布局或网格）能改善推理。作者引入基于可信度和复杂度的切换度量，让模型决定何时使用自然语言或结构化模态。实验证明模态切换策略在空间推理任务上优于纯语言方法。",
+      "llm_tldr": "人类在困难问题中常借助图表等外部表征。本文探究是否将多跳文本空间故事接地到几何感知模态（如布局或网格）能改善推理。作者引入基于可信度和复杂度的切换度量，让模型决定何时使用自然语言或结构化模态。实验证明模态切换策略在空间推理任务上优于纯语言方法。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
