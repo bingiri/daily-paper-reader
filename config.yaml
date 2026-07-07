@@ -25,3 +25,48 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: mm-reasoning
+      description: 请你帮我查找多模态推理相关的论文，有github仓库和顶会中稿的优先
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: multimodal reasoning
+          keyword_cn: 多模态推理
+          query: multimodal reasoning
+        - keyword: visual reasoning
+          keyword_cn: 视觉推理
+          query: visual reasoning
+      intent_queries:
+        - query: multimodal reasoning papers with GitHub code repository
+          query_cn: 包含GitHub代码仓库的多模态推理论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: multimodal reasoning accepted at top conferences
+          query_cn: 顶会中稿的多模态推理论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: multimodal reasoning open source implementation
+          query_cn: 多模态推理开源实现
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-07-07T03:27:29.031Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
