@@ -1,0 +1,786 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-08T21:22:05.727540+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 12,
+    "deep_cap": 6,
+    "deep_selected": 8,
+    "quick_candidates": 18,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2607.00465v1",
+      "source": "arxiv",
+      "title": "StochasT: Learning with Stochastic Turn Depth for Visual Instruction Tuning",
+      "abstract": "Large Vision-Language Models (LVLMs) rely extensively on Visual Instruction Tuning (VIT) to elicit their multimodal reasoning capabilities. However, we find a discrepancy: VIT often packs multiple language tasks about the same image for conversational, multi-turn training, whereas existing benchmarks evaluate LVLMs in isolated, single-turn scenarios. The models can suffer from visual attention decay and contextual overfitting during multi-turn training, making it hard for them to realize their full potential in the mismatched test phase. To close the gap, we propose learning with Stochastic Turn Depth (StochasT), which stochastically groups language tasks for the same image into clusters of varying sizes (turn depth) while preserving their organic order. Hence, while StochasT draws on Dropout and stochastic depth for ResNets, it does not actually drop anything to maximize the utility of the training data. Furthermore, we introduce a challenging, benchmark-agnostic evaluation mechanism based on the Balanced Latin Square to measure LVLMs' robustness under varying contextual dependencies. Extensive experiments demonstrate that StochasT effectively grants LVLMs strong, harmonized capabilities for both single-turn and multi-turn use cases.",
+      "authors": [
+        "Yuan Qing",
+        "Chengzhi Mao",
+        "Boqing Gong"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-01T05:34:07+00:00",
+      "link": "https://arxiv.org/pdf/2607.00465v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "enhances multimodal reasoning via stochastic turn depth in visual instruction tuning",
+      "llm_evidence_cn": "通过随机交互轮次深度提升多模态推理能力",
+      "llm_evidence": "通过随机交互轮次深度提升多模态推理能力",
+      "canonical_evidence": "通过随机交互轮次深度提升多模态推理能力",
+      "llm_tldr_en": "StochasT introduces stochastic turn depth during visual instruction tuning to bridge the gap between multi-turn training and single-turn evaluation, improving multimodal reasoning in LVLMs.",
+      "llm_tldr_cn": "现有视觉指令调优（VIT）在多轮训练中打包多个语言任务，但评测为单轮场景，导致模型注意力衰减和过拟合。针对这一差距，本文提出StochasT，在训练中随机分组图像对应的语言任务为不同大小的簇（即随机轮次深度），使模型适应评测时的单轮交互。实验表明该方法有效提升了多模态推理能力。",
+      "llm_tldr": "现有视觉指令调优（VIT）在多轮训练中打包多个语言任务，但评测为单轮场景，导致模型注意力衰减和过拟合。针对这一差距，本文提出StochasT，在训练中随机分组图像对应的语言任务为不同大小的簇（即随机轮次深度），使模型适应评测时的单轮交互。实验表明该方法有效提升了多模态推理能力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.00685v1",
+      "source": "arxiv",
+      "title": "M2Note: Continual Evolution of Vision Language Models via Mistake Notebook Learning",
+      "abstract": "Vision Language Models (VLMs) have demonstrated remarkable capabilities in multimodal reasoning tasks, yet they still suffer from recurring failures, such as skipping key visual checks, misapplying domain rules, and hallucinating unsupported concepts. Most existing solutions rely on supervised fine-tuning (SFT) and reinforcement learning (RL), which are expensive to iterate and can be brittle under distribution shift. To this end, we propose Multimodal Mistake Notebook Learning (M2Note), a training-free continual evolution framework that externalizes learning into an editable memory. M2Note transforms failed trajectories into compact subject-guidance notes: the subject summarizes the underlying domain and concept, while the guidance provides actionable verification steps that can be reused in future inference. At test time, M2Note retrieves relevant notes via multimodal retrieval-augmented generation (RAG) and appends them to the model context, steering reasoning away from previously observed pitfalls. To stabilize continual evolution, we adopt batch-level post-verification with rollback, which commits notebook edits only if they improve performance on the same batch, reducing noisy updates and preventing regressions. M2Note supports both self-evolving, where the same VLM acts as solver and supervisor, and cross-model evolving, where a stronger supervisor guides a weaker solver, enabling capability transfer without weight updates. Experiments on six multimodal reasoning benchmarks show consistent improvements across domains and backbones, while achieving strong cost and sample efficiency and remaining complementary to Chain-of-Thought (CoT) prompting.",
+      "authors": [
+        "Haiwen Li",
+        "Jing Tang",
+        "Rui Chen",
+        "Lei Sun",
+        "Xiangxiang Chu"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-07-01T09:30:10+00:00",
+      "link": "https://arxiv.org/pdf/2607.00685v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "continual evolution of VLMs for multimodal reasoning",
+      "llm_evidence_cn": "面向多模态推理的视觉语言模型持续演化",
+      "llm_evidence": "面向多模态推理的视觉语言模型持续演化",
+      "canonical_evidence": "面向多模态推理的视觉语言模型持续演化",
+      "llm_tldr_en": "M2Note uses mistake notebook learning to evolve VLMs without retraining.",
+      "llm_tldr_cn": "视觉语言模型在多模态推理中常出现重复性失败，如忽略关键视觉线索、误用领域规则和幻觉。现有微调方法成本高且鲁棒性差。本文提出多模态错误笔记本学习（M2Note），一个无需训练持续演化框架，将失败轨迹转化为简洁的学科指导笔记，通过编辑外部记忆不断改进模型。实验表明该方法能有效减少重复错误，提升推理稳定性。",
+      "llm_tldr": "视觉语言模型在多模态推理中常出现重复性失败，如忽略关键视觉线索、误用领域规则和幻觉。现有微调方法成本高且鲁棒性差。本文提出多模态错误笔记本学习（M2Note），一个无需训练持续演化框架，将失败轨迹转化为简洁的学科指导笔记，通过编辑外部记忆不断改进模型。实验表明该方法能有效减少重复错误，提升推理稳定性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.02607v1",
+      "source": "arxiv",
+      "title": "Latent Visual Cache for Video Reasoning",
+      "abstract": "Video reasoning requires Large Multimodal Models (LMMs) to remain grounded in dense evidence, yet existing systems largely adopt \"read-once, generate-many\" paradigm, in which visual grounding weakens during generation. This phenomenon has been widely observed and is known as Visual Anchoring Decay. To fill this gap, we introduce Latent Video Cache (Latent-VC), a recurrent latent visual cache inserted into the decoder to preserve compact visual memories throughout reasoning. The cache is trained with supervised contrastive cache alignment and vision-grounded GRPO with a latent grounding reward, while maintaining strict train-inference alignment through native decoder hidden states. Built on Qwen3.5-9B, Latent-VC consistently outperforms strong CoT and SFT+GRPO baselines across six video benchmarks, with especially clear gains on grounding-intensive and long-video tasks. In addition, it also achieves higher accuracy with substantially shorter responses, suggesting that latent visual caching improves video reasoning by preserving visual evidence rather than relying on longer textual chains.",
+      "authors": [
+        "Yongheng Zhang",
+        "Zhipeng Xu",
+        "Hao Wu",
+        "Yinghui Li",
+        "Di Yin",
+        "Xing Sun",
+        "Philip S. Yu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-07-01T13:51:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.02607v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "latent visual cache for video reasoning to combat visual anchoring decay",
+      "llm_evidence_cn": "用于视频推理的潜在视觉缓存，抵抗视觉锚定衰减",
+      "llm_evidence": "用于视频推理的潜在视觉缓存，抵抗视觉锚定衰减",
+      "canonical_evidence": "用于视频推理的潜在视觉缓存，抵抗视觉锚定衰减",
+      "llm_tldr_en": "Proposes Latent-VC, a recurrent latent visual cache for video reasoning that preserves compact visual memories throughout generation, trained with contrastive alignment and GRPO with grounding reward.",
+      "llm_tldr_cn": "视频推理中大型多模态模型存在视觉锚定衰减问题。本文提出潜在视频缓存Latent-VC，在解码器中插入循环潜在缓存以保持紧凑视觉记忆。通过对比缓存对齐和基于视觉基础的GRPO训练，模型在生成过程中持续保持视觉基础，超越强基线。",
+      "llm_tldr": "视频推理中大型多模态模型存在视觉锚定衰减问题。本文提出潜在视频缓存Latent-VC，在解码器中插入循环潜在缓存以保持紧凑视觉记忆。通过对比缓存对齐和基于视觉基础的GRPO训练，模型在生成过程中持续保持视觉基础，超越强基线。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.03825v1",
+      "source": "arxiv",
+      "title": "Q-TriM: Question-Guided Tri-Modal Attention for Audio-Visual Question Answering",
+      "abstract": "Audio-Visual Question Answering (AVQA) extends classical VQA by requiring joint reasoning over video and synchronized audio. However, many AVQA systems rely on deeply stacked layers of self- and cross attention across text, video, and audio. Such sequential stacking may incur loss of information such as subtle inter-modal cues over the layers, causing errors to accumulate across sequential attention layers during the fusion. We introduce Q-TriM which performs multi-modal fusion in a shallow and parallel manner instead of a deep and sequential manner. For Q-TriM, we propose a novel framework for attention operation incorporating video and audio conditioned on text. As a result, we obtain not only standard cross attention outputs but also Tri-Modal Attention representations in which Query, Key, and Value come from distinct modalities. These attention representations are combined in parallel at a single stage, thus avoiding the multi-modal fusion with deep stacks in order to mitigate error accumulation and depth-induced issues. Q-TriM achieves state-of-the-art performance on three AVQA benchmarks, including substantial gains on MUSIC-AVQA-R, which demonstrates its robustness and out-of-distribution generalization. Code is available at https://github.com/Sunghun95/Q-TriM",
+      "authors": [
+        "SungHun Kim",
+        "SeungJun Baek"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-04T11:21:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.03825v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "question-guided tri-modal attention for audio-visual question answering",
+      "llm_evidence_cn": "问题引导的三模态注意力用于音视频问答",
+      "llm_evidence": "问题引导的三模态注意力用于音视频问答",
+      "canonical_evidence": "问题引导的三模态注意力用于音视频问答",
+      "llm_tldr_en": "Introduces Q-TriM for AVQA, performing multi-modal fusion in a shallow and parallel manner via question-guided attention over video and audio, avoiding error accumulation from deep sequential stacking.",
+      "llm_tldr_cn": "音视频问答需要联合推理视频和音频，但深层堆叠注意力导致信息丢失。Q-TriM采用浅层并行融合：问题引导的注意力同时处理视频和音频，并提取三模态特征。实验表明该方法在保持低计算量的同时提升了推理准确性，减少了错误积累。",
+      "llm_tldr": "音视频问答需要联合推理视频和音频，但深层堆叠注意力导致信息丢失。Q-TriM采用浅层并行融合：问题引导的注意力同时处理视频和音频，并提取三模态特征。实验表明该方法在保持低计算量的同时提升了推理准确性，减少了错误积累。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05131v1",
+      "source": "arxiv",
+      "title": "TacReasoner: A Dynamic Tactile-Language Framework for Interactive Reasoning in Real-World Scenarios",
+      "abstract": "Among the five primary human senses, tactile is arguably the most fundamental to survival, as it enables the perception of physical contact and interaction in real-world environments. In this paper, we explore two key challenges of integrating tactile sensing into intelligent systems for multimodal reasoning: (i) insufficient modeling of dynamic tactile signals, which restricts reasoning over temporally evolving properties, and (ii) hallucination in tactile foundation models caused by the absence of explicit reasoning mechanisms, leading to unstable real-world inference. To address these challenges, we propose TacReasoner, a dynamic tactile-language framework for interactive reasoning in real-world scenarios. First, TacReasoner incorporates a Dynamic-aware Tactile Encoder to enhance the perception and representation of dynamic tactile signals. More importantly, we introduce TouchCoT-10k, the first tactile chain-of-thought dataset for structured reasoning over tactile inputs. Upon it, we establish DynTac-Bench to systematically evaluate dynamic tactile perception and real-world commonsense reasoning. Experimental results demonstrate that TacReasoner achieves competitive performance against state-of-the-art models across multiple datasets. Notably, despite using only 7B parameters, TacReasoner outperforms the 14B VTV-LLM model on most subtasks, highlighting its effectiveness and efficiency in tactile commonsense reasoning.",
+      "authors": [
+        "Kailin Lyu",
+        "Di Wu",
+        "Long Xiao",
+        "Jianning Zeng",
+        "Jianwei He",
+        "Chang Lin",
+        "Lianyu Hu",
+        "Lin Shu",
+        "Jie Hao",
+        "Ce Hao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-06T14:17:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.05131v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal reasoning integrating tactile and language",
+      "llm_evidence_cn": "整合触觉和语言的多模态推理",
+      "llm_evidence": "整合触觉和语言的多模态推理",
+      "canonical_evidence": "整合触觉和语言的多模态推理",
+      "llm_tldr_en": "TacReasoner addresses challenges in integrating tactile sensing for multimodal reasoning by modeling dynamic tactile signals and reducing hallucination through explicit reasoning mechanisms, enabling interactive reasoning in real-world scenarios.",
+      "llm_tldr_cn": "触觉感知对于多模态推理至关重要，但现有工作缺乏对动态触觉信号的建模且容易产生幻觉。本文提出TacReasoner框架，通过对动态触觉信号的时序建模和引入显式推理机制，有效降低了触觉基础模型中的幻觉现象，支持真实世界场景中的交互式推理。实验证明了其稳定性和有效性。",
+      "llm_tldr": "触觉感知对于多模态推理至关重要，但现有工作缺乏对动态触觉信号的建模且容易产生幻觉。本文提出TacReasoner框架，通过对动态触觉信号的时序建模和引入显式推理机制，有效降低了触觉基础模型中的幻觉现象，支持真实世界场景中的交互式推理。实验证明了其稳定性和有效性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05716v1",
+      "source": "arxiv",
+      "title": "Scene Graph Thinking: Reinforcing Structured Visual Reasoning for Multimodal Large Language Models",
+      "abstract": "Multimodal Large Language Models (MLLMs) have demonstrated strong perception and reasoning capabilities. However, most existing models focus on isolated objects and neglect structured relationships for efficient target navigation, limiting their performance on visually intensive tasks. To address this challenge, we introduce Scene Graph Thinking (SaGe), a novel paradigm that enables fine-grained and structured visual reasoning through explicit scene-graph representations. Specifically, we first introduce an automated data engine that converts flat image-text corpora into structured scene graphs, where hierarchical entities constitute the nodes and diverse visual relations define the edges. Building upon this, we construct 120K high-quality training data by sampling reasoning traces from scene graphs. Then, two-stage graph-aligned post-training paradigms are introduced, where supervised fine-tuning internalizes MLLMs with structured reasoning, and subsequent reinforcement fine-tuning proposes node-as-proxy graph rewards to consolidate efficient graph exploration. With curated data and graph-aligned training, our approach achieves significant improvements across eight multimodal benchmarks, demonstrating strong effectiveness on fine-grained perception and reasoning tasks. Code is available at https://github.com/zwyang6/SaGe.",
+      "authors": [
+        "Zhiwei Yang",
+        "Yuanchen Wu",
+        "Nan Zhang",
+        "Yucong Meng",
+        "Ke Yan",
+        "Shouhong Ding"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-07T01:00:51+00:00",
+      "link": "https://arxiv.org/pdf/2607.05716v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "structured visual reasoning via scene graphs",
+      "llm_evidence_cn": "通过场景图进行结构化视觉推理",
+      "llm_evidence": "通过场景图进行结构化视觉推理",
+      "canonical_evidence": "通过场景图进行结构化视觉推理",
+      "llm_tldr_en": "Scene Graph Thinking (SaGe) enables fine-grained structured visual reasoning in MLLMs by converting image-text corpora into explicit scene graphs and training on 12 diverse tasks.",
+      "llm_tldr_cn": "多模态大模型在视觉推理中常忽略对象间的结构关系。本文提出场景图思维（SaGe），通过自动数据引擎将平面图像文本转化为结构化场景图，构建12个任务的数据集进行训练，使模型能够进行细粒度的结构化视觉推理。实验表明SaGe在多种视觉推理任务上显著提升性能。",
+      "llm_tldr": "多模态大模型在视觉推理中常忽略对象间的结构关系。本文提出场景图思维（SaGe），通过自动数据引擎将平面图像文本转化为结构化场景图，构建12个任务的数据集进行训练，使模型能够进行细粒度的结构化视觉推理。实验表明SaGe在多种视觉推理任务上显著提升性能。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05798v1",
+      "source": "arxiv",
+      "title": "Segmentation before Answering: Pixel Grounding for MLLM Visual Reasoning",
+      "abstract": "Recent advancements in Multimodal Large Language Models (MLLMs) have evolved from static perception to interleaved visual-language reasoning, often referred to as ``thinking with images''. A basic operation in this reasoning process is to zoom in on regions of interest (often represented with bounding boxes) to acquire finer visual details. In this paper, we propose \\textbf{Seg}mentation before \\textbf{Answer}ing (SegAnswer), which shifts the unit of zoom-in from the popular bounding box to pixel-level segmentation mask. By employing fine-grained masks to isolate the target area from cluttered environments, segmented visual input yields a more precise region of interest, effectively filtering out redundant background and interfering objects. Furthermore, the discrete patches of segmented visual input align more seamlessly with how MLLMs structure visual tokens via positional embeddings. In experiments, we evaluate SegAnswer across diverse benchmarks, including high-resolution perception, general perception, and hallucination. It achieves consistent improvements and also exhibits considerable performance on segmentation tasks, validating its capability for reliable pixel grounding.",
+      "authors": [
+        "Yake Wei",
+        "Yuan Wang",
+        "Fengyun Rao",
+        "Jing Lyu",
+        "Di Hu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-07T03:50:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.05798v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "pixel-level grounding improves MLLM visual reasoning",
+      "llm_evidence_cn": "像素级定位提升MLLM视觉推理",
+      "llm_evidence": "像素级定位提升MLLM视觉推理",
+      "canonical_evidence": "像素级定位提升MLLM视觉推理",
+      "llm_tldr_en": "SegAnswer shifts zoom-in from bounding boxes to pixel-level segmentation masks, providing finer regions of interest and improving visual reasoning in MLLMs.",
+      "llm_tldr_cn": "MLLM在视觉推理中通常用边界框放缩感兴趣区域，但框内仍包含背景干扰。本文提出SegAnswer，将放缩单元从边界框改为像素级分割掩码，通过精细掩码隔离目标，过滤背景和干扰物体，从而获得更精确的视觉特征，显著提升多模态推理的准确性。",
+      "llm_tldr": "MLLM在视觉推理中通常用边界框放缩感兴趣区域，但框内仍包含背景干扰。本文提出SegAnswer，将放缩单元从边界框改为像素级分割掩码，通过精细掩码隔离目标，过滤背景和干扰物体，从而获得更精确的视觉特征，显著提升多模态推理的准确性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05943v1",
+      "source": "arxiv",
+      "title": "SearchEyes: Towards Frontier Multimodal Deep Search Intelligence via Search World Simulation",
+      "abstract": "Training multimodal search agents to perform multi-hop reasoning remains challenging due to a fundamental structural disconnect: existing pipelines construct training data, search environments, and reward signals independently, causing synthesized structural metadata to be discarded, environments to rely on irreproducible external engines, and RL rewards to remain sparse at the trajectory level. We present \\textbf{SearchEyes}, which uses a typed knowledge graph as the backbone of a \\emph{simulated search world} that unifies all three components. We propose \\textbf{Perception-Knowledge Chains (PKC)} to sample constrained multi-hop paths over the visual-knowledge intersection of Wikidata5M, retaining hop-level entity metadata that simultaneously defines a self-contained search world and step-level reward anchors. We further propose \\textbf{Hop-Anchored Policy Optimization (HaPO)}, which reuses these anchors for step-level credit assignment without a separately trained process reward model. Experiments on six multimodal knowledge-intensive benchmarks show that SearchEyes achieves state-of-the-art performance among open-source multimodal search agents, with SearchEyes-27B improving over the strongest open-source baseline by 6.2 points on average.%",
+      "authors": [
+        "Zhengbo Jiao",
+        "Yiming Cheng",
+        "Yilei Jiang",
+        "Kaituo Feng",
+        "Rui Huang",
+        "Tianyi Jiang",
+        "Juanxi Tian",
+        "Jiapeng li",
+        "Qunzhong Wang",
+        "Tailai Chen",
+        "Qianshan Wei",
+        "Chuan Xiao",
+        "Shanyu Rong",
+        "Yangfu Li",
+        "Yanhan Zhou",
+        "Yunpu Ma",
+        "Yifan Zhang",
+        "Xiangyu Yue"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-07T07:43:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.05943v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal deep search with multi-hop reasoning",
+      "llm_evidence_cn": "多模态深度搜索，多跳推理",
+      "llm_evidence": "多模态深度搜索，多跳推理",
+      "canonical_evidence": "多模态深度搜索，多跳推理",
+      "llm_tldr_en": "SearchEyes unifies training data, search environment, and reward signals via a simulated search world built on a knowledge graph, enabling effective multi-hop reasoning for multimodal search agents.",
+      "llm_tldr_cn": "训练多模态搜索智能体进行多跳推理面临数据、环境和奖励信号相互脱节的问题。本文提出SearchEyes，使用类型化知识图谱构建模拟搜索世界，统一三个组件。并提出感知-知识链（PKC）来采样多跳路径，保留实体元数据。实验表明该方法在多个搜索基准上大幅提升多跳推理能力。",
+      "llm_tldr": "训练多模态搜索智能体进行多跳推理面临数据、环境和奖励信号相互脱节的问题。本文提出SearchEyes，使用类型化知识图谱构建模拟搜索世界，统一三个组件。并提出感知-知识链（PKC）来采样多跳路径，保留实体元数据。实验表明该方法在多个搜索基准上大幅提升多跳推理能力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.02490v1",
+      "source": "arxiv",
+      "title": "Visually Grounded Self-Reflection for Vision-Language Models via Reinforcement Learning",
+      "abstract": "Large vision-language models can reason over multimodal inputs by generating textual chains of thought (CoT). A key capability exhibited in CoT reasoning is self-reflection: revisiting earlier decisions and correcting previous errors. However, existing LVLMs often fail to properly attend to visual inputs during reflection, limiting their ability to translate feedback into grounded corrections, especially for out-of-distribution images. To address this issue, we propose a novel reinforcement learning training framework VRRL, with two components explicitly designed to elicit visually grounded self-reflection. First, we randomly mask trajectory prefixes during training to emphasize recovery from incorrect intermediate predictions rather than making early mistakes. Second, we introduce buffered roll-ins from an experience replay buffer to expose the model to diverse failure states that it must learn to correct. We evaluate our approach on visual grounding tasks involving tables and charts, as well as spatial navigation benchmarks. While off-the-shelf and conventionally fine-tuned models degrade substantially under distribution shift, our method substantially improves average out-of-distribution accuracy over standard RL and reflection-oriented fine-tuning baselines by using self-reflection effectively.",
+      "authors": [
+        "Liyan Tang",
+        "Fangcong Yin",
+        "Greg Durrett"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-07-02T17:53:15+00:00",
+      "link": "https://arxiv.org/pdf/2607.02490v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "enhances multimodal reasoning through visually grounded self-reflection",
+      "llm_evidence_cn": "通过视觉接地自反思增强多模态推理",
+      "llm_evidence": "通过视觉接地自反思增强多模态推理",
+      "canonical_evidence": "通过视觉接地自反思增强多模态推理",
+      "llm_tldr_en": "Proposes VRRL, a reinforcement learning framework for visually grounded self-reflection in vision-language models",
+      "llm_tldr_cn": "现有视觉语言模型在自反思时往往忽视视觉输入，导致纠正错误时不够准确。本文提出VRRL框架，通过随机掩码轨迹前缀和强化训练来鼓励视觉接地的自反思。实验表明VRRL显著提升了模型在复杂推理任务中的纠错能力，尤其在分布外场景下效果明显，推动了多模态推理的鲁棒性。",
+      "llm_tldr": "现有视觉语言模型在自反思时往往忽视视觉输入，导致纠正错误时不够准确。本文提出VRRL框架，通过随机掩码轨迹前缀和强化训练来鼓励视觉接地的自反思。实验表明VRRL显著提升了模型在复杂推理任务中的纠错能力，尤其在分布外场景下效果明显，推动了多模态推理的鲁棒性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.02490v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.01667v1",
+      "source": "arxiv",
+      "title": "Temporal and Cross-Modal Alignment for Enhanced Audiovisual Video Captioning",
+      "abstract": "While Multimodal Large Language Models (MLLMs) have advanced video understanding, achieving precise temporal and cross-modal alignment in audiovisual video captioning remains a formidable challenge. Most existing approaches suffer from modality detachment and temporal incoherence, failing to accurately bind auditory events to visual entities or capture complex causal dynamics. To address these deficiencies, we propose TCA-Captioner, a framework specifically engineered to enhance Temporal and Cross-Modal Alignment for audiovisual video captioning. We first introduce the Observer-Checker-Corrector (OCC) framework, an iterative refinement strategy that generates high-fidelity, meticulously grounded training data. Leveraging a curated high-density human interaction dataset, TCA-Captioner is optimized to model sophisticated audiovisual interactions. Furthermore, we present TCA-Bench, a diagnostic benchmark utilizing a Decoupled Evaluation Protocol to isolate and quantify model proficiency in audiovisual binding and temporal relational reasoning. Extensive experiments demonstrate that TCA-Captioner sets a new standard for temporally-coherent and synchronized audiovisual narratives.",
+      "authors": [
+        "Chen Zhao",
+        "Jiajun Ma",
+        "Qilong Huang",
+        "Tiehan Fan",
+        "Hongyu Li",
+        "Zhuoliang Kang",
+        "Xiaoming Wei",
+        "Jian Yang",
+        "Ying Tai"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-02T03:47:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.01667v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "temporal and cross-modal alignment for multimodal video captioning",
+      "llm_evidence_cn": "面向多模态视频字幕的时序与跨模态对齐",
+      "llm_evidence": "面向多模态视频字幕的时序与跨模态对齐",
+      "canonical_evidence": "面向多模态视频字幕的时序与跨模态对齐",
+      "llm_tldr_en": "TCA-Captioner enhances temporal and cross-modal alignment for audiovisual video captioning.",
+      "llm_tldr_cn": "多模态视频字幕生成面临模态分离和时序不连贯的问题，难以准确绑定听觉事件与视觉实体。本文提出TCA-Captioner框架，通过Observer-Checker-Corrector迭代精炼策略生成高质量训练数据，并设计对齐机制增强视听融合。实验表明该方法在视频字幕任务上显著提升了时序一致性和跨模态关联性。",
+      "llm_tldr": "多模态视频字幕生成面临模态分离和时序不连贯的问题，难以准确绑定听觉事件与视觉实体。本文提出TCA-Captioner框架，通过Observer-Checker-Corrector迭代精炼策略生成高质量训练数据，并设计对齐机制增强视听融合。实验表明该方法在视频字幕任务上显著提升了时序一致性和跨模态关联性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.32016v1",
+      "source": "arxiv",
+      "title": "FedLAB: Traceable Semantic Codebooks for Federated Multimodal Graph Foundation Learning",
+      "abstract": "Multimodal graph foundation models aim to learn reusable knowledge from graphs enriched with text, images, attributes, and relational topology, thereby supporting diverse graph-centric and modality-centric tasks. In practice, however, such multimodal graphs are often distributed across decentralized clients, where raw contents and local structures cannot be centrally shared due to privacy constraints. This motivates federated multimodal graph foundation learning, which requires not only transferable representation learning but also intrinsic semantic traceability under strict data isolation. Existing methods usually exchange or store knowledge through parameters, prototypes, embeddings, or compact codebooks, which support optimization and transfer but do not explicitly expose how modality evidence, node semantics, and topology context jointly support predictions. To bridge this gap, we propose FedLAB, a traceable semantic codebook framework that organizes multimodal graph knowledge into typed hierarchical codebooks for modality evidence, node semantics, and topology context. FedLAB further refines these trace units through federated semantic barycenter pre-training while keeping raw multimodal contents and graph structures local. Extensive experiments on 10 benchmarks and 6 downstream tasks show that FedLAB improves over state-of-the-art baselines by up to 7.53\\%, while preserving a native semantic trace interface.",
+      "authors": [
+        "Zekai Chen",
+        "Kairui Yang",
+        "Xuaner Chen",
+        "Xunkai Li",
+        "Xun Wu",
+        "Rong-Hua Li",
+        "Guoren Wang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-30T17:47:39+00:00",
+      "link": "https://arxiv.org/pdf/2606.32016v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal graph foundation learning with traceable codebooks",
+      "llm_evidence_cn": "多模态图基础学习中的可追踪语义码本",
+      "llm_evidence": "多模态图基础学习中的可追踪语义码本",
+      "canonical_evidence": "多模态图基础学习中的可追踪语义码本",
+      "llm_tldr_en": "Proposes FedLAB for federated multimodal graph foundation learning using traceable semantic codebooks to enable transferable representation and semantic traceability under data isolation.",
+      "llm_tldr_cn": "联邦多模态图基础学习面临数据隔离和语义可追踪的挑战。FedLAB通过引入可追踪语义码本，在保护隐私的同时实现跨客户端的可迁移表示学习和内在语义追踪，支持多种图中心和多模态任务。实验证明该方法能有效平衡隐私与性能。",
+      "llm_tldr": "联邦多模态图基础学习面临数据隔离和语义可追踪的挑战。FedLAB通过引入可追踪语义码本，在保护隐私的同时实现跨客户端的可迁移表示学习和内在语义追踪，支持多种图中心和多模态任务。实验证明该方法能有效平衡隐私与性能。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.03184v1",
+      "source": "arxiv",
+      "title": "BVS: Bayesian Visual Search with Multimodal Large Language Model for Fine-grained Perception",
+      "abstract": "While Multimodal Large Language Models (MLLMs) demonstrate impressive general capabilities, they struggle with fine-grained perception in ultra-high-resolution (UHR) images, particularly for tiny objects in cluttered scenes. Existing methods face a dilemma: they either rely on inefficient prior-free scanning, or depend on static prior-driven heuristics that lack posterior correction to rectify initial model biases. To address this, we propose BVS (Bayesian Visual Search), a framework that formulates perception as a global optimization problem over a continuous spatial-scale manifold. Specifically, BVS bridges prior guidance with posterior correction: it utilizes an early-stop attention rollout of MLLM to construct reasoning-aware priors, while employing a scale-aware non-stationary kernel and GP-UCB to dynamically rectify noise and recover missing information in the prior through iterative local observations. We provide theoretical guarantees via sub-linear regret bounds, and extensive experiments demonstrate that BVS significantly outperforms state-of-the-art baselines with a superior trade-off between accuracy and efficiency.",
+      "authors": [
+        "Geng Li",
+        "Yuxin Peng"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-03T10:42:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.03184v1",
+      "tags": [
+        "keyword:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "visual reasoning via Bayesian visual search with MLLM",
+      "llm_evidence_cn": "基于贝叶斯视觉搜索和多模态大语言模型的视觉推理",
+      "llm_evidence": "基于贝叶斯视觉搜索和多模态大语言模型的视觉推理",
+      "canonical_evidence": "基于贝叶斯视觉搜索和多模态大语言模型的视觉推理",
+      "llm_tldr_en": "Proposes BVS, a Bayesian Visual Search framework for fine-grained perception in high-resolution images using MLLM reasoning.",
+      "llm_tldr_cn": "针对多模态大语言模型在超高分辨率图像中细粒度感知不足的问题，提出BVS框架，将感知建模为连续空间-尺度流形上的全局优化，结合先验引导与后验校正，有效提升了微小目标的检测能力。",
+      "llm_tldr": "针对多模态大语言模型在超高分辨率图像中细粒度感知不足的问题，提出BVS框架，将感知建模为连续空间-尺度流形上的全局优化，结合先验引导与后验校正，有效提升了微小目标的检测能力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.03184v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.01929v1",
+      "source": "arxiv",
+      "title": "Beyond Textual Repository Exploration: Dual-Modal Structural Reasoning for Agentic Issue Resolution",
+      "abstract": "Recent advances in agentic program repair have significantly improved issue resolution by enabling iterative repository exploration. However, existing approaches predominantly rely on sequential, text-based code navigation, which fundamentally limits their ability to reason over large-scale long-horizon repositories with complex and long-range dependencies. As issue-resolution agents traverse repositories through fragmented textual observations, structural information such as module organization, call relationships, and dependency chains must be repeatedly reconstructed across interaction steps, often leading to exploration drift and incomplete localization. We present DUALVIEW, a dual-modal structural scaffolding framework that brings visual reasoning into repository exploration for issue-resolution agents. DUALVIEW represents repository structure through four complementary graph views: Module Coupling Graph (MCG), Function Call Graph (FCG), Class Hierarchy Graph (CHG), and Program Dependence Graph (PDG), and exposes them through a queryable interface with visual and textual responses. Rather than reconstructing repository structure from a sequence of textual observations, agents can directly reason over persistent visual representations of code dependencies, enabling more effective exploration and understanding of long-horizon codebases. We evaluate DUALVIEW on SWE-bench Pro and Verified. Results show that DUALVIEW consistently improves issue-resolution performance across different agent architectures and model families. Further ablation studies demonstrate that the gains arise not only from textual structural information but also from visual externalization of repository dependencies, which better supports long-horizon repository exploration.",
+      "authors": [
+        "Jiayi Zhang",
+        "Kai Huang",
+        "Yang Liu",
+        "Chunyang Chen"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-07-02T09:23:48+00:00",
+      "link": "https://arxiv.org/pdf/2607.01929v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "dual-modal structural reasoning for agentic issue resolution",
+      "llm_evidence_cn": "双模态结构推理用于智能体问题解决",
+      "llm_evidence": "双模态结构推理用于智能体问题解决",
+      "canonical_evidence": "双模态结构推理用于智能体问题解决",
+      "llm_tldr_en": "DUALVIEW provides a dual-modal structural scaffolding framework that enhances agentic issue resolution by reasoning over both code structure and textual information, reducing exploration drift.",
+      "llm_tldr_cn": "现有智能体在仓库探索中仅依赖顺序文本，难以处理大型仓库中的复杂依赖关系。本文提出DUALVIEW双模态结构框架，同时利用代码结构（如调用关系）和文本信息进行推理，减少探索漂移。实验证明该方法在多个程序修复基准上提升了定位准确率和修复成功率。",
+      "llm_tldr": "现有智能体在仓库探索中仅依赖顺序文本，难以处理大型仓库中的复杂依赖关系。本文提出DUALVIEW双模态结构框架，同时利用代码结构（如调用关系）和文本信息进行推理，减少探索漂移。实验证明该方法在多个程序修复基准上提升了定位准确率和修复成功率。",
+      "llm_tags": [
+        "query:mm-reasoning:composite"
+      ],
+      "matched_query_tag": "query:mm-reasoning:composite",
+      "matched_query_text": "Papers central to 请你帮我查找多模态推理相关的论文，有github仓库和顶会中稿的优先, especially work that connects or combines: multimodal reasoning; visual reasoning; multimodal reasoning papers with GitHub code repository; multimodal reasoning accepted at top conferences; multimodal reasoning open source implementation.",
+      "matched_requirement_id": "req-composite-mm-reasoning",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.00293v1",
+      "source": "arxiv",
+      "title": "Rosetta: Composable Native Multimodal Pretraining",
+      "abstract": "Achieving true artificial general intelligence requires foundation models capable of integrating new modalities without forgetting prior knowledge. However, accommodating continuous generative objectives alongside discrete understanding tasks causes severe gradient conflicts. Existing architectures, including standard Mixture-of-Experts (MoE), are highly susceptible to representation overwriting. Even structurally partitioned paradigms like Mixture-of-Transformers (MoT) remain vulnerable to catastrophic forgetting, severely impeding multimodal scalability. In this work, we introduce Rosetta, a composable native multimodal pretraining framework designed for seamless and non-destructive modality expansion. Rosetta adopts a modular paradigm where core foundational knowledge is preserved within global shared experts, while modality-specific capabilities are distributed across plug-and-play experts. To guarantee non-destructive composition, we propose Momentum-Anchored Orthogonal Projection (MAOP). MAOP leverages the optimizer's momentum state as an implicit semantic anchor, selectively neutralizing conflicting gradient components from new modalities while preserving synergistic updates. Extensive evaluations demonstrate that, while standard MoE and MoT architectures suffer catastrophic forgetting of previously acquired knowledge, Rosetta robustly preserves established language and visual understanding. Furthermore, it delivers superior image generation and unlocks cross-modal synergy, paving the way for truly composable and unified multimodal foundation models. To facilitate further multimodal research, we release our code and checkpoints to the community. Project page at https://rosetta-lmm.github.io/.",
+      "authors": [
+        "Xiangyue Liu",
+        "Zijian Zhang",
+        "Miles Yang",
+        "Zhao Zhong",
+        "Liefeng Bo",
+        "Ping Tan"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-01T00:42:40+00:00",
+      "link": "https://arxiv.org/pdf/2607.00293v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "composable native multimodal pretraining preventing catastrophic forgetting",
+      "llm_evidence_cn": "可组合的原生多模态预训练，防止灾难性遗忘",
+      "llm_evidence": "可组合的原生多模态预训练，防止灾难性遗忘",
+      "canonical_evidence": "可组合的原生多模态预训练，防止灾难性遗忘",
+      "llm_tldr_en": "Introduces Rosetta, a modular pretraining framework that enables seamless addition of new modalities without forgetting prior knowledge, using a core foundation module and modality-specific experts.",
+      "llm_tldr_cn": "多模态模型扩展时面临灾难性遗忘和梯度冲突。Rosetta采用模块化范式，核心基础模块包含共享知识，新模态以非破坏方式集成。实验表明其相比MoE和MoT架构显著缓解遗忘，支持可扩展的多模态学习。",
+      "llm_tldr": "多模态模型扩展时面临灾难性遗忘和梯度冲突。Rosetta采用模块化范式，核心基础模块包含共享知识，新模态以非破坏方式集成。实验表明其相比MoE和MoT架构显著缓解遗忘，支持可扩展的多模态学习。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.04779v1",
+      "source": "arxiv",
+      "title": "DGSeg: Dynamic Gating of Semantic-Spatial Guided Predictions for Reasoning Segmentation",
+      "abstract": "Reasoning segmentation aims to predict pixel-wise masks for targets given complex language queries. Existing approaches leverage Multimodal Large Language Models (MLLMs) for vision-language reasoning and generate intermediate target cues (e.g., points or boxes) to guide a segmentation model. However, compressing rich reasoning into sparse cues often introduces ambiguity and noise, preventing these cues from accurately preserving the reasoning intent. While multiple complementary cues can enrich target information, existing methods typically feed them jointly into a single segmentation process, allowing ambiguous or erroneous cues to affect the entire prediction. Therefore, we propose DGSeg, a reasoning segmentation framework that learns to fuse predictions guided by semantic and spatial cues. Specifically, the MLLM jointly reasons about both target identity and spatial location, producing complementary semantic and spatial cues that are fed into separate segmentation branches. Their predictions are adaptively integrated by a lightweight dynamic gating module trained with relative branch-quality supervision to suppress noisy or conflicting regions. Extensive experiments demonstrate that DGSeg consistently outperforms strong baselines on multiple benchmarks and achieves 69.6% and 67.3% gIoU on the challenging ReasonSeg validation and test splits. Code is available at https://github.com/RZZeng/DGSeg.",
+      "authors": [
+        "Ruizhe Zeng",
+        "Siyu Cao",
+        "Lu Zhang",
+        "Zhiyong Liu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-06T08:10:03+00:00",
+      "link": "https://arxiv.org/pdf/2607.04779v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "reasoning segmentation with dynamic gating of semantic-spatial cues",
+      "llm_evidence_cn": "通过语义-空间线索的动态门控实现推理分割",
+      "llm_evidence": "通过语义-空间线索的动态门控实现推理分割",
+      "canonical_evidence": "通过语义-空间线索的动态门控实现推理分割",
+      "llm_tldr_en": "DGSeg proposes a reasoning segmentation framework that dynamically gates multiple complementary cues to avoid noise propagation from ambiguous intermediate representations.",
+      "llm_tldr_cn": "现有推理分割方法将多个中间线索（点/框/掩码）直接融合，导致模糊或错误线索污染整体预测。本文提出DGSeg，通过学习动态门控机制，根据每类线索的置信度选择性融合，避免噪声传播，从而提升基于MLLM推理的视觉分割质量。",
+      "llm_tldr": "现有推理分割方法将多个中间线索（点/框/掩码）直接融合，导致模糊或错误线索污染整体预测。本文提出DGSeg，通过学习动态门控机制，根据每类线索的置信度选择性融合，避免噪声传播，从而提升基于MLLM推理的视觉分割质量。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.02020v1",
+      "source": "arxiv",
+      "title": "Hidden Forgetting in Continual Multimodal Learning: When Accuracy Survives but Grounding Fails",
+      "abstract": "Multimodal large language models must continually adapt to evolving tasks and domains, yet standard continual learning metrics mainly measure whether old answers remain correct, leaving the stability of multimodal grounding largely unexamined. We study this overlooked failure mode and ask whether a continually adapted MLLM can preserve not only what it answers, but also how it uses visual, textual, OCR, chart, and document evidence. We identify \\emph{hidden evidence-use forgetting}, where answer accuracy is retained while the model silently shifts toward different or less grounded evidence channels, and propose \\textsc{RCL}, a replay-free reliance-constrained continual learning framework. \\textsc{RCL} freezes the previous checkpoint as a behavioral reference, estimates teacher and student evidence-reliance profiles through counterfactual channel interventions, and jointly optimizes task learning, prediction preservation, and reliance preservation without adding inference-time cost. Across CoIN, COAST, MCITlib, and an evidence-sensitive multimodal stream, \\textsc{RCL} consistently improves final performance and reduces forgetting over replay-free, PEFT, routing, and memory-assisted baselines, while substantially lowering modality reliance drift, dominant evidence flips, and hidden forgetting rates. These results suggest that robust continual multimodal learning requires preserving the evidence path behind correct answers, not merely the answers themselves.",
+      "authors": [
+        "Qianyu Chen",
+        "Canran Xiao",
+        "Runxuan Tang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-02T10:50:37+00:00",
+      "link": "https://arxiv.org/pdf/2607.02020v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal grounding forgetting in continual learning",
+      "llm_evidence_cn": "多模态持续学习中的证据基础遗忘",
+      "llm_evidence": "多模态持续学习中的证据基础遗忘",
+      "canonical_evidence": "多模态持续学习中的证据基础遗忘",
+      "llm_tldr_en": "Identifies hidden evidence-use forgetting in continual multimodal learning where accuracy is retained but models shift away from proper grounding, proposes RCL framework to constrain reliance on previous evidence.",
+      "llm_tldr_cn": "多模态大模型在持续学习过程中，标准指标只衡量答案准确性，忽略了多模态证据基础的稳定性。本文发现一种隐藏遗忘模式：模型虽然保持正确率，但会悄悄转向不同或更弱的证据渠道。为此提出RCL框架，通过约束证据依赖来保持模型对视觉、文本等多种证据的正确使用，无需重放旧数据。",
+      "llm_tldr": "多模态大模型在持续学习过程中，标准指标只衡量答案准确性，忽略了多模态证据基础的稳定性。本文发现一种隐藏遗忘模式：模型虽然保持正确率，但会悄悄转向不同或更弱的证据渠道。为此提出RCL框架，通过约束证据依赖来保持模型对视觉、文本等多种证据的正确使用，无需重放旧数据。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.01978v1",
+      "source": "arxiv",
+      "title": "Multimodal Knowledge Edit-Scoped Generalization for Online Recursive MLLM Editing",
+      "abstract": "Online multimodal knowledge editing requires injecting a continual stream of visual-textual corrections into multimodal large language models (MLLMs) with bounded overhead and minimal disruption to unrelated behaviors. Existing editors mainly emphasize edit reliability and long-horizon stability, but rarely control the semantic boundary of each edit. Our pilot analyses of post-edit behaviors and internal neuronal activities reveal a scope gap behind reliable edits: instance-level success neither guarantees transfer to valid cross-modal variants nor prevents leakage to unrelated inputs, while edit-related cross-modal responses concentrate in deeper semantic layers. Therefore, we formulate Edit-Scoped Generalization, reframing online MLLM editing from merely correcting an instance to controlling the propagation boundary of each edit. To this end, we propose ScopeEdit, a scope-aware online editor that decomposes each update into a modality-local absorption branch and an evidence-gated shared generalization branch. The local branch supports stable edit absorption, whereas the shared branch enables cross-modal propagation only when visual and textual evidence are sufficiently aligned. Both branches perform scope-separated write geometries in orthogonal low-rank spaces and maintain branch-wise preconditioners via Sherman--Morrison recursions, yielding constant per-edit overhead. Extensive experiments across diverse benchmarks, long-horizon edit streams, MLLM backbones, real-world VLKEB scenarios, and complex vision-language architectures show that ScopeEdit consistently improves the trade-off between in-scope cross-modal transfer and out-of-scope locality, while preserving edit reliability, stability and online efficiency. Our code is available at https://github.com/lab-klc/ScopeEdit.",
+      "authors": [
+        "Siyuan Li",
+        "Youyuan Zhang",
+        "Ruitong Liu",
+        "Junxi Wang",
+        "Jing Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-07-02T10:10:19+00:00",
+      "link": "https://arxiv.org/pdf/2607.01978v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal knowledge editing for MLLMs",
+      "llm_evidence_cn": "多模态大模型的知识编辑",
+      "llm_evidence": "多模态大模型的知识编辑",
+      "canonical_evidence": "多模态大模型的知识编辑",
+      "llm_tldr_en": "This paper identifies a scope gap in online multimodal knowledge editing where edits fail to generalize to valid cross-modal variants and proposes Edit-Scoped Generalization framework.",
+      "llm_tldr_cn": "在线多模态知识编辑需要注入连续的修正信息，但现有方法只关注编辑可靠性和稳定性，忽略了编辑的语义边界。本文发现编辑后的模型在跨模态变体上泛化不足，且会泄漏到无关输入。为此提出编辑范围泛化框架，通过控制语义边界来提升编辑的跨模态泛化能力，同时减少泄漏。",
+      "llm_tldr": "在线多模态知识编辑需要注入连续的修正信息，但现有方法只关注编辑可靠性和稳定性，忽略了编辑的语义边界。本文发现编辑后的模型在跨模态变体上泛化不足，且会泄漏到无关输入。为此提出编辑范围泛化框架，通过控制语义边界来提升编辑的跨模态泛化能力，同时减少泄漏。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.06420v1",
+      "source": "arxiv",
+      "title": "HoloCount: A Holistic Visual Counting Benchmark for MLLMs",
+      "abstract": "Visual counting is a fundamental pillar of multimodal intelligence, requiring a seamless integration of fine-grained grounding and spatial reasoning. While Multimodal Large Language Models (MLLMs) have achieved remarkable success in qualitative scene understanding, their quantitative precision remains a significant bottleneck, often characterized by persistent numerical hallucinations. Existing counting benchmarks primarily focus on basic perception in simplified contexts, failing to capture the complex failure modes that emerge under logical constraints or adversarial conditions. To address these limitations, we introduce HoloCount, a holistic and diagnostically rich benchmark structured around a three-level hierarchical taxonomy. HoloCount evaluates MLLMs across: (1) Semantic Counting, focusing on atomic and property-based enumeration; (2) Analytical Counting, assessing logical composition through spatial and set-based reasoning; and (3) Robustness Testing, probing model integrity against adverse scenarios and grounded counter-priors, such as high-density scenes and linguistic biases. Through an exhaustive evaluation of over 20 state-of-the-art MLLMs, we reveal a critical performance gap: even top-tier models degrade significantly as tasks transition from perception to complex analytical reasoning and adverse scenarios. Our findings provide a systematic landscape of current MLLM counting capabilities and offer a roadmap for developing more grounded and reliable multimodal systems. The dataset is available at https://mm-mvr.github.io/HoloCount/.",
+      "authors": [
+        "Jinhong Deng",
+        "Limeng Qiao",
+        "Guanglu Wan"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-07T15:48:57+00:00",
+      "link": "https://arxiv.org/pdf/2607.06420v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "visual counting benchmark requiring spatial reasoning",
+      "llm_evidence_cn": "视觉计数基准，需要空间推理",
+      "llm_evidence": "视觉计数基准，需要空间推理",
+      "canonical_evidence": "视觉计数基准，需要空间推理",
+      "llm_tldr_en": "HoloCount is a holistic visual counting benchmark for MLLMs that evaluates fine-grained grounding and spatial reasoning across a three-level taxonomy, revealing persistent numerical hallucinations.",
+      "llm_tldr_cn": "视觉计数是多模态智能的基础，但现有基准过于简化，无法捕捉复杂失败模式。本文提出HoloCount，一个分层基准，涵盖逻辑约束和对抗条件。通过对多种MLLM的评测，揭示了现有模型在定量精度上的严重不足，尤其是数字幻觉问题。该基准为多模态推理研究提供了诊断工具。",
+      "llm_tldr": "视觉计数是多模态智能的基础，但现有基准过于简化，无法捕捉复杂失败模式。本文提出HoloCount，一个分层基准，涵盖逻辑约束和对抗条件。通过对多种MLLM的评测，揭示了现有模型在定量精度上的严重不足，尤其是数字幻觉问题。该基准为多模态推理研究提供了诊断工具。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.02927v1",
+      "source": "arxiv",
+      "title": "VideoSearcher: Empowering Video Deep Research with Multi-Tool Agentic Reasoning via Reinforcement Learning",
+      "abstract": "Video understanding is moving beyond closed-context perception toward open-world evidence exploration, a paradigm formalized as Video Deep Research (VDR). However, existing multimodal search agents primarily target static images, and the current VDR benchmark relies on text-centric retrieval that discards crucial visual information. To address these limitations, we propose VideoSearcher, a closed-loop agentic framework that empowers Vision-Language Models with multi-tool reasoning for VDR. VideoSearcher unifies temporal localization, spatial focusing, and multimodal search within a single reasoning trajectory, enabling agents to progressively ground visual clues, retrieve relevant evidence, and synthesize answers. To optimize knowledge-intensive reasoning trajectories, we propose Bi-branch Sequence Policy Optimization (BiSPO), a reinforcement learning algorithm that decouples tool-invocation optimization from answer-accuracy optimization. This design provides stable learning signals for both evidence-grounded reasoning and purposeful tool use. Furthermore, we construct VideoSearch-QA, the first benchmark designed to evaluate open-world video information grounding and multimodal search-based reasoning. Extensive experiments demonstrate that VideoSearcher significantly outperforms prior open-source agentic baselines across various search-oriented and multimodal understanding benchmarks.",
+      "authors": [
+        "Zhenkun Gao",
+        "Yicheng Bao",
+        "Jinlong Peng",
+        "Xueheng Li",
+        "Theo Huang",
+        "Bangwei Liu",
+        "Kunquan Li",
+        "Zhenye Gan",
+        "Tao Hu",
+        "Chengjun Xie",
+        "Mingqian Yang",
+        "Xuanhua He",
+        "Zhizhong Zhang",
+        "Xin Tan",
+        "Chengjie Wang",
+        "Yuan Xie"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-03T03:50:09+00:00",
+      "link": "https://arxiv.org/pdf/2607.02927v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multi-tool agentic reasoning for video deep research",
+      "llm_evidence_cn": "多工具代理推理用于视频深度研究",
+      "llm_evidence": "多工具代理推理用于视频深度研究",
+      "canonical_evidence": "多工具代理推理用于视频深度研究",
+      "llm_tldr_en": "VideoSearcher unifies temporal localization, spatial focusing, and multimodal search in an agentic framework for video deep research via reinforcement learning.",
+      "llm_tldr_cn": "视频理解需从封闭感知转向开放证据探索。VideoSearcher通过强化学习训练视觉语言模型，将时间定位、空间聚焦和多模态搜索统一到单一推理轨迹中，使代理逐步锚定视觉线索并综合答案，在视频深度研究基准上取得突破。",
+      "llm_tldr": "视频理解需从封闭感知转向开放证据探索。VideoSearcher通过强化学习训练视觉语言模型，将时间定位、空间聚焦和多模态搜索统一到单一推理轨迹中，使代理逐步锚定视觉线索并综合答案，在视频深度研究基准上取得突破。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
