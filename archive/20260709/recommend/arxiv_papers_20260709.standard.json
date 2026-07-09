@@ -1,0 +1,631 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-09T20:53:54.299356+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 9,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 9,
+    "quick_skim_target": 11,
+    "quick_selected": 9
+  },
+  "deep_dive": [
+    {
+      "id": "2607.03591v1",
+      "source": "arxiv",
+      "title": "Responsibility Distribution Estimation in Ego-View Accident Videos with Multimodal Large Language Models",
+      "abstract": "Recent studies on multimodal traffic accident understanding have mainly relied on infrastructure-camera footage, satellite imagery, or structured crash records. However, such data sources are costly to deploy and maintain at large scale, and they cannot objectively capture what the driver was actually able to observe before the accident. In contrast, ego-view accident videos directly represent the driver's visual perspective, making them suitable for reasoning about avoidability and driver responsibility. In this paper, we introduce responsibility distribution estimation for ego-view traffic accident videos, a new task in which a model predicts the percentage of responsibility assigned to each involved agent. We construct an LLM-assisted responsibility annotation pipeline and fine-tune multimodal large language models under multiple input settings, including raw frames, segmentation-enhanced input, and textual descriptions. Experimental results establish a strong initial benchmark, demonstrating that multimodal LLMs can effectively perform this nuanced, constraint-based reasoning task. Our findings suggest that ego-centric accident videos provide a promising foundation for socially and legally meaningful multimodal reasoning beyond conventional accident classification and explanation tasks.",
+      "authors": [
+        "Ryosei Tamura",
+        "Andrew Shin"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-07-03T20:23:05+00:00",
+      "link": "https://arxiv.org/pdf/2607.03591v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "uses multimodal large language models for accident video reasoning",
+      "llm_evidence_cn": "使用多模态大模型进行事故视频推理",
+      "llm_evidence": "使用多模态大模型进行事故视频推理",
+      "canonical_evidence": "使用多模态大模型进行事故视频推理",
+      "llm_tldr_en": "Proposes a new task of responsibility distribution estimation from ego-view accident videos using multimodal LLMs, enabling reasoning about driver avoidability.",
+      "llm_tldr_cn": "本文提出了一个基于多模态大模型的新任务：从驾驶员视角的事故视频中估计责任分配。该方法利用多模态大模型对视频中的视觉信息进行推理，预测每个涉事方的责任百分比。实验表明该任务具有可行性和实用价值，为交通事故分析提供了新的视角。",
+      "llm_tldr": "本文提出了一个基于多模态大模型的新任务：从驾驶员视角的事故视频中估计责任分配。该方法利用多模态大模型对视频中的视觉信息进行推理，预测每个涉事方的责任百分比。实验表明该任务具有可行性和实用价值，为交通事故分析提供了新的视角。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.04149v1",
+      "source": "arxiv",
+      "title": "Beyond Scene Priors: Fine-Grained Traffic Scene Reasoning with Benchmarking and Query-Guided Small-Object Focus",
+      "abstract": "In safety-critical traffic scenarios, answering complex questions relies on minute, localized visual cues. However, standard Multimodal Large Language Models (MLLMs) tend to over-attend to backgrounds, overwhelming crucial small objects during visual-language alignment, a failure mode we term 'critical evidence dilution.' Furthermore, existing visual question answering (VQA) datasets rarely expose this flaw, as they lack large-scale, distractor-heavy evaluations that require pinpointing local evidence. To bridge this evaluation and architecture gap, we introduce the Fine-Grained Traffic Reasoning Benchmark (FGTR-Bench) and the Text-Guided Small-Object Reasoning MLLM (TSR-MLLM). FGTR-Bench comprises 40,236 single-image Multiple-Choice Questions (MCQs) created via multi-agent generation, consistency checks, and expert audits, alongside a disjoint 4,947-sample blind test split. To resolve evidence dilution, TSR-MLLM, built on Qwen3-VL-4B, uses a query-conditioned Text-Guided Small-Object Focus (TG-SOF) map. Applied once at the decoder boundary, the map adds sparse Top-K gated residuals to the most question-relevant vision slots while leaving text tokens unchanged. Together with lightweight decoder adaptation, TSR-MLLM preserves single-pass inference without external detectors or image re-encoding. Under matched settings, TSR-MLLM outperforms the strongest 4B baseline by 2.1 points on FGTR-Bench (74.1% overall), with larger gains on evidence-local tracks. Furthermore, it remains competitive on DriveQA-V (CARLA Signs) under greedy decoding without task-specific fine-tuning.",
+      "authors": [
+        "Waikit Xiu",
+        "Qiang Lu",
+        "Zian Wang",
+        "Xinjie Yang",
+        "Zhiwei Chen",
+        "Chen Sun",
+        "Xiying Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-05T07:27:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.04149v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "fine-grained traffic scene reasoning with multimodal models",
+      "llm_evidence_cn": "基于多模态模型的细粒度交通场景推理",
+      "llm_evidence": "基于多模态模型的细粒度交通场景推理",
+      "canonical_evidence": "基于多模态模型的细粒度交通场景推理",
+      "llm_tldr_en": "Introduces FGTR-Bench and TSR-MLLM for fine-grained traffic reasoning, focusing on small-object evidence to avoid critical evidence dilution.",
+      "llm_tldr_cn": "本文提出细粒度交通推理基准FGTR-Bench和文本引导的小物体推理多模态大模型TSR-MLLM。针对标准MLLM容易忽略小物体线索的问题，设计了包含大量干扰项的评估集和聚焦小物体的推理架构，显著提升了复杂交通场景中的推理准确性。",
+      "llm_tldr": "本文提出细粒度交通推理基准FGTR-Bench和文本引导的小物体推理多模态大模型TSR-MLLM。针对标准MLLM容易忽略小物体线索的问题，设计了包含大量干扰项的评估集和聚焦小物体的推理架构，显著提升了复杂交通场景中的推理准确性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.06534v1",
+      "source": "arxiv",
+      "title": "CAIRN: Cross-Room 3D Scene Understanding with Topology-Aware Large Multimodal Models",
+      "abstract": "Existing 3D scene-grounded Large Language Models (3D-LLMs) focus on answering questions grounded in simplified single-room 3D scenes, lacking the ability to reason over real-world household environments containing multiple interconnected rooms and diverse object categories. We introduce CAIRN, a topology-aware 3D-LLM for multi-room 3D scene understanding. CAIRN aligns transformer attention with scene hierarchy, giving the model explicit awareness of object-level relations and room-level connectivity. It enriches object tokens with room-local relational context via a graph neural network, introduces learned room tokens for room-level abstraction, and applies a hierarchical attention mask with geometric bias to route information according to scene topology. CAIRN is developed on CAIRN-MR, a benchmark we introduce on HM3D for multi-room 3D scene understanding, covering grounding, captioning, and four question-answering tasks that progressively evaluate from intra-room perception to cross-room reasoning. Experiments show that CAIRN outperforms prior 3D-LLMs by a large margin across all CAIRN-MR tasks while remaining competitive on five single-room benchmarks.",
+      "authors": [
+        "He Liang",
+        "Chenyang Ma",
+        "Yiming Zhang",
+        "Sangyun Shin",
+        "Andrew Markham",
+        "Niki Trigoni",
+        "Yuhang He"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-07T17:39:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.06534v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "3D scene understanding with topology-aware multimodal reasoning",
+      "llm_evidence_cn": "基于拓扑感知的多模态3D场景推理",
+      "llm_evidence": "基于拓扑感知的多模态3D场景推理",
+      "canonical_evidence": "基于拓扑感知的多模态3D场景推理",
+      "llm_tldr_en": "CAIRN enhances 3D-LLMs with topology awareness for multi-room scene reasoning, using GNN and hierarchical attention to handle room connectivity.",
+      "llm_tldr_cn": "本文提出CAIRN，一种拓扑感知的3D大语言模型，用于多房间3D场景理解。它通过图神经网络丰富对象令牌的上下文，引入房间令牌进行抽象，并采用层次化注意力掩码。在跨房间推理任务上显著优于先前方法。",
+      "llm_tldr": "本文提出CAIRN，一种拓扑感知的3D大语言模型，用于多房间3D场景理解。它通过图神经网络丰富对象令牌的上下文，引入房间令牌进行抽象，并采用层次化注意力掩码。在跨房间推理任务上显著优于先前方法。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.07361v1",
+      "source": "arxiv",
+      "title": "BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning",
+      "abstract": "Current Vision-Language Models (VLMs) often struggle to handle complex visual tasks that require consistent and fine-grained reasoning. Recent methods aim to train models to facilitate self-reflective reasoning, i.e., reviewing and improving the generated reasoning. However, they require large volumes of annotated data and lack explicit reflective behavior during test time. This work aims to bridge this gap through inspiration from neuroscience. The human brain exhibits efficient backward prediction, i.e., predicting which current states are likely to precede a given future state. In this work, we first verify that mainstream VLMs can perform backward prediction, similar to the human brain. Then, we propose Brain-inspired Unsupervised Self-reflection (BUS), a label-free training framework to enhance reflective reasoning capability in challenging image analysis. BUS enables VLMs to perform backward prediction and provide explicit learning signals on data without ground-truth labels. In this way, BUS eliminates reliance on annotated data while improving reasoning performance. Notably, BUS is compatible with popular fine-tuning methods, such as Supervised Fine-Tuning (SFT) and Reinforcement Learning (RL). Finally, extensive experiments on 8 benchmarks demonstrate the effectiveness of BUS across a wide range of complex visual tasks. It achieves notable improvements over the base model while using only unlabeled training data. Our experimental findings validate that backward prediction capability is critical for VLM reasoning.",
+      "authors": [
+        "Jiacheng Yang",
+        "Tongying Xiao",
+        "Yunkai Dang",
+        "Cong Wang",
+        "Yuekun Yang",
+        "Qi Fan",
+        "Wenbin Li",
+        "Feng Miao",
+        "Yang Gao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-08T12:56:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.07361v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "directly addresses multimodal reasoning with unsupervised self-reflection",
+      "llm_evidence_cn": "直接研究多模态推理的无监督自反思方法",
+      "llm_evidence": "直接研究多模态推理的无监督自反思方法",
+      "canonical_evidence": "直接研究多模态推理的无监督自反思方法",
+      "llm_tldr_en": "BUS introduces brain-inspired backward prediction for unsupervised self-reflection in VLMs, enhancing complex multimodal reasoning without annotated data.",
+      "llm_tldr_cn": "视觉语言模型在复杂细粒度推理上表现不佳，现有自反思方法需要大量标注数据且缺乏测试时反思行为。受神经科学启发，本文首次验证主流VLM具备向后预测能力，并提出BUS无监督自反思框架，通过预测历史状态来改进推理。实验表明在多个视觉推理任务上性能提升显著，且无需额外标注。",
+      "llm_tldr": "视觉语言模型在复杂细粒度推理上表现不佳，现有自反思方法需要大量标注数据且缺乏测试时反思行为。受神经科学启发，本文首次验证主流VLM具备向后预测能力，并提出BUS无监督自反思框架，通过预测历史状态来改进推理。实验表明在多个视觉推理任务上性能提升显著，且无需额外标注。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.01420v1",
+      "source": "arxiv",
+      "title": "MultAttnAttrib: Training-Free Multimodal Attribution in Long Document Question Answering",
+      "abstract": "As grounded QA systems are increasingly deployed in AI assistants, accurately attributing generated answers to evidence is critical for user trust and model safety. While unimodal attributions have been explored in depth, the multimodal setting remains relatively under-researched. As a result, we introduce MultAttnAttrib, a training-free attribution-generation method that leverages a model's prefill pass, selected attention heads, and calibrated thresholds to locate source evidence within a document. To establish baseline results for the method, we introduce MultAttrEval, a complementary benchmark dataset annotated with fine-grained, ground-truth attributions for answer components grounded in multimodal source documents. To our knowledge, this is the first evaluation dataset designed specifically for multimodal attribution in long-form documents. Experimental results show that MultAttnAttrib consistently outperforms a variety of attribution-generation methods, including several strong prompting-based approaches and matches the latest frontier models such as GPT 5.4. Our method not only substantially improves attribution accuracy for both unimodal and multimodal attribution types, but also produces attributions at up to one-seventh of the direct inference latency compared to prompting on the same base model.",
+      "authors": [
+        "Dang Quang Thien Tran",
+        "Quang V. Dang",
+        "Vinamra Tyagi",
+        "Sai Soorya Rao Veeravalli",
+        "Trang Nguyen",
+        "Ryan A. Rossi",
+        "Franck Dernoncourt",
+        "Nedim Lipka",
+        "Koustava Goswami",
+        "Samyadeep Basu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-01T19:29:19+00:00",
+      "link": "https://arxiv.org/pdf/2607.01420v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "training-free multimodal attribution for document QA reasoning",
+      "llm_evidence_cn": "文档问答中的无训练多模态归因方法，用于推理",
+      "llm_evidence": "文档问答中的无训练多模态归因方法，用于推理",
+      "canonical_evidence": "文档问答中的无训练多模态归因方法，用于推理",
+      "llm_tldr_en": "MultAttnAttrib leverages attention heads for training-free multimodal attribution in long document QA, with new benchmark.",
+      "llm_tldr_cn": "同v2版本，本文提出无需训练的多模态归因方法MultAttnAttrib，利用模型预填充阶段的注意力头和阈值定位证据，并创建MultAttrEval基准。该方法支持多文档问答中的可解释推理，无需额外训练。",
+      "llm_tldr": "同v2版本，本文提出无需训练的多模态归因方法MultAttnAttrib，利用模型预填充阶段的注意力头和阈值定位证据，并创建MultAttrEval基准。该方法支持多文档问答中的可解释推理，无需额外训练。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.04625v1",
+      "source": "arxiv",
+      "title": "Hierarchical Evidence-Driven Reasoning for Long Document Understanding",
+      "abstract": "Retrieval-Augmented Generation (RAG) streamlines long-document understanding by leveraging retrieval mechanisms to restrict input images to a highly curated subset. However, existing multimodal RAG pipelines primarily face two critical challenges: first, standard semantic similarity retrievers frequently fetch topically overlapping yet answer-void distractor pages that mislead downstream generation; second, rigid single-pass pipelines heavily depend on initial retrieval success, where any omission of core evidence inevitably causes cascading errors. To address these challenges, we introduce HIEVI-RAG, a hierarchical, evidence-driven multimodal RAG framework for closed-domain document understanding. HIEVI-RAG systematically factorizes complex queries into a cooperative four-stage pipeline: (1) hierarchical question decomposition to break multi-hop root queries into atomic child questions; (2) coarse visual page retrieval leveraging a multimodal retriever to fetch candidate pages based on semantic similarity; (3) fine-grained page verification via EVIAGENT, a specialized multi-page verifier trained with GRPO to execute cross-page reasoning over multi-image blocks; and (4) memory-guided iterative generation that leverages accumulated sub-question context to execute multi-round, dynamic reasoning over the prioritized sequence. Extensive evaluations across four benchmarks demonstrate the robust efficacy and synergy of our framework, which significantly outperforms existing open-source baselines and exceeds the strongest reported baseline by an average of 8.05% in accuracy.",
+      "authors": [
+        "Junyu Xiong",
+        "Yonghui Wang",
+        "Rongjian Gu",
+        "Chenyu Liu",
+        "Bing Yin",
+        "Wengang Zhou",
+        "Houqiang Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-06T03:08:28+00:00",
+      "link": "https://arxiv.org/pdf/2607.04625v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Hierarchical evidence-driven reasoning for multimodal RAG",
+      "llm_evidence_cn": "层次化证据驱动的多模态RAG推理",
+      "llm_evidence": "层次化证据驱动的多模态RAG推理",
+      "canonical_evidence": "层次化证据驱动的多模态RAG推理",
+      "llm_tldr_en": "HIEVI-RAG introduces hierarchical evidence-driven reasoning to address distractor pages and cascading errors in multimodal RAG for long documents.",
+      "llm_tldr_cn": "多模态RAG面临检索干扰和级联错误问题。HIEVI-RAG提出层次化证据驱动框架，通过逐步证据收集和验证机制，系统性分解复杂查询。在长文档理解任务中显著提升答案准确性，减少不必要的检索开销。",
+      "llm_tldr": "多模态RAG面临检索干扰和级联错误问题。HIEVI-RAG提出层次化证据驱动框架，通过逐步证据收集和验证机制，系统性分解复杂查询。在长文档理解任务中显著提升答案准确性，减少不必要的检索开销。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.05511v1",
+      "source": "arxiv",
+      "title": "Light-Omni: Reflex over Reasoning in Agentic Video Understanding with Long-Term Memory",
+      "abstract": "Agentic video understanding equips models with long-term memory to autonomously process and respond to continuous, long-horizon multimodal streams. However, advanced video agents often rely on ``detective-style'' iterative reasoning for action control (e.g., $\\mathtt{search}$) and evidence aggregation, incurring prohibitive costs and latency. We argue that such heavy reasoning primarily compensates for the lack of global context and semantic misalignment in retrieval. This paper introduces Light-Omni, a multimodal agent framework for reflexive and lightweight video understanding. It achieves this through dual contextual states that instantly build the required context in a single forward pass. First, we maintain a global state, a finite-sized multimodal script continuously consolidated from episodic memory, serving as the global context for Light-Omni. Through hierarchical merging, it preserves recent details while summarizing past events. Second, conditioned on this global context, we generate a parametric latent state that directly drives autonomous actions and produces retrieval embeddings, with minimal latency. Benefiting from this coupled design, Light-Omni achieves semantically aligned retrieval and reflexive responses while avoiding iterative reasoning. Extensive experiments validate the effectiveness of Light-Omni across multiple video benchmarks. Notably, it outperforms M3-Agent with an average 2.4% accuracy gain, a 12.1$\\times$ speedup, and a 2.6$\\times$ improvement in GPU memory efficiency. Furthermore, it serves as a memory system to enhance both the performance and efficiency of existing MLLMs. Project page: https://clare-nie.github.io/Light-Omni.",
+      "authors": [
+        "Chang Nie",
+        "Jiaju Wei",
+        "Junlan Feng",
+        "Chaoyou Fu",
+        "Caifeng Shan"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-06T18:00:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.05511v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multimodal agent framework for video understanding with reasoning",
+      "llm_evidence_cn": "多模态智能体视频理解推理框架",
+      "llm_evidence": "多模态智能体视频理解推理框架",
+      "canonical_evidence": "多模态智能体视频理解推理框架",
+      "llm_tldr_en": "Light-Omni proposes a multimodal agent with dual contextual states to achieve reflexive, lightweight video understanding, avoiding heavy iterative reasoning.",
+      "llm_tldr_cn": "现有视频理解智能体依赖迭代推理，成本高延迟大。本文提出Light-Omni多模态智能体框架，通过双上下文状态（全局状态和局部状态）在前向传播中即时构建所需上下文，实现反射式轻量级视频理解。实验表明在多个基准上效率与性能兼优，为实时视频推理提供了新范式。",
+      "llm_tldr": "现有视频理解智能体依赖迭代推理，成本高延迟大。本文提出Light-Omni多模态智能体框架，通过双上下文状态（全局状态和局部状态）在前向传播中即时构建所需上下文，实现反射式轻量级视频理解。实验表明在多个基准上效率与性能兼优，为实时视频推理提供了新范式。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.03356v1",
+      "source": "arxiv",
+      "title": "CaReCoS: A Spectrogram based Visual Benchmark for Cardiac, Respiratory and Cough Sounds",
+      "abstract": "Medical acoustic signals such as respiratory sounds, cardiac auscultations, and cough audio carry rich diagnostic information, yet no existing benchmark evaluates multimodal reasoning over their spectrogram representations. We address both gaps with CaReCoS, a benchmark pairing clinically grounded questions with mel-spectrogram images derived from seven medical audio datasets. Evaluating 9 state-of-the-art vision and omni models, we find that all struggle with fine-grained acoustic features encoded in spectrograms: no model reliably combines visual pattern recognition with medical knowledge, achieving a maximum accuracy of 51.2%, underscoring the need for training on medical sound visualizations.",
+      "authors": [
+        "Harshit Rajgarhia",
+        "Shuubham Ojha",
+        "Akhil Pothanapalli",
+        "Rachuri Lokesh",
+        "Asif Shaik",
+        "Abhishek Mukherji",
+        "Prasanna Desikan"
+      ],
+      "primary_category": "eess.AS",
+      "categories": [
+        "eess.AS"
+      ],
+      "published": "2026-07-03T14:14:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.03356v1",
+      "tags": [
+        "keyword:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal reasoning benchmark over medical audio spectrograms",
+      "llm_evidence_cn": "医学音频频谱图上的多模态推理基准",
+      "llm_evidence": "医学音频频谱图上的多模态推理基准",
+      "canonical_evidence": "医学音频频谱图上的多模态推理基准",
+      "llm_tldr_en": "CaReCoS evaluates multimodal reasoning on spectrogram representations of medical sounds, finding no model reliably combines visual pattern recognition with medical knowledge.",
+      "llm_tldr_cn": "医学声学信号（呼吸、心音、咳嗽）的诊断信息未被现有基准充分利用。CaReCoS构建了配对临床问题与梅尔频谱图的基准，评估9个视觉和多模态模型。所有模型在细粒度声学特征识别上表现不佳，最高准确率仅51.2%，凸显了训练医学声音可视化表示的必要性。",
+      "llm_tldr": "医学声学信号（呼吸、心音、咳嗽）的诊断信息未被现有基准充分利用。CaReCoS构建了配对临床问题与梅尔频谱图的基准，评估9个视觉和多模态模型。所有模型在细粒度声学特征识别上表现不佳，最高准确率仅51.2%，凸显了训练医学声音可视化表示的必要性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.03461v1",
+      "source": "arxiv",
+      "title": "WorldBagel: Uncovering the Power of Unified Multimodal Models for Vision-Language-Action-World Modeling",
+      "abstract": "World models aim to capture environment dynamics in ways that support perception, reasoning, and action, and have recently become a central direction in Vision-Language-Action-World (VLAW) modeling. Meanwhile, unified vision-language models have demonstrated strong multimodal generation capabilities, yet their potential as world models remains underexplored. In this work, we introduce \\texttt{WorldBagel}, a unified VLAW framework built on BAGEL, a modern multimodal unified model, and use it to systematically investigate the role of unification in world modeling. Across multi-task robotic manipulation and cross-domain experiments, \\texttt{WorldBagel} consistently outperforms task-specific alternatives and learns action representations that are more structured and semantically aligned with visual and linguistic context. Experiments on LIBERO, Language Table, and Franka show that unification is not only an architectural convenience, but also a key factor in learning effective VLAW models, leading to consistent empirical gains and deeper insights into multimodal world modeling. Code and model checkpoints will be released upon acceptance.",
+      "authors": [
+        "Zelin Zhao",
+        "Min Shi",
+        "Bo Yuan",
+        "Haotian Xue",
+        "Jialuo Li",
+        "Lama Moukheiber",
+        "Humphrey Shi",
+        "Yongxin Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-07-03T16:18:20+00:00",
+      "link": "https://arxiv.org/pdf/2607.03461v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Unified vision-language-action-world model for reasoning",
+      "llm_evidence_cn": "统一视觉-语言-动作-世界模型用于推理",
+      "llm_evidence": "统一视觉-语言-动作-世界模型用于推理",
+      "canonical_evidence": "统一视觉-语言-动作-世界模型用于推理",
+      "llm_tldr_en": "WorldBagel builds a unified VLAW framework on BAGEL, showing that unified multimodal models outperform task-specific alternatives in world modeling and robotic manipulation.",
+      "llm_tldr_cn": "世界模型需要综合感知、推理和行动，但现有统一多模态模型作为世界模型的潜力未被充分挖掘。WorldBagel基于BAGEL构建统一的视觉-语言-动作-世界框架，在多任务机器人操作和跨域实验中一致优于专用模型。证明了统一建模在推理与行动中的优势。",
+      "llm_tldr": "世界模型需要综合感知、推理和行动，但现有统一多模态模型作为世界模型的潜力未被充分挖掘。WorldBagel基于BAGEL构建统一的视觉-语言-动作-世界框架，在多任务机器人操作和跨域实验中一致优于专用模型。证明了统一建模在推理与行动中的优势。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.06620v1",
+      "source": "arxiv",
+      "title": "SpaR3D-MoE: Adaptive 3D Spatial Reasoning from Sparse Views Meets Geometry-Inductive Mixture-of-Experts",
+      "abstract": "Recent Multimodal Large Language Models (MLLMs) struggle to bridge the representational gap between 2D semantic understanding and 3D spatial geometry. Existing 3D-aware models either rely on costly 3D-specific data or utilize RGB-only inputs with heuristic sampling and monolithic, shallow fusion, which respectively disrupt essential spatiotemporal connectivity and induce modality contention across diverse spatial tasks. To overcome these bottlenecks, we introduce SpaR3D-MoE, an end-to-end framework that enables adaptive spatial reasoning by equipping MLLMs with geometry-aware capabilities from only sparse RGB inputs. First, we propose an adaptive spatiotemporal manifold sampling mechanism that constructs a geometry-aware spatiotemporal graph to extract informative keyframes, effectively mitigating sequence redundancy while preserving the scene's topological connectivity. Second, we introduce the heterogeneous geometry-inductive Mixture-of-Experts driven by an instruction-pose aware router, which adaptively routes multimodal tokens to specialized experts, resolving the cross-modal contention inherent in monolithic fusion. Extensive experiments on VSI-Bench, ScanQA, and SQA3D demonstrate that our method achieves state-of-the-art performance. Notably, SpaR3D-MoE achieves the highest average score of 63.5 on VSI-Bench, outperforming the strongest baseline by 7.8 absolute points, alongside relative improvements of 35.4% and 51.4% in Route Plan and Relative Direction tasks, respectively.",
+      "authors": [
+        "Haida Feng",
+        "Hao Wei",
+        "Haolin Wang",
+        "Shiwei Li",
+        "Chade Li",
+        "Yihong Wu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-07T09:27:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.06620v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Adaptive 3D spatial reasoning with MLLMs",
+      "llm_evidence_cn": "自适应3D空间推理的多模态大模型",
+      "llm_evidence": "自适应3D空间推理的多模态大模型",
+      "canonical_evidence": "自适应3D空间推理的多模态大模型",
+      "llm_tldr_en": "SpaR3D-MoE enables adaptive 3D spatial reasoning from sparse RGB inputs using geometry-aware mixture-of-experts, bridging 2D semantic and 3D geometric gaps.",
+      "llm_tldr_cn": "多模态大模型在2D语义理解和3D空间几何之间存在表征鸿沟。SpaR3D-MoE提出自适应时空流形采样机制和几何归纳混合专家网络，仅从稀疏RGB输入实现几何感知推理。实验表明其在多种3D空间任务上达到领先性能，为高效3D视觉推理提供了新范式。",
+      "llm_tldr": "多模态大模型在2D语义理解和3D空间几何之间存在表征鸿沟。SpaR3D-MoE提出自适应时空流形采样机制和几何归纳混合专家网络，仅从稀疏RGB输入实现几何感知推理。实验表明其在多种3D空间任务上达到领先性能，为高效3D视觉推理提供了新范式。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.05438v1",
+      "source": "arxiv",
+      "title": "Modality Relevance is not Modality Utility: Post-hoc Selective Modality Escalation for Cost-Aware Multimodal RAG",
+      "abstract": "Multimodal retrieval-augmented generation (RAG) grounds a generator in evidence drawn from heterogeneous modalities -- text, tables, and images. The dominant deployment choice is binary and made before the model has tried to answer: either run a cheap text(+table) pipeline, or pay for an expensive vision-language model (VLM) over every image. Recent adaptive systems improve on this by selecting the modality or fidelity pre-retrieval, from a question-conditioned predictor of which modality will be needed. We show that this is the wrong decision point. Through an oracle headroom analysis on MultiModalQA, we find that the relevance of a modality to a question is a weak predictor of whether that modality is actually needed to answer correctly: a large fraction of questions whose gold support includes an image are nonetheless answerable from text and tables alone, and a pre-retrieval router that escalates on apparent visual relevance over-escalates substantially relative to an oracle. We propose \\textbf{post-hoc selective modality escalation}: answer cheaply from text and tables, run a verifier on the (query, draft answer, evidence) tuple that localizes which modality is missing, and pay for VLM evidence only there. A calibrated value-of-escalation router then decides whether the expected accuracy gain justifies the visual cost. On MultiModalQA, our router recovers the accuracy of an always-on VLM pipeline while issuing far fewer visual calls, and closes most of the gap to the oracle escalation rate. The result extends a routing-signal hierarchy established for retrieval depth and reasoning hops to a third axis -- modality -- under a single cost-aware selective-escalation view.",
+      "authors": [
+        "Xue Li",
+        "Yiming Gai"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "published": "2026-07-03T15:28:16+00:00",
+      "link": "https://arxiv.org/pdf/2607.05438v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Cost-aware multimodal RAG with post-hoc modality selection",
+      "llm_evidence_cn": "成本感知的多模态RAG后验模态选择",
+      "llm_evidence": "成本感知的多模态RAG后验模态选择",
+      "canonical_evidence": "成本感知的多模态RAG后验模态选择",
+      "llm_tldr_en": "This paper shows modality relevance is not modality utility, and proposes post-hoc selective modality escalation for cost-aware multimodal RAG.",
+      "llm_tldr_cn": "多模态RAG系统中，模态相关性并不能准确预测其实际效用。本文通过oracle分析发现，在推理后判断模态需求更准确。提出后验选择性模态升级策略，在保证答案质量前提下显著降低计算成本。在MultiModalQA上验证了高效性与准确性。",
+      "llm_tldr": "多模态RAG系统中，模态相关性并不能准确预测其实际效用。本文通过oracle分析发现，在推理后判断模态需求更准确。提出后验选择性模态升级策略，在保证答案质量前提下显著降低计算成本。在MultiModalQA上验证了高效性与准确性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.04727v1",
+      "source": "arxiv",
+      "title": "Dashboard2Code: Evaluating Multimodal Models on Reconstructing Interactive Dashboards",
+      "abstract": "Automatic data visualization generation has advanced rapidly with multi-modal large language models, yet existing efforts largely focus on static charts and overlook the interactive dashboards commonly used for real-world data exploration. We introduce Dashboard2Code, a novel task that requires a model to proactively explore an interactive dashboard, acquire and integrate feedback from its own interactions (e.g., clicking and filtering), and generate code that reproduces the target dashboard. To support comprehensive evaluation, we present DashboardMimic, the first Plotly+Dash benchmark for Dashboard2Code, comprising 180 carefully designed and manually verified dashboard-code pairs spanning three difficulty levels and covering eight common real-world interaction patterns. We further propose an automated evaluation framework tailored to dashboards that combines code semantic analysis with dynamic interaction-based testing to assess visual and interaction consistency, showing strong agreement with human judgments. Experiments across a range of open- and closed-source multi-modal models reveal that even the strongest systems struggle on high-complexity dashboards and that a substantial performance gap remains between open-source and closed-source models on the Dashboard2Code task.",
+      "authors": [
+        "Tianhao Niu",
+        "Ziyu Han",
+        "Qiguang Chen",
+        "Shiqi Zhou",
+        "Baocai Shan",
+        "Hengjie Fang",
+        "Qingfu Zhu",
+        "Wanxiang Che"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-06T06:58:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.04727v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal model evaluation on interactive dashboard reconstruction with reasoning",
+      "llm_evidence_cn": "多模态模型在交互式仪表盘重构中的推理能力评估",
+      "llm_evidence": "多模态模型在交互式仪表盘重构中的推理能力评估",
+      "canonical_evidence": "多模态模型在交互式仪表盘重构中的推理能力评估",
+      "llm_tldr_en": "Dashboard2Code defines a new task requiring multimodal models to explore interactive dashboards, integrate feedback, and generate reproduction code, with a benchmark of 180 pairs.",
+      "llm_tldr_cn": "现有可视化生成工作仅关注静态图表，忽略了交互式仪表盘。Dashboard2Code提出了一个新型任务，要求模型主动探索仪表盘、整合交互反馈并生成代码。DashboardMimic基准包含180个精心设计的仪表盘-代码对，覆盖多种难度。实验揭示了当前多模态模型在该任务上的不足。",
+      "llm_tldr": "现有可视化生成工作仅关注静态图表，忽略了交互式仪表盘。Dashboard2Code提出了一个新型任务，要求模型主动探索仪表盘、整合交互反馈并生成代码。DashboardMimic基准包含180个精心设计的仪表盘-代码对，覆盖多种难度。实验揭示了当前多模态模型在该任务上的不足。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.07117v1",
+      "source": "arxiv",
+      "title": "Tree-of-Thoughts Reasoning for Text-to-Image In-Context Learning",
+      "abstract": "In text-to-image in-context learning (T2I-ICL), a model has to infer a latent compositional pattern from fewshot demonstrations for generating a query image. Recent studies show that state-of-the-art multimodal large language models struggle with this setting, particularly due to limited compositional reasoning and sensitivity to prompt construction. In this work, we propose a Tree-of-Thoughts (ToT) reasoning framework for T2I-ICL that introduces a multi-stage reasoning and selection layer that generates, evaluates, and selects among multiple candidate hypotheses before constructing the final prompt for image synthesis. By exploring alternative reasoning branches and selecting a coherent interpretation, the proposed approach mitigates prompt ambiguity and compositional errors. We implement the proposed approach in a complete ToT-T2IICL inference pipeline and evaluate it on the CoBSAT benchmark. Both qualitative and quantitative results show that structured multi-branch reasoning leads to more consistent and semantically aligned image generation compared to baseline and Chain-of-Thought prompting strategies, without any additional training or fine-tuning.",
+      "authors": [
+        "Stepanida Alekseeva",
+        "Jenifer Kalafatovich",
+        "Seong-Whan Lee"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-08T07:58:48+00:00",
+      "link": "https://arxiv.org/pdf/2607.07117v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "addresses text-to-image in-context learning with reasoning",
+      "llm_evidence_cn": "应对文本到图像上下文学习中的推理问题",
+      "llm_evidence": "应对文本到图像上下文学习中的推理问题",
+      "canonical_evidence": "应对文本到图像上下文学习中的推理问题",
+      "llm_tldr_en": "Proposes Tree-of-Thoughts reasoning framework for text-to-image in-context learning, generating and selecting multiple hypotheses before prompt construction to improve compositional reasoning.",
+      "llm_tldr_cn": "该论文针对多模态大语言模型在文本到图像上下文学习中组合推理能力不足的问题，提出了一种基于思维树的多阶段推理与选择框架。该方法通过生成、评估和选择多个候选假设，缓解了提示歧义性。实验表明，该方法显著提升了少样本条件下的图像生成质量，为多模态推理提供了新思路。",
+      "llm_tldr": "该论文针对多模态大语言模型在文本到图像上下文学习中组合推理能力不足的问题，提出了一种基于思维树的多阶段推理与选择框架。该方法通过生成、评估和选择多个候选假设，缓解了提示歧义性。实验表明，该方法显著提升了少样本条件下的图像生成质量，为多模态推理提供了新思路。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.07108v1",
+      "source": "arxiv",
+      "title": "Seeing and Reflecting: Multimodal Memory-Enhanced Agent Collaboration for Recommendation",
+      "abstract": "Large language model (LLM)-based agentic recommender systems show promise in modeling user preferences through natural-language reasoning, yet they remain limited by text-centric inputs and coarse-grained memory updates, making agents prone to missing visual evidence, semantic noise, and preference drift. To address these limitations, we propose MMEACR, a Multimodal Memory-Enhanced Agent Collaboration framework for recommendation. MMEACR introduces a dual-track memory architecture that separates interpretable agent reasoning from fine-grained multimodal matching. In the reasoning track, collaborative User and Item Memory Agents maintain persistent multimodal memories and update them through an attribute-guided reinforcement-and-reflection mechanism. In the matching track, a decoupled multi-modal embedding memory is built from raw interaction narratives and item images to preserve detailed cross-modal signals beyond structured memory updates. The two tracks are integrated through weighted Reciprocal Rank Fusion to produce robust and interpretable rankings. Experiments on three real-world domains show that MMEACR achieves strong overall performance against competitive LLM-based and agent-based baselines, with notable gains in visually grounded recommendation scenarios.",
+      "authors": [
+        "Hao Cong",
+        "Huizu Lin",
+        "Zihan Wang",
+        "Chengkai Huang",
+        "Quan Z. Sheng",
+        "Lina Yao"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-07-08T07:50:03+00:00",
+      "link": "https://arxiv.org/pdf/2607.07108v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Multimodal memory-enhanced agent collaboration for recommendation",
+      "llm_evidence_cn": "多模态记忆增强的推荐智能体协作",
+      "llm_evidence": "多模态记忆增强的推荐智能体协作",
+      "canonical_evidence": "多模态记忆增强的推荐智能体协作",
+      "llm_tldr_en": "MMEACR introduces a dual-track memory architecture for multimodal agent collaboration, enabling interpretable reasoning and fine-grained multimodal matching in recommendation.",
+      "llm_tldr_cn": "基于LLM的推荐系统受限于文本输入和粗粒度记忆更新，缺乏视觉证据。MMEACR提出双轨记忆架构，分离可解释的智能体推理与细粒度多模态匹配，通过属性引导的强化与反思实现持续记忆更新。在真实数据集上优于现有方法。",
+      "llm_tldr": "基于LLM的推荐系统受限于文本输入和粗粒度记忆更新，缺乏视觉证据。MMEACR提出双轨记忆架构，分离可解释的智能体推理与细粒度多模态匹配，通过属性引导的强化与反思实现持续记忆更新。在真实数据集上优于现有方法。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.07179v1",
+      "source": "arxiv",
+      "title": "Comparative Study of Domain-adapted VLMs for General Document Visual Question Answering",
+      "abstract": "Document Visual Question Answering (DocVQA) presents a complex multimodal challenge, requiring models to exploit visual, textual, and layout information from documents. Although Vision-Language Models (VLMs) have shown remarkable performance in text-vision tasks, their robustness and transferability to different document domains remains underexplored. In this study, we present a comprehensive evaluation of 8 open-source pretrained VLMs on DocVQA in three different document domains: industrial documents of varying type, infographics, and presentation slides. We systematically assess model performance under zero-shot evaluations, fully supervised finetuning with inter- and intra-dataset evaluations, and few-shot learning evaluations of knowledge transfer between domains. Our findings demonstrate that while large pretrained VLMs possess strong zero-shot baselines for structured layouts, their performance strongly decreases on visually complex layouts of infographics and slides. Although parameter scaling is a dominant factor on performance, supervised finetuning yields higher relative gains in smaller architectures. Furthermore, our cross-domain and few-shot experiments show that visual understanding is the main bottleneck for DocVQA, not a lack of knowledge from the VLMs. Using 50 target domain samples, the models finetuned in DocVQA with datasets of different domains rapidly adapt to the target domain documents, even surpassing their fully supervised counterparts in some cases.",
+      "authors": [
+        "Miguel Lopez-Duran",
+        "Elena Marrero",
+        "Julian Fierrez",
+        "Marta Robledo-Moreno",
+        "Ruben Vera-Rodriguez",
+        "Daniel DeAlcala",
+        "Aythami Morales",
+        "Ruben Tolosana",
+        "Oscar Delgado",
+        "Alvaro Ortigosa",
+        "Javier Ortega-Garcia"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-07-08T09:13:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.07179v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal document VQA reasoning",
+      "llm_evidence_cn": "多模态文档视觉问答推理",
+      "llm_evidence": "多模态文档视觉问答推理",
+      "canonical_evidence": "多模态文档视觉问答推理",
+      "llm_tldr_en": "A comprehensive evaluation of 8 open-source VLMs on document VQA across three domains, revealing robustness and transferability insights.",
+      "llm_tldr_cn": "本文对8种开源视觉语言模型在文档视觉问答任务上进行了系统评估，涵盖工业文档、信息图和幻灯片三个领域。通过零样本、全监督微调和少样本学习等设置，揭示了模型在不同领域的鲁棒性和可迁移性，为多模态文档理解提供了重要参考。",
+      "llm_tldr": "本文对8种开源视觉语言模型在文档视觉问答任务上进行了系统评估，涵盖工业文档、信息图和幻灯片三个领域。通过零样本、全监督微调和少样本学习等设置，揭示了模型在不同领域的鲁棒性和可迁移性，为多模态文档理解提供了重要参考。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
