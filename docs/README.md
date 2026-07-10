@@ -6,69 +6,49 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-09
-- 运行时间：2026-07-09 21:02:26 UTC
+- 最新运行日期：2026-07-10
+- 运行时间：2026-07-10 20:29:28 UTC
 - 运行状态：成功
-- 本次总论文数：15
+- 本次总论文数：9
 - 精读区：6
-- 速读区：9
+- 速读区：3
 
 ### 今日简报（AI）
-1) 今日精选15篇论文，聚焦多模态大模型在事故视频责任识别与细粒度交通场景推理的两项9分突破。
-
-2) 最值得关注：《Responsibility Distribution Estimation》用多模态大模型解构第一视角事故责任；《Beyond Scene Priors》提出小目标聚焦的精细场景基准。
-
-3) 建议普通读者优先精读这两篇，它们展示了如何让AI从“看场景”进化到“懂细节”，对自动驾驶安全分析有直接参考价值。
-- 详情：[/202607/09/README](/202607/09/README)
+今日精读聚焦物理推理与多模态智能体两大前沿，两篇满分论文分别提出视觉行为结果推理对齐和认知结构多模态智能体。  
+最值得关注的是行为结果推理能显著提升机器人任务泛化能力，而结构化多模态智能体在理解、生成与编辑任务中表现优异。  
+普通读者可优先跟进视觉-语言-动作模型的双重潜在记忆机制，以及场景感知文档合成在关键信息提取中的实用价值。
+- 详情：[/202607/10/README](/202607/10/README)
 
 ### 精读区论文标签
-1. [Responsibility Distribution Estimation in Ego-View Accident Videos with Multimodal Large Language Models](/202607/09/2607.03591v1-responsibility-distribution-estimation-in-ego-view-accident-videos-with-multimodal-large-language-models)  
+1. [Bridging Physical Reasoning and Task Generalization via Visual Action Outcome Reasoning Alignment](/202607/10/2607.06522v1-bridging-physical-reasoning-and-task-generalization-via-visual-action-outcome-reasoning-alignment)  
    标签：评分：9.0/10、query:mm-reasoning
-   evidence：使用多模态大模型进行事故视频推理
-2. [Beyond Scene Priors: Fine-Grained Traffic Scene Reasoning with Benchmarking and Query-Guided Small-Object Focus](/202607/09/2607.04149v1-beyond-scene-priors-fine-grained-traffic-scene-reasoning-with-benchmarking-and-query-guided-small-object-focus)  
+   evidence：视觉行动结果推理对齐
+2. [Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing](/202607/10/2607.08497v1-cognitive-structured-multimodal-agent-for-multimodal-understanding-generation-and-editing)  
    标签：评分：9.0/10、query:mm-reasoning
-   evidence：基于多模态模型的细粒度交通场景推理
-3. [CAIRN: Cross-Room 3D Scene Understanding with Topology-Aware Large Multimodal Models](/202607/09/2607.06534v1-cairn-cross-room-3d-scene-understanding-with-topology-aware-large-multimodal-models)  
+   evidence：结构化认知多模态智能体，使用情景记忆进行推理
+3. [OpenCoF: Learning to Reason Through Video Generation](/202607/10/2607.08763v1-opencof-learning-to-reason-through-video-generation)  
    标签：评分：9.0/10、query:mm-reasoning
-   evidence：基于拓扑感知的多模态3D场景推理
-4. [BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning](/202607/09/2607.07361v1-bus-brain-inspired-unsupervised-self-reflection-for-advanced-multimodal-reasoning)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：直接研究多模态推理的无监督自反思方法
-5. [MultAttnAttrib: Training-Free Multimodal Attribution in Long Document Question Answering](/202607/09/2607.01420v1-multattnattrib-training-free-multimodal-attribution-in-long-document-question-answering)  
+   evidence：通过视频生成进行推理（链式帧推理）
+4. [Scene Graph Thinking: Reinforcing Structured Visual Reasoning for Multimodal Large Language Models](/202607/10/2607.05716v2-scene-graph-thinking-reinforcing-structured-visual-reasoning-for-multimodal-large-language-models)  
    标签：评分：8.0/10、query:mm-reasoning
-   evidence：文档问答中的无训练多模态归因方法，用于推理
-6. [Hierarchical Evidence-Driven Reasoning for Long Document Understanding](/202607/09/2607.04625v1-hierarchical-evidence-driven-reasoning-for-long-document-understanding)  
+   evidence：通过场景图进行结构化视觉推理
+5. [DeltaV: Thinking with Visual State Updates in Unified Large Multimodal Models](/202607/10/2607.08434v1-deltav-thinking-with-visual-state-updates-in-unified-large-multimodal-models)  
    标签：评分：8.0/10、query:mm-reasoning
-   evidence：层次化证据驱动的多模态RAG推理
+   evidence：视觉状态更新实现高效多模态推理
+6. [Switch-Reasoner: Learn When to Think in Multitask Mixtures via Reinforcement Learning](/202607/10/2607.08572v1-switch-reasoner-learn-when-to-think-in-multitask-mixtures-via-reinforcement-learning)  
+   标签：评分：8.0/10、query:mm-reasoning
+   evidence：针对多模态大语言模型的自适应推理模式
 
 ### 速读区论文标签
-1. [Light-Omni: Reflex over Reasoning in Agentic Video Understanding with Long-Term Memory](/202607/09/2607.05511v1-light-omni-reflex-over-reasoning-in-agentic-video-understanding-with-long-term-memory)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：多模态智能体视频理解推理框架
-2. [SpaR3D-MoE: Adaptive 3D Spatial Reasoning from Sparse Views Meets Geometry-Inductive Mixture-of-Experts](/202607/09/2607.06620v1-spar3d-moe-adaptive-3d-spatial-reasoning-from-sparse-views-meets-geometry-inductive-mixture-of-experts)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：自适应3D空间推理的多模态大模型
-3. [Tree-of-Thoughts Reasoning for Text-to-Image In-Context Learning](/202607/09/2607.07117v1-tree-of-thoughts-reasoning-for-text-to-image-in-context-learning)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：应对文本到图像上下文学习中的推理问题
-4. [CaReCoS: A Spectrogram based Visual Benchmark for Cardiac, Respiratory and Cough Sounds](/202607/09/2607.03356v1-carecos-a-spectrogram-based-visual-benchmark-for-cardiac-respiratory-and-cough-sounds)  
-   标签：评分：7.0/10、query:mm-reasoning
-   evidence：医学音频频谱图上的多模态推理基准
-5. [Modality Relevance is not Modality Utility: Post-hoc Selective Modality Escalation for Cost-Aware Multimodal RAG](/202607/09/2607.05438v1-modality-relevance-is-not-modality-utility-post-hoc-selective-modality-escalation-for-cost-aware-multimodal-rag)  
-   标签：评分：7.0/10、query:mm-reasoning
-   evidence：成本感知的多模态RAG后验模态选择
-6. [Seeing and Reflecting: Multimodal Memory-Enhanced Agent Collaboration for Recommendation](/202607/09/2607.07108v1-seeing-and-reflecting-multimodal-memory-enhanced-agent-collaboration-for-recommendation)  
-   标签：评分：7.0/10、query:mm-reasoning
-   evidence：多模态记忆增强的推荐智能体协作
-7. [Comparative Study of Domain-adapted VLMs for General Document Visual Question Answering](/202607/09/2607.07179v1-comparative-study-of-domain-adapted-vlms-for-general-document-visual-question-answering)  
-   标签：评分：7.0/10、query:mm-reasoning
-   evidence：多模态文档视觉问答推理
-8. [WorldBagel: Uncovering the Power of Unified Multimodal Models for Vision-Language-Action-World Modeling](/202607/09/2607.03461v1-worldbagel-uncovering-the-power-of-unified-multimodal-models-for-vision-language-action-world-modeling)  
+1. [Enhancing Large Multimodal Models in Key Information Extraction via Scene-Aware Document Synthesis](/202607/10/2607.04636v1-enhancing-large-multimodal-models-in-key-information-extraction-via-scene-aware-document-synthesis)  
    标签：评分：6.0/10、query:mm-reasoning
-   evidence：统一视觉-语言-动作-世界模型用于推理
-9. [Dashboard2Code: Evaluating Multimodal Models on Reconstructing Interactive Dashboards](/202607/09/2607.04727v1-dashboard2code-evaluating-multimodal-models-on-reconstructing-interactive-dashboards)  
+   evidence：文档理解中的多模态推理
+2. [Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation](/202607/10/2607.07608v1-dual-latent-memory-in-vision-language-action-models-for-robotic-manipulation)  
    标签：评分：6.0/10、query:mm-reasoning
-   evidence：多模态模型在交互式仪表盘重构中的推理能力评估
+   evidence：潜在记忆与视觉-语言-动作推理交织
+3. [Reinforcing the Generation Order of Multimodal Masked Diffusion Models](/202607/10/2607.08056v1-reinforcing-the-generation-order-of-multimodal-masked-diffusion-models)  
+   标签：评分：6.0/10、query:mm-reasoning
+   evidence：强化多模态掩码扩散模型的生成顺序，提升多模态理解
 
 
 <div class="dpr-home-promo-card">

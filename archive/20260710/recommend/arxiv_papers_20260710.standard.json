@@ -1,0 +1,391 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-10T20:22:51.381618+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.06522v1",
+      "source": "arxiv",
+      "title": "Bridging Physical Reasoning and Task Generalization via Visual Action Outcome Reasoning Alignment",
+      "abstract": "Vision-language models (VLMs) struggle to generalize in interactive physical reasoning, particularly under unseen tasks and environments. Two key failure modes are prominent: hallucinated chain-of-thought (CoT) reasoning that contradicts physical reality, and misalignment between the model's reasoning and actions. We present VAORA (Visual Action Outcome Reasoning Alignment), a novel reward design that directly addresses both issues. VAORA introduces two complementary rewards: Visual Alignment Reward, which anchors VLM reasoning to the visual context independent of the agent action itself, and Visual-Action Alignment Reward, which grounds reasoning in the visual outcome induced by the model's action. Together, these rewards suppress hallucinated CoT and reduce the gap between reasoning and behavior. To improve training stability, we further employ smooth, dense rewards by estimating success probabilities using a pre-trained in-domain expert agent. Experiments on PHYRE and Virtual Tool support our performances across novel-task and unseen-environment settings, confirming that grounded and generalizable physical intelligence can be induced through VAORA.",
+      "authors": [
+        "Han-Jun Ko",
+        "Jr-Jen Chen",
+        "Haobo Yuan",
+        "Hsin-Ying Lee",
+        "Tiancheng Shen",
+        "Ming-Hsuan Yang",
+        "Yu-Chiang Frank Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-07T17:27:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.06522v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "visual action outcome reasoning alignment",
+      "llm_evidence_cn": "视觉行动结果推理对齐",
+      "llm_evidence": "视觉行动结果推理对齐",
+      "canonical_evidence": "视觉行动结果推理对齐",
+      "llm_tldr_en": "VAORA aligns VLM reasoning with visual outcomes using two rewards, improving physical reasoning and task generalization.",
+      "llm_tldr_cn": "针对视觉语言模型在交互式物理推理中产生幻觉且行动与推理脱节的问题，提出视觉行动结果推理对齐方法VAORA。该方法引入视觉对齐奖励和视觉-行动对齐奖励，分别将模型推理锚定到视觉上下文和由行动引起的视觉结果。实验证明该奖励设计显著提升了物理推理的正确性和任务泛化能力，为视觉推理的对齐提供了新机制。",
+      "llm_tldr": "针对视觉语言模型在交互式物理推理中产生幻觉且行动与推理脱节的问题，提出视觉行动结果推理对齐方法VAORA。该方法引入视觉对齐奖励和视觉-行动对齐奖励，分别将模型推理锚定到视觉上下文和由行动引起的视觉结果。实验证明该奖励设计显著提升了物理推理的正确性和任务泛化能力，为视觉推理的对齐提供了新机制。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.08497v1",
+      "source": "arxiv",
+      "title": "Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing",
+      "abstract": "Recent unified multimodal models show a single architecture can jointly perform vision/language understanding and image generation/editing. However, they repeatedly feed all historical visual and textual inputs into a shared context window, limiting long-horizon multimodal dialogue due to visual token explosion and unreliable cross-turn referencing. We propose a Cognitive-structured Multimodal Agent that externalizes visual information into an Episodic Visual Memory and selectively reactivates relevant episodes during reasoning. The agent consists of a Perceptual Abstraction Engine for structured visual abstraction, a Cognitive Retrieval Engine for cross-turn memory retrieval, and a Multimodal Executive Controller for autonomous task inference and action planning. To address the lack of turn-level retrieval supervision in existing datasets, we develop a Unified Scenario Engine that programmatically generates structured multi-turn conversations with fine-grained retrieval annotations, enabling reinforcement learning to optimize abstraction and retrieval policies. We also construct a long-horizon visual-dialogue benchmark stratified by difficulty to evaluate episodic visual recall. Our 8B agent achieves 91.4% retrieval accuracy over 20-turn sessions, surpassing 32B baselines by +8.2% while nearly halving per-turn inference time (23.1s -> 12.7s). We further present the Cognitive-structured Multimodal Agent Harness (CMA-Harness), a tool-augmented deployment of the same cognitive structure integrating persistent multimodal memory, web access, image generation/editing/composition tools, and OpenAI-compatible serving. Structured memory and modular decision-making offer a more scalable, efficient paradigm for long-horizon multimodal agents than monolithic parameter scaling. Code: https://github.com/caseclose/cma-harness ; Project page: https://caseclose.github.io/cma-harness/",
+      "authors": [
+        "Feng Wang",
+        "Canmiao Fu",
+        "Zhipeng Huang",
+        "Chen Li",
+        "Jing Lyu",
+        "Ge Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-09T13:55:55+00:00",
+      "link": "https://arxiv.org/pdf/2607.08497v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "cognitive-structured multimodal agent with episodic memory for reasoning",
+      "llm_evidence_cn": "结构化认知多模态智能体，使用情景记忆进行推理",
+      "llm_evidence": "结构化认知多模态智能体，使用情景记忆进行推理",
+      "canonical_evidence": "结构化认知多模态智能体，使用情景记忆进行推理",
+      "llm_tldr_en": "Proposes a Cognitive-structured Multimodal Agent that uses episodic visual memory to avoid visual token explosion and enable reliable cross-turn reasoning.",
+      "llm_tldr_cn": "本文提出一种结构化认知多模态智能体，通过外化视觉信息至情景记忆，并选择性激活相关情景进行推理，解决了统一多模态模型在长对话中视觉令牌爆炸和跨轮引用不可靠的问题。该智能体包含感知抽象引擎、认知检索引擎和多模态执行控制器，可自主完成理解、生成与编辑任务。实验证明其在多轮对话中保持一致的推理质量，为构建长效多模态交互系统奠定了基础。",
+      "llm_tldr": "本文提出一种结构化认知多模态智能体，通过外化视觉信息至情景记忆，并选择性激活相关情景进行推理，解决了统一多模态模型在长对话中视觉令牌爆炸和跨轮引用不可靠的问题。该智能体包含感知抽象引擎、认知检索引擎和多模态执行控制器，可自主完成理解、生成与编辑任务。实验证明其在多轮对话中保持一致的推理质量，为构建长效多模态交互系统奠定了基础。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.08763v1",
+      "source": "arxiv",
+      "title": "OpenCoF: Learning to Reason Through Video Generation",
+      "abstract": "Reasoning has become a core capability for large models, especially when reliable decisions require understanding logical consequences. Recent video generation models offer a reasoning path distinct from previous Chain-of-Thought (CoT): reasoning can unfold through temporally connected frames, known as Chain-of-Frame (CoF) reasoning. However, existing video generators are primarily trained on general video corpora, still lacking diverse supervision and dedicated designs for CoF reasoning. To address this gap, we introduce OpenCoF, a framework comprising the OpenCoF-17K dataset, a reasoning video dataset spanning 11 task families, and Wan-CoF, a fine-tuned video model for studying whether diverse temporal supervision improves CoF behavior. Across four video reasoning benchmarks, Wan-CoF achieves considerable gains over the Wan2.2-I2V-A14B baseline. Building on this, we empirically explore more advanced designs for CoF capabilities, i.e., equipping the model with visual and textual reasoning tokens. This mechanism respectively captures low-level visual cues and high-level semantic priors for spatial and temporal reasoning. Through performance comparisons and attention analysis, we examine how these tokens contribute across model depth, denoising steps, space, and time. Our results suggest that stronger video reasoning requires both broad temporal supervision and explicit mechanisms for organizing intermediate reasoning state. We open-source the dataset, model, and code to facilitate future research on reasoning-oriented video generation.",
+      "authors": [
+        "Xinyan Chen",
+        "Ziyu Guo",
+        "Renrui Zhang",
+        "Dongzhi Jiang",
+        "Hongsheng Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-09T17:58:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.08763v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "reasoning through video generation (Chain-of-Frame)",
+      "llm_evidence_cn": "通过视频生成进行推理（链式帧推理）",
+      "llm_evidence": "通过视频生成进行推理（链式帧推理）",
+      "canonical_evidence": "通过视频生成进行推理（链式帧推理）",
+      "llm_tldr_en": "OpenCoF proposes Chain-of-Frame reasoning via video generation, with a 17K reasoning video dataset and fine-tuned model, advancing multimodal reasoning evaluation.",
+      "llm_tldr_cn": "OpenCoF提出了一种通过视频生成进行推理的新范式——链式帧（CoF）推理。现有视频生成模型缺乏针对推理的多样化监督，为此作者构建了OpenCoF-17K数据集，涵盖11个任务族，并微调了Wan-CoF视频模型。在四个视频推理基准上的实验表明，多样化时间监督能显著提升CoF推理行为，为多模态推理提供了新路径。",
+      "llm_tldr": "OpenCoF提出了一种通过视频生成进行推理的新范式——链式帧（CoF）推理。现有视频生成模型缺乏针对推理的多样化监督，为此作者构建了OpenCoF-17K数据集，涵盖11个任务族，并微调了Wan-CoF视频模型。在四个视频推理基准上的实验表明，多样化时间监督能显著提升CoF推理行为，为多模态推理提供了新路径。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05716v2",
+      "source": "arxiv",
+      "title": "Scene Graph Thinking: Reinforcing Structured Visual Reasoning for Multimodal Large Language Models",
+      "abstract": "Multimodal Large Language Models (MLLMs) have demonstrated strong perception and reasoning capabilities. However, most existing models focus on isolated objects and neglect structured relationships for efficient target navigation, limiting their performance on visually intensive tasks. To address this challenge, we introduce Scene Graph Thinking (SaGe), a novel paradigm that enables fine-grained and structured visual reasoning through explicit scene-graph representations. Specifically, we first introduce an automated data engine that converts flat image-text corpora into structured scene graphs, where hierarchical entities constitute the nodes and diverse visual relations define the edges. Building upon this, we construct 120K high-quality training data by sampling reasoning traces from scene graphs. Then, two-stage graph-aligned post-training paradigms are introduced, where supervised fine-tuning internalizes MLLMs with structured reasoning, and subsequent reinforcement fine-tuning proposes node-as-proxy graph rewards to consolidate efficient graph exploration. With curated data and graph-aligned training, our approach achieves significant improvements across eight multimodal benchmarks, demonstrating strong effectiveness on fine-grained perception and reasoning tasks. Code is available at https://github.com/zwyang6/SaGe.",
+      "authors": [
+        "Zhiwei Yang",
+        "Yuanchen Wu",
+        "Nan Zhang",
+        "Yucong Meng",
+        "Ke Yan",
+        "Shouhong Ding"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-07T01:00:51+00:00",
+      "link": "https://arxiv.org/pdf/2607.05716v2",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "structured visual reasoning via scene graphs",
+      "llm_evidence_cn": "通过场景图进行结构化视觉推理",
+      "llm_evidence": "通过场景图进行结构化视觉推理",
+      "canonical_evidence": "通过场景图进行结构化视觉推理",
+      "llm_tldr_en": "SaGe introduces a scene-graph paradigm for MLLMs, enabling fine-grained structured visual reasoning by converting image-text data into explicit scene graphs.",
+      "llm_tldr_cn": "多模态大语言模型在视觉密集任务中忽略结构化关系，导致性能受限。SaGe提出场景图思维范式，通过自动数据引擎将图像-文本转换为结构化场景图，使模型能进行细粒度关系推理，在多项视觉推理任务上取得显著提升。",
+      "llm_tldr": "多模态大语言模型在视觉密集任务中忽略结构化关系，导致性能受限。SaGe提出场景图思维范式，通过自动数据引擎将图像-文本转换为结构化场景图，使模型能进行细粒度关系推理，在多项视觉推理任务上取得显著提升。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.08434v1",
+      "source": "arxiv",
+      "title": "DeltaV: Thinking with Visual State Updates in Unified Large Multimodal Models",
+      "abstract": "Current Unified Large Multimodal Models (ULMMs) support interleaved multimodal reasoning through textual reasoning and intermediate visual states, but typically generate each visual state as a full image. This full-image generation paradigm introduces substantial visual-token redundancy and dilutes supervision on sparse yet reasoning-critical state transitions. We propose DeltaV, a ULMM that replaces full-image generation with visual updates. Conditioned on historical visual states, DeltaV incrementally predicts compact update tokens that capture the visual changes across reasoning steps, avoiding repeated modeling of unchanged content. To align the token budget of each update with the magnitude of visual change, DeltaV introduces a temporal similarity (TSIM) Router, which stops allocating tokens once the marginal reconstruction gain falls below a threshold. To support more diverse and generalizable reasoning, we further construct StructCoT, a large-scale interleaved multimodal reasoning dataset with 1.05M samples spanning 44 task domains. Experiments show that the visual-update paradigm reduces newly generated visual tokens by 55.6\\% on average without compromising reconstruction fidelity, and improves multimodal reasoning by 3.3\\% over full-image generation. Trained with StructCoT and large-scale multimodal data, DeltaV-2B further outperforms substantially larger open-source models by 8.4\\% on in-domain multimodal reasoning evaluations and surpasses the comparable-scale Qwen3-VL-2B by 5.9\\% on external multimodal reasoning and understanding benchmarks. Code, models, and StructCoT will be released at https://github.com/Pengjie-W/DeltaV.",
+      "authors": [
+        "Pengjie Wang",
+        "Linger Deng",
+        "Zujia Zhang",
+        "Shaojie Zhang",
+        "Zhenbo Luo",
+        "Pei Fu",
+        "Jian Luan",
+        "Xiang Bai",
+        "Yuliang Liu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-09T12:54:05+00:00",
+      "link": "https://arxiv.org/pdf/2607.08434v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "visual state updates for efficient multimodal reasoning",
+      "llm_evidence_cn": "视觉状态更新实现高效多模态推理",
+      "llm_evidence": "视觉状态更新实现高效多模态推理",
+      "canonical_evidence": "视觉状态更新实现高效多模态推理",
+      "llm_tldr_en": "DeltaV replaces full-image generation with compact visual update tokens in ULMMs, reducing redundancy and improving reasoning efficiency.",
+      "llm_tldr_cn": "统一多模态模型在推理中生成完整中间图像导致冗余和弱监督。DeltaV提出增量预测视觉更新令牌，仅捕捉变化部分，并通过时间相似性对齐令牌预算。实验表明，DeltaV在保持推理质量的同时大幅降低了计算开销，使多模态推理更加高效。",
+      "llm_tldr": "统一多模态模型在推理中生成完整中间图像导致冗余和弱监督。DeltaV提出增量预测视觉更新令牌，仅捕捉变化部分，并通过时间相似性对齐令牌预算。实验表明，DeltaV在保持推理质量的同时大幅降低了计算开销，使多模态推理更加高效。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.08572v1",
+      "source": "arxiv",
+      "title": "Switch-Reasoner: Learn When to Think in Multitask Mixtures via Reinforcement Learning",
+      "abstract": "Multimodal Large Language Models (MLLMs) often follow a fixed Think-then-Answer paradigm, which is inefficient in heterogeneous multitask settings because simple inputs may not require explicit reasoning while difficult ones can benefit substantially from it. Learning when to think is also unstable during post-training, where imbalanced rollouts can drive the model toward always-thinking or always-direct behavior. We propose Switch-Reasoner, a GRPO-based framework that learns to adaptively select reasoning modes for MLLMs. It treats thinking as a virtual tool invocation and allows the model to either answer directly or invoke explicit reasoning before answering. To stabilize this decision, we introduce a dual-level regulation mechanism that balances the overall use of Thinking Mode and Direct Mode while providing sample-level supervision based on the relative benefit of the two choices. Experiments on 11 multimodal tasks show that Switch-Reasoner reduces unnecessary reasoning while maintaining strong performance, achieving a better accuracy-efficiency trade-off.",
+      "authors": [
+        "Yiyang Fang",
+        "Pei Fu",
+        "Jinjie Li",
+        "Jian Liang",
+        "Wenke Huang",
+        "Ruijie Luo",
+        "Shaojie Zhang",
+        "Jian Luan",
+        "Yi R. Fung",
+        "Mang Ye"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-09T15:04:05+00:00",
+      "link": "https://arxiv.org/pdf/2607.08572v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "adaptive reasoning mode for MLLMs",
+      "llm_evidence_cn": "针对多模态大语言模型的自适应推理模式",
+      "llm_evidence": "针对多模态大语言模型的自适应推理模式",
+      "canonical_evidence": "针对多模态大语言模型的自适应推理模式",
+      "llm_tldr_en": "Switch-Reasoner uses GRPO to learn when to think in MLLMs, adaptively selecting direct or reasoning-based answers for heterogeneous tasks.",
+      "llm_tldr_cn": "多模态大语言模型固定“先思考后回答”范式在多任务中效率低下。Switch-Reasoner提出GRPO框架，让模型自适应选择直接回答或显式推理，并通过双层调节机制稳定决策，在混合任务上提升了效率与准确率。",
+      "llm_tldr": "多模态大语言模型固定“先思考后回答”范式在多任务中效率低下。Switch-Reasoner提出GRPO框架，让模型自适应选择直接回答或显式推理，并通过双层调节机制稳定决策，在混合任务上提升了效率与准确率。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.04636v1",
+      "source": "arxiv",
+      "title": "Enhancing Large Multimodal Models in Key Information Extraction via Scene-Aware Document Synthesis",
+      "abstract": "Key Information Extraction (KIE) converts visually rich documents into structured data, but practical deployment remains challenging: strong performance often relies on costly on-server Large Multimodal Models (LMMs), while compact locally deployable models lack sufficient KIE supervision. We present SAYRE, a scene-aware document synthesis framework for generating scalable KIE training data without hand-crafted template design. Given a few exemplar documents, SAYRE captures category-specific content patterns and layout conventions to synthesize document-schema-annotation triples. It further introduces error-driven generation, which expands real-world failure cases into hard training examples while preserving their structural patterns. Experiments on constrained- and open-category KIE show that SAYRE consistently improves Qwen3-VL backbones and achieves the strongest overall performance among on-device LMMs. Data scaling experiments show an overall upward trend as more synthesized data is introduced, especially for smaller models and open-category extraction. Error analysis further shows that synthesized training reduces field-level errors by improving schema-aware extraction over dense tables, business identifiers, and contract clauses. These results establish scene-aware synthesis as an effective data-centric approach for improving practical multimodal KIE.",
+      "authors": [
+        "Zhipeng Xu",
+        "Zulong Chen",
+        "Qing Liu",
+        "Junhao Ji",
+        "Jinxin Hu",
+        "Yipeng Yu",
+        "Jianqiang Wan",
+        "Jun Tang",
+        "Zhao Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-06T03:39:08+00:00",
+      "link": "https://arxiv.org/pdf/2607.04636v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal reasoning in document understanding",
+      "llm_evidence_cn": "文档理解中的多模态推理",
+      "llm_evidence": "文档理解中的多模态推理",
+      "canonical_evidence": "文档理解中的多模态推理",
+      "llm_tldr_en": "SAYRE synthesizes scalable training data for key information extraction using scene-aware document synthesis, improving large multimodal models.",
+      "llm_tldr_cn": "针对多模态模型在关键信息提取任务中训练数据不足的问题，提出SAYRE框架，通过场景感知文档合成自动生成文档-模式-标注三元组，并引入错误驱动生成来扩充困难样本。实验表明该方法能显著提升模型在文档理解方面的性能，为多模态推理在文档领域的应用提供了有效数据增强手段。",
+      "llm_tldr": "针对多模态模型在关键信息提取任务中训练数据不足的问题，提出SAYRE框架，通过场景感知文档合成自动生成文档-模式-标注三元组，并引入错误驱动生成来扩充困难样本。实验表明该方法能显著提升模型在文档理解方面的性能，为多模态推理在文档领域的应用提供了有效数据增强手段。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.07608v1",
+      "source": "arxiv",
+      "title": "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
+      "abstract": "Mainstream Vision-Language-Action (VLA) models predict actions primarily from the current observation under a Markovian assumption, thus struggling with long-horizon, temporally dependent tasks. Existing memory-augmented VLAs either expand the observation window or retrieve history from the memory bank as auxiliary policy-side context. However, they leave memory outside the native latent embedding space of VLA reasoning, preventing historical experience from being fluidly interleaved with multimodal reasoning and action formation. To this end, we introduce LaMem-VLA, a latent-memory-native framework that reconstructs historical experience into latent memory tokens and directly interweaves them with VLA reasoning. At its core, LaMem-VLA introduces four coordinated components: (i) a curator that organizes historical experience into two complementary short-term and long-term memory vaults; (ii) a seeker that queries both vaults using the multimodal cognition to retrieve context-relevant evidence; (iii) a condenser that reconstructs the retrieved evidence into compact short-term and long-term latent memory tokens; and (iv) a weaver that injects these memory tokens with the current observation and instruction into one continuous embedding sequence. By representing, retrieving, and consuming historical experience entirely in the same continuous latent space, LaMem-VLA enables memory to directly participate in VLA reasoning and guide action generation under a bounded context. Extensive experiments on SimplerEnv and LIBERO demonstrate the superiority of our LaMem-VLA.",
+      "authors": [
+        "Hongyu Qu",
+        "Jianzhe Gao",
+        "Xiaobin Hu",
+        "Shaohuan Yang",
+        "Xinlei Yu",
+        "Rui Yan",
+        "Wenguan Wang",
+        "Xiangbo Shu",
+        "Shuicheng Yan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-08T16:26:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.07608v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "latent memory interweaves with VLA reasoning",
+      "llm_evidence_cn": "潜在记忆与视觉-语言-动作推理交织",
+      "llm_evidence": "潜在记忆与视觉-语言-动作推理交织",
+      "canonical_evidence": "潜在记忆与视觉-语言-动作推理交织",
+      "llm_tldr_en": "LaMem-VLA integrates latent memory tokens into VLA reasoning, enabling fluid interleaving of historical experience with multimodal reasoning for long-horizon tasks.",
+      "llm_tldr_cn": "现有视觉-语言-动作模型缺乏历史与推理的深度融合。LaMem-VLA将历史经验重构为潜在记忆令牌，直接嵌入VLA推理过程，实现长期任务中的上下文推理，提升了机器人操作的长时依赖性能。",
+      "llm_tldr": "现有视觉-语言-动作模型缺乏历史与推理的深度融合。LaMem-VLA将历史经验重构为潜在记忆令牌，直接嵌入VLA推理过程，实现长期任务中的上下文推理，提升了机器人操作的长时依赖性能。",
+      "llm_tags": [
+        "query:mm-reasoning:composite"
+      ],
+      "matched_query_tag": "query:mm-reasoning:composite",
+      "matched_query_text": "Papers central to 请你帮我查找多模态推理相关的论文，有github仓库和顶会中稿的优先, especially work that connects or combines: multimodal reasoning; visual reasoning; multimodal reasoning papers with GitHub code repository; multimodal reasoning accepted at top conferences; multimodal reasoning open source implementation.",
+      "matched_requirement_id": "req-composite-mm-reasoning",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.08056v1",
+      "source": "arxiv",
+      "title": "Reinforcing the Generation Order of Multimodal Masked Diffusion Models",
+      "abstract": "Diffusion Language Models (DLMs) have recently achieved substantial progress in natural language generation tasks. Recent research demonstrates that adaptive token generation ordering can significantly improve performance in mathematical reasoning and code synthesis applications. In this work, we investigate the optimization of generation order for both text-to-image synthesis and multimodal understanding. We first establish that, unlike structured problems in language generation such as Sudoku puzzles, model logits alone are insufficient for determining optimal generation sequences in text-to-image generation and multimodal understanding. To address this challenge, we introduce a learnable control module trained via Group Relative Policy Optimization (GRPO) to determine the generation order. Our results demonstrate that learning this control block substantially improves both text-to-image alignment and multimodal understanding in DLMs. In particular, it enhances the model's ability to capture fine-grained spatial relationships in generated images while also strengthening performance on multimodal reasoning and comprehension tasks. We evaluate our framework on GenEval, an object-focused benchmark for text-to-image alignment, where it achieves 4.08% relative improvements. In addition, experiments on VLMEvalKit confirm 4.85% relative improvements in multimodal understanding, highlighting the broad effectiveness of our approach.",
+      "authors": [
+        "Yidong Ouyang",
+        "Zhe Wang",
+        "Sourav Bhabesh",
+        "Dmitriy Bespalov"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "published": "2026-07-09T02:07:30+00:00",
+      "link": "https://arxiv.org/pdf/2607.08056v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "reinforcing generation order of multimodal masked diffusion models for multimodal understanding",
+      "llm_evidence_cn": "强化多模态掩码扩散模型的生成顺序，提升多模态理解",
+      "llm_evidence": "强化多模态掩码扩散模型的生成顺序，提升多模态理解",
+      "canonical_evidence": "强化多模态掩码扩散模型的生成顺序，提升多模态理解",
+      "llm_tldr_en": "Investigates optimizing generation order for text-to-image and multimodal understanding using a learnable control module trained with GRPO.",
+      "llm_tldr_cn": "本文研究多模态掩码扩散模型中生成顺序的优化问题。与语言生成中不同，模型logits不足以确定最优生成序列。为此，作者引入一个可学习的控制模块，通过组相对策略优化（GRPO）训练，自适应调整文本到图像生成和多模态理解任务的生成顺序。实验表明该方法在推理和生成质量上均有提升，证明了生成顺序优化对多模态推理任务的价值。",
+      "llm_tldr": "本文研究多模态掩码扩散模型中生成顺序的优化问题。与语言生成中不同，模型logits不足以确定最优生成序列。为此，作者引入一个可学习的控制模块，通过组相对策略优化（GRPO）训练，自适应调整文本到图像生成和多模态理解任务的生成顺序。实验表明该方法在推理和生成质量上均有提升，证明了生成顺序优化对多模态推理任务的价值。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
