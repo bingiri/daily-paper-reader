@@ -1,0 +1,246 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-11T20:35:54.172306+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [
+    {
+      "id": "2607.04112v1",
+      "source": "arxiv",
+      "title": "DynaVieW: Schema-Guided World Modeling for Understanding Hierarchical Visual Dynamics",
+      "abstract": "Multimodal LLMs struggle to systematically model the temporal evolution of visual scenes in videos or multi-image sequences. Such inputs require models to predict or simulate multiple levels of dynamic constituents, such as actions taken in the visual sequence, and the associated changes to the visual environment that result. To address this challenge, we propose a dynamic schema-guided world model, DynaVieW, optimized for visual dynamic prediction and simulation. DynaVieW achieves an in-depth understanding of visual dynamics by learning interleaved state-transition sequences, where states cover broad visual scenes from video keyframes, and transitions capture comprehensive dynamic constituents within a hierarchical schema. DynaVieW jointly models transition prediction and state simulation under a mixture-of-experts architecture, with a cross-expert selective attention and a schema token re-weighted loss, to ensure effective and robust learning. DynaVieW's understanding of visual dynamics boosts its downstream performance in visual narrative creation and world simulation, showing improved consistency, controllability, and instruction-following.",
+      "authors": [
+        "Silin Gao",
+        "Hao Zhao",
+        "Zeming Chen",
+        "Sepideh Mamooler",
+        "Antara Raaghavi Bhattacharya",
+        "Qiyu Wu",
+        "Hiromi Wakaki",
+        "Yuki Mitsufuji",
+        "Li Mi",
+        "Syrielle Montariol",
+        "Antoine Bosselut"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-07-05T04:44:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.04112v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "schema-guided world model for visual dynamics, temporal reasoning in videos",
+      "llm_evidence_cn": "模式引导的世界模型理解视觉动态，视频时序推理",
+      "llm_evidence": "模式引导的世界模型理解视觉动态，视频时序推理",
+      "canonical_evidence": "模式引导的世界模型理解视觉动态，视频时序推理",
+      "llm_tldr_en": "DynaVieW proposes a dynamic schema-guided world model for hierarchical visual dynamic prediction and simulation in videos, improving multimodal LLM's temporal understanding.",
+      "llm_tldr_cn": "DynaVieW提出了一种动态模式引导的世界模型，用于视频中层次化视觉动态的预测与模拟。它学习状态-转换交织序列，其中状态覆盖视频关键帧的场景，转换捕捉层次化的动态成分。该方法显著提升了多模态LLM对视觉场景时间演变的建模能力，在视频理解任务上取得了优秀效果。",
+      "llm_tldr": "DynaVieW提出了一种动态模式引导的世界模型，用于视频中层次化视觉动态的预测与模拟。它学习状态-转换交织序列，其中状态覆盖视频关键帧的场景，转换捕捉层次化的动态成分。该方法显著提升了多模态LLM对视觉场景时间演变的建模能力，在视频理解任务上取得了优秀效果。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.06560v1",
+      "source": "arxiv",
+      "title": "Vision as Unified Multimodal Generation",
+      "abstract": "We formulate computer vision as unified multimodal generation, where heterogeneous visual tasks are expressed in the native text and image generation spaces of a unified multimodal model, without task-specific architectures. Under this formulation, SenseNova-Vision uses natural-language instructions and optional visual prompts to specify tasks, target regions or views, and decoding conventions, and generates responses as text for symbolic outputs, images for dense spatial predictions, or mixed text-and-image outputs for compositional tasks. To support large-scale training, we convert diverse computer vision annotations into instruction-response examples compatible with these generation spaces, resulting in the SenseNova-Vision Corpus, a computer-vision instruction-response corpus spanning text, image, and mixed targets. Starting from an off-the-shelf pretrained unified multimodal model, SenseNova-Vision is trained primarily on this corpus, with auxiliary multimodal data used as a capability-preserving mixture, and requires no task-specific prediction heads or architectural modifications. The resulting model covers a broad range of vision tasks, including detection, OCR, keypoint estimation, segmentation, depth estimation, surface normal prediction, point maps, and camera pose estimation, while supporting language-defined variants that combine category, color, region, and other visual cues. Experiments show that a single unified model can match leading task-specialized systems across structured visual understanding, dense geometric prediction, segmentation, and multi-view visual geometry. These results suggest unified multimodal generation as a scalable route for integrating computer vision capabilities into general-purpose foundation models. The model and corpus are publicly available.",
+      "authors": [
+        "Xiaoyang Han",
+        "Jianhua Li",
+        "Kewang Deng",
+        "Zukai Chen",
+        "Xuanke Shi",
+        "Sihan Wang",
+        "Boxuan Li",
+        "Linyan Wang",
+        "Siyi Xie",
+        "Xin You",
+        "Jinsheng Quan",
+        "Zhongang Cai",
+        "Haiwen Diao",
+        "Ziwei Liu",
+        "Lei Yang",
+        "Dahua Lin",
+        "Quan Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-07T17:58:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.06560v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "unified multimodal generation for vision tasks, multimodal reasoning",
+      "llm_evidence_cn": "视觉任务的统一多模态生成，多模态推理",
+      "llm_evidence": "视觉任务的统一多模态生成，多模态推理",
+      "canonical_evidence": "视觉任务的统一多模态生成，多模态推理",
+      "llm_tldr_en": "SenseNova-Vision formulates computer vision as unified multimodal generation, using a single model for diverse tasks without task-specific architectures.",
+      "llm_tldr_cn": "SenseNova-Vision将计算机视觉表达为统一的多模态生成，通过自然语言指令和视觉提示实现多种视觉任务，无需任务专用架构。它构建了大规模指令-响应语料库，并在文本、图像或混合输出空间中进行训练。该方法在多项视觉基准上展现了通用性和竞争力，为多模态推理提供了一种统一的生成式框架。",
+      "llm_tldr": "SenseNova-Vision将计算机视觉表达为统一的多模态生成，通过自然语言指令和视觉提示实现多种视觉任务，无需任务专用架构。它构建了大规模指令-响应语料库，并在文本、图像或混合输出空间中进行训练。该方法在多项视觉基准上展现了通用性和竞争力，为多模态推理提供了一种统一的生成式框架。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.04423v1",
+      "source": "arxiv",
+      "title": "Transferability Between Understanding and Generation in Unified Multimodal Models",
+      "abstract": "Unified Multimodal Models (UMMs) integrate image understanding and generation within a single architecture, yet how the two tasks interact remains understudied. We investigate $\\boldsymbol{\\mathsf{transferability}}$ in UMMs: whether training a capability on one task improves the same capability on the other without explicit supervision. Through controlled experiments, we empirically find that transferability depends on architecture-models with fully shared transformer backbone and a unified visual encoder exhibit consistent cross-task transfer, while loosely coupled designs show little or none. Leveraging this transferability, we propose a practical training strategy. The most straightforward way to improve a target generative capability (e.g., counting) is to fine-tune generation directly, but this can degrade visual quality due to distribution shift. Instead, we train the corresponding understanding task and let it transfer into generation, which improves capability-specific generative performance while minimizing distribution shift. We validate this across three capabilities-counting, spatial relation, and text recognition/generation-showing that cross-task transferability can be systematically exploited in UMMs.",
+      "authors": [
+        "Jiwon Kang",
+        "Heeji Yoon",
+        "Jaewoo Jung",
+        "Jaewon Min",
+        "Minkyeong Jeon",
+        "Biyeon Hwang",
+        "Sangwon Jung",
+        "Seungryong Kim"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-05T17:33:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.04423v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "transferability between understanding and generation in UMMs",
+      "llm_evidence_cn": "统一多模态模型中理解与生成的迁移性",
+      "llm_evidence": "统一多模态模型中理解与生成的迁移性",
+      "canonical_evidence": "统一多模态模型中理解与生成的迁移性",
+      "llm_tldr_en": "UMM transferability depends on architecture; shared backbone enables cross-task transfer between understanding and generation.",
+      "llm_tldr_cn": "本文研究统一多模态模型中图像理解与生成任务之间的迁移性，发现迁移性依赖于架构设计：完全共享transformer骨架和统一视觉编码器的模型表现出稳定的跨任务迁移，而松耦合设计则几乎无迁移。基于此提出利用迁移性提升目标生成能力的训练策略。",
+      "llm_tldr": "本文研究统一多模态模型中图像理解与生成任务之间的迁移性，发现迁移性依赖于架构设计：完全共享transformer骨架和统一视觉编码器的模型表现出稳定的跨任务迁移，而松耦合设计则几乎无迁移。基于此提出利用迁移性提升目标生成能力的训练策略。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.07608v1",
+      "source": "arxiv",
+      "title": "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
+      "abstract": "Mainstream Vision-Language-Action (VLA) models predict actions primarily from the current observation under a Markovian assumption, thus struggling with long-horizon, temporally dependent tasks. Existing memory-augmented VLAs either expand the observation window or retrieve history from the memory bank as auxiliary policy-side context. However, they leave memory outside the native latent embedding space of VLA reasoning, preventing historical experience from being fluidly interleaved with multimodal reasoning and action formation. To this end, we introduce LaMem-VLA, a latent-memory-native framework that reconstructs historical experience into latent memory tokens and directly interweaves them with VLA reasoning. At its core, LaMem-VLA introduces four coordinated components: (i) a curator that organizes historical experience into two complementary short-term and long-term memory vaults; (ii) a seeker that queries both vaults using the multimodal cognition to retrieve context-relevant evidence; (iii) a condenser that reconstructs the retrieved evidence into compact short-term and long-term latent memory tokens; and (iv) a weaver that injects these memory tokens with the current observation and instruction into one continuous embedding sequence. By representing, retrieving, and consuming historical experience entirely in the same continuous latent space, LaMem-VLA enables memory to directly participate in VLA reasoning and guide action generation under a bounded context. Extensive experiments on SimplerEnv and LIBERO demonstrate the superiority of our LaMem-VLA.",
+      "authors": [
+        "Hongyu Qu",
+        "Jianzhe Gao",
+        "Xiaobin Hu",
+        "Shaohuan Yang",
+        "Xinlei Yu",
+        "Rui Yan",
+        "Wenguan Wang",
+        "Xiangbo Shu",
+        "Shuicheng Yan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-08T16:26:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.07608v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Latent memory interleaved with multimodal reasoning in VLA",
+      "llm_evidence_cn": "潜在记忆与VLA多模态推理交织",
+      "llm_evidence": "潜在记忆与VLA多模态推理交织",
+      "canonical_evidence": "潜在记忆与VLA多模态推理交织",
+      "llm_tldr_en": "LaMem-VLA introduces latent memory tokens that are directly interwoven with VLA reasoning, enabling fluid integration of historical experience for long-horizon robotic manipulation.",
+      "llm_tldr_cn": "本文提出LaMem-VLA框架，将历史经验重构为潜在记忆令牌，并直接与视觉-语言-动作（VLA）推理交织。该方法克服了传统记忆增强VLA中记忆外置于推理潜空间的局限，使机器人能够利用长期依赖进行多模态推理和动作生成。实验证明在长时域任务上优于基线。",
+      "llm_tldr": "本文提出LaMem-VLA框架，将历史经验重构为潜在记忆令牌，并直接与视觉-语言-动作（VLA）推理交织。该方法克服了传统记忆增强VLA中记忆外置于推理潜空间的局限，使机器人能够利用长期依赖进行多模态推理和动作生成。实验证明在长时域任务上优于基线。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.04423v2",
+      "source": "arxiv",
+      "title": "Transferability Between Understanding and Generation in Unified Multimodal Models",
+      "abstract": "Unified Multimodal Models (UMMs) integrate image understanding and generation within a single architecture, yet how the two tasks interact remains understudied. We investigate $\\boldsymbol{\\mathsf{transferability}}$ in UMMs: whether training a capability on one task improves the same capability on the other without explicit supervision. Through controlled experiments, we empirically find that transferability depends on architecture-models with fully shared transformer backbone and a unified visual encoder exhibit consistent cross-task transfer, while loosely coupled designs show little or none. Leveraging this transferability, we propose a practical training strategy. The most straightforward way to improve a target generative capability (e.g., counting) is to fine-tune generation directly, but this can degrade visual quality due to distribution shift. Instead, we train the corresponding understanding task and let it transfer into generation, which improves capability-specific generative performance while minimizing distribution shift. We validate this across three capabilities-counting, spatial relation, and text recognition/generation-showing that cross-task transferability can be systematically exploited in UMMs.",
+      "authors": [
+        "Jiwon Kang",
+        "Heeji Yoon",
+        "Jaewoo Jung",
+        "Jaewon Min",
+        "Minkyeong Jeon",
+        "Biyeon Hwang",
+        "Sangwon Jung",
+        "Seungryong Kim"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-05T17:33:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.04423v2",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "transferability between understanding and generation in UMMs",
+      "llm_evidence_cn": "统一多模态模型中理解与生成的迁移性",
+      "llm_evidence": "统一多模态模型中理解与生成的迁移性",
+      "canonical_evidence": "统一多模态模型中理解与生成的迁移性",
+      "llm_tldr_en": "UMM transferability depends on architecture; shared backbone enables cross-task transfer between understanding and generation.",
+      "llm_tldr_cn": "本文研究统一多模态模型中图像理解与生成任务之间的迁移性，发现迁移性依赖于架构设计：完全共享transformer骨架和统一视觉编码器的模型表现出稳定的跨任务迁移，而松耦合设计则几乎无迁移。基于此提出利用迁移性提升目标生成能力的训练策略。",
+      "llm_tldr": "本文研究统一多模态模型中图像理解与生成任务之间的迁移性，发现迁移性依赖于架构设计：完全共享transformer骨架和统一视觉编码器的模型表现出稳定的跨任务迁移，而松耦合设计则几乎无迁移。基于此提出利用迁移性提升目标生成能力的训练策略。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
