@@ -1,0 +1,178 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-12T19:58:30.777539+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2607.08745v1",
+      "source": "arxiv",
+      "title": "AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding",
+      "abstract": "Recent advances in Vision-Language Models, Large Language Models, and Multimodal Large Language Models have improved autonomous driving tasks such as scene understanding, decision making, trajectory prediction, and visual question answering. However, evaluating whether these models can reliably reason about safety-critical incidents remains challenging. To address this gap, we present AUTOPILOT-VQA, an incident-centric visual question answering benchmark for dashcam video understanding. The dataset evaluates different systems through structured questions designed around real-world driving incidents and near-incidents. The benchmark covers diverse safety-relevant categories, including weather and lighting conditions, traffic environment, road layout, road surface state, signage, involved entities, accident occurrence, impact location, and avoidability-related reasoning. By requiring models to answer grounded questions about both contextual scene properties and event-level incident details, AUTOPILOT-VQA moves beyond object recognition toward temporally grounded, safety-aware reasoning. The dataset is released as part of the AUTOPILOT CVPR 2026 competition and provides a standardized benchmark for assessing the reliability of autonomous driving systems in different scenarios. Our benchmark support developments for more interpretable, robust, and safety-conscious vision-language systems for real-world autonomous driving.",
+      "authors": [
+        "Siddharth Damodharan",
+        "Radhika Gupta",
+        "Ali Alshami",
+        "Ryan Rabinowitz",
+        "Jugal Kalita"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-09T17:46:24+00:00",
+      "link": "https://arxiv.org/pdf/2607.08745v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "incident-centric VQA benchmark for visual reasoning",
+      "llm_evidence_cn": "以事故为中心的视觉问答基准，用于视觉推理",
+      "llm_evidence": "以事故为中心的视觉问答基准，用于视觉推理",
+      "canonical_evidence": "以事故为中心的视觉问答基准，用于视觉推理",
+      "llm_tldr_en": "Proposes AUTOPILOT-VQA, a visual question answering benchmark for dashcam video understanding, evaluating reasoning about safety-critical incidents across diverse conditions.",
+      "llm_tldr_cn": "该论文提出AUTOPILOT-VQA基准，专注于行车记录仪视频中的事故理解视觉问答，通过结构化问题评估模型对安全关键场景的推理能力。基准覆盖多种天气、交通等条件，弥合了现有模型在事故推理评估上的空白。为视觉推理研究提供了重要测试平台。",
+      "llm_tldr": "该论文提出AUTOPILOT-VQA基准，专注于行车记录仪视频中的事故理解视觉问答，通过结构化问题评估模型对安全关键场景的推理能力。基准覆盖多种天气、交通等条件，弥合了现有模型在事故推理评估上的空白。为视觉推理研究提供了重要测试平台。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.04079v1",
+      "source": "arxiv",
+      "title": "Seeing Once is Enough? Online Geometry-Aware Token Pruning for 3D Question Answering",
+      "abstract": "Recent Multi-modal Large Language Models (MLLMs) have demonstrated remarkable performance on 2D question answering tasks. However, extending these models to the 3D question answering remains challenging, as they typically require multiple views of the scene, which incurs substantial computational cost at inference. To mitigate this issue, existing solutions rely on strategic frame selection or token-merging algorithms that require preprocessing in advance all frames of the scene, i.e., an offline fashion. In contrast, we propose the first online token-pruning method that can be integrated seamlessly with current MLLM models for 3D question answering tasks, without additional training and with lower memory usage.Our key insight is to project each input frame into a shared voxel space using depth information and camera pose, identifying spatially-overlapped regions across frames and selectively pruning redundant image tokens before they enter the language model. Our method enables efficient online processing while reducing up to 50% of token usage. We apply this approach to Qwen2.5-VL-7B and Qwen3-VL-8B, demonstrating improved performance on the ScanQA, SQA3D, and OpenEQA-HM3D benchmarks.",
+      "authors": [
+        "Ruei-Chi Lai",
+        "Bolivar Solarte",
+        "Chin-Hsuan Wu",
+        "Yi-Hsuan Tsai",
+        "Min Sun"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-05T02:00:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.04079v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Online token pruning for 3D question answering reduces computational cost while maintaining reasoning accuracy",
+      "llm_evidence_cn": "面向3D问答的在线令牌剪枝方法降低计算开销并保持推理精度",
+      "llm_evidence": "面向3D问答的在线令牌剪枝方法降低计算开销并保持推理精度",
+      "canonical_evidence": "面向3D问答的在线令牌剪枝方法降低计算开销并保持推理精度",
+      "llm_tldr_en": "First online token-pruning method for 3D QA with MLLMs, projecting 3D geometry to select critical tokens without offline preprocessing, reducing memory and computation.",
+      "llm_tldr_cn": "多模态大模型在3D问答中需处理多视角图像，计算成本高。本文提出首个在线令牌剪枝方法，通过几何感知投影选择关键令牌，无需离线预处理和额外训练。实验表明在保持推理精度的同时显著降低内存和计算开销，为多模态推理的部署提供了高效解决方案。",
+      "llm_tldr": "多模态大模型在3D问答中需处理多视角图像，计算成本高。本文提出首个在线令牌剪枝方法，通过几何感知投影选择关键令牌，无需离线预处理和额外训练。实验表明在保持推理精度的同时显著降低内存和计算开销，为多模态推理的部署提供了高效解决方案。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.05465v1",
+      "source": "arxiv",
+      "title": "CanvasAgent: Enabling Complex Image Creation and Editing via Visual Tool Orchestration",
+      "abstract": "Complex image creation and editing often require more than a single generation or editing model. A user request may involve synthesizing images, localizing objects, segmenting regions, editing selected content, compositing intermediate assets, reading text, and enhancing the final result. Such tasks shift multimodal agents from perception-augmented reasoning to manipulation-centered visual creation, where tools must actively transform visual states rather than merely inspect them. However, existing multimodal tool-use agents are mostly optimized for perception, search, or domain-specific editing, and lack large-scale supervision for executable image-creation trajectories. In this paper, we introduce CanvasCraft, a large-scale multimodal tool-use dataset for complex image creation and editing, and \\textbf{CanvasAgent}, a tool-augmented multimodal agent that learns to orchestrate heterogeneous visual tools through multi-turn interaction. CanvasCraft contains 140K fully annotated executable trajectories and 10K   RL task specifications. CanvasAgent is first trained with SFT to learn executable reasoning-action trajectories, and is then optimized with GRPO using a hybrid reward that combines outcome- and process-level signals. During rollout, CanvasAgent inspects intermediate results, tracks visual assets, and adapts tool decisions to the evolving visual state. Experiments evaluate both final image quality and trajectory behavior, demonstrating the effectiveness of CanvasAgent and the proposed dataset for complex multi-tool image creation workflows.",
+      "authors": [
+        "Hairui Zhu",
+        "Yiying Yang",
+        "Tengjin Weng",
+        "Ziyu Lu",
+        "Xiao Yao",
+        "Xiaoyang Ye",
+        "Lin Ma",
+        "Wenhao Jiang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-06T04:57:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.05465v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal agents for visual creation via tool orchestration, shifting from perception to reasoning",
+      "llm_evidence_cn": "通过工具编排实现视觉创作的多模态代理，从感知转向推理",
+      "llm_evidence": "通过工具编排实现视觉创作的多模态代理，从感知转向推理",
+      "canonical_evidence": "通过工具编排实现视觉创作的多模态代理，从感知转向推理",
+      "llm_tldr_en": "CanvasCraft provides a large-scale dataset and framework for training multimodal agents to orchestrate visual tools for complex image creation and editing.",
+      "llm_tldr_cn": "复杂图像创建和编辑需要多种生成和编辑模型的协同，这要求多模态代理从感知增强推理转向以操作为中心的视觉创作。本文提出CanvasCraft，一个大规模多模态数据集和框架，训练代理编排视觉工具（如绘制、分割、合成等）来执行复杂创作轨迹。实验证明，该框架使代理能够有效地多步推理和工具使用，在图像创建和编辑任务上显著优于现有方法，拓展了多模态推理的应用边界。",
+      "llm_tldr": "复杂图像创建和编辑需要多种生成和编辑模型的协同，这要求多模态代理从感知增强推理转向以操作为中心的视觉创作。本文提出CanvasCraft，一个大规模多模态数据集和框架，训练代理编排视觉工具（如绘制、分割、合成等）来执行复杂创作轨迹。实验证明，该框架使代理能够有效地多步推理和工具使用，在图像创建和编辑任务上显著优于现有方法，拓展了多模态推理的应用边界。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.05911v1",
+      "source": "arxiv",
+      "title": "Progressive Reasoning with Primitive Correction for Compositional Zero-Shot Learning",
+      "abstract": "Compositional Zero-Shot Learning (CZSL) aims to combine known attributes and objects as primitives for recognizing previously unseen attribute-object pairs. Prior works either predict attributes and objects independently, missing their strong contextual dependency, or use unidirectional conditional modeling (e.g., object-guided attribute prediction), which is prone to error propagation. We propose PRPC, a Progressive Reasoning framework with Primitive Correction, which explicitly models the bidirectional dependency between attributes and objects via step-wise inference. PRPC performs mutual correction of primitives to suppress prediction errors in earlier steps. Specifically, we formulate CZSL as structured, Q&A-style Chain-of-Thought reasoning process and constrain the MLLM to follow predefined semantic steps to generate intermediate decisions. To further enhance the reliability and logical consistency of intermediate reasoning, we introduce reinforcement learning post-training with a GRPO-based objective, providing step-level rewards aligned with the progressive inference procedure. Extensive experiments on three CZSL benchmarks demonstrate that PRPC achieves state-of-the-art performance, validating the effectiveness of progressive reasoning and bidirectional correction for robust compositional generalization.",
+      "authors": [
+        "Ziyi Chen",
+        "Haoyan Shi",
+        "Sunhan Xu",
+        "Congyan Lang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-07T07:06:27+00:00",
+      "link": "https://arxiv.org/pdf/2607.05911v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "progressive reasoning for compositional zero-shot learning, visual reasoning",
+      "llm_evidence_cn": "组合零样本学习的渐进推理，涉及视觉推理",
+      "llm_evidence": "组合零样本学习的渐进推理，涉及视觉推理",
+      "canonical_evidence": "组合零样本学习的渐进推理，涉及视觉推理",
+      "llm_tldr_en": "Proposes PRPC with bidirectional dependency and progressive reasoning for compositional zero-shot learning, using chain-of-thought.",
+      "llm_tldr_cn": "不相关",
+      "llm_tldr": "不相关",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

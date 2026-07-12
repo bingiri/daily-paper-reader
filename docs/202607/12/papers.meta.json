@@ -1,0 +1,69 @@
+{
+  "label": "2026-07-12",
+  "date": "2026-07-12",
+  "generated_at": "2026-07-12T20:01:11",
+  "count": 4,
+  "papers": [
+    {
+      "paper_id": "202607/12/2607.08745v1-autopilot-vqa-benchmarking-vision-language-models-for-incident-centric-dashcam-understanding",
+      "section": "deep",
+      "title_en": "AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding",
+      "authors": "Siddharth Damodharan, Radhika Gupta, Ali Alshami, Ryan Rabinowitz, Jugal Kalita",
+      "date": "2026-07-09",
+      "pdf": "https://arxiv.org/pdf/2607.08745v1",
+      "score": "9.0",
+      "evidence": "以事故为中心的视觉问答基准，用于视觉推理",
+      "tldr": "当前视觉语言模型在自动驾驶安全关键场景中的推理能力评估不足。为此，我们提出AUTOPILOT-VQA，一个以事件为中心的行车记录仪视频问答基准。该数据集围绕真实驾驶事件和近事件设计结构化问题，涵盖天气、道路布局、碰撞等9类安全维度。它要求模型回答场景属性与事件细节，推动从物体识别到时序安全推理的跨越。作为CVPR 2026竞赛基准，它将促进更可解释、鲁棒和安全的自动驾驶视觉语言系统发展。",
+      "tags": "query:mm-reasoning",
+      "abstract_en": "Recent advances in Vision-Language Models, Large Language Models, and Multimodal Large Language Models have improved autonomous driving tasks such as scene understanding, decision making, trajectory prediction, and visual question answering. However, evaluating whether these models can reliably reason about safety-critical incidents remains challenging. To address this gap, we present AUTOPILOT-VQA, an incident-centric visual question answering benchmark for dashcam video understanding. The dataset evaluates different systems through structured questions designed around real-world driving incidents and near-incidents. The benchmark covers diverse safety-relevant categories, including weather and lighting conditions, traffic environment, road layout, road surface state, signage, involved entities, accident occurrence, impact location, and avoidability-related reasoning. By requiring models to answer grounded questions about both contextual scene properties and event-level incident details, AUTOPILOT-VQA moves beyond object recognition toward temporally grounded, safety-aware reasoning. The dataset is released as part of the AUTOPILOT CVPR 2026 competition and provides a standardized benchmark for assessing the reliability of autonomous driving systems in different scenarios. Our benchmark support developments for more interpretable, robust, and safety-conscious vision-language systems for real-world autonomous driving.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/12/2607.04079v1-seeing-once-is-enough-online-geometry-aware-token-pruning-for-3d-question-answering",
+      "section": "deep",
+      "title_en": "Seeing Once is Enough? Online Geometry-Aware Token Pruning for 3D Question Answering",
+      "authors": "Ruei-Chi Lai, Bolivar Solarte, Chin-Hsuan Wu, Yi-Hsuan Tsai, Min Sun",
+      "date": "2026-07-05",
+      "pdf": "https://arxiv.org/pdf/2607.04079v1",
+      "score": "8.0",
+      "evidence": "面向3D问答的在线令牌剪枝方法降低计算开销并保持推理精度",
+      "tldr": "现有多模态大模型处理3D问答需多视图输入，计算成本高，且现有方法需离线预处理所有帧。本文提出首个在线token剪枝方法，利用深度与相机位姿将帧投影到共享体素空间，识别重叠区域并剪枝冗余token，无需额外训练。在Qwen2.5-VL-7B等模型上token使用减少50%，在ScanQA等三个基准上性能提升。该方法实现了高效在线处理，降低了内存占用。",
+      "tags": "query:mm-reasoning",
+      "abstract_en": "Recent Multi-modal Large Language Models (MLLMs) have demonstrated remarkable performance on 2D question answering tasks. However, extending these models to the 3D question answering remains challenging, as they typically require multiple views of the scene, which incurs substantial computational cost at inference. To mitigate this issue, existing solutions rely on strategic frame selection or token-merging algorithms that require preprocessing in advance all frames of the scene, i.e., an offline fashion. In contrast, we propose the first online token-pruning method that can be integrated seamlessly with current MLLM models for 3D question answering tasks, without additional training and with lower memory usage.Our key insight is to project each input frame into a shared voxel space using depth information and camera pose, identifying spatially-overlapped regions across frames and selectively pruning redundant image tokens before they enter the language model. Our method enables efficient online processing while reducing up to 50% of token usage. We apply this approach to Qwen2.5-VL-7B and Qwen3-VL-8B, demonstrating improved performance on the ScanQA, SQA3D, and OpenEQA-HM3D benchmarks.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/12/2607.05465v1-canvasagent-enabling-complex-image-creation-and-editing-via-visual-tool-orchestration",
+      "section": "quick",
+      "title_en": "CanvasAgent: Enabling Complex Image Creation and Editing via Visual Tool Orchestration",
+      "authors": "Hairui Zhu, Yiying Yang, Tengjin Weng, Ziyu Lu, Xiao Yao, Xiaoyang Ye, Lin Ma, Wenhao Jiang",
+      "date": "2026-07-06",
+      "pdf": "https://arxiv.org/pdf/2607.05465v1",
+      "score": "7.0",
+      "evidence": "通过工具编排实现视觉创作的多模态代理，从感知转向推理",
+      "tldr": "复杂图像创建和编辑常需多个视觉模型协同操作，如合成、定位、分割、编辑、合成、文本读取和增强，但现有多模态工具智能体多面向感知或域特定编辑。本文构建CanvasCraft大规模多模态工具使用数据集（140K可执行轨迹和10K RL任务规格），并设计CanvasAgent，先通过SFT学习可执行推理-动作轨迹，再使用GRPO结合结果和过程级混合奖励优化。运行中CanvasAgent能检视中间结果、跟踪视觉资产并自适应调整工具决策。实验验证该方法在多工具图像工作流中有效，显著提升最终图像质量和轨迹行为。",
+      "tags": "query:mm-reasoning",
+      "abstract_en": "Complex image creation and editing often require more than a single generation or editing model. A user request may involve synthesizing images, localizing objects, segmenting regions, editing selected content, compositing intermediate assets, reading text, and enhancing the final result. Such tasks shift multimodal agents from perception-augmented reasoning to manipulation-centered visual creation, where tools must actively transform visual states rather than merely inspect them. However, existing multimodal tool-use agents are mostly optimized for perception, search, or domain-specific editing, and lack large-scale supervision for executable image-creation trajectories. In this paper, we introduce CanvasCraft, a large-scale multimodal tool-use dataset for complex image creation and editing, and \\textbf{CanvasAgent}, a tool-augmented multimodal agent that learns to orchestrate heterogeneous visual tools through multi-turn interaction. CanvasCraft contains 140K fully annotated executable trajectories and 10K   RL task specifications. CanvasAgent is first trained with SFT to learn executable reasoning-action trajectories, and is then optimized with GRPO using a hybrid reward that combines outcome- and process-level signals. During rollout, CanvasAgent inspects intermediate results, tracks visual assets, and adapts tool decisions to the evolving visual state. Experiments evaluate both final image quality and trajectory behavior, demonstrating the effectiveness of CanvasAgent and the proposed dataset for complex multi-tool image creation workflows.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/12/2607.05911v1-progressive-reasoning-with-primitive-correction-for-compositional-zero-shot-learning",
+      "section": "quick",
+      "title_en": "Progressive Reasoning with Primitive Correction for Compositional Zero-Shot Learning",
+      "authors": "Ziyi Chen, Haoyan Shi, Sunhan Xu, Congyan Lang",
+      "date": "2026-07-07",
+      "pdf": "https://arxiv.org/pdf/2607.05911v1",
+      "score": "6.0",
+      "evidence": "组合零样本学习的渐进推理，涉及视觉推理",
+      "tldr": "组合零样本学习需识别未见的属性-物体对。现有方法常忽略属性与物体的双向依赖，导致错误传播。本文提出PRPC，通过逐步推理和原语相互纠正，将任务建模为思维链问答过程，并用GRPO强化学习优化中间步骤。在三个基准上均达到最优性能，证明了双向纠错对组合泛化的有效性。",
+      "tags": "query:mm-reasoning",
+      "abstract_en": "Compositional Zero-Shot Learning (CZSL) aims to combine known attributes and objects as primitives for recognizing previously unseen attribute-object pairs. Prior works either predict attributes and objects independently, missing their strong contextual dependency, or use unidirectional conditional modeling (e.g., object-guided attribute prediction), which is prone to error propagation. We propose PRPC, a Progressive Reasoning framework with Primitive Correction, which explicitly models the bidirectional dependency between attributes and objects via step-wise inference. PRPC performs mutual correction of primitives to suppress prediction errors in earlier steps. Specifically, we formulate CZSL as structured, Q&A-style Chain-of-Thought reasoning process and constrain the MLLM to follow predefined semantic steps to generate intermediate decisions. To further enhance the reliability and logical consistency of intermediate reasoning, we introduce reinforcement learning post-training with a GRPO-based objective, providing step-level rewards aligned with the progressive inference procedure. Extensive experiments on three CZSL benchmarks demonstrate that PRPC achieves state-of-the-art performance, validating the effectiveness of progressive reasoning and bidirectional correction for robust compositional generalization.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

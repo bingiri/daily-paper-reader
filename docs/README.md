@@ -6,37 +6,34 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-11
-- 运行时间：2026-07-11 20:41:55 UTC
+- 最新运行日期：2026-07-12
+- 运行时间：2026-07-12 20:01:03 UTC
 - 运行状态：成功
-- 本次总论文数：5
-- 精读区：1
-- 速读区：4
+- 本次总论文数：4
+- 精读区：2
+- 速读区：2
 
 ### 今日简报（AI）
-1) 今日精读提出分层视觉动态世界建模，速读聚焦统一多模态生成、机器人操作记忆与迁移性，共5篇。
-2) 最值得关注：分层动态世界建模（《DynaVieW》）及统一多模态的理解-生成迁移能力，前者探索复杂视觉结构，后者验证任务间知识复用。
-3) 建议优先阅读精读论文理解分层动态建模思路，再结合速读中多模态统一框架，探索如何将感知与行动衔接。
-- 详情：[/202607/11/README](/202607/11/README)
+今日聚焦视觉语言模型的行车记录仪场景理解评测与3D问答几何感知剪枝两项进展。
+最值得看9分行车记录仪VQA基准与8分仅需单次观察的3D问答几何剪枝方法。
+建议优先关注VLM在真实驾驶场景的评测标准及token剪枝的效率提升。
+- 详情：[/202607/12/README](/202607/12/README)
 
 ### 精读区论文标签
-1. [DynaVieW: Schema-Guided World Modeling for Understanding Hierarchical Visual Dynamics](/202607/11/2607.04112v1-dynaview-schema-guided-world-modeling-for-understanding-hierarchical-visual-dynamics)  
+1. [AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding](/202607/12/2607.08745v1-autopilot-vqa-benchmarking-vision-language-models-for-incident-centric-dashcam-understanding)  
+   标签：评分：9.0/10、query:mm-reasoning
+   evidence：以事故为中心的视觉问答基准，用于视觉推理
+2. [Seeing Once is Enough? Online Geometry-Aware Token Pruning for 3D Question Answering](/202607/12/2607.04079v1-seeing-once-is-enough-online-geometry-aware-token-pruning-for-3d-question-answering)  
    标签：评分：8.0/10、query:mm-reasoning
-   evidence：模式引导的世界模型理解视觉动态，视频时序推理
+   evidence：面向3D问答的在线令牌剪枝方法降低计算开销并保持推理精度
 
 ### 速读区论文标签
-1. [Vision as Unified Multimodal Generation](/202607/11/2607.06560v1-vision-as-unified-multimodal-generation)  
+1. [CanvasAgent: Enabling Complex Image Creation and Editing via Visual Tool Orchestration](/202607/12/2607.05465v1-canvasagent-enabling-complex-image-creation-and-editing-via-visual-tool-orchestration)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：视觉任务的统一多模态生成，多模态推理
-2. [Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation](/202607/11/2607.07608v1-dual-latent-memory-in-vision-language-action-models-for-robotic-manipulation)  
-   标签：评分：7.0/10、query:mm-reasoning
-   evidence：潜在记忆与VLA多模态推理交织
-3. [Transferability Between Understanding and Generation in Unified Multimodal Models](/202607/11/2607.04423v1-transferability-between-understanding-and-generation-in-unified-multimodal-models)  
+   evidence：通过工具编排实现视觉创作的多模态代理，从感知转向推理
+2. [Progressive Reasoning with Primitive Correction for Compositional Zero-Shot Learning](/202607/12/2607.05911v1-progressive-reasoning-with-primitive-correction-for-compositional-zero-shot-learning)  
    标签：评分：6.0/10、query:mm-reasoning
-   evidence：统一多模态模型中理解与生成的迁移性
-4. [Transferability Between Understanding and Generation in Unified Multimodal Models](/202607/11/2607.04423v2-transferability-between-understanding-and-generation-in-unified-multimodal-models)  
-   标签：评分：6.0/10、query:mm-reasoning
-   evidence：统一多模态模型中理解与生成的迁移性
+   evidence：组合零样本学习的渐进推理，涉及视觉推理
 
 
 <div class="dpr-home-promo-card">
