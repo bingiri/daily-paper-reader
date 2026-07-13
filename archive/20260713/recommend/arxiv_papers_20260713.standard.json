@@ -1,0 +1,256 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-13T20:40:00.549793+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.07361v2",
+      "source": "arxiv",
+      "title": "BUS: Brain-Inspired Unsupervised Self-Reflection via Backward Prediction for Multimodal Reasoning",
+      "abstract": "Current Vision-Language Models (VLMs) often struggle to handle complex visual tasks that require consistent and fine-grained reasoning. Recent methods aim to train models to facilitate self-reflective reasoning, i.e., reviewing and improving the generated reasoning. However, they require large volumes of annotated data and lack explicit reflective behavior during test time. By contrast, humans perform explicit and efficient self-reflection through mechanisms such as backward prediction, i.e., predicting which current states are likely to precede a given future state. Inspired by neuroscience, this work proposes a novel solution to address these challenges. We first observe and investigate the phenomenon that mainstream VLMs can perform backward prediction, similar to the human brain. A label-free training framework named Brain-inspired Unsupervised Self-reflection (BUS) is proposed to leverage and exploit backward prediction capability to enhance reflective reasoning in complex visual tasks. BUS enables self-verification of reflective reasoning based on backward prediction, providing explicit learning signals under unsupervised conditions. In this way, BUS eliminates reliance on annotated data while improving reasoning performance. Designed as a model-agnostic plug-in, our framework is compatible with popular fine-tuning methods, such as Supervised Fine-Tuning (SFT) and Reinforcement Learning (RL). Initialized from Qwen3-VL-8B, it improves HR-Bench-8K (+8.0%), HR-Bench-4K (+7.7%), V* Bench (+6.3%), and MME-RealWorld-Lite (+5.8%), proving backward prediction is key to advancing reflective reasoning.",
+      "authors": [
+        "Jiacheng Yang",
+        "Tongying Xiao",
+        "Yunkai Dang",
+        "Cong Wang",
+        "Yuekun Yang",
+        "Qi Fan",
+        "Tianyu Ding",
+        "Wenbin Li",
+        "Feng Miao",
+        "Yang Gao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-08T12:56:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.07361v2",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "unsupervised self-reflection for multimodal reasoning",
+      "llm_evidence_cn": "无监督自反思方法用于多模态推理",
+      "llm_evidence": "无监督自反思方法用于多模态推理",
+      "canonical_evidence": "无监督自反思方法用于多模态推理",
+      "llm_tldr_en": "BUS introduces backward prediction for unsupervised self-reflection in VLMs, improving complex visual reasoning.",
+      "llm_tldr_cn": "该论文针对视觉语言模型在复杂视觉推理中缺乏显式反思能力的问题，受神经科学启发提出无监督自反思框架BUS。通过反向预测机制让模型在测试时自动回顾并修正推理步骤，无需大量标注数据。实验表明BUS在多个视觉推理基准上提升了一致性和细粒度，为多模态推理的自我改进提供了高效方案。",
+      "llm_tldr": "该论文针对视觉语言模型在复杂视觉推理中缺乏显式反思能力的问题，受神经科学启发提出无监督自反思框架BUS。通过反向预测机制让模型在测试时自动回顾并修正推理步骤，无需大量标注数据。实验表明BUS在多个视觉推理基准上提升了一致性和细粒度，为多模态推理的自我改进提供了高效方案。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.09438v1",
+      "source": "arxiv",
+      "title": "Test-Time Scaling for Small VLMs on Multilingual Visual MCQ",
+      "abstract": "Test-time scaling (TTS) reliably improves reasoning in large language models, but whether it transfers to small open vision-language models remains unclear. We examine this on EXAMS-V, a multilingual visual multiple-choice benchmark, comparing self-consistency, describe-then-reason with PRM-guided beam search, and two post-hoc selectors across Qwen2.5-VL-7B-Instruct and Qwen3.5-4B. What matters is the conditions under which TTS runs, not the search or verification machinery. The largest factor is parseability: an early prompt format left many chains reasoning correctly yet never committing to an answer letter, which a standard answer cue and a guided repair step largely remove. A larger decoding budget removes the rest: raising the per-chain token limit from 1k to 2k recovers 3.7 pp, whereas sampling more chains (8 to 16) adds only 0.15 pp. Once chains have room to finish, elaborate methods contribute little: PRM-guided beam search trails plain self-consistency by 0.39 pp at over eight times the cost, and neither a training-free generative critic nor a trained multimodal PRM beats majority vote across both policies. The largest gain comes instead from the policy model itself (+11.4 pp). Our best configuration reaches 84.1% on the held-out ImageCLEF 2026 test split, ranking first on the Visual MCQ leaderboard.",
+      "authors": [
+        "Spiros Baxevanakis",
+        "Peng-Jian Yang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-10T14:09:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.09438v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "visual reasoning on multilingual visual MCQ with VLM test-time scaling",
+      "llm_evidence_cn": "在多语言视觉选择题上通过测试时扩展提升视觉语言模型推理",
+      "llm_evidence": "在多语言视觉选择题上通过测试时扩展提升视觉语言模型推理",
+      "canonical_evidence": "在多语言视觉选择题上通过测试时扩展提升视觉语言模型推理",
+      "llm_tldr_en": "Examines test-time scaling for small VLMs on multilingual visual MCQ, finding parseability and token budget are key factors for reasoning improvement.",
+      "llm_tldr_cn": "针对小视觉语言模型在多语言视觉选择题上的推理能力，研究测试时扩展的作用。发现可解析性和解码预算比搜索或验证机制更重要，通过提示格式修复和增大预算可以显著提升推理准确性，为VLM推理优化提供了实用见解。",
+      "llm_tldr": "针对小视觉语言模型在多语言视觉选择题上的推理能力，研究测试时扩展的作用。发现可解析性和解码预算比搜索或验证机制更重要，通过提示格式修复和增大预算可以显著提升推理准确性，为VLM推理优化提供了实用见解。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.09623v1",
+      "source": "arxiv",
+      "title": "Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026",
+      "abstract": "We present our submission to the QANTA 2026 shared challenge at the ICML 2026 Workshop on Efficient Multimodal Question Answering (EMM-QA). Quanta evaluates multimodal quizbowl systems that answer pyramid-style questions from incrementally revealed text and accompanying images while operating under realistic efficiency constraints. The challenge consists of two distinct tasks: Tossup questions, which require deciding when to answer under uncertainty, and Bonus questions, which emphasize accurate answer selection and human adoption. To address these differing objectives, we develop a task-specific two-agent architecture. Our Tossup agent utilizes a GPT-4o-mini-class model (referred to as GPT-4.1-mini in the competition logs) with confidence-calibrated answering and a domain-specific numeric reasoning policy that reduces overconfident predictions from isolated quantitative clues. Our Bonus agent uses GPT-4o-class model (referred to as GPT-4.1) with leadin-aware reasoning, structured relational reasoning, and multimodal evidence integration to improve exact answer selection. Rather than relying on a retrieval pipeline or model ensembles, our approach emphasizes efficient reasoning policies and confidence calibration within a hosted-only environment. Our system achieved the highest overall leaderboard score of 0.402, including a Tossup score of 0.238 and a Bonus Effect score of 0.164. The results demonstrate that lightweight, task-specific reasoning strategies can provide strong performance on resource-constrained multimodal question answering benchmarks.",
+      "authors": [
+        "Nirjhar Das",
+        "Md. Al-Mamun Provath"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-10T17:22:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.09623v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multimodal question answering with incremental reasoning and confidence calibration",
+      "llm_evidence_cn": "基于增量推理和置信度校准的多模态问答",
+      "llm_evidence": "基于增量推理和置信度校准的多模态问答",
+      "canonical_evidence": "基于增量推理和置信度校准的多模态问答",
+      "llm_tldr_en": "Presents a two-agent system for multimodal quizbowl QA tasks, using confidence calibration for decision-making and incremental reasoning for answer selection.",
+      "llm_tldr_cn": "本文提出了一个任务特定的双代理架构，用于多模态问答挑战。抢答代理利用置信度校准决定何时作答，奖励代理通过增量推理精确选择答案。系统在ICML 2026 EMM-QA研讨会上提交，展示了多模态推理在效率约束下的有效性。实验证明该方法在两种任务上均取得良好效果。",
+      "llm_tldr": "本文提出了一个任务特定的双代理架构，用于多模态问答挑战。抢答代理利用置信度校准决定何时作答，奖励代理通过增量推理精确选择答案。系统在ICML 2026 EMM-QA研讨会上提交，展示了多模态推理在效率约束下的有效性。实验证明该方法在两种任务上均取得良好效果。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.09068v1",
+      "source": "arxiv",
+      "title": "OmniMapBench: Benchmarking Visual-Centric Reasoning on Diverse Map Documents",
+      "abstract": "Recent advancements in LVLMs necessitate robust benchmarks for complex, visually grounded reasoning. A critical limitation is identified in many document understanding benchmarks: visual content is often reducible to text, enabling high performance without genuine visual grounding. To address this limitation, OmniMapBench is introduced to foster visual-centric reasoning for map documents. The benchmark comprises 2,096 manually annotated question-answer pairs across 1,603 map documents from nine categories. It is designed to probe a hierarchy of skills, ranging from perception to multi-step visual reasoning. To quantify benchmark properties, a simple yet effective benchmark-level metric is proposed: the Visual Dependency Index (VDI), defined as the accuracy drop when images are replaced with question-agnostic descriptions. OmniMapBench exhibits higher VDI than established benchmarks, which quantitatively validates its focus on irreducible visual reasoning. Comprehensive evaluations of 25 leading LVLMs are conducted on OmniMapBench. A significant performance gap is observed, with the top-performing model achieving only 75.03\\% accuracy. This result underscores the challenges posed by OmniMapBench to current LVLMs. This work aims to catalyze progress in visual-centric reasoning for document understanding of LVLMs. The dataset and code are publicly available at https://github.com/SIGMME/OmniMapBench.",
+      "authors": [
+        "Yang Chen",
+        "Yunwen Li",
+        "Yufan Shen",
+        "Minghao Liu",
+        "Tianyu Zheng",
+        "Bin Fu",
+        "Qunshu Lin",
+        "Zhi Yu",
+        "Botian Shi"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-10T03:27:25+00:00",
+      "link": "https://arxiv.org/pdf/2607.09068v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "benchmark for visual-centric reasoning on map documents",
+      "llm_evidence_cn": "面向地图文档的视觉中心推理基准",
+      "llm_evidence": "面向地图文档的视觉中心推理基准",
+      "canonical_evidence": "面向地图文档的视觉中心推理基准",
+      "llm_tldr_en": "OmniMapBench is a benchmark for visual-centric reasoning on maps, with 2096 QA pairs probing perception to multi-step reasoning, including a Visual Dependency Index metric.",
+      "llm_tldr_cn": "该论文提出OmniMapBench基准，包含2096个地图文档问答对，覆盖感知到多步推理技能，并引入视觉依赖指数（VDI）量化基准的视觉要求。旨在推动真正的视觉推理评估，避免文本捷径。",
+      "llm_tldr": "该论文提出OmniMapBench基准，包含2096个地图文档问答对，覆盖感知到多步推理技能，并引入视觉依赖指数（VDI）量化基准的视觉要求。旨在推动真正的视觉推理评估，避免文本捷径。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.05927v1",
+      "source": "arxiv",
+      "title": "CMDR: Contextual Multimodal Document Retrieval",
+      "abstract": "Multimodal document retrieval aims to retrieve relevant pages while preserving both textual and visual content from the original document. However, existing benchmarks primarily evaluate simple lexical or semantic matching, and most methods encode pages independently. Consequently, they overlook the contextual information in the document required to resolve queries that aggregate information across multiple pages. In this paper, we introduce CMDR and CMDR-Bench, a new multimodal document retrieval task and benchmark that require modeling document context. To address this challenge, we propose CMDR-Embed, a contextual multimodal embedding framework that explicitly incorporates document context by jointly encoding multiple pages and deriving page-level embeddings from a shared contextual representation. Furthermore, we introduce CMCL, a contextual multimodal contrastive learning objective that effectively trains CMDR-Embed by balancing contextual modeling with page-level discriminability. Experiments demonstrate that CMDR-Embed significantly outperforms non-contextual embeddings, highlighting the importance of context-aware multimodal embeddings for advancing document retrieval.",
+      "authors": [
+        "Ryota Tanaka",
+        "Taku Hasegawa",
+        "Kyosuke Nishida"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-07-07T07:31:05+00:00",
+      "link": "https://arxiv.org/pdf/2607.05927v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal document retrieval with context modeling",
+      "llm_evidence_cn": "多模态文档检索中的上下文建模",
+      "llm_evidence": "多模态文档检索中的上下文建模",
+      "canonical_evidence": "多模态文档检索中的上下文建模",
+      "llm_tldr_en": "Proposes CMDR, a contextual multimodal document retrieval task and benchmark, with CMDR-Embed framework that jointly encodes multiple pages for page-level embeddings.",
+      "llm_tldr_cn": "现有文档检索忽略页面间上下文信息，无法处理跨页聚合查询。本文提出CMDR任务及基准，并设计CMDR-Embed框架通过联合编码多页面来生成页面级嵌入，显式建模文档上下文，提升多页检索效果。该工作为多模态检索中的推理提供了新视角。",
+      "llm_tldr": "现有文档检索忽略页面间上下文信息，无法处理跨页聚合查询。本文提出CMDR任务及基准，并设计CMDR-Embed框架通过联合编码多页面来生成页面级嵌入，显式建模文档上下文，提升多页检索效果。该工作为多模态检索中的推理提供了新视角。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.09515v1",
+      "source": "arxiv",
+      "title": "One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps",
+      "abstract": "Robotic manipulation tasks often require simultaneous reasoning over motion and contact forces, yet most Learning from Demonstration (LfD) methods model only spatial trajectories and neglect force interactions with the environment. This limitation reduces robustness and can lead to unsafe or inconsistent task reproduction in force-constrained settings. We propose a novel one-shot multimodal LfD framework for the segmentation, encoding, and reproduction of force-inclusive demonstrations. First, we introduce a multimodal probabilistic segmentation method that adaptively weighs spatial and force modalities over time, enabling the automatic extraction of force-aware motion primitives. Second, we extend the elastic maps representation to incorporate external force constraints during skill encoding and formulate a convex optimization procedure for learning force-consistent trajectory models. The resulting skills reproduce both motion and contact characteristics from a single demonstration while promoting safer execution by accounting for demonstrated force profiles. We validate our approach on five real-world manipulation tasks across two distinct force-sensing configurations: wrist force sensing on a UR5e with a Robotiq 2f-85 gripper and finger force sensing on a Kinova Gen3 with an Openhand Model O gripper. Experimental results demonstrate robust multimodal segmentation, accurate force-aware reproduction, and cross-platform generality.",
+      "authors": [
+        "Brendan Hertel",
+        "Jonathan Spanos",
+        "Navya Garg",
+        "Reza Azadeh"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-10T15:27:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.09515v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal learning from demonstration involving force and motion reasoning",
+      "llm_evidence_cn": "多模态示教学习，涉及力和运动的推理",
+      "llm_evidence": "多模态示教学习，涉及力和运动的推理",
+      "canonical_evidence": "多模态示教学习，涉及力和运动的推理",
+      "llm_tldr_en": "One-shot multimodal LfD framework for force-inclusive demonstrations, using probabilistic segmentation and elastic maps for robust task reproduction.",
+      "llm_tldr_cn": "针对机器人操作中多模态示教学习常忽略力交互的问题，提出一种单次多模态示教学习框架，通过多模态概率分割提取力感知运动基元，并扩展弹性图表示以实现力约束下的鲁棒复制。实验证明该方法能有效处理力约束场景，提升任务再现的安全性与一致性。",
+      "llm_tldr": "针对机器人操作中多模态示教学习常忽略力交互的问题，提出一种单次多模态示教学习框架，通过多模态概率分割提取力感知运动基元，并扩展弹性图表示以实现力约束下的鲁棒复制。实验证明该方法能有效处理力约束场景，提升任务再现的安全性与一致性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

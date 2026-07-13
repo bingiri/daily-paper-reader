@@ -6,34 +6,38 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-12
-- 运行时间：2026-07-12 20:01:03 UTC
+- 最新运行日期：2026-07-13
+- 运行时间：2026-07-13 20:43:46 UTC
 - 运行状态：成功
-- 本次总论文数：4
-- 精读区：2
-- 速读区：2
+- 本次总论文数：6
+- 精读区：3
+- 速读区：3
 
 ### 今日简报（AI）
-今日聚焦视觉语言模型的行车记录仪场景理解评测与3D问答几何感知剪枝两项进展。
-最值得看9分行车记录仪VQA基准与8分仅需单次观察的3D问答几何剪枝方法。
-建议优先关注VLM在真实驾驶场景的评测标准及token剪枝的效率提升。
-- 详情：[/202607/12/README](/202607/12/README)
+今日共推荐6篇多模态研究，精读3篇，重点探索了类脑无监督自我反思与多语言视觉问答的测试时缩放技术。最值得关注的是BRAIN-Inspired的BUS模型（9.0分）提出了反向预测实现无监督自我反思，以及Test-Time Scaling方法（8.0分）有效提升小模型在多语言视觉问答中的表现。建议关注如何将BUS的反思机制融入实际多模态推理任务，并利用测试时缩放技术优化资源受限场景下的视觉问答精度。
+- 详情：[/202607/13/README](/202607/13/README)
 
 ### 精读区论文标签
-1. [AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding](/202607/12/2607.08745v1-autopilot-vqa-benchmarking-vision-language-models-for-incident-centric-dashcam-understanding)  
+1. [BUS: Brain-Inspired Unsupervised Self-Reflection via Backward Prediction for Multimodal Reasoning](/202607/13/2607.07361v2-bus-brain-inspired-unsupervised-self-reflection-via-backward-prediction-for-multimodal-reasoning)  
    标签：评分：9.0/10、query:mm-reasoning
-   evidence：以事故为中心的视觉问答基准，用于视觉推理
-2. [Seeing Once is Enough? Online Geometry-Aware Token Pruning for 3D Question Answering](/202607/12/2607.04079v1-seeing-once-is-enough-online-geometry-aware-token-pruning-for-3d-question-answering)  
+   evidence：无监督自反思方法用于多模态推理
+2. [Test-Time Scaling for Small VLMs on Multilingual Visual MCQ](/202607/13/2607.09438v1-test-time-scaling-for-small-vlms-on-multilingual-visual-mcq)  
    标签：评分：8.0/10、query:mm-reasoning
-   evidence：面向3D问答的在线令牌剪枝方法降低计算开销并保持推理精度
+   evidence：在多语言视觉选择题上通过测试时扩展提升视觉语言模型推理
+3. [Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026](/202607/13/2607.09623v1-task-specific-multimodal-question-answering-agents-via-confidence-calibration-and-incremental-reasoning-for-qanta-2026)  
+   标签：评分：8.0/10、query:mm-reasoning
+   evidence：基于增量推理和置信度校准的多模态问答
 
 ### 速读区论文标签
-1. [CanvasAgent: Enabling Complex Image Creation and Editing via Visual Tool Orchestration](/202607/12/2607.05465v1-canvasagent-enabling-complex-image-creation-and-editing-via-visual-tool-orchestration)  
+1. [OmniMapBench: Benchmarking Visual-Centric Reasoning on Diverse Map Documents](/202607/13/2607.09068v1-omnimapbench-benchmarking-visual-centric-reasoning-on-diverse-map-documents)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：通过工具编排实现视觉创作的多模态代理，从感知转向推理
-2. [Progressive Reasoning with Primitive Correction for Compositional Zero-Shot Learning](/202607/12/2607.05911v1-progressive-reasoning-with-primitive-correction-for-compositional-zero-shot-learning)  
+   evidence：面向地图文档的视觉中心推理基准
+2. [One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps](/202607/13/2607.09515v1-one-shot-multimodal-learning-from-demonstration-with-force-constrained-elastic-maps)  
+   标签：评分：7.0/10、query:mm-reasoning
+   evidence：多模态示教学习，涉及力和运动的推理
+3. [CMDR: Contextual Multimodal Document Retrieval](/202607/13/2607.05927v1-cmdr-contextual-multimodal-document-retrieval)  
    标签：评分：6.0/10、query:mm-reasoning
-   evidence：组合零样本学习的渐进推理，涉及视觉推理
+   evidence：多模态文档检索中的上下文建模
 
 
 <div class="dpr-home-promo-card">
