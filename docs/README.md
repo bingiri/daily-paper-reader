@@ -6,68 +6,43 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-14
-- 运行时间：2026-07-14 21:04:47 UTC
+- 最新运行日期：2026-07-15
+- 运行时间：2026-07-15 20:44:59 UTC
 - 运行状态：成功
-- 本次总论文数：16
-- 精读区：7
-- 速读区：9
+- 本次总论文数：7
+- 精读区：2
+- 速读区：5
 
 ### 今日简报（AI）
-今日推荐16篇论文，精读7篇，其中《SVR-R1》和《Beyond the Eye》均获满分。最值得关注的是多模态推理的自我验证与隐式工具调控两大方向，精读列表中的两篇10分论文极具启发性。建议优先精读这两篇高分研究，掌握视觉推理与强化学习结合的最新进展。
-- 详情：[/202607/14/README](/202607/14/README)
+今日推荐7篇论文，精读聚焦多模态大模型4D时空推理与具身智能体，速读覆盖Web智能体、音视频描述及几何问题生成。  
+最值得关注DynTrace和Hy-Embodied-VLM-1.0，前者提出动态对象证据跟踪实现4D时空推理，后者打造高效物理世界智能体。  
+建议普通读者优先深入精读这两篇，把握多模态模型从静态理解向动态空间交互演进的核心方向。
+- 详情：[/202607/15/README](/202607/15/README)
 
 ### 精读区论文标签
-1. [SVR-R1: Bootstrapping Multi-modal Reasoning with Self-verification in Reinforcement Learning](/202607/14/2607.10966v1-svr-r1-bootstrapping-multi-modal-reasoning-with-self-verification-in-reinforcement-learning)  
-   标签：评分：10.0/10、query:mm-reasoning
-   evidence：带自验证的多模态推理
-2. [Beyond the Eye: Efficient Multimodal Reasoning via Self-Regulated Implicit Visual Tools](/202607/14/2607.11106v1-beyond-the-eye-efficient-multimodal-reasoning-via-self-regulated-implicit-visual-tools)  
-   标签：评分：10.0/10、query:mm-reasoning
-   evidence：明确针对多模态推理
-3. [EventCoT: Event-centric Video Chain-of-thought for Reasoning Temporal Localization](/202607/14/2607.04872v1-eventcot-event-centric-video-chain-of-thought-for-reasoning-temporal-localization)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：提出以事件为中心的视频链式推理用于推理时间定位
-4. [Scene Graph Thinking: Reinforcing Structured Visual Reasoning for Multimodal Large Language Models](/202607/14/2607.05716v3-scene-graph-thinking-reinforcing-structured-visual-reasoning-for-multimodal-large-language-models)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：基于场景图的视觉推理增强多模态大模型
-5. [CAIRN: Cross-Room 3D Scene Understanding with Topology-Aware Large Multimodal Models](/202607/14/2607.06534v2-cairn-cross-room-3d-scene-understanding-with-topology-aware-large-multimodal-models)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：用于3D场景理解的多模态推理
-6. [Model Guides You How to Draw: Adaptive Visual Gating for Unified Multimodal Reasoning](/202607/14/2607.10004v1-model-guides-you-how-to-draw-adaptive-visual-gating-for-unified-multimodal-reasoning)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：直接针对多模态推理，提出自适应视觉门控
-7. [The Ebb and Flow of Multimodal Focus: Scheduling Visual Relay Windows for Grounded VLM Reasoning](/202607/14/2607.11436v1-the-ebb-and-flow-of-multimodal-focus-scheduling-visual-relay-windows-for-grounded-vlm-reasoning)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：直接研究多模态推理和VLM内部动态
+1. [DynTrace: Tracking Dynamic Object Evidence for 4D Spatio-Temporal Reasoning in MLLMs](/202607/15/2607.12503v1-dyntrace-tracking-dynamic-object-evidence-for-4d-spatio-temporal-reasoning-in-mllms)  
+   标签：评分：8.0/10、query:mm-reasoning
+   evidence：MLLM中4D时空推理
+2. [Hy-Embodied-VLM-1.0: Efficient Physical-World Agents](/202607/15/2607.12894v1-hy-embodied-vlm-10-efficient-physical-world-agents)  
+   标签：评分：8.0/10、query:mm-reasoning
+   evidence：具身多模态推理
 
 ### 速读区论文标签
-1. [PhysMRV: Physical Memory Retrieval and Verification for Physics Plausibility Reasoning](/202607/14/2607.10190v1-physmrv-physical-memory-retrieval-and-verification-for-physics-plausibility-reasoning)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：多模态物理合理性推理
-2. [UNIBROWSE: A Data-to-Agent Framework for Multimodal BrowseComp](/202607/14/2607.10557v1-unibrowse-a-data-to-agent-framework-for-multimodal-browsecomp)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：浏览任务中的多模态推理
-3. [WasteAssistant: Regulation-Guided Visual Question Answering Framework for Intelligent Waste Segregation and Sustainable Managemen](/202607/14/2607.10610v1-wasteassistant-regulation-guided-visual-question-answering-framework-for-intelligent-waste-segregation-and-sustainable-managemen)  
+1. [MAG: A Web-Agent Benchmark and Harness for Multimodal Action and Guide Generation](/202607/15/2607.10079v2-mag-a-web-agent-benchmark-and-harness-for-multimodal-action-and-guide-generation)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：提出集成视觉语言模型的视觉问答框架用于废弃物分类的多模态推理
-4. [Mixture of Cognitive Experts in Large Vision-Language Models](/202607/14/2607.10796v1-mixture-of-cognitive-experts-in-large-vision-language-models)  
+   evidence：多模态网页智能体的动作与指南生成
+2. [AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning](/202607/15/2607.12820v1-avscap-orchestrating-audio-visual-synergy-for-omni-modal-video-captioning)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：为大视觉语言模型集成认知专家
-5. [Towards Predictive, Aligned, and Scalable Robot Learning](/202607/14/2607.11270v1-towards-predictive-aligned-and-scalable-robot-learning)  
+   evidence：通过跨模态事件绑定解决音视频字幕中的多模态推理
+3. [FormalAnalyticGeo: A Neural-Symbolic Based Framework for Multimodal Analytic Geometry Problem Generation](/202607/15/2607.12982v1-formalanalyticgeo-a-neural-symbolic-based-framework-for-multimodal-analytic-geometry-problem-generation)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：潜空间世界-动作模型用于预测推理及跨模态对齐，与机器人多模态推理相关
-6. [Beyond the Single Camera: Agentic Multi-View Reasoning in Sports Video Understanding](/202607/14/2607.11844v1-beyond-the-single-camera-agentic-multi-view-reasoning-in-sports-video-understanding)  
-   标签：评分：7.0/10、query:mm-reasoning
-   evidence：体育视频理解中的多视角推理
-7. [TSRouter: Dynamic Modality-Model Selection for Time Series Reasoning](/202607/14/2607.08940v1-tsrouter-dynamic-modality-model-selection-for-time-series-reasoning)  
+   evidence：多模态解析几何问题生成框架
+4. [IQA-T1: Tool-based Visual Evidence Reasoning for Image Quality Assessment](/202607/15/2607.12375v1-iqa-t1-tool-based-visual-evidence-reasoning-for-image-quality-assessment)  
    标签：评分：6.0/10、query:mm-reasoning
-   evidence：时间序列的多模态推理
-8. [Evolution of Accuracy and Visual-Cognitive Errors in a Decade of Vision-Language AI Models](/202607/14/2607.09654v1-evolution-of-accuracy-and-visual-cognitive-errors-in-a-decade-of-vision-language-ai-models)  
+   evidence：基于工具的视觉证据推理用于图像质量评估
+5. [EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval](/202607/15/2607.12764v1-evograph-r1-self-evolving-multimodal-knowledge-hypergraphs-for-agentic-retrieval)  
    标签：评分：6.0/10、query:mm-reasoning
-   evidence：VLM的视觉推理错误分析
-9. [MAG: A Web-Agent Benchmark and Harness for Multimodal Action and Guide Generation](/202607/14/2607.10079v1-mag-a-web-agent-benchmark-and-harness-for-multimodal-action-and-guide-generation)  
-   标签：评分：6.0/10、query:mm-reasoning
-   evidence：多模态动作与指南生成基准
+   evidence：多模态知识超图增强MLLM检索与推理
 
 
 <div class="dpr-home-promo-card">

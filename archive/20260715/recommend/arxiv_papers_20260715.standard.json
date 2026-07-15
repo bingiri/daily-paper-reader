@@ -1,0 +1,336 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-15T20:38:41.767335+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 5,
+    "quick_skim_target": 11,
+    "quick_selected": 5
+  },
+  "deep_dive": [
+    {
+      "id": "2607.12503v1",
+      "source": "arxiv",
+      "title": "DynTrace: Tracking Dynamic Object Evidence for 4D Spatio-Temporal Reasoning in MLLMs",
+      "abstract": "4D spatio-temporal reasoning, jointly modeling 3D spatial structure and temporal evolution, is essential for understanding dynamic worlds and enabling embodied interaction. While current Multimodal Large Language Models (MLLMs) show strong capabilities in static scene understanding and coarse-grained 4D tasks, they still have notable limitations in continuous dynamic scene perception, especially in tracking dynamic object evidence for coherent 4D spatio-temporal reasoning. This shortcoming stems mainly from relying on sparse frame-level observations, fragmenting continuous dynamic cues and leaving models unable to disentangle genuine object dynamics from camera-induced apparent motion. Inspired by humans tracking dynamic cues while compensating for viewpoint changes, we propose DynTrace, a training-free framework for 4D spatio-temporal reasoning with two complementary components. Dynamic Trajectory Visualization (DTV) reprojects world-coordinate trajectories onto the image plane, providing geometry-informed visual priors that disentangle genuine object dynamics from camera-induced apparent motion. Meanwhile, the Dynamic Trace Token (DT-Token), organized into a Dynamic Trace Graph (DTG), tracks object-level dynamic cues, trace evolution, and key moments, maintaining continuous dynamic object evidence for coherent 4D reasoning. Together, these two components equip MLLMs with continuously tracked dynamic object evidence, grounded in geometry-informed visual priors and structured spatio-temporal traces. DynTrace consistently improves open-source MLLMs, achieving state-of-the-art results on Dyn-Bench, VLM4D, and DSI-Bench, validating the importance of tracking dynamic object evidence for robust 4D spatio-temporal reasoning.",
+      "authors": [
+        "Rongxin Gao",
+        "Yuzhi Huang",
+        "Dongxuan Liu",
+        "Chu Li",
+        "Zhenye Wang",
+        "Jie Wu",
+        "Shuzhao Xie",
+        "Jingyan Jiang",
+        "Xinghao Ding",
+        "Xiaotong Tu",
+        "Yue Huang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-14T08:35:07+00:00",
+      "link": "https://arxiv.org/pdf/2607.12503v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "4D spatio-temporal reasoning in MLLMs",
+      "llm_evidence_cn": "MLLM中4D时空推理",
+      "llm_evidence": "MLLM中4D时空推理",
+      "canonical_evidence": "MLLM中4D时空推理",
+      "llm_tldr_en": "DynTrace enhances MLLMs for 4D spatio-temporal reasoning by tracking dynamic object evidence and disentangling object motion from camera motion.",
+      "llm_tldr_cn": "该论文针对MLLM在连续动态场景感知中的不足，提出DynTrace框架，通过追踪动态物体证据来增强4D时空推理能力。方法灵感来自人类追踪动态线索的方式，旨在分离物体真实运动与相机运动。实验表明，DynTrace在多个基准上提升了动态场景理解性能，为具身智能中的时空推理提供了新思路。",
+      "llm_tldr": "该论文针对MLLM在连续动态场景感知中的不足，提出DynTrace框架，通过追踪动态物体证据来增强4D时空推理能力。方法灵感来自人类追踪动态线索的方式，旨在分离物体真实运动与相机运动。实验表明，DynTrace在多个基准上提升了动态场景理解性能，为具身智能中的时空推理提供了新思路。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.12894v1",
+      "source": "arxiv",
+      "title": "Hy-Embodied-VLM-1.0: Efficient Physical-World Agents",
+      "abstract": "Building capable embodied agents requires not only multimodal perception and understanding, but also agentic capabilities for reasoning about actions, adapting to evolving situations, and interacting with the physical world. In this report, we introduce Hy-Embodied-VLM-1.0, an efficient and powerful embodied foundation model specifically designed for embodied agents operating in the physical world. To cultivate such capabilities from the pre-training stage onward, we define an action-centric capability taxonomy comprising three progressive dimensions: Action-Relevant State Understanding, Action-Transition Reasoning, and Sequential and Adaptive Reasoning. Guided by this taxonomy, we develop a systematic data pipeline and curate data mixtures spanning both pre-training and post-training. To deliver strong physical-world understanding and interaction capabilities while supporting latency-sensitive deployment, we build our model on the Hy3-A3B language backbone and the Hy-ViT2 vision encoder. Its efficient Mixture-of-Experts architecture combines strong model capacity with high inference efficiency. We evaluate Hy-Embodied-VLM-1.0 on a comprehensive suite of 38 benchmarks covering embodied perception, physical-world understanding, and embodied reasoning. The model achieves the best performance among similarly sized models on 19 of the 38 benchmarks and substantially outperforms strong competitors, including Qwen3.6-A3B and Cosmos 3. Compared with the previous-generation Hy-Embodied-0.5 MoT-2B, Hy-Embodied-VLM-1.0 improves average performance by 8.4%. Despite activating only 3B parameters, it achieves performance close to that of the previous-generation model with 32B activated parameters. Beyond static benchmark evaluation, Hy-Embodied-VLM-1.0 also demonstrates strong performance on embodied agentic tasks requiring multi-turn interaction and long-horizon reasoning.",
+      "authors": [
+        "Ziyi Wang",
+        "Xumin Yu",
+        "Yongming Rao",
+        "Yonggen Ling",
+        "Yunheng Li",
+        "Oran Wang",
+        "Mingqi Gao",
+        "Yuchen Zhou",
+        "Yves Liang",
+        "Zuyan Liu",
+        "Yani Zhang",
+        "Rui Huang",
+        "Xiaoran Xu",
+        "Bowen Yuan",
+        "Yifu Yuan",
+        "Xu Tan",
+        "He Zhang",
+        "Yufei Huang",
+        "Shenghao Zhang",
+        "Hongsheng Wu",
+        "Han Hu",
+        "Zhengyou Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-14T15:34:17+00:00",
+      "link": "https://arxiv.org/pdf/2607.12894v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "embodied multimodal reasoning",
+      "llm_evidence_cn": "具身多模态推理",
+      "llm_evidence": "具身多模态推理",
+      "canonical_evidence": "具身多模态推理",
+      "llm_tldr_en": "Hy-Embodied-VLM-1.0 is an embodied foundation model with action-centric reasoning for physical world agents.",
+      "llm_tldr_cn": "该论文提出了Hy-Embodied-VLM-1.0，一个专为物理世界智能体设计的具身基础模型。通过定义以动作为中心的能力分类法（状态理解、动作转换推理、序列自适应推理），并构建系统数据流水线，模型在多个具身推理任务上达到高效性能，推动了多模态推理在机器人等领域的应用。",
+      "llm_tldr": "该论文提出了Hy-Embodied-VLM-1.0，一个专为物理世界智能体设计的具身基础模型。通过定义以动作为中心的能力分类法（状态理解、动作转换推理、序列自适应推理），并构建系统数据流水线，模型在多个具身推理任务上达到高效性能，推动了多模态推理在机器人等领域的应用。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.10079v2",
+      "source": "arxiv",
+      "title": "MAG: A Web-Agent Benchmark and Harness for Multimodal Action and Guide Generation",
+      "abstract": "Digital Adoption Platforms (DAPs) are embedded overlays widely used on web systems to guide users through operations inside a page, helping them get started with unfamiliar interfaces quickly. Completing a real task, however, rarely means clicking a few buttons on a single page: it takes a sequence of actions that unfolds across changing page states. Prior studies have also treated automated web agent actions and guide text generation as two separate problems, and most of them feed models textual page representations such as the DOM or accessibility trees rather than the rendered screens that humans actually operate on. In this work we introduce MAG, the first benchmark that unifies task execution and guide writing into a single Multimodal Action and Guide task, with two grounding schemes over screenshots: Set-of-Mark element selection and raw pixel coordinates. We further build a complete harness for this compound task, covering annotation with LLM assistance and human verification, training, evaluation in live environments, and joint metrics for actions and guides. With this harness we evaluate frontier API models and open multimodal models, and report detailed analyses. Finally, we design a GRPO training method augmented with expert trajectories, which nearly doubles the success rate of a supervised 9B agent (from 6.9% to 13.2%) and improves guide quality at the same time. Even the strongest model completes fewer than 40% of the tasks, leaving ample room for future research.",
+      "authors": [
+        "Chengguang Gan",
+        "Hanjun Wei",
+        "Yunhao Liang",
+        "Zhixi Cai",
+        "Qinghao Zhang",
+        "Shiwen Ni"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-11T02:08:46+00:00",
+      "link": "https://arxiv.org/pdf/2607.10079v2",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal web agent action and guide generation",
+      "llm_evidence_cn": "多模态网页智能体的动作与指南生成",
+      "llm_evidence": "多模态网页智能体的动作与指南生成",
+      "canonical_evidence": "多模态网页智能体的动作与指南生成",
+      "llm_tldr_en": "MAG is the first benchmark unifying web agent task execution and guide text generation from multimodal screenshots.",
+      "llm_tldr_cn": "该论文提出MAG，首个统一网页智能体任务执行和指南文本生成的基准，基于渲染截图而非文本表示。涵盖多页面顺序任务。为多模态推理在真实网页交互中的应用提供了标准化评估，揭示了现有模型在多步动作和指南生成上的差距。",
+      "llm_tldr": "该论文提出MAG，首个统一网页智能体任务执行和指南文本生成的基准，基于渲染截图而非文本表示。涵盖多页面顺序任务。为多模态推理在真实网页交互中的应用提供了标准化评估，揭示了现有模型在多步动作和指南生成上的差距。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.12375v1",
+      "source": "arxiv",
+      "title": "IQA-T1: Tool-based Visual Evidence Reasoning for Image Quality Assessment",
+      "abstract": "Image Quality Assessment (IQA) in open-world environments remains challenging due to limited generalization and interpretability. Recent approaches based on multimodal large language models (MLLMs) introduce textual reasoning for quality prediction, yet their judgments rely heavily on semantically biased internal representations, making them insensitive to low-level perceptual degradations. We propose IQA-T1, a tool-based visual evidence reasoning framework that augments MLLM reasoning with explicit perceptual observations. During inference, the model autonomously invokes specialized analysis tools to generate structured visual evidence, such as noise residual maps, gradient statistics, and frequency spectra, which are progressively integrated into the reasoning process. To support this paradigm, we construct Q-Tool, a dataset containing 11k multimodal reasoning chains grounded in tool-generated evidence. Extensive experiments on seven IQA benchmarks show that IQA-T1 achieves the best overall performance across datasets while producing interpretable and evidence-grounded quality assessments. Code and dataset are available at https://github.com/zibuyu-02/IQA-T1.",
+      "authors": [
+        "Jinjian Wu",
+        "Jiaqi Tang",
+        "Wei Wei",
+        "Yingying Yan",
+        "Jianmin Chen",
+        "Botong Geng",
+        "Lei Zhang",
+        "Qifeng Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "eess.IV"
+      ],
+      "published": "2026-07-14T05:47:32+00:00",
+      "link": "https://arxiv.org/pdf/2607.12375v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "tool-based visual evidence reasoning for image quality",
+      "llm_evidence_cn": "基于工具的视觉证据推理用于图像质量评估",
+      "llm_evidence": "基于工具的视觉证据推理用于图像质量评估",
+      "canonical_evidence": "基于工具的视觉证据推理用于图像质量评估",
+      "llm_tldr_en": "IQA-T1 augments MLLM reasoning with explicit perceptual observations through specialized analysis tools for image quality assessment.",
+      "llm_tldr_cn": "现有基于多模态大模型的图像质量评估对低层退化不敏感。本文提出IQA-T1，在推理时自动调用分析工具生成噪声残差图、梯度统计等结构化视觉证据，逐步整合到推理中。实验证明该方法提升了IQA的准确性和可解释性。",
+      "llm_tldr": "现有基于多模态大模型的图像质量评估对低层退化不敏感。本文提出IQA-T1，在推理时自动调用分析工具生成噪声残差图、梯度统计等结构化视觉证据，逐步整合到推理中。实验证明该方法提升了IQA的准确性和可解释性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.12820v1",
+      "source": "arxiv",
+      "title": "AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning",
+      "abstract": "Omni-modal video captioning is not merely combining visual captioning with audio transcription: a useful caption must describe how visual actions, speech, music, and sound effects co-evolve. Existing large multimodal models often fail at this relational step, treating audio and visual streams as loosely coupled observations, relying on automatic speech recognition, and under-specifying non-speech sounds and their links to visual events. We present AVSCap, a framework for audio-visual captioning centered on explicit cross-modal event binding. First, we construct AVSCap-130K, a tri-modal training corpus generated by a decoupled-then-fused pipeline that anchors visual and acoustic evidence before composing grounded omni-modal captions. Second, we train AVSCap-7B, a 7B captioner with a two-stage strategy: supervised fine-tuning establishes baseline capabilities, while sample-efficient reinforcement learning uses hybrid rewards to optimize acoustic completeness and audio-visual synergy. Our scaling analysis shows that reinforcement learning brings larger gains than increasing SFT data. Third, we introduce AVSCapBench, a benchmark that decomposes captions into visual, audio, and synergy events and evaluates them with fine-grained event recall. Experiments on AVSCapBench and external benchmarks show that AVSCap-7B improves non-speech audio coverage and cross-modal binding, delivering the best overall performance among evaluated open-source models.",
+      "authors": [
+        "Yanghai Wang",
+        "Jiahao Wang",
+        "Jiafu Tang",
+        "Yuanxing Zhang",
+        "Zhe Cao",
+        "Hanyan Bian",
+        "Zijie Zhang",
+        "Weiliang Luo",
+        "Zhiyu Pan",
+        "Zixuan Dong",
+        "Jiaheng Liu",
+        "Zhaoxiang Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-14T14:34:19+00:00",
+      "link": "https://arxiv.org/pdf/2607.12820v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Addresses multimodal reasoning for audio-visual video captioning with cross-modal event binding",
+      "llm_evidence_cn": "通过跨模态事件绑定解决音视频字幕中的多模态推理",
+      "llm_evidence": "通过跨模态事件绑定解决音视频字幕中的多模态推理",
+      "canonical_evidence": "通过跨模态事件绑定解决音视频字幕中的多模态推理",
+      "llm_tldr_en": "AVSCap focuses on audio-visual synergy for omni-modal video captioning by explicitly binding cross-modal events, improving relational reasoning.",
+      "llm_tldr_cn": "现有大模型在视频字幕中未能有效关联音频和视觉流，对非语音声音及其与视觉事件的联系描述不足。本文提出AVSCap框架，专注于显式跨模态事件绑定。构建了AVSCap-130K训练语料库，采用解耦后融合的管道生成接地多模态字幕。实验表明该方法显著提升音视频相关性描述，增强多模态推理能力。",
+      "llm_tldr": "现有大模型在视频字幕中未能有效关联音频和视觉流，对非语音声音及其与视觉事件的联系描述不足。本文提出AVSCap框架，专注于显式跨模态事件绑定。构建了AVSCap-130K训练语料库，采用解耦后融合的管道生成接地多模态字幕。实验表明该方法显著提升音视频相关性描述，增强多模态推理能力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.12764v1",
+      "source": "arxiv",
+      "title": "EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval",
+      "abstract": "Retrieval-augmented generation (RAG) has emerged as a critical paradigm for grounding Multimodal Large Language Models (MLLMs) in external knowledge. Recent GraphRAG methods introduce structured entity-relation graphs to improve retrieval and reasoning. However, they remain limited by treating knowledge graphs as static data structures built offline and queried in a single pass. This static paradigm misaligns with the interactive, iterative nature of knowledge-intensive reasoning, creating three bottlenecks: (i) text-centric fragmentation that impedes cross-modal reasoning, (ii) frozen structures unable to incorporate new evidence or correct errors, and (iii) rigid single-pass retrieval without adaptive refinement. To overcome these limitations, we introduce EvoGraph-R1, a self-evolving GraphRAG framework that reconceptualizes knowledge graphs as dynamic environments shaped through agent interactions. We formulate retrieval as a Markov Decision Process (MDP) where the agent observes the graph state and executes actions to query (GraphRetrieve), expand (WebSearch), refine (GraphEdit), or terminate (Answer) the reasoning. These actions reshape the hypergraph structure and generate feedback signals that guide subsequent evolution. Through this closed loop, the hypergraph evolves by integrating new evidence, correcting errors, and refining structure to support multi-hop reasoning. Experiments on multimodal VQA and text QA benchmarks demonstrate substantial improvements over existing RAG baselines in accuracy, coverage, and traceability, establishing self-evolving knowledge graphs as a fundamental paradigm across modalities.",
+      "authors": [
+        "Jiashi Lin",
+        "Changhong Jiang",
+        "Xiangru Lin",
+        "Ruifei Zhang",
+        "Xinyi Zhu",
+        "Jiyao Liu",
+        "Cheng Tang",
+        "Ye Du",
+        "Shujian Gao",
+        "Junzhi Ning",
+        "Lihao Liu",
+        "Ziyan Huang",
+        "Tianbin Li",
+        "Jin Ye",
+        "Junjun He"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-14T13:34:07+00:00",
+      "link": "https://arxiv.org/pdf/2607.12764v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal knowledge hypergraph for MLLM retrieval and reasoning",
+      "llm_evidence_cn": "多模态知识超图增强MLLM检索与推理",
+      "llm_evidence": "多模态知识超图增强MLLM检索与推理",
+      "canonical_evidence": "多模态知识超图增强MLLM检索与推理",
+      "llm_tldr_en": "EvoGraph-R1 introduces self-evolving multimodal knowledge hypergraphs that adapt during inference, improving cross-modal reasoning for MLLMs.",
+      "llm_tldr_cn": "现有图检索方法依赖静态知识库，无法适应多模态推理需求。EvoGraph-R1提出自演化多模态知识超图，在线更新结构和证据，实现迭代推理。实验表明在跨模态推理任务上提升了准确率，为多模态推理提供了动态知识支持。",
+      "llm_tldr": "现有图检索方法依赖静态知识库，无法适应多模态推理需求。EvoGraph-R1提出自演化多模态知识超图，在线更新结构和证据，实现迭代推理。实验表明在跨模态推理任务上提升了准确率，为多模态推理提供了动态知识支持。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.12982v1",
+      "source": "arxiv",
+      "title": "FormalAnalyticGeo: A Neural-Symbolic Based Framework for Multimodal Analytic Geometry Problem Generation",
+      "abstract": "Math reasoning has achieved significant progress with the rapid advancement of Multimodal Large Language Models (MLLMs), however analytic geometry remains largely underexplored, primarily due to the scarcity of annotated samples. Existing diagram generation approaches struggle with analytic geometry: template methods cannot handle constraint-driven layouts, and generative models lack the geometric precision to render annotated conic curves correctly. We present FormalAnalyticGeo, a scalable framework for fully automatic generation of multimodal analytic geometry problems. Leveraging the rigor of formal languages, we design the framework around CDL (Condition Description Language), a formal intermediate representation that bridges free-form problem text with precise diagram rendering via a Signed Distance Field (SDF) engine. The framework employs four specialized LLM components in sequence: a Generator that produces diverse analytic geometry problems, a Formalizer that converts each problem into CDL for SDF-based rendering, a Measurer that extracts ground-truth answers through vision-based measurement on the rendered diagrams, and a Quality Verifier that checks outputs at three stages. Structured feedback from the Quality Verifier drives automatic retry, forming a closed loop that eliminates any need for human annotation. Applying FormalAnalyticGeo at scale yields AnalyticGeo7K, a dataset of over 7K verified multimodal problems, each with aligned text, diagram, formal annotation, and ground truth.Experiments show that the generated problems achieve a median ground-truth relative error of 0.70\\%, with 82.3\\% of answers falling within 5\\% of the exact symbolic solution. Our framework and dataset will be publicly released.",
+      "authors": [
+        "Ruoran Xu",
+        "Wending Gao",
+        "Qiufeng Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA",
+        "cs.SC"
+      ],
+      "published": "2026-07-14T17:24:57+00:00",
+      "link": "https://arxiv.org/pdf/2607.12982v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal analytic geometry problem generation framework",
+      "llm_evidence_cn": "多模态解析几何问题生成框架",
+      "llm_evidence": "多模态解析几何问题生成框架",
+      "canonical_evidence": "多模态解析几何问题生成框架",
+      "llm_tldr_en": "Proposes FormalAnalyticGeo, a neural-symbolic framework leveraging formal language CDL for scalable multimodal analytic geometry problem generation, addressing scarcity of annotated samples.",
+      "llm_tldr_cn": "针对多模态解析几何问题缺乏标注样本的难点，提出FormalAnalyticGeo框架，利用形式语言CDL作为中间表示，实现全自动、可扩展的多模态几何问题生成。该方法结合神经符号方法，能够高精度生成带约束的圆锥曲线图形和问题。实验表明该框架可有效扩充训练数据，提升MLLM在解析几何上的推理能力。",
+      "llm_tldr": "针对多模态解析几何问题缺乏标注样本的难点，提出FormalAnalyticGeo框架，利用形式语言CDL作为中间表示，实现全自动、可扩展的多模态几何问题生成。该方法结合神经符号方法，能够高精度生成带约束的圆锥曲线图形和问题。实验表明该框架可有效扩充训练数据，提升MLLM在解析几何上的推理能力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
