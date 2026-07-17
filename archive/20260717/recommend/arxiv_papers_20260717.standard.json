@@ -1,0 +1,296 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-17T19:46:31.740770+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2607.14333v1",
+      "source": "arxiv",
+      "title": "SD-MAR: Multi-image Analytical Reasoning via Synthetic Data and Reinforcement Learning",
+      "abstract": "Vision Language Models (VLMs) demonstrate strong perceptual abilities but remain limited in tasks requiring analytical reasoning across multiple visual states, such as multi-image comparison, change detection, and multi-step visual inference. These capabilities are critical for real-world multimodal applications where reasoning must be grounded in systematic differences between visual contexts. However, existing benchmarks rarely require both explicit visual comparison and analytical reasoning, leaving this capability underexplored. To address this gap, we introduce SD-MAR (Synthetic Data for Multi-image Analytical Reasoning), a framework for training and evaluating VLMs on multi-image analytical reasoning. SD-MAR constructs paired visual scenarios through controlled perturbations and generates reasoning tasks spanning semantic change attribution and quantitative comparison. We further train VLMs using GRPO-lite with Backward Discounted Allocation (BDA), a reinforcement learning approach that removes KL regularization to encourage stronger policy optimization while allocating greater credit to the later reasoning steps where analytical conclusions are formed. Experiments on Qwen2.5-VL-7B and InternVL3-8B show that GRPO-lite fine-tuning on SD-MAR improves in-domain accuracy by up to 36.95%, with Qwen2.5-VL-7B outperforming GPT-4.1 on the SD-MAR benchmark. Importantly, out-of-domain generalization is preserved or improved: performance remains within 1% on MME, MMMU-Pro, and MathVista, while improving by up to 4% on MMBench. LLM-as-judge evaluation further demonstrates consistent improvements in logical coherence and explanation quality across both models.",
+      "authors": [
+        "Shiyu Yuan",
+        "Sourav Sanjukta Bhabesh",
+        "Zhe Wang",
+        "Dmitriy Bespalov",
+        "Wesley Rose",
+        "Huzefa Rangwala"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-07-15T19:55:01+00:00",
+      "link": "https://arxiv.org/pdf/2607.14333v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Multi-image analytical reasoning for VLMs",
+      "llm_evidence_cn": "多图像分析推理",
+      "llm_evidence": "多图像分析推理",
+      "canonical_evidence": "多图像分析推理",
+      "llm_tldr_en": "SD-MAR uses synthetic data and RL to train VLMs for multi-image analytical reasoning, addressing limitations in visual comparison and multi-step inference.",
+      "llm_tldr_cn": "现有多模态模型在需要跨多个图像进行对比和推理的任务中表现不足。SD-MAR通过合成数据构建训练集，并利用强化学习优化模型，使其能够进行多图像分析推理。实验表明，该方法显著提升了模型在多图像比较、变化检测等任务上的能力，为多模态推理提供了新范式。",
+      "llm_tldr": "现有多模态模型在需要跨多个图像进行对比和推理的任务中表现不足。SD-MAR通过合成数据构建训练集，并利用强化学习优化模型，使其能够进行多图像分析推理。实验表明，该方法显著提升了模型在多图像比较、变化检测等任务上的能力，为多模态推理提供了新范式。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.14658v1",
+      "source": "arxiv",
+      "title": "TopoAgent: A Self-Evolving Topological Agent for Multimodal Scientific Reasoning",
+      "abstract": "While Multimodal Large Language Models (MLLMs) excel in general tasks, rigorous scientific reasoning remains challenging due to the limitations of monolithic, linear planning. Such sequential designs often suffer from visual-semantic misalignment, long-context hallucinations, and brittle execution under fixed task granularity. We propose TopoAgent, a self-evolving topological framework that replaces linear trajectories with dynamic, state-isolated graph evolution. TopoAgent first employs a front-end decomposer to fracture complex queries into visually-grounded atoms. These atoms are organized into a Directed Acyclic Graph (DAG) based on their dependencies, enabling strict context isolation to shield the reasoning engine from irrelevant historical noise. Furthermore, we introduce adaptive atomic fission, which dynamically splits bottleneck nodes into finer-grained sub-atoms at runtime when tool capability boundaries are exceeded. Extensive experiments across mathematics, physics, and chemistry benchmarks demonstrate that TopoAgent significantly outperforms state-of-the-art linear agent frameworks, providing a robust, noise-resistant, and self-correcting paradigm for autonomous scientific reasoning.",
+      "authors": [
+        "Mingze Xu",
+        "Yinghui Li",
+        "Jiayi Kuang",
+        "Zhanhui Kang",
+        "Di Yin",
+        "Ying Shen",
+        "Xing Sun",
+        "Yuxing Han"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-16T07:22:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.14658v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Self-evolving topological agent for multimodal scientific reasoning",
+      "llm_evidence_cn": "面向多模态科学推理的自演化拓扑智能体",
+      "llm_evidence": "面向多模态科学推理的自演化拓扑智能体",
+      "canonical_evidence": "面向多模态科学推理的自演化拓扑智能体",
+      "llm_tldr_en": "Proposes TopoAgent, a self-evolving topological framework that replaces linear planning with DAG-based decomposition for multi-step multimodal scientific reasoning, improving robustness against hallucinations.",
+      "llm_tldr_cn": "多模态大语言模型在科学推理中采用线性规划，容易导致视觉语义错位、长上下文幻觉和固定粒度下脆弱的执行。本文提出TopoAgent，一个自演化拓扑框架，通过前端分解器将复杂科学查询碎裂为视觉原子，基于依赖关系组织成有向无环图，并在图上演化推理路径，实现严格上下文隔离。在多个科学推理基准上，TopoAgent有效减少了幻觉发生频率，提升了多步推理的准确性和鲁棒性，为科学推理提供了一种灵活且可扩展的解决方案。",
+      "llm_tldr": "多模态大语言模型在科学推理中采用线性规划，容易导致视觉语义错位、长上下文幻觉和固定粒度下脆弱的执行。本文提出TopoAgent，一个自演化拓扑框架，通过前端分解器将复杂科学查询碎裂为视觉原子，基于依赖关系组织成有向无环图，并在图上演化推理路径，实现严格上下文隔离。在多个科学推理基准上，TopoAgent有效减少了幻觉发生频率，提升了多步推理的准确性和鲁棒性，为科学推理提供了一种灵活且可扩展的解决方案。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.15054v1",
+      "source": "arxiv",
+      "title": "Beyond Single Expert: Harmonizing Diverse Visual Priors in MLLMs for Spatial Understanding",
+      "abstract": "Multimodal Large Language Models (MLLMs) have demonstrated substantial promise in spatial understanding. Existing works typically incorporate prior knowledge extracted from a pre-trained foundation model to further enhance the spatial awareness of MLLMs. In this paper, we first reveal that when integrating diverse foundation models into MLLMs, different models provide complementary spatial priors that benefit different tasks. Motivated by this, we propose $\\textbf{ViPS}$, a novel multi-model prior framework designed to fully unleash the potential of incorporating multiple $\\textbf{Vi}$sual $\\textbf{P}$riors from diverse models into MLLMs for $\\textbf{S}$patial understanding. Specifically, ViPS introduces an Efficient Prior Proxy to generate multiple foundational priors with minimal inference overhead, and a Dynamic Prior Fusion mechanism to achieve harmonious and context-aware prior fusion and injection from the prior proxies. Extensive experiments demonstrate that ViPS successfully harmonizes diverse visual priors, establishing new state-of-the-art performance across multiple complex spatial reasoning and 3D spatial understanding benchmarks. Project page: https://visual-ai.github.io/vips",
+      "authors": [
+        "Xiao Lin",
+        "Xiaohu Huang",
+        "Kai Han"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-16T14:31:16+00:00",
+      "link": "https://arxiv.org/pdf/2607.15054v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "improves spatial understanding in MLLMs by harmonizing diverse visual priors",
+      "llm_evidence_cn": "通过调和多样视觉先验改进MLLM的空间理解",
+      "llm_evidence": "通过调和多样视觉先验改进MLLM的空间理解",
+      "canonical_evidence": "通过调和多样视觉先验改进MLLM的空间理解",
+      "llm_tldr_en": "Proposes ViPS, a multi-model prior framework that integrates diverse visual priors from multiple foundation models to enhance MLLM spatial understanding.",
+      "llm_tldr_cn": "本文提出ViPS框架，将多个预训练基础模型的多样视觉先验集成到多模态大语言模型中，以增强空间理解。实验发现不同模型提供互补的空间先验，ViPS通过高效先验代理和融合机制充分释放了多先验的潜力，在空间推理任务上取得了提升。",
+      "llm_tldr": "本文提出ViPS框架，将多个预训练基础模型的多样视觉先验集成到多模态大语言模型中，以增强空间理解。实验发现不同模型提供互补的空间先验，ViPS通过高效先验代理和融合机制充分释放了多先验的潜力，在空间推理任务上取得了提升。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.14497v1",
+      "source": "arxiv",
+      "title": "Reinforcing Egocentric Spatial Perception in Multimodal Large Language Models via Ego Scene Augmentation",
+      "abstract": "Egocentric Visual Question Answering (VQA) has attracted widespread attention as an important task for enabling Multimodal Large Language Models (MLLMs) to interact with the real world. However, existing MLLMs struggle to perform effective spatial reasoning in complex egocentric scenes due to their limited spatial perception capabilities. To this end, we introduce Ego Scene Augmentation (ESA), an egocentric spatial perception framework, which actively enhances the spatial perception capabilities from the egocentric perspective, powered by the proposed Ego-element Graph. Our core insight is leveraging the Ego-element Graph as an intermediary representation to augment the egocentric spatial perception of MLLMs via visual foundational models. Specifically, we 1) construct the Ego-element Graph, which encapsulates and integrates egocentric spatial features enabled by visual foundational models; 2) enhance the spatial perception capabilities of MLLMs via the Ego-element Graph for ego-perspective scenes. Our proposed ESA framework presents significant performance improvement on the EgoTextVQA benchmark. We achieve an 8.14% gain on the indoor setting and an 8.72% gain on the outdoor setting. Furthermore, our ESA shows the most impressive performance improvement in the shopping subset of the indoor setting. The project code is publicly available.",
+      "authors": [
+        "Chi Kit Wong",
+        "Ye Pan",
+        "Yuanhuiyi Lyu",
+        "Xu Zheng",
+        "Zidong Cao",
+        "Lutao Jiang",
+        "Zixin Zhang",
+        "Huiyu Zhou",
+        "Xuming Hu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-16T02:22:26+00:00",
+      "link": "https://arxiv.org/pdf/2607.14497v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "egocentric spatial perception for visual QA",
+      "llm_evidence_cn": "用于视觉问答的自我中心空间感知",
+      "llm_evidence": "用于视觉问答的自我中心空间感知",
+      "canonical_evidence": "用于视觉问答的自我中心空间感知",
+      "llm_tldr_en": "ESA enhances MLLM egocentric spatial perception via Ego-element Graph and visual augmentation, improving spatial reasoning in complex egocentric scenes.",
+      "llm_tldr_cn": "针对MLLM在自我中心场景中空间感知不足的问题，提出Ego Scene Augmentation（ESA），利用Ego-element图作为中介表示，通过视觉增强提升空间推理能力，在自我中心VQA任务上取得显著改进。",
+      "llm_tldr": "针对MLLM在自我中心场景中空间感知不足的问题，提出Ego Scene Augmentation（ESA），利用Ego-element图作为中介表示，通过视觉增强提升空间推理能力，在自我中心VQA任务上取得显著改进。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.15241v1",
+      "source": "arxiv",
+      "title": "Beyond the Leaderboard: Design Lessons for Trustworthy Multimodal VQA",
+      "abstract": "Healthcare multimodal AI must combine visual and textual evidence while remaining reliable and interpretable. Using MediaEval Medico 2025 as a retrospective GI endoscopy case study, we analyze design choices across nine documented systems for question answering and explanation quality. Parameter-efficient adaptation of pretrained backbones provides strong challenge performance, but answer-level gains do not consistently translate into faithful and complete clinical reasoning. Methods enforcing structured reasoning and explicit grounding show more reliable behavior across heterogeneous question types, although the evidence is correlational rather than ablation-based. These results motivate evaluation beyond lexical overlap, standardized evidence-linked explanations, leakage-aware data governance, and lightweight robustness and calibration checks. The findings support trustworthy multimodal healthcare AI based on data fusion, explainability, and resilient evaluation.",
+      "authors": [
+        "Sushant Gautam",
+        "Vajira Thambawita",
+        "Michael A. Riegler",
+        "Pål Halvorsen",
+        "Steven A. Hicks"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-07-16T17:38:19+00:00",
+      "link": "https://arxiv.org/pdf/2607.15241v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "analyzes multimodal VQA systems for trustworthy reasoning",
+      "llm_evidence_cn": "分析多模态VQA系统的可信推理",
+      "llm_evidence": "分析多模态VQA系统的可信推理",
+      "canonical_evidence": "分析多模态VQA系统的可信推理",
+      "llm_tldr_en": "Retrospective analysis of nine multimodal VQA systems for healthcare, highlighting that structured reasoning and explicit grounding improve faithfulness.",
+      "llm_tldr_cn": "本文以MediaEval Medico 2025为案例，回顾分析九个多模态VQA系统的设计选择。发现参数高效适配虽在排行榜上表现强劲，但答案级增益并未一致转化为忠实完整的临床推理。强制结构化推理和显式接地的方法在不同问题类型上表现更可靠。结果鼓励超越词汇重叠的评估和标准化证据链接。",
+      "llm_tldr": "本文以MediaEval Medico 2025为案例，回顾分析九个多模态VQA系统的设计选择。发现参数高效适配虽在排行榜上表现强劲，但答案级增益并未一致转化为忠实完整的临床推理。强制结构化推理和显式接地的方法在不同问题类型上表现更可靠。结果鼓励超越词汇重叠的评估和标准化证据链接。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.14256v1",
+      "source": "arxiv",
+      "title": "Automatic Hard Example Synthesis with Multi-Level Agentic Data Curation",
+      "abstract": "Multimodal Large Language Models (MLLMs) are increasingly deployed for nuanced content safety and moderation tasks, yet they remain vulnerable to adversarial attacks and out-of-distribution edge cases. Traditional active learning and manual annotation fail to scale against the complexity and volume of novel multimodal threats. In this paper, we propose an automated, agentic red-teaming framework that systematically synthesizes difficult examples using an iterative strategy that proposes novel hypotheses as well as mutating on past attempts. Leveraging a multi-agent architecture that consists of a high-reasoning Architect agent, an advanced image generator, and a multi-level verification committee of LLM raters, our system autonomously uncovers boundary-pushing violations and ambiguous policy edge cases without any human intervention. By employing these carefully synthesized adversarial examples as in-context demonstrations via test-time Retrieval, we substantially improve the target model's robustness, reducing the False Negative Rate (FNR) from 41.2% to 24.5% in a public image safety benchmark without relying on any human labeling.",
+      "authors": [
+        "Genglin Liu",
+        "Muye Zhang",
+        "Krishnamurthy Viswanathan",
+        "Nichole J. Hansen",
+        "Blaž Bratanič",
+        "Nathan L Clement",
+        "Shalini Ghosh",
+        "Ariel Fuxman"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-07-15T18:13:05+00:00",
+      "link": "https://arxiv.org/pdf/2607.14256v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal reasoning for hard example synthesis",
+      "llm_evidence_cn": "多模态推理用于难例合成",
+      "llm_evidence": "多模态推理用于难例合成",
+      "canonical_evidence": "多模态推理用于难例合成",
+      "llm_tldr_en": "An automated agentic red-teaming framework synthesizes hard examples for MLLMs using multi-agent architecture with high-reasoning Architect agent.",
+      "llm_tldr_cn": "针对多模态大模型在内容安全中的脆弱性，提出自动化对抗框架，利用多智能体架构（含高级推理规划者）迭代合成难例，提升边界发现能力。",
+      "llm_tldr": "针对多模态大模型在内容安全中的脆弱性，提出自动化对抗框架，利用多智能体架构（含高级推理规划者）迭代合成难例，提升边界发现能力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.14557v1",
+      "source": "arxiv",
+      "title": "Seeing the End at Step Zero: Accelerating Diffusion MLLMs via MLP Sparsity-Aware Truncation",
+      "abstract": "Diffusion Multimodal Large Language Models (DMLLMs) are highly effective for multimodal reasoning, yet their inference efficiency is significantly hindered by fixed-length generation constraints. Since the actual output length is unknown, output sequences are padded to a predefined maximum length, resulting in substantial redundant computation over unnecessary [EOS] tokens. In this work, we discover that DMLLMs implicitly reveal their valid semantic boundary at the very first denoising step through a distinct shift in MLP activation sparsity. Leveraging this observation, we propose Seer, a training-free framework that detects this boundary using a Signal-to-Noise Ratio (SNR)-based criterion and performs one-shot truncation of the redundant suffix for all subsequent computations. To preserve these theoretical gains during batched serving, Seer incorporates a hybrid execution strategy that maximizes throughput while seamlessly accommodating dynamic sequence lengths. Experimental results demonstrate that Seer effectively eliminates padding waste, accelerating throughput by up to $\\sim$31$\\times$. Across 9 benchmarks, Seer robustly maintains overall performance and even improves accuracy on complex visual tasks by mitigating noise leakage (e.g., DocVQA score increases from 63.52 to 63.66), offering a highly efficient, plug-and-play solution for DMLLM acceleration.",
+      "authors": [
+        "Qicheng Zhao",
+        "Qi Sun",
+        "Zheyu Yan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-16T04:37:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.14557v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Accelerating diffusion MLLMs for multimodal reasoning",
+      "llm_evidence_cn": "加速扩散多模态大模型的推理",
+      "llm_evidence": "加速扩散多模态大模型的推理",
+      "canonical_evidence": "加速扩散多模态大模型的推理",
+      "llm_tldr_en": "Seer accelerates diffusion multimodal LLMs by detecting semantic boundaries from MLP sparsity and truncating redundant tokens, improving inference efficiency.",
+      "llm_tldr_cn": "扩散多模态大语言模型推理时因固定长度生成导致大量冗余计算。本文发现模型在初始去噪步骤通过MLP激活稀疏性隐式揭示语义边界，据此提出Seer框架，利用信噪比准则检测边界并一步截断，有效减少计算开销。实验表明方法在保持质量的同时大幅提升速度。",
+      "llm_tldr": "扩散多模态大语言模型推理时因固定长度生成导致大量冗余计算。本文发现模型在初始去噪步骤通过MLP激活稀疏性隐式揭示语义边界，据此提出Seer框架，利用信噪比准则检测边界并一步截断，有效减少计算开销。实验表明方法在保持质量的同时大幅提升速度。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
