@@ -1,0 +1,139 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-18T20:40:57.626772+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.10494v1",
+      "source": "arxiv",
+      "title": "Question Answering for Diagram-Rich Technical Meeting Videos",
+      "abstract": "Software engineering increasingly relies on asynchronous communication artifacts, including recorded meetings where stakeholders discuss concerns, rationale, and decisions. These meetings often include diagram-based representations of requirements, system behavior, component interactions, and trace dependencies. Accessing knowledge from these meetings is challenging because recordings are long and relevant evidence is distributed across speech, slides, and technical diagrams. This paper reports our industrial experience developing and evaluating LMVQA, an LLM-based multimodal question-answering system for technical meeting videos. Developed in collaboration with engineers at Ciena, LMVQA supports the understanding of requirements and design intent by grounding answers in audio and visual evidence, with explicit handling of diagram-rich content such as requirements and UML diagrams. It processes each video once to build a reusable time-stamped evidence corpus for grounded question answering. Across a Ciena dataset and a public dataset, we show that LMVQA significantly improves answer accuracy compared to a state-of-the-art baseline, from 31% to 94% on the Ciena dataset and from 21% to 88% on the public dataset, with larger gains on diagram-rich videos. We further show that, after one-time indexing, LMVQA reduces average response time from 81.3s to 3.3s on Ciena and from 98.4s to 9.2s on the public dataset, while lowering average token-based LLM API cost by about 75%. Finally, our interviews with three domain experts show that engineers particularly value LMVQA for locating software-engineering-relevant information, revisiting rationale, and tracing answers to specific video segments.",
+      "authors": [
+        "Zhuoran Xu",
+        "Jia Li",
+        "Dayuan Tan",
+        "Mark Cole",
+        "Ish Ashraf",
+        "Sandeep Puri",
+        "Mehrdad Sabetzadeh",
+        "Shiva Nejati"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-07-11T21:58:16+00:00",
+      "link": "https://arxiv.org/pdf/2607.10494v1",
+      "tags": [
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multimodal QA system for technical meeting videos involving speech slides and diagrams",
+      "llm_evidence_cn": "针对技术会议视频的多模态问答系统，融合语音、幻灯片和图表",
+      "llm_evidence": "针对技术会议视频的多模态问答系统，融合语音、幻灯片和图表",
+      "canonical_evidence": "针对技术会议视频的多模态问答系统，融合语音、幻灯片和图表",
+      "llm_tldr_en": "LMVQA is an LLM-based multimodal QA system that grounds answers across speech, slides, and diagrams in technical meeting videos.",
+      "llm_tldr_cn": "软件工程会议视频中知识分布在不同媒体（语音、幻灯片、图表），传统方法难以综合理解。LMVQA利用大语言模型构建多模态问答系统，通过跨模态对齐和推理从会议视频中提取答案。工业评估表明，LMVQA能有效支持需求理解与设计意图追溯，展示了多模态推理在真实场景的价值。",
+      "llm_tldr": "软件工程会议视频中知识分布在不同媒体（语音、幻灯片、图表），传统方法难以综合理解。LMVQA利用大语言模型构建多模态问答系统，通过跨模态对齐和推理从会议视频中提取答案。工业评估表明，LMVQA能有效支持需求理解与设计意图追溯，展示了多模态推理在真实场景的价值。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.14682v1",
+      "source": "arxiv",
+      "title": "Stop Thinking, Start Looking: Efficient Post-Training for Multimodal Document Question Answering via Reasoning-Free Alignment",
+      "abstract": "Efficient multimodal document question answering with explicit visual grounding, locating the precise document region that supports each answer remains an open challenge. Current approaches bifurcate into Supervised Fine-Tuning (SFT), which requires large annotated datasets and reaches optimization plateaus, and reasoning-centric Reinforcement Learning (RL), which depends on verbose intermediate traces that inflate inference token cost without clear benefit. We introduce Perception-RFT, a training framework that applies Group Relative Policy Optimization (GRPO) to multimodal document QA, bypassing intermediate reasoning tokens to directly align visual features with structured grounding outputs. To rigorously evaluate the necessity of reasoning, we construct a reasoning variant under identical reward settings. We find that reasoning-enabled models suppress their reasoning traces during training, converging to direct perception-based policies at the 4B parameter scale, reducing per-query inference token length by more than 60%, while reasoning-enabled RL underperforms perception-only training. Through a fine-grained analysis of Qwen3-VL-4B optimization dynamics, we confirm that SFT saturation and cold-start RL instability established in text-domain post-training extend to multimodal, and identify a previously uncharacterized Grounding Divergence: a selective trade-off between semantic robustness and geometric precision on two out of distribution (OOD) benchmarks (4,828 samples) under joint RL optimization. We further show that an early SFT$\\rightarrow$RL transition achieves comparable precision with 65% less training data.",
+      "authors": [
+        "Harikrishnan P M",
+        "Goutham Vignesh",
+        "Ganesh Parab",
+        "Saisubramaniam Gopalakrishnan",
+        "Vishal Vaddina",
+        "Varun V",
+        "Rohit Agrawal"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-16T07:43:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.14682v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multimodal document QA with visual grounding",
+      "llm_evidence_cn": "多模态文档问答和视觉定位",
+      "llm_evidence": "多模态文档问答和视觉定位",
+      "canonical_evidence": "多模态文档问答和视觉定位",
+      "llm_tldr_en": "Proposes Perception-RFT using GRPO for multimodal document QA, bypassing intermediate reasoning tokens to align visual features directly with grounding outputs, improving efficiency.",
+      "llm_tldr_cn": "该论文针对多模态文档问答中显式视觉定位的挑战，提出感知-RFT框架，利用GRPO算法绕过中间推理令牌，直接将视觉特征与结构化定位输出对齐。实验表明该方法在无需推理的情况下实现了高效准确的视觉定位，降低了推理成本。",
+      "llm_tldr": "该论文针对多模态文档问答中显式视觉定位的挑战，提出感知-RFT框架，利用GRPO算法绕过中间推理令牌，直接将视觉特征与结构化定位输出对齐。实验表明该方法在无需推理的情况下实现了高效准确的视觉定位，降低了推理成本。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.12686v1",
+      "source": "arxiv",
+      "title": "Segregate, Refine, Integrate: Decomposing Multimodal Fusion for Sentiment Analysis",
+      "abstract": "Multimodal fusion must simultaneously refine modality-specific signals and model cross-modal interactions; two competing objectives typically entangled within the same operation. We propose \\textbf{SeRIn} (\\textbf{Se}gregate, \\textbf{R}efine, \\textbf{In}tegrate), a multimodal LM fusion scheme that enforces this separation as an architectural prior. Modality-specific representations evolve along isolated pathways, each refined against its respective encoder context, while a dedicated cross-modal pathway accumulates their joint evolution without contaminating unimodal streams. Full cross-modal interaction is deferred to a final prediction step - ablations confirm that structured interactions, not added capacity, drive the gains; gate analysis under visual corruption reveals emergent modality reweighting without explicit supervision. SeRIn achieves state-of-the-art results on CH-SIMS and CMU-MOSEI, improving all metrics on both benchmarks.",
+      "authors": [
+        "Alexios Filippakopoulos",
+        "Elias Kallioras",
+        "Nikolaos Xiros",
+        "Efthymios Georgiou",
+        "Alexandros Potamianos"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-14T12:13:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.12686v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Multimodal fusion for sentiment analysis",
+      "llm_evidence_cn": "多模态融合用于情感分析",
+      "llm_evidence": "多模态融合用于情感分析",
+      "canonical_evidence": "多模态融合用于情感分析",
+      "llm_tldr_en": "Proposes SeRIn, a multimodal LM fusion scheme that separates modality-specific refinement from cross-modal interaction, improving sentiment analysis.",
+      "llm_tldr_cn": "现有多模态融合方法将模态特定信号精炼和跨模态交互纠缠在同一操作中，难以平衡。本文提出SeRIn方案，通过架构先验强制分离两者：模态特定表示沿隔离路径演进，另设专用跨模态路径累积联合演变，最终在预测步骤进行完整交互。实验表明，结构化互动而非额外容量带来性能提升，门控分析验证了分离的有效性。",
+      "llm_tldr": "现有多模态融合方法将模态特定信号精炼和跨模态交互纠缠在同一操作中，难以平衡。本文提出SeRIn方案，通过架构先验强制分离两者：模态特定表示沿隔离路径演进，另设专用跨模态路径累积联合演变，最终在预测步骤进行完整交互。实验表明，结构化互动而非额外容量带来性能提升，门控分析验证了分离的有效性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
