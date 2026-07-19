@@ -6,29 +6,35 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-18
-- 运行时间：2026-07-18 20:43:01 UTC
+- 最新运行日期：2026-07-19
+- 运行时间：2026-07-19 19:51:23 UTC
 - 运行状态：成功
-- 本次总论文数：3
+- 本次总论文数：5
 - 精读区：2
-- 速读区：1
+- 速读区：3
 
 ### 今日简报（AI）
-今日精读2篇高价值论文，速读1篇，聚焦多模态问答与情感分析。最值得关注方向：技术会议视频中的图表问答，以及无需推理对齐的文档问答效率提升方案。建议读者优先精读这两篇，并留意多模态融合在情感分析中的分解思路。
-- 详情：[/202607/18/README](/202607/18/README)
+今日精读两篇高分论文，速读三篇，聚焦多模态问答、视觉推理及机器人学习。最值得关注《Omni-Decision》的渐进证据状态系统与《Hierarchical Denoising》的层次去噪法，两者在多模态推理上突破显著。建议优先精读这两篇论文，其技术思路对提升模型稳固性启发性强。
+- 详情：[/202607/19/README](/202607/19/README)
 
 ### 精读区论文标签
-1. [Question Answering for Diagram-Rich Technical Meeting Videos](/202607/18/2607.10494v1-question-answering-for-diagram-rich-technical-meeting-videos)  
+1. [Omni-Decision: A Progressive Evidence-State Agent System for Omni-Modal QA](/202607/19/2607.11433v1-omni-decision-a-progressive-evidence-state-agent-system-for-omni-modal-qa)  
    标签：评分：8.0/10、query:mm-reasoning
-   evidence：针对技术会议视频的多模态问答系统，融合语音、幻灯片和图表
-2. [Stop Thinking, Start Looking: Efficient Post-Training for Multimodal Document Question Answering via Reasoning-Free Alignment](/202607/18/2607.14682v1-stop-thinking-start-looking-efficient-post-training-for-multimodal-document-question-answering-via-reasoning-free-alignment)  
+   evidence：全模态推理用于问答的证据追踪
+2. [Hierarchical Denoising For Multi-Step Visual Reasoning](/202607/19/2607.15278v1-hierarchical-denoising-for-multi-step-visual-reasoning)  
    标签：评分：8.0/10、query:mm-reasoning
-   evidence：多模态文档问答和视觉定位
+   evidence：分层去躁用于视频生成中的多步视觉推理
 
 ### 速读区论文标签
-1. [Segregate, Refine, Integrate: Decomposing Multimodal Fusion for Sentiment Analysis](/202607/18/2607.12686v1-segregate-refine-integrate-decomposing-multimodal-fusion-for-sentiment-analysis)  
+1. [Trust Before Fusion: QIMG-7 and Source-Aware Resolution for Polluted Multimodal RAG](/202607/19/2607.10798v1-trust-before-fusion-qimg-7-and-source-aware-resolution-for-polluted-multimodal-rag)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：多模态融合用于情感分析
+   evidence：多模态检索增强生成的污染鲁棒性
+2. [MAG: A Web-Agent Benchmark and Harness for Multimodal Action and Guide Generation](/202607/19/2607.10079v3-mag-a-web-agent-benchmark-and-harness-for-multimodal-action-and-guide-generation)  
+   标签：评分：6.0/10、query:mm-reasoning
+   evidence：网络代理的多模态动作与指南生成，涉及视觉与文本推理
+3. [Towards Predictive, Aligned, and Scalable Robot Learning](/202607/19/2607.11270v1-towards-predictive-aligned-and-scalable-robot-learning)  
+   标签：评分：6.0/10、query:mm-reasoning
+   evidence：跨模态预测推理的隐式世界-动作模型
 
 
 <div class="dpr-home-promo-card">
