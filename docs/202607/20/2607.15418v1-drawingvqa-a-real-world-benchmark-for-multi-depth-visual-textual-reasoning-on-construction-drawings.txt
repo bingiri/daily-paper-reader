@@ -1,0 +1,516 @@
+Title: DrawingVQA: A Real-World Benchmark for Multi-Depth Visual-Textual Reasoning on Construction Drawings
+
+URL Source: https://arxiv.org/pdf/2607.15418v1
+
+Published Time: Mon, 20 Jul 2026 00:17:09 GMT
+
+Number of Pages: 34
+
+Markdown Content:
+# DrawingVQA : A Real-World Benchmark for Multi-Depth Visual–Textual Reasoning on Construction Drawings 
+
+## Yoonhwa Jung ∗
+
+Louisiana State University 
+
+yoonhwa.jung@lsu.edu 
+
+## Junryu Fu ∗†
+
+Independent Researcher 
+
+junryu.fu@gmail.com 
+
+## Mani Golparvar-Fard 
+
+University of Illinois Urbana-Champaign 
+
+mgolpar@illinois.edu 
+
+## Abstract 
+
+We introduce DrawingVQA , the first benchmark designed to evaluate multimodal large language models (MLLMs) on real-world construction drawings—a core media in archi-tecture, civil, and many other engineering practices. Un-like natural images or schematic floor plans, construction drawings fuse abstract geometry, symbolic notation, tab-ular data, annotations, and domain-specific text, forming a uniquely complex visual–textual domain core to engi-neering workflows. DrawingVQA bridges this gap with 33 “Issued for Construction” drawings and 92 expertly curated question–answer pairs, spanning three reasoning depths: perceptual understanding, contextual interpreta-tion, and domain-expert reasoning. To evaluate model capabilities, we present a dual categorization framework to jointly analyze performance across seven construction-engineering and four MLLM capability dimensions– the first to explicitly map engineering workflows to AI reason-ing competencies. Evaluations of state-of-the-art MLLMs reveal a substantial gap between model and expert per-formance, particularly at higher reasoning depths. This benchmark lays a foundation for domain-specialized mul-timodal reasoning to allow for advancement on integra-tion of AI-driven understanding and real-world engineer-ing workflows. DrawingVQA is available here: https: //joonv2.github.io/DrawingVQA/ 
+
+## 1. Introduction 
+
+The rapid advancement of Multimodal Large Language Models (MLLMs) has revealed a significant milestone to-ward artificial general intelligence (AGI), demonstrating re-markable capabilities that often match or even surpass hu-man performance on perception, reasoning, and cross-modal understanding [2]. Recent multimodal benchmarks have shown that frontier models can approach or even surpass human performance in many generalist [14, 19, 27, 32], aca- 
+
+> ∗Equal contribution †Work done during graduate studies at the Univer-sity of Illinois Urbana-Champaign.
+
+demic [9, 10, 21, 35], or professional fields such as finance [9, 22], medical [1, 11, 17], and biology [8, 20]. However, deep engineering disciplines, particularly civil and construc-tion engineering, remain largely underexplored. Civil and construction engineering are among the most established yet least digitized engineering domains, where professional reasoning heavily depends on construction drawings—dense, multi-layered visual artifacts that com-bine geometric entities, annotations, tables, notes, engineer-ing symbols, and cross-sheet references to communicate design intent and engineering problems. Existing research in the domain has mostly addressed low-level perceptual tasks, such as object detection or segmentation of simple floor plans [8, 24, 34]. The few existing QA datasets for en-gineering disciplines tend to focus on academic knowledge, such as “FE exam” style questions [1, 30]. This raises a critical question: Do MLLMs that excel at academic exams possess the practical reasoning skills of industry profession-als? And more broadly, To what extent do high scores on general benchmarks translate to competence in a complex, high-stakes domain like construction? 
+
+To address this gap, we introduce DrawingVQA , the first benchmark designed to evaluate MLLMs on real-world con-struction drawings. Unlike previous datasets, DrawingVQA uses “Issued for Construction” (IFC)–grade drawings, re-flecting the standards, complexity, and semantics encoun-tered by practicing civil, structural, and construction engi-neers. The dataset challenging multi-image and interleaved text-image VQA questions comprises 33 drawings paired with 92 expertly curated question–answer pairs, reflecting the kinds of reasoning tasks engineers perform in real-world workflows. Each question is classified into three reasoning levels—easy (perceptual recognition), moderate (contextual interpretation), and difficult (expert reasoning)—capturing how humans progressively reason from perception to pro-fessional judgment. Beyond conventional accuracy metrics, DrawingVQA in-troduces a dual-categorization framework to analyze model performance jointly across seven construction-engineering dimensions (e.g., Quantity Take-Off, Design Intent, Code arXiv:2607.15418v1 [cs.AI] 16 Jul 2026 Figure 1. The Multimodal Challenges of IFC Drawings and DrawingVQA ’s Engineering-Level VQA. (A) Deconstructing IFC Drawing Complexity: Real-world “Issued for Construction” (IFC) drawings are information-dense artifacts that present unique multimodal challenges (See Section 3.2). (B) DrawingVQA VQA Examples: We present challenging question-answer pairs from DrawingVQA          
+
+> that demand industry-professional engineering reasoning, categorized by our three Reasoning Depths (indicated by stars: ★Perception,
+> ★★ Contextual, ★ ★ ★ Expert-level Knowledge and Reasoning). Each example maps to specific MLLM capabilities (e.g., OCR, Visual Perception, Knowledge, Reasoning) and Construction Engineering (CE) tasks (e.g., QTO, Design Understanding, Element Identification, Compliance). These tasks extend far beyond academic benchmarks (See Section 3.4).
+
+and Specification Compliance) and four core MLLM capa-bility dimensions (Visual Perception, Knowledge, Reason-ing, and OCR/Text Understanding). This multi-axis evalu-ation is the first to explicitly map engineering workflows to AI reasoning competencies, revealing where current models succeed, where they fail, and why. It is the first benchmarking to evaluate open-source and proprietary MLLMs on IFC drawings with engineering pro-fessional levels. We summarize our contributions as follows: 
+
+• We introduce DrawingVQA , the first VQA benchmark built on complex, real-world “Issued for Construction” (IFC) structural drawings, with carefully curated QA pairs reflecting professional reasoning depth. 
+
+• We propose a dual categorization framework that explic-itly links professional engineering workflows to core AI reasoning competencies, enabling multidimensional anal-ysis of model strengths and failures. 
+
+• We provide a comprehensive analysis of MLLMs, high-lighting a critical gap in high-level engineering reasoning and setting a new, challenging baseline for future research. 
+
+## 2. Related Work 
+
+MLLM reasoning benchmarks The evaluation of MLLMs has evolved from general-perception VQA on natural images (e.g., VQA [4], GQA [12], A-OKVQA [27]) to benchmarks testing deep, domain-specific expertise. This expert shift 
+
+requires deep disciplinary understanding, by testing college-level academic knowledge (e.g., MMMU [9], SceMQA [16]) and targeting research-level reasoning in professional fields such as medicine [1, 11, 36] and biology [8, 20]. While this trend toward deep reasoning is critical, it has not yet addressed the unique, practical reasoning required for en-gineering, where visual and textual information are deeply intertwined through symbolic diagrams, geometric and spa-tial relationships, and domain-specific conventions. 
+
+MLLM in Engineering. Existing MLLM benchmarks re-lated to engineering predominantly evaluate academic or declarative knowledge, not practical skills. For example, the Engineering category of MMMU [9] consists of college-level exam-style questions using natural images, tables, or schematic diagrams. Similarly, R-Bench [10] features graduate-level exam-style questions in engineering disci-plines. ScienceQA [21] focuses on scientific experiment questions on natural and general images (i.e., photos) with-out domain-level visual grounding. As we argue, these datasets, while valuable, do not test comprehensive mul-timodal reasoning—such as cross-and multi-view spatial understanding, detail referencing, or interpreting technical annotations—skills essential for professional engineering tasks. Closer to our domain, other benchmarks have partially addressed design-phase documents. MM-Vet [32] features VQA on simplified floor plans, analyzing OCR, spatial awareness, and math capabilities of MLLMs. DesignQA [2] performs VQA over mechanical CAD drawings along with additional PDF documents, while DrafterBench [15] intro-duces LLM-based editing on vectorized CAD data. While valuable, these datasets focus on schematic, low-density de-sign representations and fall short of evaluating the multi-modal reasoning required for Issued for Construction (IFC) drawings—documents that integrate geometric complexity, symbolic notation, tabular data, annotations, and discipline-specific text. 
+
+Construction domain benchmarks Within the AEC do-main, research has historically bypassed high-level reason-ing on IFC drawings, focusing instead on other data types. A significant body of work targets low-level perceptual tasks on schematic floor plans, such as object detection, segmen-tation, 3D reconstruction [8, 23, 24, 34] or image captioning [6, 13]. Other benchmarks address text-only question an-swering based on licensing exams or professional guidelines [1, 30]. Such approaches completely bypass the multimodal nature of engineering communication. Consequently, there remains no benchmark that captures how engineers reason across visual, textual, and spatial modalities in construction professional workflows. DrawingVQA is the first to ad-dress this gap with an expert-level VQA dataset grounded in real-world IFC drawings. Section 3.5 shows how Draw-ingVQA differ from other standard MLLM benchmarks in engineering disciplines. 
+
+## 3. DrawingVQA 
+
+3.1. Overview of DrawingVQA 
+
+The primary goal of DrawingVQA is to address the sig-nificant gap between existing MLLM benchmarks and the practical, real-world visual reasoning tasks performed by engineering professionals. Current benchmarks often focus on academic knowledge or simplified schematics, failing to capture the complexity of industry-standard documents. 
+
+DrawingVQA is designed to identify and measure these performance gaps in frontier models, providing a crucial tool to drive industry adoption. To achieve this, our benchmark is built on two core prin-ciples: 
+
+• Authentic Data Source: We use real-world, “Issued for Construction” (IFC) structural drawings, which are the dense, multi-modal, and legally-binding documents used in the field. 
+
+• Practical Questioning: The question-answer (QA) pairs are crafted by three domain experts to resemble the day-to-day queries and reasoning workflows professionals per-form, not just surface-level academic questions. The dataset spans three distinct reasoning depths: (1) simple perceptual understanding, (2) contextual interpreta-tion, and (3) deep domain-expert reasoning. To analyze model performance with high granularity, we introduce a novel dual categorization framework that jointly maps each QA pair across seven construction-engineering dimensions and four foundational MLLM capability dimensions. This is the first framework, to our knowledge, to explicitly map engineering workflows to core AI reasoning competencies, offering diagnostic insights into why and where models fail in real-world construction engineering contexts. 
+
+Table 1. DrawingVQA statistics                                 
+
+> Statistics Value Total questions 92 Image (artifacts) types 5Total images 58 Unique drawing 33 Multiple-choice questions 90 Open questions 2Questions with an explanation 100% Image in Question 97.78% * Image at the beginning 24.72% * Image in the middle 34.96% * Image at the end 39.33% Image in Options 2.22% Example with Multiple Images 14.44% Reasoning Level (Perceptual:Contextual:Expert-Reasoning) 36.96%:33.70%:29.35% Questions Mapped to MLLM Capabilities * Visual Perception 17.73% * Reasoning (Total) 29.06% * Visual reasoning 39.3% * Alignment and grounding 32.1% * Spatial reasoning 28.6% * Knowledge 15.76% * OCR (Text Understanding) 37.44% Questions Mapped to Construction Eng. Dimensions * General administration 8.94% * Domain-specific element identification 20.67% * Domain-specific language understanding 13.41% * Design semantic understanding 29.05% * Dimensional relationship reasoning 17.32% * Quantity takeoff 6.70% * Compliance check 3.91% Average question length 14 words Average time to create 1 question 38 mins Average time to quality check 1 question 24 mins
+
+Figure 2. Comparison of drawing complexity. (a) A low-density, schematic architectural floor plan from [8]. (b) A mechanical design from [2]. (c) A high-density, “Issued for Construction” (IFC) level drawing from our DrawingVQA corpus. 
+
+3.2. Construction Drawings (Issued for Construc-tion) 
+
+The visual foundation of DrawingVQA consists of 33 struc-tural drawing sets from six real-world educational building projects. Our corpus is composed of high-entropy “Issued for Construction” (IFC) documents. It is crucial to differenti-ate the visual and semantic complexity of IFC drawings from the schematic architectural floor plans or mechanical design used in other datasets (see Figure 2). Compared to other 2D drawings, an IFC drawing spans the entire project lifecycle as “source of truth” that integrates precise geometry, engineer-ing annotations, material specifications, revision histories, and regulatory compliance notes—all of which form a dense visual–textual interface that professionals interpret daily. In details, IFC drawings represent a unique multimodal challenge precisely because they are dense, information-rich artifacts that layer: 
+
+• Complex Geometries: Precise 2D representations (plans, sections, elevations) of structural elements (Figure 1). 
+
+• Symbolic Language: Symbols and domain-specific vo-cabulary (e.g., weld symbols, material hatches, discipline specific language and acronyms) 
+
+• Dense Annotations: Textual and symbolic callouts, di-mensions, and annotations with arrows that require high-fidelity OCR. 
+
+• Data-Rich Tables and Notes: Complex tabular schedules for columns, beams, footings, and revisions and general notes. 
+
+• Cross-References: Pointers that require a model to align information and understand different dimensional views across different details and multiple sheets with callouts. 
+
+3.3. Data Curation Process 
+
+Data Collection We curated our dataset from a collec-tion of 33 structural drawing sets from 6 campus-building projects, ensuring each document meets professional Issued for Construction (IFC) standards. The visual artifacts in-clude plans, sections, details, annotations, symbols, and general notes covering diverse structural components (e.g., slabs, columns, beams, and foundations). All drawings used in the dataset conform to a common industry standard for publishing IFC drawings called the U.S. National CAD Stan-dard (NCS): core elements such as symbols, callouts, sheet IDs, and table formats remain consistent across all construc-tion and facility design projects in the United States. The NCS standard ensures consistency with professional draft-ing conventions and serves as the foundational rationale for interpreting symbols, annotations, and callouts within the dataset, aligning our benchmark with established industry documentation practices. All QA pairs were generated by a team of three domain experts, including licensed civil en-gineers and construction professionals with 2 to 10+ years of field experience. The process was designed to emulate the authentic, information-seeking behaviors of construction professionals. 
+
+Reasoning Depth Experts were first instructed to formulate questions spanning three progressive reasoning depths. The first level, Perceptual Understanding, includes simple, direct questions requiring visual search or basic OCR (e.g., “What is the sheet title?” ). The second, Contextual Interpreta-tion, requires models to connect and reason about multiple pieces of information on a single sheet (e.g., “What is the top of the footing elevation for footing ‘F7x13.83’ along horizontal grid line 24?” ). The final and most complex level, Domain-Expert Reasoning, demands compositional reasoning, implicit domain knowledge, or aligning informa-tion across different drawings (e.g., “What type of vertical reinforcements would I need for the walls shown? Use the other drawing if needed.” ). All answers were required to be concise, factual, and directly verifiable from the provided drawing set. 
+
+VQA Format Each question was formulated as either a multiple-choice or a short open-answer question. For the multiple-choice questions, our experts manually created all distractors to avoid low-quality, easily guessable, or LLM-generated options. Distractors often included realistic but subtly incorrect alternatives such as picking up nearby texts on the drawings that are actually irrelevant or challenging op-tions such as “None of the above” or “All of the above” This expert-driven design ensures the distractors reflect authentic misinterpretations of IFC drawings, serving as a rigorous proxy for professional ambiguity. Finally, comparative test-ing between the MCQ and open-ended formats confirms that the closed-ended structure does not artificially reduce task difficulty (further details are provided in the Supplemen-tary). This multi-stage, expert-driven process produced 92 question-answer pairs grounded in real construction draw-ings—capturing not only the visual and textual complexity of engineering documents but also the depth of reasoning required in professional practice. 
+
+Quality Control and Validation To ensure dataset integrity, we employed a rigorous, multi-pass validation protocol. First, each QA pair generated by one expert was indepen-dently reviewed by a second expert for correctness, ambigu-ity, and practical relevance. Any disagreements were esca-lated to a senior engineer for final adjudication. Second, we explicitly filtered out any questions that could be answered without the image or were unanswerable with the provided context. Finally, after validation, every QA pair was anno-tated according to our dual categorization framework, which jointly captures (a) the construction-engineering domain as-pect of the inquiry and (b) the MLLM capability dimension required to solve the question. These annotations under-went the same multi-pass review cycle to maintain labeling reliability and conceptual clarity. 
+
+3.4. Dual Categorization Framework 
+
+The core of DrawingVQA evaluation comes from our dual categorization framework. Each QA pair is tagged along two orthogonal axes, allowing for a multifaceted analysis of Figure 3. Visualization of the dual categorization mapping MLLM Capabilities (left) to their corresponding Construction-Engineering Dimensions (right) in DrawingVQA . The flow diagram highlights how complex engineering tasks, such as “Dimensional Understand-ing”, draw upon multiple MLLM Reasoning and OCR capabilities. 
+
+model capabilities. 
+
+1. MLLM Capability Dimension (The “AI Task”) This axis categorizes the foundational AI competency required to answer the question. It is divided into four primary dimen-sions: Visual Perception (simple identification, attribute recognition, and counting); Reasoning (higher-order cog-nition, which is further subdivided into Visual Reasoning ,
+
+Alignment & Grounding , and Spatial Reasoning ); Knowl-edge (accessing implicit, domain-specific information not explicitly written on the sheet); and OCR (text recognition and understanding, inside Tabular for schedules and Textual 
+
+for callouts and notes). When a task requires only reading text, its MLLM capability dimension is OCR alone. If the question necessitates aligning that text from tabular with ge-ometric entities or layouts, it is explicitly mapped to both OCR and Reasoning category (Visual, Spatial, Alignment). 
+
+2. Construction-Engineering Dimension (The “Practi-cal Task”) This axis categorizes the real-world engineering workflow the question belongs to. The seven dimensions are: General / Administrative (reading metadata, tables, and general notes); Element Identification (interpreting structural symbols); Language Understanding (interpret-ing domain-specific languages); Dimensional Understand-ing (cross-referencing on multi-view drawing parts and re-lationships); Design Semantic Understanding (inferring drawing type or design intent); Quantity Take-Off (QTO) 
+
+(tasks related to counting elements); and Compliance (ver-ifying components against a code or specification). We provide a detailed breakdown of the dataset statistics and the distribution of these categories in Table 1. This dual framework allows us to move beyond a single accuracy score and precisely diagnose why a model fails for engi-neering workflows, providing a clear roadmap for future improvements. 
+
+3.5. Comparisons with Existing Benchmarks 
+
+DrawingVQA occupies a unique position at the intersec-tion of multimodal reasoning and engineering document packed with domain specific knowledge. As summarized in Figure 4, existing benchmarks that include AEC content address only narrow, academic aspects of the discipline. MMMU [9] contains a small subset of 135 civil and struc-tural engineering-related questions framed as textbook prob-lems. Similarly, RBench-M [10] includes 54 questions from structural engineering textbook exams. ScienceQA [21] of-fers 24 relevant engineering practice questions based on nat-ural images, and MM-Vet [32] includes only four schematic floor plans for basic spatial reasoning. These datasets eval-uate declarative knowledge rather than assessing context specific multimodal reasoning required in real construction workflows. One notable VQA benchark, DesignQA [2], focuses on the mechanical and industrial engineering domain, which possess parallels with DrawingVQA on 2D drawing and compliance pdf document on compliance check. However, the QA images utilized were cleaned of any confusing an-notations, and other textual or tabular, and symbolic visuals that hinder perception performance. Additionally, the ma-jority of their QA dataset relies heavily on simple, text-based measurement checks against PDF documents. These “hin-drances” were kept true to its color in the DrawingVQA ,just as anyone sees everyday at real construction projects, re-quiring authentic, real-world engineering knowledge rather than basic text extraction. 
+
+DrawingVQA is the first dataset built entirely on real IFC-level structural drawings, reflecting how professionals interpret, cross-reference, and reason across sheets in daily practice. To avoid artificially inflating model performance with repetitive, low-level queries (e.g., repeatedly extracting sheet IDs), we curated a high-entropy dataset that maxi-mizes diagnostic coverage. Each question targets a specific failure mode and distinct reasoning pathway, ensuring the task demands the multi-step inferential workflows required at jobsites rather than reducing to simple visual ground-ing. Finally, by incorporating a dual categorization frame-work spanning both construction-engineering and MLLM capability dimensions, it performs fine-grained diagnosis of model reasoning gaps, establishing a foundation for advanc-ing AI toward domain-grounded engineering intelligence. 
+
+## 4. Experiments 
+
+4.1. Baselines 
+
+MLLMs To evaluate DrawingVQA , we benchmarked a range of state-of-the-art and recent MLLMs. This in-cludes leading proprietary models such as OpenAI’s o3 and GPT-4o, Google’s Gemini 2.5 Pro and 2.5 Flash, and An-thropic’s Claude-4.5 Sonnet and open-source models, in-Benchmark Level Visual source Option creation Q.diversity Answer Expln. Size                                             
+
+> DrawingVQA (Ours) Eng. Profl. Real-world IFC drawings Annotation 7MC + Open ✓92
+> ScienceQA (subset) [21] Pre-college K–12 curricula Textbook 1MC ✗24 MM-Vet (subset) [32] Undergraduate Floor plan Annotation 1Open ✗4MMMU (subset) [9] Undergraduate Textbooks, WebQA Textbook 2MC + Open △135 RBench-M (subset) [10] Graduate Exams Exams 1MC ✗54 DesignQA ∗[2] Eng. Profl. Mechanical drawings Annotation 3Open ✗1451
+
+Figure 4. Comparison of DrawingVQA with other VQA benchmarks, which contain any of Architecture, Civil, Structural, or Construction Engineering disciplines, or drawing-related questions. Q. means Question, Expln. means Explanations, Profl. means Professional, Eng. means Engineering, MC means multiple-choice, and Open means open-ended. DesignQA is not a pure VQA dataset, with document-reference dependence. Compared to others, DrawingVQA has the highest visual complexity (also featured in Figure 2) and the highest professional reasoning level in engineering practices. 
+
+cluding LLaVA-OneVision-1.5-8B-Instruct [10], LLaVA-v1.6-Mistral-7B [5], Llama-3.2-11B-Vision-Instruct [4], Qwen3-VL-8B-Instruct [11], InternVL3.5-30B-A3B[12], and Phi-4-multimodal-instruct [7], which are known for their strong performance on general vision-language tasks. All models were tested using standard chain-of-thought prompt-ing in a zero-shot setting and answer parsing, following the protocol established in MicroVQA [8]. All experiments are conducted with an NVIDIA A100 GPU. 
+
+Human Benchmarking and Evaluation To benchmark MLLM performance against true domain expertise, we es-tablished a robust human baseline. We randomly selected a subset of 20 QA pairs from our test set, stratified across the three reasoning depths (4 Perceptual, 8 Contextual, 8 Expert). 52 Responses were collected from three groups representing increasing levels of domain expertise: (i) un-dergraduate civil engineering students (not in their freshman year, mainly junior and seniors), (ii) graduate civil engineer-ing students and/or early-career professionals (less than three years of industry experience), and (iii) experienced profes-sionals (three or more years of experience). This allows us to not only compare models to peak human performance but also to understand how model reasoning capabilities align with different stages of professional development. To main-tain a fair experiment, all the QA answering were timed (20 minutes) to ensure all participants had equal amount of time to answer the same number of questions. In addition, we added Random Choice baseline for reference. 
+
+Evaluation We report overall mean accuracy for both multiple-choice and open-ended questions. In addition, we provide fine-grained analysis across both MLLM capability dimensions (visual perception, reasoning, knowledge, OCR) and construction-engineering dimensions (general, element identification, language understanding, dimensional reason-ing, semantic understanding, quantity takeoff, code/specifi-cation compliance). More details on the dimensions can be found in the Supplementary. We also evaluate model per-formance under no-image conditions and using randomized multiple-choice label prefixes (ABCD alphabetical order), reported in the Supplementary. 
+
+4.2. Main Results 
+
+Overall Performance: SOTA vs. Human Experts. Aprimary finding is the significant performance gap that still exists between most MLLMs and human-level expertise. Only one model, Gemini-2.5-pro , achieved an overall score of 71.7, surpassing the average human score (68.4) and the undergraduate student cohort (62.8). However, this still falls substantially short of the performance of expe-rienced Professionals (94.9), indicating that while SOTA models can match entry-level performance, they do not yet possess deep domain expertise. The next-best mod-els, Gemini-2.5-flash (66.3) and o3 (58.7) , also demonstrate strong capabilities but, like most other models (e.g., GPT-4o at 48.9, Claude-4.5-Sonnet at 57.6), still struggle to match the baseline performance of an under-graduate student in civil engineering major. 
+
+Figure 5. Comparison of multimodal reasoning performance across human cohorts and Gemini-2.5-pro on DrawingVQA . Left: CV-derived competencies, Right: CE-derived competencies. 
+
+Reasoning Depth Analysis. Our Reasoning Depth cat-egory evaluates a model’s ability to progress from ba-sic perception to deep expertise. R1 (Visual Percep-tion) tests foundational skills, such as recognizing ele-ments, where models like Gemini-2.5-pro (80.6) and 
+
+Gemini-2.5-flash (77.4) score highest. This is fol-lowed by R2 (Contextual Understanding) , which requires Table 2. Model Performance with Reasoning, MLLM, and Construction Metrics. MLLM Dimensions (VP: Visual Perception, K: Knowledge, R: Reasoning, OCR: Optical Character Recognition); Construction Eng. Domain Aspects (Adm.: Administration, EI: Element Identification, LU: Domain Language Understanding, DR: Dimensional Recognition, SU: Design Semantic Understanding, QTO: Quantity Take Off, Comp.: Compliance). Underscored values indicate the highest score for each model within the MLLM Dimensions and CE Domain Aspects categories.                                                                                                                                                                                                                                                                                 
+
+> Reasoning Depth MLLM Dimensions Construction Eng. Domain Aspects Model Overall R1 R2 R3 VP KROCR Adm. EI LU DR SU QTO Comp
+> GPT-4o 48.9 61.3 44.1 40.7 47.1 59.4 44.3 48.7 56.3 32.4 70.8 41.9 50.0 25.0 42.9 o3 58.7 64.5 61.8 48.2 58.8 65.6 54.1 59.2 62.5 56.8 54.2 48.4 61.5 25.0 42.9
+> Gemini-2.5-pro 71.7 80.6 76.5 55.6 67.6 78.1 67.2 72.4 87.5 56.8 79.2 67.7 75.0 41.7 57.1 Gemini-2.5-flash 66.3 77.4 73.5 44.4 64.7 81.2 57.4 63.2 87.5 51.4 79.2 51.6 67.3 33.3 71.4 Claude-4.5-Sonnet 57.6 64.5 64.7 40.7 58.8 59.4 57.9 54.1 68.8 48.7 66.7 41.9 57.7 41.7 57.1 Claude-4.5-Haiku 54.3 51.6 73.5 33.3 52.9 65.6 52.5 54.0 62.5 43.2 50.0 48.4 51.9 33.3 42.9 LLaVA-OneVision-1.5-8B-Instruct [10] 40.2 61.3 41.2 14.8 38.2 46.9 31.1 39.5 43.8 24.3 62.5 25.8 42.3 0.0 0.0 LLaVA-v1.6-Mistral-7B [5] 28.3 25.8 29.4 29.6 29.4 37.5 27.9 23.7 31.2 24.3 16.7 32.3 30.8 25.0 14.3 Llama-3.2-11B-Vision-Instruct [4] 39.1 45.2 47.1 22.2 41.2 40.6 34.4 38.2 50.0 29.7 45.8 32.3 42.3 8.3 28.6 Qwen3-VL-8B-Instruct [11] 53.3 51.6 61.8 44.4 50.0 53.1 45.9 55.3 81.2 40.5 66.7 45.2 46.2 33.3 42.9 InternVL3.5-30B-A3B[12] 41.3 51.6 35.3 37.0 26.5 43.8 42.6 42.1 50.0 40.5 45.8 45.1 46.1 8.3 14.3 Phi-4 [7] 40.2 41.9 47.1 29.6 29.4 40.6 42.6 40.8 37.5 40.5 45.8 35.5 40.4 25.0 28.6 Random 27.2 25.8 17.7 40.7 23.5 37.5 27.9 29.0 37.5 18.9 29.2 29.0 23.0 16.6 42.8 Human 68.4 75.6 72.6 59.9 75.8 81.4 84.9 75.0 46.8 71.9 82.7 82.1 99.2 83.3 66.2 * Undergraduate 62.8 71.8 70.2 53.8 64.3 66.7 74.9 53.0 43.6 49.7 70.7 75.4 97.4 69.4 46.2 * Graduate & Young Professionals 78.2 85.4 76.6 68.8 73.9 81.9 83.8 76.0 50.0 70.0 81.9 75.0 100.0 83.7 62.5 * Professionals 94.9 90.0 85.0 93.3 89.1 95.6 96.0 96.0 46.7 96.0 95.6 96.0 100.0 96.6 90.0
+
+connecting multiple pieces of information. Performance here shows a mixed pattern: while top-performing mod-els ( Gemini-2.5-pro , dropping to 76.5) and all hu-man cohorts show a slight decrease, indicating the in-herent difficulty of synthesis, several other models (e.g., 
+
+Qwen3-VL-8B from 51.6 to 61.8) actually improve, sug-gesting they gain better insights as more context is pro-vided. Finally, R3 (Expert Reasoning) , which demands deep domain-specific inference, is clearly the most signif-icant bottleneck. Scores for all models fall dramatically. This contrasts sharply with human Professionals , whose R3 score (93.3) is their highest, highlighting the primary gap between current AI and true domain expertise. 
+
+General MLLM aspects. Analyzing the “MLLM Di-mensions” reveals a distinct specialist profile for models compared to humans. Models consistently excel in the 
+
+Knowledge (K) dimension, with Gemini-2.5-flash 
+
+(81.2) and Gemini-2.5-pro (78.1) achieving the highest scores. This suggests models are highly effective at retriev-ing and applying their vast store of accumulated knowledge. Conversely, humans demonstrate a clear advantage in the 
+
+Reasoning (R) dimension, with the average human scor-ing 84.9 and professionals reaching 96.0. As illustrated in Figure 5, even undergraduate students are better than the state-of-the-art MLLM on reasoning capability. It highlights that humans retain a superior ability to perform flexible and abstract reasoning on complex visual information. 
+
+Fine-Grained Construction Engineering Domain As-pects. Unlike the well-rounded human experts, Figure 5 reveals that MMLM models exhibit a different performance pattern (i.e., “spiky” specialist profile). MMLM strengths lie in Administration (Adm.) and Language Understanding (LU) , with Gemini-2.5-pro achieving 87.5. This in-dicates a strong grasp of domain-specific terminology and the ability to process administrative information from doc-uments. However, the most significant weakness for all MLLMs is Quantity Take Off (QTO) . With the top model (Gemini-2.5-pro ) scoring only 41.7 and several mod-els near 0.0, this task remains a major challenge. This difficulty is likely attributable to MLLMs’ limitations in precise spatial grounding and the inability to accurately de-compose and count objects in dense, large-scale engineer-ing drawings. Domain-specific tasks such as quantity take-off require multiple MLLM competencies simultaneously, including visual reasoning, OCR, and embedded domain knowledge, as illustrated in Figure 3. Among open-source models, Qwen3-VL-8B-Instruct shows a very strong and competitive performance at 53.3, notably outperforming several proprietary models and showing exceptional strength in General Administration aspect (81.2). More details are analyzed in Supplementary. 
+
+Human Evaluation The “Construction Eng. Do-main Aspects” category provides the most detailed in-sights. Human performance clearly illustrates the value of experience: scores show a progressive trend from Undergraduate (62.8) to Graduate & Young Professionals (78.2) to Professionals (94.9). This trend is especially pronounced in the Compliance (Comp) task, where the professional score (90.0) is nearly double that of undergraduates (46.2). This suggests that understanding complex specifications and requirements is a skill acquired through practical experience beyond academic achievement. In contrast, Semantic Understanding (SU) ap-pears to be a more fundamental skill, with all human cohorts performing exceptionally well (97.4-100.0). 
+
+Content Realism. We also asked participants to rate question realism on a 1-5 scale (5=very realistic). The feedback confirmed our dataset’s authenticity: a combined 
+
+71.2% of participants rated the questions as highly realistic (32.7% rated ’4’; 38.5% rated ’5’). Critically, 0% of par-ticipants gave a ’1’ or ’2’ rating. This feedback validates 
+
+DrawingVQA as an authentic benchmark for real-world AEC challenges. 
+
+Validating Multimodal Dependency (Text-Only Abla-tion) To validate that DrawingVQA requires genuine multi-modal reasoning and is not solvable through linguistic priors or context leakage, we performed a text-only ablation study. As shown in Table 3, this ablation is expected to cause a significant performance collapse, dropping scores to near or even lower than the random-guess baseline. This confirms that the visual information in the drawings is not just supple-mentary but indispensable for solving the tasks, validating our dataset’s reliance on grounded visual understanding.             
+
+> Table 3. Text-Only Ablation Study
+> Model Multimodal (Image+Text) Text-Only (Ablation) Drop ( Δ)
+> o3 58.7% 29.5% 29.2% ( ↓)Gemini-2.5-flash 66.3% 9.8% 56.5% ( ↓)Random (Baseline) 27.2% --
+
+## 5. Error Analysis 
+
+Overall. As part of the analysis to understand why models made certain decisions for questions that they got wrong, their explanation or “chain of thoughts” were investigated to break apart the steps it took, and where it may have gone wrong. A more detailed breakdown of these analysis will be provided in the Supplementary material. 
+
+Visual Grounding and Perception Failures. A com-mon failure mode occurs when the model’s reasoning plan is logically sound, but its visual perception fails. This was most pronounced in QTO (Quantity Take Off) tasks. For instance, when asked to count columns along a specific grid line (e.g., ”grid line Q”), the model’s CoT would correctly state the plan: “Step 1: Locate Vertical Grid Line Q... Step 3: Trace Grid Line Q... Step 4: Identify and Count the Columns” . However, the final count would be incor-rect because the model visually “derailed” while tracing, misidentifying the line or “hallucinating” intersections that were not present. This decoupling of logic and perception was also seen in detail-finding tasks. When asked to find a callout for a footing next to another, the model’s CoT would flawlessly describe finding a callout symbol (e.g., “9 / S3.00”), but it would be the wrong callout, having visually latched onto a different, nearby footing. This shows a fundamental inability to maintain precise spatial grounding in dense, symbol-rich IFC drawings illustrated in Figure 1. 
+
+Failure to Interpret Core Symbolic Language for Cross-Referencing. The most consequential breakdowns occur in tasks that require multi-step visual reason-ing—particularly those involving callouts, cross-sheet links, or geometric dependencies. These tasks form the back-bone of dimensional and compliance verification. When a model must search across multiple details for a gov-erning reference, it often stops after identifying the first plausible link and fails to perform a complete visual scan. Once anchored to that partial discovery, the model shows a tendency to force-fit its reasoning to the available an-swer choices rather than reassessing the drawing. For engi-neering workflows—where reliability depends on accurately tracing references, elevations, sections, governing geometry, or scope boundaries—this behavior makes current models fundamentally untrustworthy for tasks requiring disciplined cross-referencing or multi-step interpretation. 
+
+Lack of Expert Knowledge. A recurring source of fail-ure is the MLLM’s limited domain knowledge in core con-struction and engineering disciplines. Models frequently misinterpret basic drafting conventions—such as weld sym-bols, standard structural symbols, and annotations with do-main acronyms—because they lack the expert familiarity required to decode these symbols reliably. When MLLM cannot recognize what a triangular weld symbol means, or cannot distinguish a footing from other structural elements, it begins reasoning from a fundamentally incorrect premise. This knowledge gap does not merely produce isolated mis-takes; it accelerates cascading errors, where misidentified elements lead to incorrect dimensional logic, false assump-tions about load paths, or fabricated interpretations of the drawing. Without this baseline professional literacy, the model cannot properly read or interpret construction doc-uments, and its reasoning degrades before the analytical process even begins. 
+
+## 6. Conclusion 
+
+We introduce DrawingVQA , the first VQA benchmark built on complex, real-world IFC drawings, designed to assess the multimodal reasoning capabilities of MLLMs on tasks that reflect authentic engineering practice. We employ a dual cat-egorization analysis that spans both MLLM capabilities and construction-engineering aspects. We hope this benchmark provides a foundation for evaluating AI systems in expert-driven domains. Future direction includes exploration of domain-specific steering, the role of model scale, the text and vision embedding capacity, and expansion into Civil, and Mechanical, Electrical, and Plumbing disciplines. References 
+
+[1] Asma Ben Abacha, Sadid A Hasan, Vivek V Datla, Joey Liu, Dina Demner-Fushman, and Henning M¨ uller. Vqa-med: Overview of the medical visual question answering task at imageclef 2019. CLEF (working notes) , 2(6):1–11, 2019. [2] Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774 , 2023. [10] Xiang An, Yin Xie, Kaicheng Yang, Wenkang Zhang, Xiuwei Zhao, Zheng Cheng, Yirui Wang, Songcen Xu, Changrui Chen, Chunsheng Wu, Huajie Tan, Chunyuan Li, Jing Yang, Jie Yu, Xiyao Wang, Bin Qin, Yumeng Wang, Zizhen Yan, Ziyong Feng, Ziwei Liu, Bo Li, and Jiankang Deng. Llava-onevision-1.5: Fully open framework for democratized mul-timodal training, 2025. [4] Stanislaw Antol, Aishwarya Agrawal, Jiasen Lu, Margaret Mitchell, Dhruv Batra, C Lawrence Zitnick, and Devi Parikh. Vqa: Visual question answering. In Proceedings of the IEEE international conference on computer vision , pages 2425– 2433, 2015. [8] James Burgess, Jeffrey J Nirschl, Laura Bravo-S´ anchez, Alejandro Lozano, Sanket Rajan Gupte, Jesus G. Galaz-Montoya, Yuhui Zhang, Yuchang Su, Disha Bhowmik, Zachary Coman, Sarina M Hasan, Alexandra Johannesson, William D. Leineweber, Malvika G Nair, Ridhi Yarlagadda, Connor Zuraski, Wah Chiu, Sarah Cohen, Jan N. Hansen, Manuel D Leonetti, Chad Liu, Emma Lundberg, and Serena Yeung-Levy. Microvqa: A multimodal reasoning benchmark for microscopy-based scientific research. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , pages 19552–19564, 2025. [6] Xuezheng Chen and Zhengbo Zou. Are large pre-trained vision language models effective construction safety inspec-tors?, 2025. [2] Anna C. Doris, Daniele Grandi, Ryan Tomich, Md Ferdous Alam, Mohammadmehdi Ataei, Hyunmin Cheong, and Faez Ahmed. Designqa: A multimodal benchmark for evaluating large language models’ understanding of engineering docu-mentation, 2024. [8] Zhiwen Fan, Lingjie Zhu, Honghua Li, Xiaohao Chen, Siyu Zhu, and Ping Tan. Floorplancad: A large-scale cad draw-ing dataset for panoptic symbol spotting. In Proceedings of the IEEE/CVF international conference on computer vision ,pages 10128–10137, 2021. [9] Ziliang Gan, Dong Zhang, Haohan Li, Yang Wu, Xueyuan Lin, Ji Liu, Haipang Wu, Chaoyou Fu, Zenglin Xu, Rongjunchen Zhang, et al. Mme-finance: A multimodal finance benchmark for expert-level understanding and rea-soning. In Proceedings of the 33rd ACM International Con-ference on Multimedia , pages 12867–12874, 2025. [10] Meng-Hao Guo, Jiajun Xu, Yi Zhang, Jiaxi Song, Haoyang Peng, Yi-Xuan Deng, Xinzhi Dong, Kiyohiro Nakayama, Zhengyang Geng, Chen Wang, Bolin Ni, Guo-Wei Yang, Yongming Rao, Houwen Peng, Han Hu, Gordon Wetzstein, and Shi-Min Hu. RBench: Graduate-level multi-disciplinary benchmarks for LLM &; MLLM complex reasoning evalu-ation. In Proceedings of the 42nd International Conference on Machine Learning , pages 21184–21201. PMLR, 2025. [11] Yutao Hu, Tianbin Li, Quanfeng Lu, Wenqi Shao, Junjun He, Yu Qiao, and Ping Luo. Omnimedvqa: A new large-scale comprehensive evaluation benchmark for medical lvlm. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 22170–22183, 2024. [12] Drew A Hudson and Christopher D Manning. Gqa: A new dataset for real-world visual reasoning and compositional question answering. In Proceedings of the IEEE/CVF con-ference on computer vision and pattern recognition , pages 6700–6709, 2019. [13] Yoonhwa Jung, Ikhyun Cho, Shun-Hsiang Hsu, and Mani Golparvar-Fard. Visualsitediary: A detector-free vision-language transformer model for captioning photologs for daily construction reporting and image retrievals. Automation in Construction , 165:105483, 2024. [14] Bohao Li, Yuying Ge, Yixiao Ge, Guangzhi Wang, Rui Wang, Ruimao Zhang, and Ying Shan. Seed-bench: Benchmark-ing multimodal large language models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 13299–13308, 2024. [15] Yinsheng Li, Zhen Dong, and Yi Shao. Drafterbench: Bench-marking large language models for tasks automation in civil engineering, 2025. [16] Zhenwen Liang, Kehan Guo, Gang Liu, Taicheng Guo, Yujun Zhou, Tianyu Yang, Jiajun Jiao, Renjie Pi, Jipeng Zhang, and Xiangliang Zhang. SceMQA: A scientific college entrance level multimodal question answering benchmark. In Pro-ceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers) , pages 109–119, Bangkok, Thailand, 2024. Association for Compu-tational Linguistics. [17] Bo Liu, Ke Zou, Li-Ming Zhan, Zexin Lu, Xiaoyu Dong, Yidi Chen, Chengqiang Xie, Jiannong Cao, Xiao-Ming Wu, and Huazhu Fu. Gemex: A large-scale, groundable, and explainable medical vqa benchmark for chest x-ray diagnosis. In Proceedings of the IEEE/CVF International Conference on Computer Vision , pages 21310–21320, 2025. [5] Haotian Liu, Chunyuan Li, Yuheng Li, and Yong Jae Lee. Improved baselines with visual instruction tuning, 2023. [19] Yuan Liu, Haodong Duan, Yuanhan Zhang, Bo Li, Songyang Zhang, Wangbo Zhao, Yike Yuan, Jiaqi Wang, Conghui He, Ziwei Liu, Kai Chen, and Dahua Lin. Mmbench: Is your multi-modal model an all-around player? In Computer Vision – ECCV 2024 , pages 216–233, Cham, 2025. Springer Nature Switzerland. [20] Alejandro Lozano, Jeffrey Nirschl, James Burgess, San-ket Rajan Gupte, Yuhui Zhang, Alyssa Unell, and Serena Yeung. Micro-bench: A microscopy benchmark for vision-language understanding. Advances in Neural Information Processing Systems , 37:30670–30685, 2024. [21] Pan Lu, Swaroop Mishra, Tanglin Xia, Liang Qiu, Kai-Wei Chang, Song-Chun Zhu, Oyvind Tafjord, Peter Clark, and Ashwin Kalyan. Learn to explain: Multimodal reasoning via thought chains for science question answering. In Advances in Neural Information Processing Systems , pages 2507–2521. Curran Associates, Inc., 2022. [22] Junyu Luo, Zhizhuo Kou, Liming Yang, Xiao Luo, Jinsheng Huang, Zhiping Xiao, Jingshu Peng, Chengzhong Liu, Ji-aming Ji, Xuanzhe Liu, Sirui Han, Ming Zhang, and Yike Guo. FinMME: Benchmark dataset for financial multi-modal reasoning evaluation. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) , pages 29465–29489, Vienna, Aus-tria, 2025. Association for Computational Linguistics. [23] Ruifeng Luo, Zhengjie Liu, Tianxiao Cheng, Jie Wang, Tongjie Wang, Fei Cheng, Fu Chai, Yanpeng Li, Xingguang Wei, Haomin Wang, et al. Archcad-400k: A large-scale cad drawings dataset and new baseline for panoptic symbol spotting. In The Thirty-ninth Annual Conference on Neural Information Processing Systems .[24] Xiaolei Lv, Shengchu Zhao, Xinyang Yu, and Binqiang Zhao. Residential floor plan recognition and reconstruction. In Pro-ceedings of the IEEE/CVF conference on computer vision and pattern recognition , pages 16717–16726, 2021. [4] Meta. Llama-3.2-11b-vision-instruct. Technical report, 2024. [7] Microsoft, :, Abdelrahman Abouelenin, Atabak Ashfaq, Adam Atkinson, Hany Awadalla, Nguyen Bach, Jianmin Bao, Alon Benhaim, Martin Cai, Vishrav Chaudhary, Con-gcong Chen, Dong Chen, Dongdong Chen, Junkun Chen, Weizhu Chen, Yen-Chun Chen, Yi ling Chen, Qi Dai, Xiyang Dai, Ruchao Fan, Mei Gao, Min Gao, Amit Garg, Ab-hishek Goswami, Junheng Hao, Amr Hendy, Yuxuan Hu, Xin Jin, Mahmoud Khademi, Dongwoo Kim, Young Jin Kim, Gina Lee, Jinyu Li, Yunsheng Li, Chen Liang, Xihui Lin, Zeqi Lin, Mengchen Liu, Yang Liu, Gilsinia Lopez, Chong Luo, Piyush Madan, Vadim Mazalov, Arindam Mitra, Ali Mousavi, Anh Nguyen, Jing Pan, Daniel Perez-Becker, Ja-cob Platin, Thomas Portet, Kai Qiu, Bo Ren, Liliang Ren, Sambuddha Roy, Ning Shang, Yelong Shen, Saksham Sing-hal, Subhojit Som, Xia Song, Tetyana Sych, Praneetha Vad-damanu, Shuohang Wang, Yiming Wang, Zhenghao Wang, Haibin Wu, Haoran Xu, Weijian Xu, Yifan Yang, Ziyi Yang, Donghan Yu, Ishmam Zabir, Jianwen Zhang, Li Lyna Zhang, Yunan Zhang, and Xiren Zhou. Phi-4-mini technical re-port: Compact yet powerful multimodal language models via mixture-of-loras, 2025. [27] Dustin Schwenk, Apoorv Khandelwal, Christopher Clark, Kenneth Marino, and Roozbeh Mottaghi. A-okvqa: A bench-mark for visual question answering using world knowledge. In European conference on computer vision , pages 146–162. Springer, 2022. [11] Qwen Team. Qwen3 technical report, 2025. [12] Weiyun Wang, Zhangwei Gao, Lixin Gu, Hengjun Pu, Long Cui, Xingguang Wei, Zhaoyang Liu, Linglin Jing, Shenglong Ye, Jie Shao, et al. Internvl3.5: Advancing open-source multimodal models in versatility, reasoning, and efficiency. 
+
+arXiv preprint arXiv:2508.18265 , 2025. [30] Yanzhao Wu, Lufan Wang, and Rui Liu. Cequest: Bench-marking large language models for construction estimation. 
+
+arXiv preprint arXiv:2508.16081 , 2025. [1] Ruoxin Xiong, Yanyu Wang, Suat Gunhan, Yimin Zhu, and Charles Berryman. Can ai master construction management (cm)? benchmarking state-of-the-art large language models on cm certification exams, 2025. [32] Weihao Yu, Zhengyuan Yang, Linjie Li, Jianfeng Wang, Kevin Lin, Zicheng Liu, Xinchao Wang, and Lijuan Wang. Mm-vet: evaluating large multimodal models for integrated capabilities. In Proceedings of the 41st International Confer-ence on Machine Learning . JMLR.org, 2024. [9] Xiang Yue, Yuansheng Ni, Kai Zhang, Tianyu Zheng, Ruoqi Liu, Ge Zhang, Samuel Stevens, Dongfu Jiang, Weiming Ren, Yuxuan Sun, Cong Wei, Botao Yu, Ruibin Yuan, Ren-liang Sun, Ming Yin, Boyuan Zheng, Zhenzhu Yang, Yibo Liu, Wenhao Huang, Huan Sun, Yu Su, and Wenhu Chen. Mmmu: A massive multi-discipline multimodal understand-ing and reasoning benchmark for expert agi. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , pages 9556–9567, 2024. [34] Zhiliang Zeng, Xianzhi Li, Ying Kin Yu, and Chi-Wing Fu. Deep floor plan recognition using a multi-task network with room-boundary-guided attention. In Proceedings of the IEEE/CVF International Conference on Computer Vision ,pages 9096–9104, 2019. [35] Wenxuan Zhang, Mahani Aljunied, Chang Gao, Yew Ken Chia, and Lidong Bing. M3exam: A multilingual, multi-modal, multilevel benchmark for examining large language models. Advances in Neural Information Processing Systems ,36:5484–5505, 2023. [36] Xiaoman Zhang, Chaoyi Wu, Ziheng Zhao, Weixiong Lin, Ya Zhang, Yanfeng Wang, and Weidi Xie. Pmc-vqa: Visual in-struction tuning for medical visual question answering, 2024. DrawingVQA : A Real-World Benchmark for Multi-Depth Visual–Textual Reasoning on Construction Drawings 
+
+## Supplementary Material Contents 
+
+1. Introduction 12. Related Work 23. DrawingVQA 3
+
+3.1. Overview of DrawingVQA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33.2. Construction Drawings (Issued for Construction) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33.3. Data Curation Process . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43.4. Dual Categorization Framework . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43.5. Comparisons with Existing Benchmarks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+
+4. Experiments 5
+
+4.1. Baselines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 54.2. Main Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+
+5. Error Analysis 86. Conclusion 8A. Full Main Results S3 B. Author contributions S3 C. Limitations and future work S4 D. Benchmark details S4 
+
+D.1. Accessing DrawingVQA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S4 D.2. General Guidelines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S4 D.3. Question curation guidelines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S5 D.4. Dataset VQA Structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S5 D.5. Training contamination mitigation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S6 D.6. Question Format: Multiple-Choice vs. Open-Ended . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S6 D.7. Generalization to Unseen Drawing Styles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S6 D.8. Ethical Consideration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S6 
+
+E. Dual Categorization Taxonomy S6 F. Experiments details S7 
+
+F.1. Evaluation Prompts and Parsing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S7 F.2. Model details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S8 F.3. Human baseline . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S8 F.4. Dense and MoE models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S9 F.5. No-Image Ablations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S9 F.6. Breakdown results on Dual Category Mapping . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S10 F.7. More experiments on Image resolution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S11 F.8. More experiments on on Option Permutation and Prefix Sensitivity . . . . . . . . . . . . . . . . . . . . . . . S11 F.9. Ablation Study on Input Modality: The PDF Hybrid Setting . . . . . . . . . . . . . . . . . . . . . . . . . . . S12 G. Error Analysis S14 
+
+G.1. Visual Perception errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S14 G.2. Visual and Text Perception errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S15 G.3. Text Perception (OCR) errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S16 G.4. Knowledge errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S17 G.5. Reasoning errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S18 G.6. Instruction Adherence and Output Formatting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S20 G.7. Parametric Bias vs. Visual Grounding . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S20 G.8. Visual Attention . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S22 A. Full Main Results 
+
+Table 4 presents the comprehensive evaluation of all models across three reasoning depths (R1–R3), four MLLM dimensions, and seven construction-specific domains. 
+
+• Gaps Between Theory and Practice : Previous studies have demonstrated that models like GPT-4o pass construction certification exams with nearly 90% accuracy [1]. However, our results show a significant performance drop when these models are tasked with deciphering engineering drawings. For instance, GPT-4o achieves 48.9% on DrawingVQA . This highlights that while current MLLMs possess strong domain knowledge retrieval capabilities, they fundamentally lack the spatial and semantic visual reasoning required to execute real-world engineering workflows. This discrepancy aligns common notion that MLLMs excel at Knowledge (their strongest dimension), rather than the visual reasoning required to execute real-world engineering workflows. 
+
+• Multimodal Architecture : Among the evaluated architectures, Gemini and Qwen family achieve state-of-the-art perfor-mance. This suggests that the native multimodal architecture of the family may have better visual grounding and model architecture for dense technical documents compared to others. Especially, Gemini-3-pro-preview 1 shows improved knowledge and OCR capability in their modality, leading to the best result (77.2%), which now moves much closer to the graduate and young professionals’ benchmark score. 
+
+• Benchmarking Against Human Expertise : Most MLLMs significantly lag behind Graduate & Young professionals (78.2%) and the Professional Expert baseline (94.9%). This gap between the best AI and industry experts indicates that while MLLMs are approaching the competency of an entry-level engineer, they are not yet reliable enough for autonomous professional practice. Detailed model size impacts and qualitative error analysis are provided in the subsequent sections. 
+
+Table 4. Full Main Results. MLLM Dimensions (VP: Visual Perception, K: Knowledge, R: Reasoning, OCR: Optical Character Recog-nition); Construction Eng. Domain Aspects (Adm.: Administration, EI: Element Identification, LU: Domain Language Understanding, DR: Dimensional Recognition, SU: Design Semantic Understanding, QTO: Quantity Take Off, Comp.: Compliance). Underscored values indicate the highest score for each model within the MLLM Dimensions and CE Domain Aspects categories.                                                                                                                                                                                                                                                                                                                                                                                          
+
+> Reasoning Depth MLLM Dimensions Construction Eng. Domain Aspects Model Overall R1 R2 R3 VP KROCR Adm. EI LU DR SU QTO Comp
+> GPT-4o 48.9 61.3 44.1 40.7 47.1 59.4 44.3 48.7 56.3 32.4 70.8 41.9 50.0 25.0 42.9 o3 58.7 64.5 61.8 48.2 58.8 65.6 54.1 59.2 62.5 56.8 54.2 48.4 61.5 25.0 42.9
+> Gemini-2.5-pro 71.7 80.6 76.5 55.6 67.6 78.1 67.2 72.4 87.5 56.8 79.2 67.7 75.0 41.7 57.1 Gemini-2.5-flash 66.3 77.4 73.5 44.4 64.7 81.2 57.4 63.2 87.5 51.4 79.2 51.6 67.3 33.3 71.4 Claude-4.5-Sonnet 57.6 64.5 64.7 40.7 58.8 59.4 57.9 54.1 68.8 48.7 66.7 41.9 57.7 41.7 57.1 Claude-4.5-Haiku 54.3 51.6 73.5 33.3 52.9 65.6 52.5 54.0 62.5 43.2 50.0 48.4 51.9 33.3 42.9 LLaVA-OneVision-1.5-8B-Instruct [10] 40.2 61.3 41.2 14.8 38.2 46.9 31.1 39.5 43.8 24.3 62.5 25.8 42.3 0.0 0.0 LLaVA-v1.6-Mistral-7B [5] 28.3 25.8 29.4 29.6 29.4 37.5 27.9 23.7 31.2 24.3 16.7 32.3 30.8 25.0 14.3 LLaVA-v1.6-34B [5] 42.4 38.7 44.1 44.4 50.0 53.1 42.6 40.8 43.8 37.8 41.7 35.5 40.4 33.3 42.9 Llama-3.2-11B-Vision-Instruct [4] 39.1 45.2 47.1 22.2 41.2 40.6 34.4 38.2 50.0 29.7 45.8 32.3 42.3 8.3 28.6 Llama-4-Scout-17B-16E-Instruct [6] 53.3 58.1 58.8 40.7 52.9 62.5 52.5 55.3 62.5 37.8 58.3 41.9 48.1 50.0 42.9 Qwen3-VL-8B-Instruct [11] 53.3 51.6 61.8 44.4 50.0 53.1 45.9 55.3 81.2 40.5 66.7 45.2 46.2 33.3 42.9 Qwen3-VL-32B-Instruct [11] 58.7 48.4 79.4 44.4 55.9 56.3 55.7 63.2 75.0 48.7 66.7 67.7 57.7 33.3 42.9 Qwen3-VL-30B-A3B-Instruct [11] 47.8 51.6 58.8 29.6 38.2 53.1 41.0 48.7 62.5 29.7 62.5 45.2 48.1 16.7 28.6 InternVL3 5-8B[12] 50.0 58.1 58.8 29.6 44.1 53.1 49.2 50.0 56.3 37.8 58.3 41.9 38.5 58.3 28.6 InternVL3.5-30B-A3B[12] 41.3 51.6 35.3 37.0 26.5 43.8 42.6 42.1 50.0 40.5 45.8 45.1 46.1 8.3 14.3 InternVL3 5-38B[12] 50.0 48.4 64.7 33.3 41.2 59.4 47.5 54.0 62.5 35.1 62.5 54.8 44.2 16.7 14.3 Phi-4-multimodal-instruct [7] 40.2 41.9 47.1 29.6 29.4 40.6 42.6 40.8 37.5 40.5 45.8 35.5 40.4 25.0 28.6 Random 27.2 25.8 17.7 40.7 23.5 37.5 27.9 29.0 37.5 18.9 29.2 29.0 23.0 16.6 42.8 Human 68.4 75.6 72.6 59.9 75.8 81.4 84.9 75.0 46.8 71.9 82.7 82.1 99.2 83.3 66.2 * Undergraduate 62.8 71.8 70.2 53.8 64.3 66.7 74.9 53.0 43.6 49.7 70.7 75.4 97.4 69.4 46.2 * Graduate & Young Professionals 78.2 85.4 76.6 68.8 73.9 81.9 83.8 76.0 50.0 70.0 81.9 75.0 100.0 83.7 62.5 * Professionals 94.9 90.0 85.0 93.3 89.1 95.6 96.0 96.0 46.7 96.0 95.6 96.0 100.0 96.6 90.0
+> Gemini-3-pro-preview 77.2 80.6 79.4 70.4 76.5 81.3 72.1 80.3 93.8 75.7 83.3 77.4 78.8 33.3 85.7
+
+## B. Author contributions 
+
+• Project Conception: Y.J., J.F., M.G. 
+
+> 1
+
+This was released on 11/19/2025 at the time of writing supplementary materials. • Task Definition & Benchmark Design: Y.J., J.F., M.G. 
+
+• Data Curation & Management: Y.J., J.F., M.G. 
+
+• Benchmark Question Generation: Y.J., J.F., M.G. 
+
+• Model Evaluation: Y.J., J.F. 
+
+• Qualitative & Quantitative Analysis: Y.J., J.F. 
+
+• Writing & Visualization: Y.J., J.F. 
+
+• Supervision: Y.J., J.F., M.G. 
+
+## C. Limitations and future work 
+
+• Dataset Scale, Density, and the Expert Bottleneck Our final dataset consists of 92 high-quality, professionally annotated samples. We acknowledge that this scale is smaller than general-domain VQA benchmarks or DesignQA [2]. However, as highlighted in comparisons (in the main paper), there is a distinct trade-off between dataset size and reasoning depth. High-level cognitive tasks especially toward real-world engineering workflows require annotations from licensed experts, creating an “expert bottleneck” that limits rapid scaling. Crucially, despite the modest total count, DrawingVQA is larger and more diverse than the construction-engineering subsets of existing generalist benchmarks. As shown in Figure 4 in the main paper, the relevant subsets of MM-Vet (4 samples), ScienceQA (24 samples), and RBench-M (54 samples) are significantly smaller. Furthermore, where other datasets typically focus on a single question type (e.g., from textbook, exam), DrawingVQA spans 7 distinct construction-engineering workflow aspects. While smaller in volume, our dataset offers a higher “information density” and a more comprehensive evaluation of professional versatility than existing alternatives. 
+
+• Closed vs. Open-Ended To ensure robust and reproducible comparisons, the majority of our quantitative evaluation relies on Multiple-Choice Questions. We recognize, however, that real-world engineering workflows operate in an open-ended setting—practitioners do not select from a list of options but must generate solutions derived from compliance checks to spatial and quantity calculations. While we included an open-ended subset in our benchmark, it remains a challenge. Future iterations of DrawingVQA aim to establish a rigorous question set for open-ended engineering VQA. 
+
+• Scope of Engineering Disciplines DrawingVQA currently emphasizes structural engineering and construction manage-ment, utilizing real-world IFC-level structural drawings. While structural discipline is the backbone of any construction, the domain is multidisciplinary. Our current scope excludes other disciplines such as Architectural, Civil, and other critical system disciplines such as Mechanical, Electrical, and Plumbing (MEP). While the way to read IFC drawings and the main rationale are similar across disciplines, visual perception and the reasoning process differ. MEP drawings rely heavily on schematic symbols, deciphering complex relations and connections, rather than the physical scale and dimensioning critical to structural drawings. Future work must expand the dataset to cover these modalities. This would allow for a more holistic assessment of an MLLM’s ability to understand construction engineering drawings in a meaningful way. 
+
+## D. Benchmark details 
+
+D.1. Accessing DrawingVQA DrawingVQA is an expertly curated benchmark datasets that utilizes Issued for Construction (IFC) level drawings. In this iteration of DrawingVQA , the focus was made on structural discipline drawings, as structural drawings include the backbone of any building structures that become the basis for coordination with other disciplines. The QA sets within the drawings focus on practical questions that would be asked by construction industry professionals to better understand design intent and design requirements. Contrary to many dataset that may require ‘intrinsic’ or ‘latent’ knowledge, DrawingVQA focuses on reasoning within the given context window of a drawing or a portion of the drawing, to truly test MLLMs capability in understanding local contexts without hallucinating. The DrawingVQA is shared on https://huggingface.co/datasets/S2-MIND/DrawingVQA . It is dis-tributed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. Please note that most of the drawings do contain private information such as the architects, engineers, and general contractors. Any information that indicates private information were redacted. 
+
+D.2. General Guidelines 
+
+There are two types of questions asked within this QA set: Multiple-Choice Questions, and Open-Ended Questions. The multiple choice questions included True/False, and choices of more than 4 options with one correct option. The closed ended questions encompassed short descriptive responses, however, the questions were asked in a way to ensure that long answers were avoided. Each questions had at least one input of a construction drawing image, where it was either a full drawing image, or a proportion of the full drawing image. Construction drawings utilized in the industry are typically saved as PDFs for portability. For the purpose of benchmarking, these drawings were converted into PNG images. As part of a process to export from PDF to images, there are various resolutions that can be selected in the unit of pixels per inch (ppi). For the DrawingVQA , range of resolution from 25 to 125 were extracted for testing. Practically, the resolutions can defer based on the usage, where for lightweight purpose, the ppi can be as low as 75 ppi, but in other cases such as for printing applications, this can be up until 300 ppi. The table below shows the average width and height of the images used, as it contains full drawing images to portion of the drawing image, to a very small patch for symbol detection. 
+
+D.3. Question curation guidelines 
+
+To curate the dataset, 33 Issued for Construction level structural discipline drawings were collected. These drawings became the basis for brainstorming potential questions that can be asked, specifically in the sense that if this was a real project, what sort of questions would professionals ask first when seeing the drawings. These questions and answer pairs were recorded first to ensure that the complexity of the questions were realistic, and matched what was needed for a meaningful benchmark. Upon completion for the first round of Question-Answer creation, a more scrutinized evaluation was made to come up with plausible options that may arise as a result of misreading or misunderstanding the drawings. These options were added as part of the Question-Answer pair. Finally, these questions were evaluated and designated for its dual categorization to possibly create meaningful insights upon completion of the benchmark testing. 
+
+> Table 5. Drawing image size variations in pixels
+
+Minimum Median Maximum 
+
+Width 54 4064 4800 
+
+Height 82 3000 3600 
+
+D.4. Dataset VQA Structure 
+
+The code block below indicates the dataset schema and structure used to conduct the test in various models this work has benchmarked.                  
+
+> {"id": Integer, "image_name": String, "image2_name": String, "question": String, "options": {"A": String, "B": String, "C": String, "D": String }, "answer": String, "explanation": String, "cv_field": List[String] "cv_subfield": List[String] "ce_field": List[String] "ce_subfield": List[String], "topic_difficulty": String, "question_type": String },
+
+D.5. Training contamination mitigation 
+
+A critical challenge in benchmarking MLLMs is the risk of data contamination, where test samples inadvertently appear in the model’s pre-training corpus. This leakage allows models to solve problems through memorization rather than reasoning. To guarantee the integrity of our evaluation, DrawingVQA is designed to be strictly contamination-free through two key mechanisms: 
+
+• Proprietary and Offline Image Sources: Unlike benchmarks derived from public internet crawls, the IFC construction engineering drawings in our dataset were sourced from private construction projects and have not been visible to public search engines. 
+
+• Novel Annotation and Temporal Separation: The Question-Answer (QA) pairs were generated de novo by our research team in late 2025, following industry practices. This creation date post-dates the knowledge cutoff of all models tested. Consequently, we can confirm that DrawingVQA represents a true zero-shot evaluation environment. The performance metrics reported in this study reflect the models’ genuine capability to contextualize novel visual engineering context window of a drawing, rather than their ability to recall training data. 
+
+D.6. Question Format: Multiple-Choice vs. Open-Ended 
+
+To ensure rigorous and reproducible evaluation, DrawingVQA employs a Multiple-Choice Question (MCQ) format. The distractors within these MCQs are meticulously expert-designed to reflect realistic cognitive and procedural errors commonly made by practitioners when interpreting IFC (Issued for Construction) drawings. This design ensures the benchmark serves as a reliable proxy for real-world engineering challenges. To verify that the closed-ended format does not artificially alter the inherent difficulty of the tasks, we conducted an ablation study by converting a subset of 20 MCQs into open-ended questions. An evaluation of MLLM performance across these two formats yielded no statistically significant difference in accuracy (paired t-test, 𝑝 = 0.09). This confirms that the MCQ format in DrawingVQA effectively evaluates reasoning capabilities without introducing a format-based advantage or bias. 
+
+D.7. Generalization to Unseen Drawing Styles 
+
+We prioritize reasoning density over repetitive volume. To further validate the generalization capabilities of our dataset, we conducted an additional evaluation using unseen data. Specifically, we compiled a supplementary set of 49 new VQA pairs derived from 7 newly introduced drawings, distributing 7 QA sets evenly across 7 distinct Construction Engineering (CE) dimensions. Comparing model performance on this unseen set against the original benchmark, a paired t-test revealed no statistically significant difference in overall MLLM accuracy ( 𝑝 = 0.07). This confirms that the performance benchmarked by our dataset remains consistent and generalizes effectively when models are confronted with different drawing styles, due to our drawing QA is careful engineering reasoning required not just extracting information. 
+
+D.8. Ethical Consideration 
+
+• Copyright and Licensing: We maintain strict adherence to all applicable copyright and licensing regulations. 
+
+• Data Privacy and Anonymity: All project-specific identifiers (e.g., client names, specific site addresses) were redacted prior to inclusion. 
+
+## E. Dual Categorization Taxonomy 
+
+To move beyond aggregate accuracy metrics and diagnose specific model bottlenecks, we developed a dual-category taxonomy. This framework cross-references the Domain-Specific Dimension (the engineering intent of the query) with the Cognitive Capability (the underlying mechanism required by the MLLM to solve it). The taxonomy classifies queries into seven domain dimensions, ranging from General Administrative tasks to complex 
+
+Code and Specification Compliance verification . As detailed in Table 6, each dimension is associated with the corresponding primary MLLM capabilities necessary for resolution: 
+
+• OCR (Text Regocnition/Understanding): Essential for interpreting dense technical annotations, tables, and callouts (i.e., other cross-references). 
+
+• Visual Perception: Low-level identification of graphical entities (symbols, lines, shapes), delineation of major spaces within drawings such as sub-drawings or details, and object counting. 
+
+• Reasoning: Higher-order processing, including Spatial (2D-to-2/3D reasoning), Alignment (cross-referencing be-tween visual and textual content), and Visual (compositional analysis) reasoning. An example can include understanding spatial composition of elements within the model (e.g. this element A is on the left of element B, element C exists between grid line D and E). 
+
+• Knowledge: Retrieval of external domain facts or latent knowledge (e.g., standard acronyms, drawing standards, industry best practice, specifications or other engineering standards) not explicitly visible in the pixel data.   
+
+> Table 6. The DrawingVQA Domain-Capability Map. We define seven domain dimensions and identify the primary MLLM cognitive capabilities typically required to solve tasks within each category.
+
+Domain-Specific Dimension Task Description Primary Cognitive Dependencies 1. General Admin. Identifying project participants, sheet metadata, dates, and drawing types. OCR, Visual Perception 
+
+2. Domain Element Identification Interpreting specific architectural, struc-tural element symbols, callout symbols and other administrative components. Visual Perception, Reasoning (Alignment, Visual), OCR 
+
+3. Discipline Language Understanding Identifying discipline-specific acronyms, abbreviations, and technical nomenclature. OCR, Knowledge, Reasoning (Vi-sual, Alignment) 
+
+4. Dimensional Understanding Mapping sections to plan views, locating intersections, and understanding spatial off-sets. Reasoning (Alignment, Spatial), OCR 
+
+5. Design Semantic Understanding Inferring coordination needs, distinguish-ing design alternatives, and interpreting context. Knowledge, OCR, Reasoning (Vi-sual, Spatial) 
+
+6. Quantity Take-Off (QTO) Counting elements, measuring linear/area quantities, and extracting categories from schedules. Reasoning (Alignment), Visual Per-ception, OCR 
+
+7. Compliance & Specs Matching components to specifications, identifying scope gaps, or verifying code compliance. Knowledge, Reasoning (Alignment, Visual, Spatial), OCR 
+
+## F. Experiments details 
+
+F.1. Evaluation Prompts and Parsing 
+
+To evaluate the model’s performance, we structured the input prompts to encourage Chain-of-Thought (CoT) reasoning and specified a strict output format. Depending on the question type, we appended the following instructions to the input. 
+
+Multiple Choice: 
+
+The following is a multiple choice question. Think step by step and then output the answer in the format of \“The answer is (X) \” at the end. 
+
+{{ [QUESTION] }} 
+
+Options: 
+
+{{ [CHOICES] }} 
+
+Open-Ended: The following is an open-ended question (with an explicit numeric answer). Think step by step and then output the answer in the format of \“The answer is (X) \” at the end. 
+
+{{ [QUESTION] }} 
+
+Despite these explicit formatting instructions, the models occasionally generated heterogeneous output formats. Common variations included: 
+
+• Standard sentences: “The answer is A.” or “The answer is (A)” 
+
+• LaTeX formatting: “The final answer is \boxed {A}.” 
+
+• Markdown emphasis: “The answer is **A: XX**.” 
+
+• Minimalist output: “A” or “A: XX” To robustly extract the predicted label across these variations, we implemented a regular expression pattern designed to capture the answer key while ignoring surrounding formatting or punctuation. Other variations, except the above list, are not handled in the parsing process. 
+
+F.2. Model details 
+
+Table 7 details the specific versions and API endpoints utilized in our experiments to ensure full reproducibility of our results. 
+
+Table 7. MLLM API endpoints and sources.                                       
+
+> Model API Endpoint Source
+> GPT-4o gpt-4o-2024-08-06 OpenAI API o3 o3-2025-04-16 OpenAI API Gemini-2.5-pro gemini-2.5-flash Google Gemini API Gemini-2.5-flash gemini-2.5-pro Google Gemini API Claude-4.5-Sonnet claude-sonnet-4-5-20250929 Claude API Claude-4.5-Haiku claude-haiku-4-5-20251001 Claude API LLaVA-OneVision-1.5-8B-Instruct lmms-lab/LLaVA-OneVision-1.5-8B-Instruct HuggingFace, local inference LLaVA-v1.6-Mistral-7B llava-hf/llava-v1.6-mistral-7b-hf HuggingFace, local inference LLaVA-v1.6-34B llava-hf/llava-v1.6-34b-hf HuggingFace, local inference Llama-3.2-11B-Vision-Instruct meta-llama/Llama-3.2-11B-Vision-Instruct HuggingFace, local inference Llama-4-Scout-17B-16E-Instruct meta-llama/Llama-4-Scout-17B-16E-Instruct HuggingFace, local inference Qwen3-VL-8B-Instruct Qwen/Qwen3-VL-8B-Instruct HuggingFace, local inference Qwen3-VL-32B-Instruct Qwen/Qwen3-VL-32B-Instruct HuggingFace, local inference Qwen3-VL-30B-A3B-Instruct Qwen/Qwen3-VL-30B-A3B-Instruct HuggingFace, local inference InternVL3.5-8B OpenGVLab/InternVL3 5-8B-HF HuggingFace, local inference InternVL3.5-38B OpenGVLab/InternVL3 5-38B-HF HuggingFace, local inference InternVL3.5-30B-A3B OpenGVLab/InternVL3 5-30B-A3B-HF HuggingFace, local inference Phi-4-multimodal-instruct microsoft/Phi-4-multimodal-instruct HuggingFace, local inference
+
+F.3. Human baseline 
+
+As part of an effort to ensure that the tests being conducted on various SOTA MLLMs are reasonable and not superficial or impractical, a human baselines for the same questions were created to compare their performance against the latest models. Similar to how various models may have variant parameter sizes or access to different knowledge, a similar delineation was made to the human baseline tests based on their industry experience in years. We recruited 52 participants within the Civil Engineering or Construction Management industry with 3 levels of expertise in the following manner: Undergraduate (Years of experience = 0 years); Young Professionals such as graduate students or those who have just started working in the industry (0 ≤ Years of experience ≤ 2 years); Professionals (3 ≤ Years of Experience). This delineation will also aim to help create human benchmark checkpoints that are comparable with model performance. As many of the participants were students and working professionals, the questionnaire for the baselines was shortened to 20 questions per person, but the questions were asked in the exact same format as to the MLLMs, with one image + multiple choices for the closed-ended questions, and one image + free response for the open-ended questions. The following rules were used to set up the human benchmark test: 
+
+• Questions were provided in a google form. 
+
+• Participants did not view any questions prior to completing the form. • Any internet, LLM or other resource access were prohibited, to preserve testing hygiene, where only the context window of the drawing image, as well as their prior experiences in the industry, are utilized. 
+
+• Time limit was set up to be 20 minutes for 20 questions, to ensure all participants had the same control variable, regardless of their experiences. At the end of the benchmark test, all the participants were asked to rank the difficulty of the QA set, as well as the realistic nature of the QA set to the practical industry application. The results collected by the participants are shown below.                              
+
+> Table 8. DrawingVQA Human Benchmark Test Feedback Results (%).
+> 12345
+> How realistic were the questions? 0.0 0.0 28.3 32.1 39.6
+> How difficult were the questions? 3.8 17.0 50.9 28.3 0.0
+> Table 9. Participant votes for the dataset that best requires reasoning skills on real-world AEC industry context and engineering practices.
+> Dataset Source Votes Percentage (%)
+> DrawingVQA Construction drawings from real-world projects 40 76.9 MMMU FE exam or college exam 713.5 CEQuest Textbooks and guidelines 35.8 None -23.8
+
+F.4. Dense and MoE models 
+
+To understand the trade-off between inference efficiency and reasoning accuracy on IFC construction drawings, we compared Dense architectures against Mixture-of-Experts (MoE) variants within the same model families. MoE models are designed to reduce computational cost by activating only a subset of parameters per token. Table 10 summarizes the performance across the Qwen, InternVL, Llama, and LLaVA families. We observe a distinct trend where Dense architectures generally outperform their MoE counterparts on the DrawingVQA benchmark .
+
+• Qwen Family: The Qwen3-VL-8B (Dense) achieved 53.3% accuracy, surpassing the Qwen3-VL-30B-A3B (MoE) which scored 47.8% , despite the MoE model having nearly 4 × the total parameters. 
+
+• InternVL Family: A similar pattern emerges, where the Dense 8B model (50.0%) significantly outperforms the MoE 30B variant (41.3%). 
+
+• Scaling Behavior: While the Llama-4-Scout MoE achieved a competitive 53.3%, it required a massive total parameter budget of 109B to match the performance of the significantly smaller Qwen-8B Dense model. These results suggest that for high-fidelity visual tasks requiring global context interpretation—such as reading complex construction drawings—the sparsity of MoE models may be a limiting factor compared to the dense connectivity of standard Transformers. 
+
+F.5. No-Image Ablations 
+
+To quantify the extent to which models rely on visual information versus language priors, we conducted a no-image ablation study, a standard diagnostic in VQA evaluations [8, 9]. In this setting, the MLLMs are provided with the textual question alone, without the accompanying visual context. Following [8], we prepended the prompt with the following sentence: 
+
+If an image is mentioned, ignore this information and try your best to answer the question. 
+
+A rigorous VQA benchmark is “vision-centric”, ensuring that questions cannot be solved solely through common sense reasoning or textual artifacts. DrawingVQA was explicitly curated to reflect realistic engineering problems encountered by professionals on job sites, which inherently require visual verification. As presented in Table 11, the significant performance drop ( Δ) observed across high-performing models provides strong empirical evidence that DrawingVQA is vision-dependent. Qualitative analysis reveals that when text-only models answer correctly, they often rely on hallucinations (inventing scenarios), bias toward specific answers (e.g., defaulting to “True” on Table 10. Performance comparison between Dense and Mixture-of-Experts (MoE) models across different parameter scales. † These numbers are from each model’s report and official website. 
+
+Model Arch. Total Params. † Activated Params. † Acc. (%) 
+
+Qwen Family [11] Qwen3-VL-8B-Instruct Dense 8B 8B 53.3 Qwen3-VL-32B-Instruct Dense 32B 32B 58.7 Qwen3-VL-30B-A3B-Instruct MoE 30B 3B 47.8 
+
+InternVL Family [12] InternVL3.5-8B Dense 8B 8B 50.0 InternVL3.5-38B Dense 38B 38B 50.0 InternVL3.5-30B-A3B MoE 30B 3B 41.3 
+
+Llama Family [4] Llama-3.2-11B-Vision-Instruct Dense 11B 11B 39.1 Llama-4-Scout-17B-16E-Instruct MoE 109B 17B 53.3 
+
+LLaVa Family [5] LLaVA-v1.6-Mistral-7B Dense 7B 7B 28.3 LLaVA-v1.6-34B Dense 34B 34B 42.4 
+
+binary questions), or exploit domain priors (e.g., guessing typical quantities of drawing notes). However, the substantial performance gap (around or even below that random guess) confirms that reasoning on this benchmark necessitates visual grounding. Notably, refusal rates offer insight into model safety and grounding capabilities. Models such as Gemini-2.5-flash 
+
+and LLaVA-OneVision exhibited high refusal rates (55.4% and 81.5%, respectively), correctly identifying that the questions were unanswerable without the visual drawing context. 
+
+Table 11. Text-Only Ablation Study. Value is a percentage.                                                         
+
+> Model Multimodal Acc. (Image+Text) Text-Only Acc. (Ablation) Drop ( Δ)Refuse to answer (Require image)
+> GPT-4o 48.9 31.5 17.4 ( ↓)15.2 o3 58.7 29.5 29.2 ( ↓)1.1 Gemini-2.5-pro 71.7 37.0 34.7 ( ↓)13.0 Gemini-2.5-flash 66.3 9.8 56.5 ( ↓)55.4 Claude-4.5-Sonnet 57.6 35.9 21.7 ( ↓)2.2 Claude-4.5-Haiku 54.3 18.5 35.8 ( ↓)56.5 LLaVA-OneVision-1.5-8B-Instruct [10] 40.2 8.7 31.5 ( ↓)81.5 LLaVA-v1.6-Mistral-7B [5] 28.3 25.0 3.3( ↓)2.2 Llama-3.2-11B-Vision-Instruct [4] 39.1 30.4 8.7( ↓)3.3 Qwen3-VL-8B-Instruct [11] 53.3 34.8 18.5 ( ↓)9.9 InternVL3.5-30B-A3B[12] 41.3 37.0 4.3 ( ↓)3.3 Phi-4-multimodal-instruct [7] 40.2 31.5 8.7 ( ↓)17.4 Random (Baseline) 27.2 ---
+
+F.6. Breakdown results on Dual Category Mapping 
+
+To identify specific cognitive bottlenecks in construction drawing interpretation, we introduce our dual-category mapping to the error instances of the top-performing model, Gemini-2.5-Pro. Figure 6 illustrates the distribution of failure causes across seven domain-specific tasks. The analysis reveals that failure modes are highly context-dependent. General administrative tasks (“Admin.”) require OCR and Visual Perception capabilities from MLLMs, indicating the model gets answers by reading explicit information in drawings. In contrast, technical tasks such as “Domain Element Identification” and “Dimensional Understanding (Cross-Referencing)” exhibit a shift toward Reasoning (spatial, visual, and alignment), OCR, and Visual Per-ception capabilities required. “QTO” (Quantity Take-off) shows sensitivity to OCR and Visual alignment errors, highlighting the challenge of accurately grounding text within complex graphical geometries. On the other hand, “Compliance” requires knowledge beyond explicit information within the drawings. This heterogeneity indicates that a single optimization strategy is insufficient; distinct construction tasks require targeted improvements in specific multimodal capabilities. Figure 6. Dual-Category Error Breakdown. 
+
+F.7. More experiments on Image resolution 
+
+We investigate the impact of image resolution on the performance of MLLMs within the context of engineering drawings. In our dataset construction, we distinguish between Region of Interest (ROI) images and Full Drawing Sheets. While ROI images are typically user-generated crops that do not require standardization, the Full Drawing Sheet serves as the global context and must be rasterized at a resolution that balances legibility with computational efficiency. To determine the optimal setting, we generated variants of the full drawing sheets at pixel densities ranging from 25 PPI to 125 PPI. Table 12 details the resulting pixel dimensions. Note that the 100 PPI setting yields a median resolution of 4800 × 3600 pixels. This resolution substantially exceeds standard 4K UHD resolution (3840 × 2160), ensuring that fine-grained details—such as dimension text, line weights, and hatch patterns—are preserved without the artifacts common in lower-resolution rasterization. On top of this, we conducted an ablation study across varying resolutions to assess robustness. As shown in Table 13, model performance generally correlates with increased resolution. However, the accuracy gains plateau beyond 100 PPI, with some models (e.g., Gemini-2.5-flash, Qwen3) showing peak performance at 100 PPI rather than 125 PPI. The 100 PPI setting achieved the highest average accuracy of 55.7% across all tested MLLMs. Based on these results, we selected 100 PPI as the default resolution for the DrawingVQA benchmark, as it offers the best trade-off between high-fidelity visual detail and model performance.                                                  
+
+> Table 12. Summary of Image Dimensions for Different PPI Variants on a Full Drawing Sheet.
+> Images Width (px) Height (px) Avg Min Median Max Avg Min Median Max
+> 125 PPI 5625.1 5077 6000 6000 4178.7 3750 4500 4500 100 PPI 4500.1 4062 4800 4800 3343 3000 3600 3600 75 PPI 3375.0 3046 3600 3600 2507.3 2250 2700 2700 50 PPI 2250.1 2031 2400 2400 1671.5 1500 1800 1800 25 PPI 1125.1 1016 1200 1200 835.8 750 900 900
+
+F.8. More experiments on on Option Permutation and Prefix Sensitivity 
+
+Prior research indicates that Large Language Models (LLMs) often exhibit sensitivity to the ordering of choices and the assignment of option labels (e.g., A, B, C, D) in multiple-choice settings, a phenomenon known as position bias or selection bias [13, 14]. To evaluate the robustness of the models on DrawingVQA , we introduced an ablation setting named “Prefix v2”. In this setting, we shuffle the order of the answer options and randomize the assignment of alphabetical prefixes. As shown in Table 14, this randomization does not result in a significant difference (Avg. 49.4% and 49.5%). Table 13. Ablation study on image resolution (Accuracy %). Best results are highlighted in bold.                                                   
+
+> Model 125 PPI 100 PPI 75 PPI 50 PPI 25 PPI
+> Gemini-2.5-pro 71.7 71.7 68.5 69.6 64.1 Gemini-2.5-flash 58.7 66.3 65.2 57.6 56.5 o3 60.0 58.7 55.4 56.5 57.6 gpt-4o 52.2 48.9 51.1 52.2 42.4 Claude-4.5-Sonnet 55.4 57.6 56.5 51.1 55.4 Claude-4.5-Haiku 53.2 48.9 50.0 46.7 54.4 Qwen3-VL-8B-Instruct 52.2 53.3 47.8 45.7 46.7 Phi-4-multimodal-instruct 39.1 40.2 37.0 32.6 29.4
+> Average 55.3 55.7 53.9 51.5 50.8
+
+We attribute this result to the design of the original DrawingVQA . The original dataset features carefully curated options and their sequences that are intentionally designed to challenge humans’ reasoning capabilities. 
+
+Table 14. Ablation Study on Random Option Prefixes. Values represent accuracy percentages. “Prefix v2” denotes results with shuffled option orders and randomized prefixes.                                                   
+
+> Model DrawingVQA (As-is) DrawingVQA (Prefix v2) Δ
+> GPT-4o 48.9 52.2 +3.3 o3 58.7 59.8 +1.1 Gemini-2.5-pro 71.7 71.7 0.0 Gemini-2.5-flash 66.3 65.2 -1.1 Claude-4.5-Sonnet 57.6 53.3 -4.3 Claude-4.5-Haiku 54.3 57.6 +3.3 LLaVA-OneVision-1.5-8B-Instruct [10] 40.2 31.5 -8.7 LLaVA-v1.6-Mistral-7B [5] 28.3 32.6 +4.3 Llama-3.2-11B-Vision-Instruct [4] 39.1 41.3 +2.2 Qwen3-VL-8B-Instruct [11] 53.3 54.3 +1.0 Qwen3-VL-30B-A3B-Instruct [11] 41.3 48.9 +7.6 InternVL3.5-8B [12] 50.0 44.6 -5.4 InternVL3.5-30B-A3B [12] 41.3 45.7 +4.4 Phi-4-multimodal-instruct [7] 40.2 34.8 -5.4
+> Average 49.4 49.5 0.1
+
+F.9. Ablation Study on Input Modality: The PDF Hybrid Setting 
+
+In standard construction industry workflows, stakeholders typically exchange drawings as vectorized PDFs (e.g., exported from BIM/CAD platforms) rather than rasterized, scanned images. To align our evaluation with this real-world practice, we introduced a PDF Hybrid experimental setting. In this configuration, whenever a question references a full drawing sheet, the model is provided with the native vectorized PDF file instead of a raster image. Conversely, if a question targets a specific Region of Interest (ROI), the input remains a cropped raster screenshot. For questions containing both a full sheet and an ROI, the input includes both the raster crop with the vectorized full-sheet PDF. This hybrid approach mirrors practical scenarios where engineers might upload a full PDF sheet but query a specific visual detail. We limited this study to proprietary MLLMs (GPT, Gemini, Claude series), as most current open-weights models do not natively support PDF document ingestion. Table 15 presents the comparative performance. Theoretically, vectorized PDFs should offer superior fidelity by providing explicit text layers and sharp vector paths, bypassing the resolution constraints of rasterization. However, our results indicate that this benefit is inconsistent and minor. While GPT-4o and o3 got performance gain (+5.4%), the Gemini and Claude families either stagnated or suffered performance degradation (e.g., Gemini-2.5-flash dropped by 15.2%). This suggests that MLLMs struggle to spatially ground the explicit information contained in vector PDFs. In queries such as “How many columns are located along vertical grid line Q?” , MLLMs in the PDF setting frequently fail despite the text “Q” and adjacent lines being machine-readable. The models appear to perceive the text and lines as disjointed lists of data rather than a spatially coherent map, failing to align the identifier “Q” with the specific vertical vector line and its intersecting column elements. Furthermore, the hybrid modality (pairing a vector PDF full-sheet with a raster ROI crop) introduces a modality gap . The models struggle to perform visual referencing when the context (full sheet) is represented in vector space while the detail (crop) exists in pixel space. This confirms that DrawingVQA is a robust, visual-centric benchmark; simply providing machine-readable text via PDFs does not bypass the core requirement for complex spatial and visual reasoning. Future research should focus on bridging this gap, potentially by developing architectures that can better align vector primitives with raster visual features. 
+
+Table 15. Ablation Study on PDF Hybrid setting.                        
+
+> Model DrawingVQA (Raster) DrawingVQA (PDF Hybrid) Δ
+> GPT-4o 48.9 54.3 +5.4 o3 58.7 64.1 +5.4 Gemini-2.5-pro 71.7 66.3 -5.4 Gemini-2.5-flash 66.3 51.1 -15.2 Claude-4.5-Sonnet 57.6 56.5 -1.1 Claude-4.5-Haiku 54.3 54.3 0.0
+
+## G. Error Analysis 
+
+We reviewed the Chain-of-Thought (CoT) responses on the best models that were available from our benchmark study, which was Gemini-2.5-pro and QWen3-VL-8B-Instruct. The following figures illustrates the reasoning the model made to evaluate the options that were given to make the final determination. The figures aim to illustrate where in their Chain-of-Thought went wrong. For all the following figures, light green highlights and comments are added to indicate when models have performed well. The highlight and comments are added in red when model makes an error or false claims. 
+
+G.1. Visual Perception errors 
+
+> Figure 7. Visual Perception and Visual Grounding Errors for Structural Beam Identification based on Grid Lines (by Gemini-2.5-pro).
+
+G.2. Visual and Text Perception errors 
+
+Figure 8. A Mix of Visual and Text Perception Errors for Column Schedule Tabular Identifications (by Gemini-2.5-pro). G.3. Text Perception (OCR) errors 
+
+Figure 9. Text Perception (OCR) Errors on Beam Annotations (by Qwen3-VL-8B-Instruct). G.4. Knowledge errors 
+
+Figure 10. Knowledge and perception error on reading section detail tags (by Gemini-2.5-pro). G.5. Reasoning errors 
+
+Figure 11. Visual Perception and Reasoning Error on Recognizing Drain Tiles (by Gemini-2.5-pro). Figure 12. Knowledge, Reasoning and Perception Error while calculating length of elements (by Gemini-2.5-pro). G.6. Instruction Adherence and Output Formatting 
+
+We observed a distinct disparity in instruction following between proprietary and open-sourced models. Commercial MLLMs (GPT, Gemini, Claude) demonstrated robust adherence to formatting constraints with no syntax errors. In contrast, a few smaller open-sourced models and certain MoE variants exhibited occasional anomalies: 
+
+• Prefix Omission: Outputting raw text without the required option label, despite the explicit prompt instruction to use the format “The answer is (A)” (see Section F.1). 
+
+• Language and Refusal Hallucinations: Reverting to non-target languages (e.g., generating Chinese characters such as 无
+
+法确定) or producing generic refusal phrases like “I don’t know” instead of selecting a valid option. 
+
+G.7. Parametric Bias vs. Visual Grounding 
+
+Beyond formatting adherence, we investigated the models’ ability to prioritize explicit visual evidence over general domain knowledge (parametric priors). MLLMs often exhibit a strong bias toward standard engineering patterns, which can lead to hallucinations when a specific drawing deviates from typical conventions. To evaluate this, we test an adversarial example where the visual detail contradicts common construction norms. Figure 14 illustrates a representative case involving a slab anchor detail. In standard structural engineering practice, such anchors are typically welded “all-around”. However, in this specific test case, the standard “all-around” circle symbol was intentionally removed from the welding notation. The original example is shown in Figure 13. Despite the explicit visual absence of this symbol, models selected the “all-around weld” option. This indicates that the models are over-relying on their training priors regarding how slab anchors are usually detailed, rather than grounding their reasoning in the objective visual syntax provided in the drawing. This prior knowledge bias remains a significant challenge for automated checking systems, which must detect non-standard or erroneous deviations rather than assuming standard compliance. 
+
+> Figure 13. Original example on “all-around” welding example (Gemini-2.5-pro).
+
+Figure 14. Adversarial example to exclude “all-around” circle symbol to highlight parametric knowledge bias in MLLM (Gemini-2.5-pro). G.8. Visual Attention 
+
+To investigate the interpretability of the model’s reasoning process, we extract the attention weights from the final layer of the Qwen3-VL-8B-Instruct decoder [3]. To ensure semantic coherence, we aggregate the attention maps for multi-token words (e.g., merging “P”, “.”, and “8” into a single “P.8” concept) by averaging their respective weights. The visualization results in Figure 15 reveal a disconnect between the model’s textual output and its visual grounding. While the model attempts to localize general geometric features—showing some attention to linear drawing outlines when processing the token “grid line” or “P.8”—it fails to accurately ground specific beam entities (i.e., attention sink). Crucially, when processing the target location “P.8”, the attention map does not focus on the “P.8” label in the drawing; instead, the focus drifts to irrelevant regions such as grid line symbol F, G, J, P, P.1, G, or R. This visual misalignment indicates that the model is effectively hallucinating the entity’s location (i.e., spatial reasoning) rather than looking at the right pixel area. Consequently, this failure in visual grounding leads to a logic error: the model incorrectly predicts option, having “W24”, whereas the ground truth for the structural member at P.8 is “W21x50”. We hypothesize that this phenomenon stems from a domain gap: MLLMs are predominantly trained on natural images and may lack the capability to interpret the sparse, symbolic, geometry representations found in 2D technical drawings. These findings bring attention to future work focused on improving cross-modal alignment and grounding specifically for engineering artifacts and 2D schematic views. Figure 15. Visual attention maps of Qwen3-VL-8B-Instruct. The maps illustrate where the model “looks” when processing each text token. Supplementary References 
+
+[1] R. Xiong, Y. Wang, S. Gunhan, Y. Zhu, and C. Berryman. Can ai master construction management (cm)? benchmarking state-of-the-art large language models on cm certification exams. arXiv:2504.08779, 2025. [2] A. C. Doris, D. Grandi, R. Tomich, M. F. Alam, M. Ataei, H. Cheong, and F. Ahmed. Designqa: A multimodal benchmark for evaluating large language models’ understanding of engineering documentation. arXiv:2404.07917, 2024. [3] S. Kang, J. Kim, J. Kim, and S. J. Hwang. See what you are told: Visual attention sink in large multimodal models. arXiv:2503.03321, 2025. [4] Meta. Llama-3.2-11b-vision-instruct. Technical report, 2024. [5] H. Liu, C. Li, Y. Li, and Y. J. Lee. Improved baselines with visual instruction tuning. arXiv:2310.03744, 2023. [6] Meta AI. The llama 4 herd: The beginning of a new era of natively multimodal ai innovation, April 2025. [7] Microsoft et al. Phi-4-mini technical report: Compact yet powerful multimodal language models via mixture-of-loras. arXiv:2503.01743, 2025. [8] J. Burgess et al. Microvqa: A multimodal reasoning benchmark for microscopy-based scientific research. In CVPR , pages 19552– 19564, 2025. [9] X. Yue et al. MMMU: A massive multi-discipline multimodal understanding and reasoning benchmark for expert AGI. In CVPR ,pages 9556–9567, 2024. [10] X. An et al. LLaVA-onevision-1.5: Fully open framework for democratized multimodal training. arXiv:2509.23661, 2025. [11] Qwen Team. Qwen3 technical report. arXiv:2505.09388, 2025. [12] W. Wang et al. InternVL3.5: Advancing open-source multimodal models in versatility, reasoning, and efficiency. arXiv:2508.18265, 2025. [13] Z. Yang, P. Jian, and C. Li. Option symbol matters: Investigating and mitigating multiple-choice option symbol bias of large language models. In NAACL , pages 1902–1917, 2025. [14] C. Zheng, H. Zhou, F. Meng, J. Zhou, and M. Huang. Large language models are not robust multiple choice selectors. arXiv:2309.03882, 2024.

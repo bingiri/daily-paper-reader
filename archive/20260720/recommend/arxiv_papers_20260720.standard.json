@@ -1,0 +1,464 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-20T20:28:24.012517+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 8,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [
+    {
+      "id": "2607.11436v2",
+      "source": "arxiv",
+      "title": "The Ebb and Flow of Multimodal Focus: Scheduling Visual Relay Windows for Grounded VLM Reasoning",
+      "abstract": "Vision-language models increasingly succeed on multimodal reasoning benchmarks, yet their visual evidence often becomes unstable once it enters the language stack, weakening evidence-grounded reasoning. To understand this fragility, we examine the internal dynamics of VLMs through a mechanistic lens and uncover a stable three-stage redistribution of multimodal attention focus across depth: an early question-conditioned organization, a critical middle visual-dominant relay, and a late return to answer formation. We operationalize the middle phase as the Visual Relay Window (VRW), and show that its geometry varies with task demand, is causally tied to grounded generation, and distinguishes unsupported answers from stronger reasoning trajectories. Guided by this internal rhythm, we propose TRACE, a task-adaptive inference-time control framework with lightweight trained modules. It reshapes relay allocation during prefill and preserves assembled visual support after handoff during decoding. Across four open-weight VLM backbones and seven benchmarks, TRACE delivers large gains on grounding-sensitive settings, improving them by 4.33 points on average and by up to 6.6 points, while also improving reasoning-heavy tasks. These results show that explicitly controlling multimodal focus across depth offers a unified and effective mechanism for strengthening evidence-grounded multimodal reasoning.",
+      "authors": [
+        "Wencheng Ye",
+        "Yi Bin",
+        "Yujuan Ding",
+        "Hongye Fang",
+        "Zheng Wang",
+        "Xing Xu",
+        "Jingkuan Song",
+        "Yun Zhang",
+        "Sirui Da",
+        "Heng Tao Shen"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-13T11:44:23+00:00",
+      "link": "https://arxiv.org/pdf/2607.11436v2",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "grounded VLM reasoning and visual relay window",
+      "llm_evidence_cn": "有根据的VLM推理与视觉中继窗口",
+      "llm_evidence": "有根据的VLM推理与视觉中继窗口",
+      "canonical_evidence": "有根据的VLM推理与视觉中继窗口",
+      "llm_tldr_en": "Reveals a three-stage multimodal attention redistribution in VLMs, defines the Visual Relay Window (VRW) crucial for grounded reasoning, and shows its causal role in answer generation.",
+      "llm_tldr_cn": "视觉语言模型的多模态注意力在深度上呈现三阶段重分配，其中中间阶段的视觉中继窗口对基于证据的推理至关重要。本文通过机制分析发现了这一窗口，并证明其几何形状与任务需求相关，因果影响生成质量。",
+      "llm_tldr": "视觉语言模型的多模态注意力在深度上呈现三阶段重分配，其中中间阶段的视觉中继窗口对基于证据的推理至关重要。本文通过机制分析发现了这一窗口，并证明其几何形状与任务需求相关，因果影响生成质量。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.15686v1",
+      "source": "arxiv",
+      "title": "S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation",
+      "abstract": "We present S1-Omni, a unified multimodal reasoning model for scientific understanding, prediction, and generation. AI for Science (AI4S) has advanced significantly through domain-specific models, tool-augmented LLMs, and scientific language models. However, model capabilities remain highly fragmented, limiting the joint modeling of heterogeneous data, scientific laws, and expert knowledge. S1-Omni addresses this gap by consolidating these capabilities into a single, coherent scientific reasoning model. The architecture of S1-Omni is built upon three core components: unified representation of scientific data, natural-world knowledge alignment, and decoding for domain-specific tasks. First, S1-Omni maps natural-language instructions and scientific objects, including CIF, SMILES, protein sequences, spectra, and scientific images, into a shared representation space. Second, it incorporates scientific laws and expert knowledge into data construction and training, enabling the model to reason from scientific evidence. Third, it performs task-specific decoding to support a broad range of applications, including property prediction, spectrum-to-molecular generation, protein site and structure prediction, and scientific image generation and editing. S1-Omni is trained on S1-Omni-Corpus, which covers 200 scientific tasks and contains millions of reasoning samples, and is evaluated on over 60 scientific benchmarks. It outperforms GPT-5.5 and Gemini-3.1-Pro on most benchmarks and matches or surpasses domain-specific models on several benchmarks. Overall, S1-Omni provides a practical path toward unified scientific modeling.",
+      "authors": [
+        "Jiahao Zhao",
+        "Junyi Liu",
+        "Lifeng Xu",
+        "Nan Xu",
+        "Qingli Wang",
+        "Qingxiao Li",
+        "Tianle Chen",
+        "Xiaoyu Wu",
+        "Yawen Zheng",
+        "Zikai Wang",
+        "Guanming Liu",
+        "Hequn Zhou",
+        "Jingyi Wang",
+        "Jingyuan Shu",
+        "Keqi Wang",
+        "Li He",
+        "Songyang Diao",
+        "Wenhui Xu",
+        "Xinyu Ren",
+        "Yaqin Fan",
+        "Yujin Zhou",
+        "Zhanao Yao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-17T06:56:08+00:00",
+      "link": "https://arxiv.org/pdf/2607.15686v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Unified multimodal reasoning model for scientific tasks",
+      "llm_evidence_cn": "面向科学任务的统一多模态推理模型",
+      "llm_evidence": "面向科学任务的统一多模态推理模型",
+      "canonical_evidence": "面向科学任务的统一多模态推理模型",
+      "llm_tldr_en": "Presents S1-Omni, a unified multimodal reasoning model that consolidates scientific understanding, prediction, and generation into one framework.",
+      "llm_tldr_cn": "针对科学领域模型能力碎片化、无法联合建模异质数据与科学规律的问题，本文提出S1-Omni统一多模态推理模型。该模型通过统一数据表示、自然世界知识对齐和领域特定解码三大核心组件，融合科学理解、预测与生成能力。实验证明S1-Omni在多个科学任务上取得领先性能，为AI for Science提供了通用推理框架。",
+      "llm_tldr": "针对科学领域模型能力碎片化、无法联合建模异质数据与科学规律的问题，本文提出S1-Omni统一多模态推理模型。该模型通过统一数据表示、自然世界知识对齐和领域特定解码三大核心组件，融合科学理解、预测与生成能力。实验证明S1-Omni在多个科学任务上取得领先性能，为AI for Science提供了通用推理框架。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.16107v1",
+      "source": "arxiv",
+      "title": "Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos",
+      "abstract": "We present Audio-Visual Flamingo (AV-Flamingo), a fully open state-of-the-art audio-visual large language model (AV-LLM) for joint understanding and reasoning over audio, images, and long-form videos. Unlike prior AV-LLMs that primarily focus on short clips, AV-Flamingo is designed for understanding and reasoning over long and complex real-world (audio-visual) videos. To support this, we make three key contributions: (i) Audio-Visual-Skills, a large-scale collection of real-world videos with ~7M caption and question-answer training instances designed to emphasize temporal, compositional, and cross-modal audio-visual reasoning; (ii) a novel three-stage curriculum that progressively trains the model from short-range perception to long-horizon multi-event reasoning; and (iii) Temporal Audio-Visual Interleaved Chain-of-Thought, a reasoning framework that explicitly grounds intermediate reasoning steps to timestamps in long audio-visual streams, improving temporal alignment and interpretability. Extensive experiments across 15+ audio-visual, omni-modal, audio, and vision benchmarks show that AV-Flamingo outperforms similarly sized open models by clear margins and remains highly competitive with, and in some cases surpasses, much larger open-weight and closed models, particularly on long and complex real-world audio-visual understanding and reasoning tasks. Beyond benchmark performance, AV-Flamingo exhibits strong real-world utility and transfers well to unseen tasks, highlighting its robustness and generalization ability.",
+      "authors": [
+        "Sreyan Ghosh",
+        "Arushi Goel",
+        "Kaousheik Jayakumar",
+        "Lasha Koroshinadze",
+        "Nishit Anand",
+        "Siddharth Gururani",
+        "Hanrong Ye",
+        "Pritam Biswas",
+        "Yuanhang Su",
+        "Ehsan Hosseini-Asl",
+        "Sang-gil Lee",
+        "Zhifeng Kong",
+        "Jaehyeon Kim",
+        "Sungwon Kim",
+        "S Sakshi",
+        "Ramani Duraiswami",
+        "Dinesh Manocha",
+        "Andrew Tao",
+        "Mohammad Shoeybi",
+        "Bryan Catanzaro",
+        "Ming-Yu Liu",
+        "Wei Ping"
+      ],
+      "primary_category": "eess.AS",
+      "categories": [
+        "eess.AS",
+        "cs.CV"
+      ],
+      "published": "2026-07-17T16:41:15+00:00",
+      "link": "https://arxiv.org/pdf/2607.16107v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Open audio-visual LLM for long video multimodal reasoning",
+      "llm_evidence_cn": "开放音频-视觉大模型，支持长视频多模态推理",
+      "llm_evidence": "开放音频-视觉大模型，支持长视频多模态推理",
+      "canonical_evidence": "开放音频-视觉大模型，支持长视频多模态推理",
+      "llm_tldr_en": "Introduces Audio-Visual Flamingo, an open AV-LLM for joint reasoning over audio, images, and long videos, with three-stage curriculum training.",
+      "llm_tldr_cn": "针对现有音频-视觉大模型主要关注短视频、缺乏长视频复杂推理能力的问题，本文提出Audio-Visual Flamingo（AV-Flamingo）。该模型通过大规模数据集Audio-Visual-Skills和三级课程学习，逐步从短时感知过渡到长时跨模态推理。实验表明，AV-Flamingo在长视频理解基准上达到最先进性能，且模型开源，推动了开放音频-视觉智能的发展。",
+      "llm_tldr": "针对现有音频-视觉大模型主要关注短视频、缺乏长视频复杂推理能力的问题，本文提出Audio-Visual Flamingo（AV-Flamingo）。该模型通过大规模数据集Audio-Visual-Skills和三级课程学习，逐步从短时感知过渡到长时跨模态推理。实验表明，AV-Flamingo在长视频理解基准上达到最先进性能，且模型开源，推动了开放音频-视觉智能的发展。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.15374v1",
+      "source": "arxiv",
+      "title": "Reasoning-Guided Part-Level Visual Grounding via Reinforcement Learning",
+      "abstract": "Multimodal large language models (MLLMs) ground whole objects well from free-form language queries, but they struggle when the query names a part rather than the object. We trace this to a missing object-part hierarchy, since parts are localized in the same single step used for objects. We propose Object-Part Hierarchical Reflective Grounding (OP-HRG), a coarse-to-fine reasoning-guided grounding strategy that first localizes the parent object and then the part within it. A self-check then reflects on the result, with an extension to re-encode the predicted crop to inspect the region it is correcting. We introduce a part-aware GRPO framework to train our pipeline with stage-wise rewards. A 4B model trained this way outperforms 7B grounding LLMs and SAM3 across PascalPart, PartImageNet, and InstructPart, and transfers to reasoning segmentation.",
+      "authors": [
+        "Kazi Sajeed Mehrab",
+        "Hani Alomari",
+        "Najibul Haque Sarker",
+        "Chia-Wei Tang",
+        "Zaber Ibn Abdul Hakim",
+        "Anuj Karpatne",
+        "Chris Thomas"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-16T18:18:31+00:00",
+      "link": "https://arxiv.org/pdf/2607.15374v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "reasoning-guided visual grounding with RL",
+      "llm_evidence_cn": "推理引导的视觉定位与强化学习",
+      "llm_evidence": "推理引导的视觉定位与强化学习",
+      "canonical_evidence": "推理引导的视觉定位与强化学习",
+      "llm_tldr_en": "Proposes OP-HRG, a coarse-to-fine reasoning-guided grounding strategy with part-aware GRPO for part-level visual grounding, outperforming larger models.",
+      "llm_tldr_cn": "多模态大模型能定位完整物体但难以定位部件，因缺乏对象-部件层级。本文提出OP-HRG，通过先定位父对象再定位部件的粗到细推理引导策略，并引入部件感知GRPO训练。4B模型在部件定位上超越7B模型和SAM，证实了层次化推理的重要性。",
+      "llm_tldr": "多模态大模型能定位完整物体但难以定位部件，因缺乏对象-部件层级。本文提出OP-HRG，通过先定位父对象再定位部件的粗到细推理引导策略，并引入部件感知GRPO训练。4B模型在部件定位上超越7B模型和SAM，证实了层次化推理的重要性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.15418v1",
+      "source": "arxiv",
+      "title": "DrawingVQA: A Real-World Benchmark for Multi-Depth Visual-Textual Reasoning on Construction Drawings",
+      "abstract": "We introduce DrawingVQA, the first benchmark designed to evaluate multimodal large language models (MLLMs) on real-world construction drawings -- a core media in architecture, civil, and many other engineering practices. Unlike natural images or schematic floor plans, construction drawings fuse abstract geometry, symbolic notation, tabular data, annotations, and domain-specific text, forming a uniquely complex visual-textual domain core to engineering workflows. DrawingVQA bridges this gap with 33 \"Issued for Construction\" drawings and 92 expertly curated question-answer pairs, spanning three reasoning depths: perceptual understanding, contextual interpretation, and domain-expert reasoning. To evaluate model capabilities, we present a dual categorization framework to jointly analyze performance across seven construction-engineering and four MLLM capability dimensions -- the first to explicitly map engineering workflows to AI reasoning competencies. Evaluations of state-of-the-art MLLMs reveal a substantial gap between model and expert performance, particularly at higher reasoning depths. This benchmark lays a foundation for domain-specialized multimodal reasoning to allow for advancement on integration of AI-driven understanding and real-world engineering workflows.",
+      "authors": [
+        "Yoonhwa Jung",
+        "Junryu Fu",
+        "Mani Golparvar-Fard"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-16T19:44:03+00:00",
+      "link": "https://arxiv.org/pdf/2607.15418v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Multimodal visual-textual reasoning on construction drawings",
+      "llm_evidence_cn": "建筑图纸上的多模态视觉文本推理",
+      "llm_evidence": "建筑图纸上的多模态视觉文本推理",
+      "canonical_evidence": "建筑图纸上的多模态视觉文本推理",
+      "llm_tldr_en": "DrawingVQA provides the first benchmark for evaluating MLLMs on construction drawings with three reasoning depths: perceptual, contextual, and domain-expert.",
+      "llm_tldr_cn": "建筑图纸融合了抽象几何、符号、表格和领域文本，对多模态大模型构成独特挑战。本文提出DrawingVQA基准，包含33张真实图纸和92个精细设计的问题，覆盖感知、上下文和领域专家三种推理深度。评估发现当前MLLMs在高层推理上仍有较大差距。该基准为多模态工程文档推理提供了标准化测试。",
+      "llm_tldr": "建筑图纸融合了抽象几何、符号、表格和领域文本，对多模态大模型构成独特挑战。本文提出DrawingVQA基准，包含33张真实图纸和92个精细设计的问题，覆盖感知、上下文和领域专家三种推理深度。评估发现当前MLLMs在高层推理上仍有较大差距。该基准为多模态工程文档推理提供了标准化测试。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.16131v1",
+      "source": "arxiv",
+      "title": "ToolSciVer: Multimodal Scientific Claim Verification with Visual Tool Augmented Reinforcement Learning",
+      "abstract": "Multimodal Scientific Claim Verification (MSCV) requires models to verify scientific claims using visually grounded evidence from papers, including figures, tables, charts, and textual context. However, existing methods often fail because they struggle to locate decisive visual evidence, accurately read structured scientific visuals, and integrate multimodal observations into reliable reasoning. We introduce ToolSciVer, the first tool-augmented framework for MSCV to our knowledge. ToolSciVer equips a VLM with three type-aware visual tools, table row/column focus, chart-to-structure parsing, and high-resolution region zoom, which convert dense scientific visuals into explicit, claim-facing evidence, and trains the policy with Group Relative Policy Optimization (GRPO) under a composite reward of answer correctness, format validity, length control, tool-use efficiency, and tool-validity penalties. Experiments on SciVer and MuSciClaims datasets on five VLMs from three model families (Qwen, InternVL, Gemma) demonstrate that our method achieves superior performance compared to four competitive baselines including prompting-based and RL-based tool-use methods, highlighting the effectiveness of learned, type-aware tool use for scientific claim verification.",
+      "authors": [
+        "Binglin Zhou",
+        "Peng Shi",
+        "Ryo Kamoi",
+        "Nan Zhang",
+        "Rui Zhang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-17T17:11:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.16131v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Multimodal scientific claim verification with visual tool augmented RL",
+      "llm_evidence_cn": "通过视觉工具增强强化学习的多模态科学主张验证",
+      "llm_evidence": "通过视觉工具增强强化学习的多模态科学主张验证",
+      "canonical_evidence": "通过视觉工具增强强化学习的多模态科学主张验证",
+      "llm_tldr_en": "Proposes ToolSciVer, a tool-augmented framework for multimodal scientific claim verification using visual tools and reinforcement learning.",
+      "llm_tldr_cn": "针对多模态科学主张验证中模型难以定位视觉证据、准确解读结构化图表的问题，本文提出ToolSciVer框架。该框架为视觉语言模型配备三类视觉工具（表格聚焦、图表解析、区域缩放），将密集科学视觉内容转化为显式证据，并通过强化学习训练使用策略。实验证明，ToolSciVer在多模态科学验证基准上显著优于现有方法，展示了工具增强推理的有效性。",
+      "llm_tldr": "针对多模态科学主张验证中模型难以定位视觉证据、准确解读结构化图表的问题，本文提出ToolSciVer框架。该框架为视觉语言模型配备三类视觉工具（表格聚焦、图表解析、区域缩放），将密集科学视觉内容转化为显式证据，并通过强化学习训练使用策略。实验证明，ToolSciVer在多模态科学验证基准上显著优于现有方法，展示了工具增强推理的有效性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.16165v1",
+      "source": "arxiv",
+      "title": "An Exam for Active Observers",
+      "abstract": "Human vision is a closed loop: gaze is continuously redirected by intermediate hypotheses rather than a single snapshot. Decades of psychophysics and cognitive science have argued that this active observation is essential for a wide range of tasks. Whether today's multimodal large language models (MLLMs) exercise active observation is an empirical question that current vision-language benchmarks do not answer. We introduce ActiveVision, a benchmark that makes active observation measurable for MLLMs, comprising 17 tasks across 3 categories. Tasks are designed to force repeated visual perception rather than a single static description. Frontier MLLMs collapse on ActiveVision: the highest-scoring model we evaluate, GPT-5.5 at the highest exposed reasoning-effort tier, solves only 10.6% of items and scores zero on 11 of the 17 tasks, and even Claude Fable 5, despite topping most reasoning and coding leaderboards, solves just 3.5%, far behind three human participants who average 96.1%. Furthermore, much of the gap persists even when models write and run their own vision code: such code is unreliable on realistic imagery, and catching its failures itself requires the active perception the models lack. Together, these results indicate that current MLLMs lack robust active visual observation, motivating architectures and training objectives that close the perception-reasoning loop.",
+      "authors": [
+        "Jiarui Zhang",
+        "Muzi Tao",
+        "Shangshang Wang",
+        "Ollie Liu",
+        "Xuezhe Ma",
+        "Willie Neiswanger"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-17T17:46:23+00:00",
+      "link": "https://arxiv.org/pdf/2607.16165v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "benchmark for active observation in MLLMs",
+      "llm_evidence_cn": "MLLMs主动观察基准",
+      "llm_evidence": "MLLMs主动观察基准",
+      "canonical_evidence": "MLLMs主动观察基准",
+      "llm_tldr_en": "Introduces ActiveVision, a benchmark measuring active observation in MLLMs over 17 tasks, revealing frontier models fail with only 10.6% accuracy.",
+      "llm_tldr_cn": "当前基准无法评估多模态大模型的主动观察能力。本文提出ActiveVision基准，包含17个任务，要求模型反复感知而非单次快照。测试发现前沿MLLMs表现极差，最高分仅10.6%，揭示了它们在动态视觉推理中的严重缺陷。",
+      "llm_tldr": "当前基准无法评估多模态大模型的主动观察能力。本文提出ActiveVision基准，包含17个任务，要求模型反复感知而非单次快照。测试发现前沿MLLMs表现极差，最高分仅10.6%，揭示了它们在动态视觉推理中的严重缺陷。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.15205v1",
+      "source": "arxiv",
+      "title": "MM-IssueLoc: A Controlled Benchmark for Evaluating Visual Evidence in Multimodal Repository-Level Issue Localization",
+      "abstract": "Real repository issues routinely include visual evidence such as screenshots, error dialogs, rendered UI states, and logs, yet repository-level issue localization is evaluated mostly as a text-only task. Existing multimodal SE benchmarks evaluate end-to-end repair, entangling localization with patch synthesis and obscuring whether visual input helped, hurt, or was ignored. We introduce \\textbf{MM-IssueLoc}, a controlled benchmark and evaluation protocol for repository-level localization with visual evidence. MM-IssueLoc contains 652 issue-PR instances across 23 languages, with annotations for 7 image categories and 4 relevance levels. It provides file-level and function-level gold labels, paired text-only and with-image evaluation, and VCE-based diagnostics that convert images into structured textual evidence. We evaluate LLM-based and retrieval-based systems, including MM-IssueLoc-VL-Emb as a controlled multimodal retriever. Results show that existing systems remain far from reliable multimodal repository localization: the strongest agent reaches 38.96 file Acc@5 and 22.45 function Acc@10, while the strongest retriever reaches 33.86 function Acc@10. Cross-benchmark comparisons show that high localization scores on text-dominant SWE benchmarks do not transfer cleanly to multimodal issue localization. MM-IssueLoc turns visual evidence into an explicit evaluation variable, enabling future work to test whether systems improve by using visual evidence for localization, rather than by relying on text-only cues or downstream patch-generation effects.",
+      "authors": [
+        "Shaoxiong Zhan",
+        "Shi Hu",
+        "Boyu Feng",
+        "Hai Lin",
+        "Andrew Gong",
+        "Zhengda Zhou",
+        "Jiaying Zhou",
+        "Yunyun Hou",
+        "Hao Su",
+        "Hai-Tao Zheng"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-07-16T17:02:25+00:00",
+      "link": "https://arxiv.org/pdf/2607.15205v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Multimodal benchmark for issue localization with visual evidence",
+      "llm_evidence_cn": "包含视觉证据的多模态问题定位基准",
+      "llm_evidence": "包含视觉证据的多模态问题定位基准",
+      "canonical_evidence": "包含视觉证据的多模态问题定位基准",
+      "llm_tldr_en": "MM-IssueLoc introduces a controlled benchmark for repository-level issue localization with visual evidence, decoupling localization from patch synthesis.",
+      "llm_tldr_cn": "现有的仓库级问题定位评估大多仅考虑文本，忽略截图等视觉证据。本文提出MM-IssueLoc基准，包含652个带视觉证据的问题-拉取请求实例，并提供文件级和函数级标签。该基准将定位与补丁合成解耦，为多模态软件工程推理提供了标准化测试平台。",
+      "llm_tldr": "现有的仓库级问题定位评估大多仅考虑文本，忽略截图等视觉证据。本文提出MM-IssueLoc基准，包含652个带视觉证据的问题-拉取请求实例，并提供文件级和函数级标签。该基准将定位与补丁合成解耦，为多模态软件工程推理提供了标准化测试平台。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.14341v1",
+      "source": "arxiv",
+      "title": "Beyond Visual Grasping: Benchmarking Complex Grasping from Detection to Execution",
+      "abstract": "Robust robotic grasping remains a fundamental challenge for complex real-world applications. Recent advances in large-scale models demonstrate promising capabilities for reasoning in robotic tasks. However, existing benchmarks for grasping primarily focus on isolated, visual-based grasp pose detection, failing to capture the complexity of grasping tasks that require multi-step reasoning and semantic understanding during execution. To address this gap, we propose GCA-Bench, a benchmark featuring challenging \\textit{grasping with complex action} scenarios that involve both scene-level reasoning and semantic constraints. GCA-Bench enables the evaluation of recent large foundation models under the same settings. To demonstrate the effectiveness of our new benchmark, we implement a diverse set of baselines, ranging from traditional grasp detection pipelines to end-to-end learning methods. Empirical studies achieve success rates below 70\\% on complex grasping scenarios, underscoring critical limitations. In addition, we propose new evaluation metrics, analyze critical failure models, and provide insights to guide the development of more robust and generalizable grasping strategies.",
+      "authors": [
+        "Hanyi Zhang",
+        "Khang Nguyen",
+        "Charith Munasinghe",
+        "Basu Hela",
+        "Tianyu Li",
+        "Zihong Luo",
+        "Hoan Nguyen",
+        "Hans Wernher van de Venn",
+        "Yalin Zheng",
+        "Ravi Prakash",
+        "Tung D. Ta",
+        "Anh Nguyen",
+        "Baoru Huang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-15T20:10:09+00:00",
+      "link": "https://arxiv.org/pdf/2607.14341v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "complex grasping benchmark with scene reasoning",
+      "llm_evidence_cn": "复杂抓取基准涉及场景推理",
+      "llm_evidence": "复杂抓取基准涉及场景推理",
+      "canonical_evidence": "复杂抓取基准涉及场景推理",
+      "llm_tldr_en": "Proposes GCA-Bench, a benchmark for complex grasping requiring multi-step reasoning and semantic understanding, evaluating large foundation models.",
+      "llm_tldr_cn": "现有抓取基准仅关注视觉抓取姿态检测，缺乏多步推理和语义理解。本文提出GCA-Bench，包含复杂动作抓取场景，要求场景级推理和语义约束，统一评估多种大模型，发现现有模型在推理方面存在不足，为推动机器人推理研究提供基础。",
+      "llm_tldr": "现有抓取基准仅关注视觉抓取姿态检测，缺乏多步推理和语义理解。本文提出GCA-Bench，包含复杂动作抓取场景，要求场景级推理和语义约束，统一评估多种大模型，发现现有模型在推理方面存在不足，为推动机器人推理研究提供基础。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.16193v1",
+      "source": "arxiv",
+      "title": "Knowing the Self, Understanding the World: A Dual-Cognition Benchmark for UAV Spatio-temporal Reasoning with MLLMs",
+      "abstract": "Multimodal large language models have achieved strong performance across diverse vision-language tasks, yet their capabilities in UAV scenarios remain insufficiently explored. Recent UAV-oriented benchmarks have begun to evaluate MLLMs in aerial scenarios, but they typically focus on scene understanding, event recognition, or navigation completion, rather than jointly assessing the dual-cognition capability required for UAV agents: reasoning about both the UAV's own state and the external environment in multiview spatio-temporal contexts. To address this gap, we present UAV-DualCog, a benchmark for aerial multiview spatio-temporal reasoning built on this dual-cognition perspective. UAV-DualCog includes both image and video tasks to jointly evaluate self-state and environment-state reasoning, while requiring spatial or temporal grounding beyond discrete answer prediction. We also develop an automated pipeline that constructs data from scene-level semantic point clouds, yielding a scalable benchmark with diverse scenes, hundreds of landmarks, and thousands of QA samples. Extensive evaluations show that current MLLMs remain far from reliable in UAV dual cognition. Self-state reasoning, viewpoint transformation, precise spatial grounding, and temporal interval localization are persistent bottlenecks, and additional validation with thinking/frontier models and a human baseline confirms that the benchmark is understandable to humans but challenging for existing models. We further construct UAV-DualCog-Train from disjoint scenes and show through a lightweight optimization probe that it provides useful structured supervision, suggesting its value not only as an evaluation benchmark but also as a data resource for advancing MLLM-based UAV agents. Project website and supplementary materials: https://uav-dualcog.lozumi.com",
+      "authors": [
+        "Like Liu",
+        "Zhengzheng Xu",
+        "Haitao He",
+        "Hongzhe Li",
+        "Shuchang Zhang",
+        "Dian Shao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-17T17:59:56+00:00",
+      "link": "https://arxiv.org/pdf/2607.16193v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "UAV spatio-temporal reasoning benchmark with MLLMs",
+      "llm_evidence_cn": "无人机时空推理多模态基准",
+      "llm_evidence": "无人机时空推理多模态基准",
+      "canonical_evidence": "无人机时空推理多模态基准",
+      "llm_tldr_en": "Proposes UAV-DualCog, a dual-cognition benchmark for evaluating MLLMs on UAV spatio-temporal reasoning, assessing both self-state and external environment understanding.",
+      "llm_tldr_cn": "现有无人机场景评估多模态大模型的工作集中于场景理解或导航，缺乏同时推理无人机自身状态与外部环境的双认知能力。本文提出UAV-DualCog基准，从双认知视角评估MLLMs在多视角时空推理上的表现，填补了该空白。该基准包含多种任务，为无人机智能体研究提供新标准。",
+      "llm_tldr": "现有无人机场景评估多模态大模型的工作集中于场景理解或导航，缺乏同时推理无人机自身状态与外部环境的双认知能力。本文提出UAV-DualCog基准，从双认知视角评估MLLMs在多视角时空推理上的表现，填补了该空白。该基准包含多种任务，为无人机智能体研究提供新标准。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}
