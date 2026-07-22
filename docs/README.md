@@ -6,63 +6,43 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-21
-- 运行时间：2026-07-21 21:20:14 UTC
+- 最新运行日期：2026-07-22
+- 运行时间：2026-07-22 21:18:40 UTC
 - 运行状态：成功
-- 本次总论文数：13
-- 精读区：6
-- 速读区：7
+- 本次总论文数：7
+- 精读区：4
+- 速读区：3
 
 ### 今日简报（AI）
-今日精读聚焦多模态智能的语言中心框架与布局可控生成两项突破，速读补充空间对齐与导航系统。
-
-最值得关注的方向是《From Modalities to Propositions》提出的以语言为中心的多模态智能新范式，以及《Think, Plan, Paint》实现的布局感知可控图像生成。
-
-建议普通读者优先精读上述两篇高分论文，把握多模态统一建模的核心思路；如果对空间推理或导航感兴趣，可顺带速读OrientSAM和PGN。
-- 详情：[/202607/21/README](/202607/21/README)
+今日精读两篇9分神作：Agentic多模态布局与会议心智理论推理，速读覆盖微手势视频、长文档问答及数据本体验证。  
+最值得关注方向：AI芯片布局的多模态智能体式推理（MAGE），以及多模态大模型在多人会议中心智理论能力的评估（MeetingToM）。  
+普通读者下一步可聚焦多模态大模型在物理世界交互与复杂社交推理中的最新突破，这两方向正迅速从理论走向工程落地。
+- 详情：[/202607/22/README](/202607/22/README)
 
 ### 精读区论文标签
-1. [From Modalities to Propositions: A Language-Centric Framework for Multimodal Intelligence](/202607/21/2607.16560v1-from-modalities-to-propositions-a-language-centric-framework-for-multimodal-intelligence)  
+1. [MAGE: Human-Like Macro Placement via Agentic Multimodal Reasoning](/202607/22/2607.18536v1-mage-human-like-macro-placement-via-agentic-multimodal-reasoning)  
    标签：评分：9.0/10、query:mm-reasoning
-   evidence：统一命题表示支持多模态推理
-2. [Think, Plan, Paint: Layout-Aware Reasoning for Controllable Image Generation in Unified Models](/202607/21/2607.16409v1-think-plan-paint-layout-aware-reasoning-for-controllable-image-generation-in-unified-models)  
+   evidence：基于多模态智能体的宏放置推理
+2. [MeetingToM: Evaluating Multimodal LLMs on Theory-of-Mind Reasoning in Multi-Party Meetings](/202607/22/2607.19235v1-meetingtom-evaluating-multimodal-llms-on-theory-of-mind-reasoning-in-multi-party-meetings)  
+   标签：评分：9.0/10、query:mm-reasoning
+   evidence：评估多模态大模型心智推理能力的基准
+3. [OmniReasoner: Thinking with Long Audio-Video via Native Tool Use](/202607/22/2607.19339v1-omnireasoner-thinking-with-long-audio-video-via-native-tool-use)  
+   标签：评分：9.0/10、query:mm-reasoning
+   evidence：面向长音频-视频多模态推理的工具使用框架
+4. [ExpertVerse: A General-Purpose Benchmark for Expert-Level Reasoning in Knowledge-Intensive Visual Synthesis](/202607/22/2607.19341v1-expertverse-a-general-purpose-benchmark-for-expert-level-reasoning-in-knowledge-intensive-visual-synthesis)  
    标签：评分：8.0/10、query:mm-reasoning
-   evidence：统一多模态大模型框架实现布局感知的图像生成推理
-3. [Constraint-Anchored Reasoning Traces](/202607/21/2607.16727v1-constraint-anchored-reasoning-traces)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：用于多模态大模型推理错误缓解的神经符号框架
-4. [LenGuard-GPC: Length Guarding with Guided-Prompt Consistency for Spatial Reasoning Reinforce Learning](/202607/21/2607.17243v1-lenguard-gpc-length-guarding-with-guided-prompt-consistency-for-spatial-reasoning-reinforce-learning)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：空间推理强化学习中的长度控制
-5. [TimeLens2: Generalist Video Temporal Grounding with Multimodal LLMs](/202607/21/2607.17423v1-timelens2-generalist-video-temporal-grounding-with-multimodal-llms)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：多模态LLM视频时间定位
-6. [ConsiSpace: Learning Geometric Consistency Matters for Video Spatial Reasoning](/202607/21/2607.17599v1-consispace-learning-geometric-consistency-matters-for-video-spatial-reasoning)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：基于几何一致性学习的视频空间推理
+   evidence：面向知识密集型视觉合成中专家级推理的基准
 
 ### 速读区论文标签
-1. [OrientSAM: Mitigating Camera-Centric Shortcut in Multimodal Spatial Reasoning via Orientation-Aware Spatial Alignment](/202607/21/2607.17657v1-orientsam-mitigating-camera-centric-shortcut-in-multimodal-spatial-reasoning-via-orientation-aware-spatial-alignment)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：通过方向对齐的多模态空间推理
-2. [PGN: Design and Implementation of a Vision-Language Navigation System Based on Pangu Multimodal Foundation Model](/202607/21/2607.17806v1-pgn-design-and-implementation-of-a-vision-language-navigation-system-based-on-pangu-multimodal-foundation-model)  
-   标签：评分：8.0/10、query:mm-reasoning
-   evidence：基于盘古多模态基础模型的视觉语言导航系统
-3. [MGDT: MLLM-Guided Diffusion Transformer with Relation-Adaptive Mixture-of-Experts for Multimodal Knowledge Graph Completion](/202607/21/2607.15592v1-mgdt-mllm-guided-diffusion-transformer-with-relation-adaptive-mixture-of-experts-for-multimodal-knowledge-graph-completion)  
+1. [GMoT: Gated Motion-Aware Tokenization for Fine-Grained Micro-Gesture Video Reasoning with Multimodal LLMs](/202607/22/2607.16322v1-gmot-gated-motion-aware-tokenization-for-fine-grained-micro-gesture-video-reasoning-with-multimodal-llms)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：多模态知识图谱补全结合MLLM引导的推理
-4. [Can Multimodal Large Language Models Understand OCT?](/202607/21/2607.16609v1-can-multimodal-large-language-models-understand-oct)  
+   evidence：微手势视频推理与运动感知标记化
+2. [TAP-RAG: Task-Aware Policy Control for Long-Document Multimodal Question Answering](/202607/22/2607.18917v1-tap-rag-task-aware-policy-control-for-long-document-multimodal-question-answering)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：多模态大语言模型理解OCT图像
-5. [MultiLoReFT: Decoupling Shared and Modality-Specific Subspaces in Multimodal Learning via Low-Rank Representation Fine-Tuning](/202607/21/2607.16789v1-multiloreft-decoupling-shared-and-modality-specific-subspaces-in-multimodal-learning-via-low-rank-representation-fine-tuning)  
-   标签：评分：7.0/10、query:mm-reasoning
-   evidence：多模态学习的低秩微调框架
-6. [ST-Veto: Spatio-Temporal Token Veto for Diffusion MLLMs via Taylor Prediction and Visual Grounding](/202607/21/2607.17884v1-st-veto-spatio-temporal-token-veto-for-diffusion-mllms-via-taylor-prediction-and-visual-grounding)  
-   标签：评分：7.0/10、query:mm-reasoning
-   evidence：无需训练的方法增强扩散多模态大模型的推理能力
-7. [When Do Multimodal and Graph-Augmented RAG Help? A Controlled Evaluation for Document Question Answering](/202607/21/2607.16604v1-when-do-multimodal-and-graph-augmented-rag-help-a-controlled-evaluation-for-document-question-answering)  
+   evidence：长文档多模态问答与任务感知RAG
+3. [An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counterfactual Reasoning Evaluation](/202607/22/2607.17269v1-an-explicit-world-model-based-on-data-first-ontology-daoql-multimodal-storage-validation-and-counterfactual-reasoning-evaluation)  
    标签：评分：6.0/10、query:mm-reasoning
-   evidence：多模态图增强RAG用于文档问答，包含视觉证据
+   evidence：基于数据优先本体论的显式世界模型，支持多模态存储和反事实推理
 
 
 <div class="dpr-home-promo-card">

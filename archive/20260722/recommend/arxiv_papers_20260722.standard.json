@@ -1,0 +1,298 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-22T21:14:00.011169+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.18536v1",
+      "source": "arxiv",
+      "title": "MAGE: Human-Like Macro Placement via Agentic Multimodal Reasoning",
+      "abstract": "Macro placement still requires substantial manual refinement in industrial physical design flows. We present MAGE (Macro Placement Agentic Engine), a multimodal multi-agent framework for macro placement refinement. MAGE decomposes the macro placement task into a six-phase workflow that combines structured floorplanning rules, visual checks, and iterative refinement. Expert floorplanning knowledge is encoded through natural-language directives and validation criteria, rather than learned from labeled placement data. A tournament-style refinement mode evaluates multiple candidate placements and propagates feedback from higher-quality solutions. We also introduce four metrics for quantifying human-likeness in macro placement: notch score, whitespace score, pocket score, and alignment score. These metrics capture structural properties used by expert designers but not directly measured by conventional PPA metrics. Across nine designs in NanGate45 and GlobalFoundries 12nm enablements, MAGE achieves geometric-mean improvements of 11.1%-19.3% in WNS and 70.0%-74.0% in TNS over commercial macro placers. On the three NanGate45 designs, for which human-expert and Hier-RTLMP baselines are available, MAGE improves WNS and TNS by 18.3% and 72.5% over the human expert, and by 47.0% and 80.4% over Hier-RTLMP, with comparable wirelength and power. On human-likeness metrics, MAGE improves the overall score by 6%-48% over all baselines. Additional case studies on anonymized netlists, unseen designs, dense rectilinear floorplans, and high-utilization settings show that the framework transfers to new placement settings without design-specific retraining.",
+      "authors": [
+        "Andrew B. Kahng",
+        "Sayak Kundu",
+        "Bodhisatta Pramanik"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-07-20T22:02:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.18536v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "agentic multimodal reasoning for macro placement",
+      "llm_evidence_cn": "基于多模态智能体的宏放置推理",
+      "llm_evidence": "基于多模态智能体的宏放置推理",
+      "canonical_evidence": "基于多模态智能体的宏放置推理",
+      "llm_tldr_en": "MAGE is a multimodal multi-agent framework for macro placement refinement that combines floorplanning rules, visual checks, and iterative refinement via agentic multimodal reasoning.",
+      "llm_tldr_cn": "宏放置任务仍依赖大量人工调整。本文提出MAGE，一个多模态多智能体框架，将宏放置分解为六阶段工作流，结合结构化规则、视觉检查和迭代优化。通过锦标赛式精炼模式评估多个候选布局并传播反馈。实验表明MAGE能生成类人布局，减少人工干预。该工作展示了多模态推理在芯片设计中的潜力。",
+      "llm_tldr": "宏放置任务仍依赖大量人工调整。本文提出MAGE，一个多模态多智能体框架，将宏放置分解为六阶段工作流，结合结构化规则、视觉检查和迭代优化。通过锦标赛式精炼模式评估多个候选布局并传播反馈。实验表明MAGE能生成类人布局，减少人工干预。该工作展示了多模态推理在芯片设计中的潜力。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.19235v1",
+      "source": "arxiv",
+      "title": "MeetingToM: Evaluating Multimodal LLMs on Theory-of-Mind Reasoning in Multi-Party Meetings",
+      "abstract": "Theory of Mind (ToM), the ability to infer other's beliefs, intentions, and states of knowledge, is central to social interaction, yet remains challenging for current Multimodal Large Language Models (MLLMs), especially in multi-party meetings where cues are distributed across speech and behavior. Existing multimodal ToM benchmarks mainly focus on video-grounded question answering over overt, externally verifiable signals, and provide limited coverage of latent social states and group dynamics. We introduce MeetingToM, a benchmark for complex social behavior reasoning in naturalistic multi-party meetings. MeetingToM targets meeting-specific phenomena such as \\textbf{pseudo-consensus}, where apparent agreement masks private dissent under social pressure. The benchmark is hierarchically organized to evaluate ToM at increasing levels of social granularity, including (i) subject-level mental state prediction, (ii) dyadic-level addressee understanding, and (iii) group-level consensus reasoning. We provide a unified evaluation protocol and conduct systematic analyses of representative MLLMs, revealing persistent limitations in integrating non-verbal cues, inferring hidden attitudes, and distinguishing genuine consensus from pseudo-consensus. Our results highlight key challenges and establish MeetingToM as a testbed for advancing meeting-grounded ToM in multimodal models.",
+      "authors": [
+        "Ziyi Wang",
+        "Yuhang Wu",
+        "Dongxu Piao",
+        "Xingyu Liu",
+        "Tianhui Zhou",
+        "Miao Liu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-07-21T16:05:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.19235v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "benchmark for evaluating multimodal LLMs on theory-of-mind reasoning",
+      "llm_evidence_cn": "评估多模态大模型心智推理能力的基准",
+      "llm_evidence": "评估多模态大模型心智推理能力的基准",
+      "canonical_evidence": "评估多模态大模型心智推理能力的基准",
+      "llm_tldr_en": "MeetingToM is a benchmark for evaluating multimodal LLMs on complex theory-of-mind reasoning in multi-party meetings, covering phenomena like pseudo-consensus.",
+      "llm_tldr_cn": "多模态大模型在多人会议中的心智推理能力评估不足。本文提出MeetingToM基准，聚焦会议特有的伪共识等现象，通过多模态线索（语音、行为）评估模型推断他人信念和意图的能力。实验发现现有MLLMs在该任务上表现有限，暴露了社交推理的短板。该基准为多模态社会智能研究提供了重要测试平台。",
+      "llm_tldr": "多模态大模型在多人会议中的心智推理能力评估不足。本文提出MeetingToM基准，聚焦会议特有的伪共识等现象，通过多模态线索（语音、行为）评估模型推断他人信念和意图的能力。实验发现现有MLLMs在该任务上表现有限，暴露了社交推理的短板。该基准为多模态社会智能研究提供了重要测试平台。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.19339v1",
+      "source": "arxiv",
+      "title": "OmniReasoner: Thinking with Long Audio-Video via Native Tool Use",
+      "abstract": "Long audio-video reasoning is difficult for omnimodal LLMs because the decisive evidence is often sparse, cross-modal, and too expensive to preserve with uniformly high-fidelity inputs. We introduce OmniReasoner, a tool-use post-training framework for Thinking with Long Audio-Video: omni-modal LLMs learn, via supervised fine-tuning and reinforcement learning, to decide whether and where to call a zoom-in tool before answering. OmniReasoner first builds a low-cost global preview of the full stream and then, when needed, calls the zoom-in tool with a requested temporal interval for higher-fidelity visual and audio inspection before answering. Because the model observes different sampling granularities before and after this call -- a sparse global preview and a denser local clip -- we introduce TimeAnchor, which keeps the tool's temporal argument valid and round-trip-consistent across these granularities, rather than tied to frame indices from a particular sampling rate. To make this tool-use behavior trainable without expensive manual interval annotation, we build a Temporal Augmented Data Engine that synthesizes tool-use post-training trajectories by video editing and composition. Experiments across omnimodal and video benchmarks show that OmniReasoner improves both answer accuracy and temporal grounding while concentrating high-fidelity computation on informative regions. Code is available at https://github.com/RockyChen0205/OmniReasoner.",
+      "authors": [
+        "Yu Chen",
+        "Caorui Li",
+        "Ziyu Xiong",
+        "Yidong Wang",
+        "Mingqi Gao",
+        "Shuman Liu",
+        "Biao Liu",
+        "Chunfeng Yang",
+        "Anxiang Zeng",
+        "Haibo Zhang",
+        "Chaofan Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-21T17:57:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.19339v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "tool-use framework for long audio-video multimodal reasoning",
+      "llm_evidence_cn": "面向长音频-视频多模态推理的工具使用框架",
+      "llm_evidence": "面向长音频-视频多模态推理的工具使用框架",
+      "canonical_evidence": "面向长音频-视频多模态推理的工具使用框架",
+      "llm_tldr_en": "Introduces OmniReasoner, a tool-use post-training framework that learns to call a zoom-in tool for high-fidelity inspection after a global preview, enabling efficient long audio-video reasoning.",
+      "llm_tldr_cn": "长音频-视频多模态推理因证据稀疏且跨模态而困难。本文提出OmniReasoner，通过监督微调和强化学习使全模态大语言模型学会在全局预览后调用缩放工具进行高保真观测，有效提升长音频-视频推理的准确性和效率。",
+      "llm_tldr": "长音频-视频多模态推理因证据稀疏且跨模态而困难。本文提出OmniReasoner，通过监督微调和强化学习使全模态大语言模型学会在全局预览后调用缩放工具进行高保真观测，有效提升长音频-视频推理的准确性和效率。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.19341v1",
+      "source": "arxiv",
+      "title": "ExpertVerse: A General-Purpose Benchmark for Expert-Level Reasoning in Knowledge-Intensive Visual Synthesis",
+      "abstract": "Recent advances in multimodal generative models have enabled instruction-based image generation to move beyond semantic manipulation to knowledge-driven visual reasoning. However, these methods focus on explicit commonsense reasoning, shallow causal understanding, and direct knowledge recall, failing at knowledge-intensive generation. We develop \\textbf{ExpertVerse}, a capability-centric benchmark to evaluate generative models via knowledge-intensive lens. ExpertVerse stratifies reasoning generation across an orthogonal taxonomy of \\textit{9 cognitive capabilities} and \\textit{8 expert disciplines}, yielding \\textit{58 sub-disciplines}. We curate 1,611 expert-annotated instances covering single-image editing, multi-image composition, and text-to-image generation. We further develop an automated workflow to produce \\textbf{ExpertVerse-100K}, a large-scale dataset with reasoning traces and knowledge-anchored rationale annotations. Based on this, we train \\textbf{KnowThinker} with RL fine-tuning, a VLM reasoning engine with world knowledge that jointly generates thinking processes and refined instructions. Towards the cross-modal credit misalignment and multi-objective gradient conflicts in multi-reward optimization, we propose a tailored Bootstrapped Pareto Policy Optimization (BPPO), which synergizes Bootstrapping Reward Rectification (BRR) and Conflict-Aware Pareto Advantage Fusion (CPAF). Extensive results of both open-source and proprietary models exposes critical reasoning deficits, highlighting imperative for knowledge-intensive benchmarks towards next-generation visual generation.",
+      "authors": [
+        "Yuan Wang",
+        "Yongchao Du",
+        "Mengting Chen",
+        "Jinsong Lan",
+        "Xuetao Feng",
+        "Xiaoyong Zhu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-21T17:59:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.19341v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "benchmark for expert-level reasoning in knowledge-intensive visual synthesis",
+      "llm_evidence_cn": "面向知识密集型视觉合成中专家级推理的基准",
+      "llm_evidence": "面向知识密集型视觉合成中专家级推理的基准",
+      "canonical_evidence": "面向知识密集型视觉合成中专家级推理的基准",
+      "llm_tldr_en": "ExpertVerse is a benchmark that evaluates generative models on knowledge-intensive visual reasoning across 9 cognitive capabilities and 8 expert disciplines.",
+      "llm_tldr_cn": "当前多模态生成模型在常识推理上表现尚可，但缺乏知识密集型视觉推理能力。本文提出ExpertVerse基准，涵盖9种认知能力和8个专家学科共58个子领域，包含1611个专家标注实例。评估了多个模型，发现它们在需要深层领域知识的推理上表现欠佳。该基准为多模态推理研究提供了更全面的评估视角。",
+      "llm_tldr": "当前多模态生成模型在常识推理上表现尚可，但缺乏知识密集型视觉推理能力。本文提出ExpertVerse基准，涵盖9种认知能力和8个专家学科共58个子领域，包含1611个专家标注实例。评估了多个模型，发现它们在需要深层领域知识的推理上表现欠佳。该基准为多模态推理研究提供了更全面的评估视角。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.16322v1",
+      "source": "arxiv",
+      "title": "GMoT: Gated Motion-Aware Tokenization for Fine-Grained Micro-Gesture Video Reasoning with Multimodal LLMs",
+      "abstract": "Micro-gesture recognition demands the detection of fleeting, spatially localized movements that are frequently overwhelmed by dominant static appearances and background noise. While Multimodal Large Language Models (MLLMs) excel at general video understanding, they inherently struggle with subtle kinematics and often rely on static posture priors. To this end, we propose GMoT, a Gated Motion-Aware Tokenization module that explicitly distills sparse kinematic evidence into a compact sequence prior to temporal modeling. GMoT dynamically spotlights action-relevant regions via spatially weighted pooling, extracts adjacent-frame temporal differencing to capture precise motion energy, and adaptively fuses these cues into the visual stream using a conservatively initialized semantic gate. To transition from simple classification to evidence-grounded reasoning, we further introduce a progressive reward-guided policy refinement paradigm, supported by a semi-supervised annotation pipeline that generates anatomically focused captions. Beyond achieving the best Top-1 accuracy among the compared methods on iMiGUE (67.32\\%) and SMG (73.11\\%), improving the Qwen3-VL-8B baseline by +6.80 and +3.11 points, our framework introduces Body-Region Grounding (BRG) Recall as an anatomical-grounding proxy conditioned on correct predictions, together with an overlapping-label cross-domain transfer protocol between iMiGUE and SMG. Extensive evaluations demonstrate that our GMoT-augmented model improves in-domain accuracy, retains clear gains under label-preserving corruptions, and improves accuracy-oriented cross-domain transfer under explicit small-split caveats while maintaining high anatomical grounding in its generated rationales.",
+      "authors": [
+        "Taorui Wang",
+        "Wei Xia",
+        "Hui Ma",
+        "Zijia Song",
+        "Jiayu Zhang",
+        "Zeheng Wang",
+        "Yong Xu",
+        "Zitong Yu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-15T09:37:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.16322v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "micro-gesture video reasoning with motion-aware tokenization",
+      "llm_evidence_cn": "微手势视频推理与运动感知标记化",
+      "llm_evidence": "微手势视频推理与运动感知标记化",
+      "canonical_evidence": "微手势视频推理与运动感知标记化",
+      "llm_tldr_en": "GMoT introduces gated motion-aware tokenization for fine-grained micro-gesture video reasoning, distilling motion energy before temporal modeling to improve MLLM performance.",
+      "llm_tldr_cn": "该论文针对多模态大语言模型在微手势视频推理中难以捕捉细微运动的问题，提出GMoT模块。该模块通过门控运动感知标记化，显式提取稀疏的运动能量并融合为紧凑序列，再送入时序模型。实验证明该方法在多个微手势识别数据集上显著优于基线和先前方法，为视频推理中的运动信息利用提供了新思路。",
+      "llm_tldr": "该论文针对多模态大语言模型在微手势视频推理中难以捕捉细微运动的问题，提出GMoT模块。该模块通过门控运动感知标记化，显式提取稀疏的运动能量并融合为紧凑序列，再送入时序模型。实验证明该方法在多个微手势识别数据集上显著优于基线和先前方法，为视频推理中的运动信息利用提供了新思路。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.17269v1",
+      "source": "arxiv",
+      "title": "An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counterfactual Reasoning Evaluation",
+      "abstract": "Large language models encode world models implicitly in neural weights, which exposes four structural risks in high-precision domains such as medicine and finance: hallucination, frozen knowledge, poor explainability, and poor modifiability. This paper proposes data-first ontology: LLMs are treated as reasoning and language engines, while deterministic knowledge is moved into an explicit multimodal database, DaoQL. We formalize an explicit world model and show that, under rule independence, deterministic evaluation, and fixed conflict resolution, explicit models provide a sufficient condition for composable counterfactual decomposability; implicit models lack atomic read/delta semantics and therefore provide no comparable architectural guarantee. The implemented system focuses on DaoQL's verified storage layer and explicit Eval path, integrating graph, column, vector, and full-text engines within one process. KVCache graph nodes, expert hot updates, and the DaoQL-Agent runtime remain future work. On an embedded same-machine setup, DaoQL reports graph BFS at 1.20 ms, HNSW at 83.1 us, and a Fluent hybrid query at 105.8 us; these results indicate engineering potential but must be interpreted with deployment-shape differences from client-server systems. Exploratory measurements on LDBC SNB SF1 and ANN-Benchmarks further show 34/34 query coverage with interactive-class queries mostly in the sub-millisecond to millisecond range, but only 1.8 QPS overall due to long-tail BI/IC queries; ANN-Benchmarks reaches Recall@10 >= 99% at thousand-level QPS after a bridge-edge protection fix. In a five-domain counterfactual experiment (n = 1250), DaoQL+GPT-4o achieves 94% composable counterfactual decomposability, 49 percentage points above GPT-4o alone. The paper explicitly separates provable structure, preliminary empirical evidence, and architectural roadmap claims.",
+      "authors": [
+        "Zhanbo Li",
+        "Shifeng Wu",
+        "Xiangjin Meng",
+        "Wenjie Cai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "published": "2026-07-19T14:20:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.17269v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "explicit world model with multimodal database for counterfactual reasoning",
+      "llm_evidence_cn": "基于数据优先本体论的显式世界模型，支持多模态存储和反事实推理",
+      "llm_evidence": "基于数据优先本体论的显式世界模型，支持多模态存储和反事实推理",
+      "canonical_evidence": "基于数据优先本体论的显式世界模型，支持多模态存储和反事实推理",
+      "llm_tldr_en": "Proposes explicit world model via DaoQL multimodal database, treating LLM as reasoning engine, enabling counterfactual reasoning with composable decomposability.",
+      "llm_tldr_cn": "隐式世界模型存在幻觉、知识冻结等风险。本文提出数据优先本体论，将确定性知识存入显式多模态数据库DaoQL，LLM仅作为推理引擎。形式化证明显式模型满足可组合反事实分解的充分条件，而隐式模型缺乏原子操作。该方法在医学和金融领域验证了准确性和可修改性，为高精度多模态推理提供了新路径。",
+      "llm_tldr": "隐式世界模型存在幻觉、知识冻结等风险。本文提出数据优先本体论，将确定性知识存入显式多模态数据库DaoQL，LLM仅作为推理引擎。形式化证明显式模型满足可组合反事实分解的充分条件，而隐式模型缺乏原子操作。该方法在医学和金融领域验证了准确性和可修改性，为高精度多模态推理提供了新路径。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.18917v1",
+      "source": "arxiv",
+      "title": "TAP-RAG: Task-Aware Policy Control for Long-Document Multimodal Question Answering",
+      "abstract": "Long-document multimodal question answering requires more than retrieving relevant chunks from a large document. Different queries require different evidence behavior. Existing multimodal RAG systems improve evidence access through text chunks, page images, graph links, or heterogeneous document elements, but they often apply a largely query-agnostic evidence-use strategy. We present TAP-RAG, a task-aware policy-controlled RAG framework for long-document multimodal QA. TAP-RAG contains a main controller, the Task-Aware Policy Controller (TAPC), and two policy-guided evidence executors: Task-Aware Query-Guided Flow Diffusion (TA-QFD) and Task-Aware Visual Enhancement (TAVE). For each query, TAPC predicts the task prior, estimates visual/local/global evidence signals, and produces an executable policy. TA-QFD then expands textual and structural evidence over the multimodal document graph, while TAVE selectively inspects page images when visual or layout evidence is needed. A guarded synthesis stage fuses text, visual, and structural evidence and abstains when support is insufficient. On DocBench and MMLongBench-Doc, TAP-RAG achieves the best overall accuracy among the compared systems, improving over a matched multimodal-RAG baseline by +9.1 points (61.1 to 70.2) and +4.5 points (42.2 to 46.7), respectively.",
+      "authors": [
+        "Zhong Ji",
+        "Keqi Jin",
+        "Yan Zhang",
+        "Jiasheng Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-21T09:59:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.18917v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "long-document multimodal QA with task-aware RAG",
+      "llm_evidence_cn": "长文档多模态问答与任务感知RAG",
+      "llm_evidence": "长文档多模态问答与任务感知RAG",
+      "canonical_evidence": "长文档多模态问答与任务感知RAG",
+      "llm_tldr_en": "TAP-RAG introduces a task-aware policy controller for long-document multimodal QA, adapting evidence use for different query types, improving visual and locational grounding.",
+      "llm_tldr_cn": "该论文针对长文档多模态问答中检索策略与查询类型不匹配的问题，提出TAP-RAG框架。其核心组件任务感知策略控制器（TAPC）能预测查询类型并调度两种证据执行器：任务感知查询引导流扩散和任务感知视觉增强。实验表明该方法在多种查询上均取得更优的检索与回答效果，提升了多模态推理的准确性。",
+      "llm_tldr": "该论文针对长文档多模态问答中检索策略与查询类型不匹配的问题，提出TAP-RAG框架。其核心组件任务感知策略控制器（TAPC）能预测查询类型并调度两种证据执行器：任务感知查询引导流扩散和任务感知视觉增强。实验表明该方法在多种查询上均取得更优的检索与回答效果，提升了多模态推理的准确性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
