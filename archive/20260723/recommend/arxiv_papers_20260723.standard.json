@@ -1,0 +1,306 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-23T20:00:53.574330+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 5,
+    "quick_skim_target": 11,
+    "quick_selected": 5
+  },
+  "deep_dive": [
+    {
+      "id": "2607.17499v1",
+      "source": "arxiv",
+      "title": "Pailitao-MMSearch: Building Native E-Commerce Multimodal Search Foundation",
+      "abstract": "The evolution of e-commerce has fundamentally transformed how users search for products, shifting from simple text-based keyword queries to complex multimodal interactions that seamlessly combine product images, natural language descriptions, and mixed-intent instructions. However, existing approaches face a critical dilemma: single-modal specialist models, deployed independently for text retrieval, visual search, and voice recognition, operate in isolation and cannot handle cross-modal queries, while general-purpose vision-language models lack the domain-specific knowledge necessary for fine-grained product understanding, user behavior modeling, and commercial intent reasoning. In this work, we present Pailitao-MMSearch, one native e-commerce multimodal search foundation model designed to bridge this gap. Our approach introduces three key innovations: (1)HybSID (Hybrid Semantic ID);(2)a two-stage continual pre-training strategy; and (3)a hybrid reasoning post-training pipeline. Built upon Qwen and deployed on Taobao's Pailitao multimodal search platform, Pailitao-MMSearch achieves substantial improvements in online A/B testing, including up to +13.61\\% in Gross Merchandise Volume (GMV) and +8.21\\% in transaction volume compared to traditional multi-modal search pipeline, demonstrating the effectiveness of our native e-commerce multimodal search large language models.",
+      "authors": [
+        "Xiaohan Ye",
+        "Xu Chen",
+        "Zihan Gong",
+        "Jian Ding",
+        "Lianyu Du",
+        "Baicheng Chen",
+        "Yunmeng Shu",
+        "Jingqian Zhao",
+        "Zhixiang Zhao",
+        "Shuaiqi Jia",
+        "Chong Ma",
+        "Shuwen Xiao",
+        "Xiangheng Kong",
+        "Yuan Gao",
+        "Jun Song",
+        "Jinsong Lan",
+        "Xiaoyong Zhu",
+        "Bo Zheng"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-20T03:06:25+00:00",
+      "link": "https://arxiv.org/pdf/2607.17499v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes a native e-commerce multimodal search system with reasoning capabilities",
+      "llm_evidence_cn": "提出具有推理能力的原生电商多模态搜索系统",
+      "llm_evidence": "提出具有推理能力的原生电商多模态搜索系统",
+      "canonical_evidence": "提出具有推理能力的原生电商多模态搜索系统",
+      "llm_tldr_en": "Pailitao-MMSearch is a multimodal search foundation for e-commerce that handles cross-modal queries combining images, text, and intent. It uses a domain-specific vision-language model to reason about commercial intent and product understanding, outperforming both single-modal specialists and general VLMs.",
+      "llm_tldr_cn": "Pailitao-MMSearch是一个面向电商的原生多模态搜索系统，能够处理结合图像、文本和混合意图的跨模态查询。该方法构建了领域特定的视觉语言模型，进行细粒度商品理解和商业意图推理。实验表明，其在多模态搜索任务上优于单模态专家模型和通用视觉语言模型，为电商搜索提供了高效的多模态推理解决方案。",
+      "llm_tldr": "Pailitao-MMSearch是一个面向电商的原生多模态搜索系统，能够处理结合图像、文本和混合意图的跨模态查询。该方法构建了领域特定的视觉语言模型，进行细粒度商品理解和商业意图推理。实验表明，其在多模态搜索任务上优于单模态专家模型和通用视觉语言模型，为电商搜索提供了高效的多模态推理解决方案。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.18438v1",
+      "source": "arxiv",
+      "title": "Relay-Bench: Evaluating LLMs on Multi-Domain Reasoning Chains",
+      "abstract": "Introducing Relay-Bench, an unsaturated, holistic, text-only benchmark that measures LLMs' ability to complete an assortment of tasks from distinct domains in a single prompt. The leading model, GPT-5.5 (xHigh), scores 43.3%. The test set entirely consists of composite problems: groups of single-domain subproblems that are strung together into challenges that require reasoning across multiple domains in combination. Many of these problems then have layers of complexity added through prompt encoding and deliberate context bloat. Domains tested include visual reasoning, coding, math, information extraction (with a focus on web search), problem-solving, general knowledge, and data analysis. No restrictions are imposed outside of the model harness, and models are explicitly encouraged to leverage code-execution, web searches, and all available tools. All problems are composed of two to thirteen subproblems and do not require multi-modal input or output.",
+      "authors": [
+        "Liam Swayne"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-20T18:46:17+00:00",
+      "link": "https://arxiv.org/pdf/2607.18438v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "evaluates visual reasoning as one domain in multi-domain benchmark",
+      "llm_evidence_cn": "在多域基准中评估视觉推理能力",
+      "llm_evidence": "在多域基准中评估视觉推理能力",
+      "canonical_evidence": "在多域基准中评估视觉推理能力",
+      "llm_tldr_en": "Relay-Bench is a text-only benchmark that evaluates LLMs on multi-domain reasoning chains, including visual reasoning, coding, math, and more. It reveals that even the best model, GPT-5.5, scores only 43.3%, highlighting the difficulty of composite reasoning.",
+      "llm_tldr_cn": "Relay-Bench是一个文本型基准测试，用于评估LLMs在多域推理链上的综合能力。该基准包含视觉推理、编程、数学等多个领域，并采用组合问题设计。实验表明，最先进的模型GPT-5.5仅达到43.3%的准确率，揭示了跨域复合推理的挑战性。该工作为多域推理评估提供了重要参考。",
+      "llm_tldr": "Relay-Bench是一个文本型基准测试，用于评估LLMs在多域推理链上的综合能力。该基准包含视觉推理、编程、数学等多个领域，并采用组合问题设计。实验表明，最先进的模型GPT-5.5仅达到43.3%的准确率，揭示了跨域复合推理的挑战性。该工作为多域推理评估提供了重要参考。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "visual reasoning",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.18514v1",
+      "source": "arxiv",
+      "title": "Querying Multimodal Scientific Papers with AI: Practices and Preferences Across Blind, Low-Vision, and Sighted Scientists",
+      "abstract": "Visual diagrams, figures, and tables are central to scientific papers, and convey information beyond what is captured in text. While blind or low-vision (BLV) scientists have traditionally relied on static alternative text to access figures in papers, the rise of artificial intelligence (AI) has made interactive question-answering (QA) a feasible paradigm for visual exploration; yet little is known about how scientists use visual QA in practice or how to improve its accessibility. In this work, we interview five BLV and five sighted scientists across different STEM fields to understand how they use two AI tools, ChatGPT and Gemini, to query multimodal scientific documents. Our findings characterize how scientists review multimodal content, including existing practices (along with accessibility workarounds) for engaging with visuals, and feedback on the suitability of AI-generated responses to multimodal queries. We further find that vague or incomplete image descriptions, as well as incorrect AI outputs more broadly, can cause both BLV and sighted scientists to abandon AI workflows. To support future research, we additionally contribute a dataset of 115 queries and responses from our participants' interactions with the AI tools for papers in their field. We close by discussing implications for AI-powered scientific QA systems, emphasizing considerations for access across abilities and domains.",
+      "authors": [
+        "Arnavi Chheda-Kothary",
+        "Lucy Lu Wang",
+        "Joseph Chee Chang",
+        "Jonathan Bragg"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "published": "2026-07-20T21:14:26+00:00",
+      "link": "https://arxiv.org/pdf/2607.18514v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "studies AI-based querying of multimodal scientific papers, involving visual question answering",
+      "llm_evidence_cn": "研究基于AI的多模态科学论文查询，涉及视觉问答",
+      "llm_evidence": "研究基于AI的多模态科学论文查询，涉及视觉问答",
+      "canonical_evidence": "研究基于AI的多模态科学论文查询，涉及视觉问答",
+      "llm_tldr_en": "This work interviews blind, low-vision, and sighted scientists to understand how they use ChatGPT and Gemini to query multimodal scientific documents. Findings reveal differences in practices and preferences, guiding future accessible AI design for scientific document query.",
+      "llm_tldr_cn": "本文通过对盲人、低视力和正常视力科学家的访谈，探究了他们使用ChatGPT和Gemini查询多模态科学文档的方式。研究发现不同视力状态的用户在查询策略和偏好上存在差异，为未来开发更易用的AI科学文档查询工具提供了设计指南。该工作强调了多模态推理在可访问性中的重要性。",
+      "llm_tldr": "本文通过对盲人、低视力和正常视力科学家的访谈，探究了他们使用ChatGPT和Gemini查询多模态科学文档的方式。研究发现不同视力状态的用户在查询策略和偏好上存在差异，为未来开发更易用的AI科学文档查询工具提供了设计指南。该工作强调了多模态推理在可访问性中的重要性。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.19011v1",
+      "source": "arxiv",
+      "title": "Computational Humor with Multimodal LLMs: Methods, Datasets, Evaluation, and Challenges",
+      "abstract": "Multimodal humor in memes, cartoons, and comics remains difficult for AI systems because intended meaning depends on non-literal mechanisms, shared cultural knowledge, and communicative intent rather than literal scene description. This survey focuses on visual humor understanding in single-image and multi-panel artifacts, while treating humor generation as an emerging downstream frontier. We position the literature against prior humor, sarcasm, and general MLLM surveys and organize it using a capability-centric hierarchy spanning recognition, interpretation and reasoning, and generation. Under this lens, we synthesize benchmark design, evaluation protocols, and modeling paradigms, tracing the field's shift from task-specific fusion models to large-model approaches based on multimodal alignment, evidence-grounded reasoning, and controlled generation. We conclude by highlighting the main barriers to progress: shortcut-prone evaluation, limited cultural and narrative coverage, weak evidence grounding, and unresolved safety and ownership concerns.",
+      "authors": [
+        "Tuo Liang",
+        "Zhe Hu",
+        "Disheng Liu",
+        "Jing Li",
+        "Yu Yin"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MM"
+      ],
+      "published": "2026-07-21T11:53:46+00:00",
+      "link": "https://arxiv.org/pdf/2607.19011v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "surveys multimodal humor understanding, which requires multimodal reasoning",
+      "llm_evidence_cn": "综述了需要多模态推理的幽默理解",
+      "llm_evidence": "综述了需要多模态推理的幽默理解",
+      "canonical_evidence": "综述了需要多模态推理的幽默理解",
+      "llm_tldr_en": "This survey organizes the literature on computational humor with multimodal LLMs, focusing on visual humor understanding in memes, cartoons, and comics. It covers recognition, interpretation and reasoning, and generation, and discusses benchmarks, evaluation protocols, and future challenges.",
+      "llm_tldr_cn": "本文系统综述了多模态大语言模型在计算幽默领域的研究，特别关注迷因、漫画和连环画中的视觉幽默理解。文章按照识别、解释与推理、生成的能力层级组织文献，梳理了基准数据集、评估范式和建模方法。该工作揭示了幽默理解对多模态推理的特殊要求，为未来研究提供了方向性指导。",
+      "llm_tldr": "本文系统综述了多模态大语言模型在计算幽默领域的研究，特别关注迷因、漫画和连环画中的视觉幽默理解。文章按照识别、解释与推理、生成的能力层级组织文献，梳理了基准数据集、评估范式和建模方法。该工作揭示了幽默理解对多模态推理的特殊要求，为未来研究提供了方向性指导。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.19932v1",
+      "source": "arxiv",
+      "title": "Efficient Chain-of-Modality Reasoning via Progressive Compression for Spoken Language Models",
+      "abstract": "Spoken language models (SLMs) enable natural human-computer interaction, but their reasoning ability still lags behind that of text-based large language models, especially on spoken mathematical question answering tasks. One important reason is that SLMs reason over purely verbalized mathematical expressions, which are harder to interpret than symbolic text. However, directly transferring text-based reasoning to SLMs is nontrivial due to architectural constraints and the additional computational requirements. To address this challenge, we propose Efficient Chain-of-Modality Reasoning (ECoM Reasoning), the first framework to introduce compressed reasoning into SLMs. By compressing the textual component so that it jointly serves as speech guidance and reasoning representation, ECoM Reasoning improves reasoning accuracy while using a smaller token budget than the standard Chain-of-Modality (CoM) architecture, which generates intermediate text before speech. To train this capability, we further propose Progressive Compression, a curriculum-based strategy that gradually trains the model from full-form reasoning to compressed reasoning. Experiments on spoken mathematical question answering benchmarks show that ECoM Reasoning improves accuracy by 21% over standard CoM without explicit reasoning, and by 3% over CoM with full reasoning traces while using only 40% of the text tokens, demonstrating that it enhances SLM reasoning while remaining inference-efficient.",
+      "authors": [
+        "Pengchao Feng",
+        "Chao-Hong Tan",
+        "Qian Chen",
+        "Wen Wang",
+        "Xiangang Li",
+        "Xie Chen"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.SD"
+      ],
+      "published": "2026-07-22T09:04:55+00:00",
+      "link": "https://arxiv.org/pdf/2607.19932v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "proposes chain-of-modality reasoning framework for spoken language models",
+      "llm_evidence_cn": "为口语语言模型提出链式模态推理框架",
+      "llm_evidence": "为口语语言模型提出链式模态推理框架",
+      "canonical_evidence": "为口语语言模型提出链式模态推理框架",
+      "llm_tldr_en": "This paper introduces Efficient Chain-of-Modality (ECoM) Reasoning, a framework that compresses textual components to aid spoken language models in reasoning. It addresses the challenge of verbalized mathematical expressions in SLMs by introducing compressed intermediate representations, improving reasoning accuracy while maintaining efficiency.",
+      "llm_tldr_cn": "本文针对口语语言模型（SLMs）在数学问答任务中推理能力不足的问题，提出了高效链式模态推理（ECoM Reasoning）框架。该方法通过压缩文本成分，使其同时作为中间表示，辅助模型进行多步推理。实验表明，ECoM在多个口语数学问答基准上显著提升了推理准确率，同时减少了计算开销，为SLMs的跨模态推理提供了有效方案。",
+      "llm_tldr": "本文针对口语语言模型（SLMs）在数学问答任务中推理能力不足的问题，提出了高效链式模态推理（ECoM Reasoning）框架。该方法通过压缩文本成分，使其同时作为中间表示，辅助模型进行多步推理。实验表明，ECoM在多个口语数学问答基准上显著提升了推理准确率，同时减少了计算开销，为SLMs的跨模态推理提供了有效方案。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.19793v1",
+      "source": "arxiv",
+      "title": "Silent Failures in Multimodal Agentic Search:A Diagnostic Taxonomy and Cross-Judge Evaluation",
+      "abstract": "Multimodal agentic search systems increasingly rely on external tools to answer knowledge-intensive visual questions. However, existing evaluations mainly focus on final-answer accuracy and may miss failures in the search trajectory. In this work, we study such hidden reliability issues as silent failures. We introduce a six-category taxonomy covering modality shortcuts, phantom grounding, wrong-evidence-right-answer cases, over-retrieval laundering, cross-modal contradiction, and provenance hallucination. Based on this taxonomy, we build a trajectory-level diagnostic pipeline that evaluates both answer correctness and evidence-grounding quality under a unified ReAct-style scaffold. Experiments on MMSearch-Plus trajectories across four frontier multimodal models show that surface accuracy consistently overestimates true trajectory-level correctness. We further use cross-judge validation, blank-image stress tests, and tool ablations to show that silent failures are capability-dependent and often shift rather than disappear. Home-page: https://github.com/DingWu1021/silent-failures-multimodal-agentic-search",
+      "authors": [
+        "Zhengxian Wu",
+        "Junjie Gao",
+        "Kai Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-22T06:19:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.19793v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "diagnostic taxonomy for multimodal agentic search failures",
+      "llm_evidence_cn": "多模态代理搜索故障的诊断分类",
+      "llm_evidence": "多模态代理搜索故障的诊断分类",
+      "canonical_evidence": "多模态代理搜索故障的诊断分类",
+      "llm_tldr_en": "Introduces a six-category taxonomy of silent failures in multimodal agentic search, with trajectory-level diagnostic evaluation.",
+      "llm_tldr_cn": "本文针对多模态代理搜索系统中隐藏的可靠性问题（静默失败），提出六类分类法，包括模态捷径、幻象接地、错误证据正确回答等，并构建轨迹级诊断流程，评估答案正确性和证据接地质量，实验揭示现有系统常见失败模式。",
+      "llm_tldr": "本文针对多模态代理搜索系统中隐藏的可靠性问题（静默失败），提出六类分类法，包括模态捷径、幻象接地、错误证据正确回答等，并构建轨迹级诊断流程，评估答案正确性和证据接地质量，实验揭示现有系统常见失败模式。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.20284v1",
+      "source": "arxiv",
+      "title": "Multimodal Large Language Models for Remote Sensing Image Understanding: Domain-Specific or General-Purpose?",
+      "abstract": "The rapid development of multimodal large language models (MLLMs) has introduced a flexible paradigm for remote sensing image scene understanding (RSISU), enabling natural-language interaction with remote sensing imagery. However, a systematic understanding of the capability boundaries, cross-task generalization, and task-specific limitations of existing remote sensing MLLMs (RS-MLLMs) is still lacking. This paper presents a systematic survey and diagnostic evaluation of MLLMs for RSISU. We review the technical evolution of RS-MLLMs, focusing on model design, multimodal learning, training data, and downstream capabilities. We further compare RS-MLLMs with general-purpose computer vision MLLMs (CV-MLLMs) across diverse RSISU tasks and benchmarks. RS-MLLMs remain competitive in domain-specific settings, particularly remote sensing visual grounding and high-resolution visual question answering. More notably, general-purpose CV-MLLMs can match or even outperform these specialized models on several RSISU tasks without remote sensing-specific fine-tuning. These findings demonstrate the strong transferability of general-purpose CV-MLLMs and show that current RS-MLLMs do not consistently outperform them across diverse RSISU tasks. Current MLLMs also face limitations in spatial and relational reasoning, fine-grained visual understanding, instruction diversity, and generalization across heterogeneous task formats. Based on these findings, we outline future directions toward reliable evaluation, multimodal and high-resolution reasoning, efficient deployment, and tool-augmented remote sensing agents. This survey provides a systematic reference for developing robust, generalizable, and practical MLLMs for RSISU.",
+      "authors": [
+        "Qiwei Ma",
+        "Chunping Qiu",
+        "Xinjun Cheng",
+        "Xiaoyu Zhang",
+        "Puhong Duan",
+        "Ke Yang",
+        "Xudong Kang",
+        "Shutao Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-22T15:30:08+00:00",
+      "link": "https://arxiv.org/pdf/2607.20284v1",
+      "tags": [
+        "keyword:mm-reasoning",
+        "query:mm-reasoning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "surveys and evaluates MLLMs for remote sensing, focusing on multimodal reasoning capabilities",
+      "llm_evidence_cn": "调查和评估MLLM在遥感中的多模态推理能力",
+      "llm_evidence": "调查和评估MLLM在遥感中的多模态推理能力",
+      "canonical_evidence": "调查和评估MLLM在遥感中的多模态推理能力",
+      "llm_tldr_en": "This paper provides a systematic survey and diagnostic evaluation of MLLMs for remote sensing image scene understanding, comparing domain-specific RS-MLLMs with general-purpose CV-MLLMs. It analyzes model design, training data, and capabilities, offering insights into the current state and limitations of multimodal reasoning in remote sensing.",
+      "llm_tldr_cn": "本文对用于遥感图像场景理解的多模态大语言模型（MLLMs）进行了系统综述和诊断性评估。文章回顾了遥感MLLM的技术演进，并将其与通用计算机视觉MLLMs进行了能力边界、跨任务泛化等方面的比较。研究发现领域专用模型在某些任务上更优，但通用模型也在快速发展。该工作为遥感领域的多模态推理研究提供了全面的技术图谱和未来方向。",
+      "llm_tldr": "本文对用于遥感图像场景理解的多模态大语言模型（MLLMs）进行了系统综述和诊断性评估。文章回顾了遥感MLLM的技术演进，并将其与通用计算机视觉MLLMs进行了能力边界、跨任务泛化等方面的比较。研究发现领域专用模型在某些任务上更优，但通用模型也在快速发展。该工作为遥感领域的多模态推理研究提供了全面的技术图谱和未来方向。",
+      "llm_tags": [
+        "query:mm-reasoning"
+      ],
+      "matched_query_tag": "query:mm-reasoning",
+      "matched_query_text": "multimodal reasoning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

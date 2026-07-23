@@ -6,43 +6,43 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-22
-- 运行时间：2026-07-22 21:18:40 UTC
+- 最新运行日期：2026-07-23
+- 运行时间：2026-07-23 20:06:12 UTC
 - 运行状态：成功
 - 本次总论文数：7
-- 精读区：4
-- 速读区：3
+- 精读区：2
+- 速读区：5
 
 ### 今日简报（AI）
-今日精读两篇9分神作：Agentic多模态布局与会议心智理论推理，速读覆盖微手势视频、长文档问答及数据本体验证。  
-最值得关注方向：AI芯片布局的多模态智能体式推理（MAGE），以及多模态大模型在多人会议中心智理论能力的评估（MeetingToM）。  
-普通读者下一步可聚焦多模态大模型在物理世界交互与复杂社交推理中的最新突破，这两方向正迅速从理论走向工程落地。
-- 详情：[/202607/22/README](/202607/22/README)
+今日推荐7篇论文，精读聚焦电商多模态搜索基座与多领域推理链评估。  
+最值得看的两篇精读：《Pailitao-MMSearch》构建原生电商多模态搜索模型，《Relay-Bench》评测大模型多领域推理链能力。  
+建议关注多模态搜索在电商场景的落地潜力，以及推理链基准如何检验模型综合推理水平。
+- 详情：[/202607/23/README](/202607/23/README)
 
 ### 精读区论文标签
-1. [MAGE: Human-Like Macro Placement via Agentic Multimodal Reasoning](/202607/22/2607.18536v1-mage-human-like-macro-placement-via-agentic-multimodal-reasoning)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：基于多模态智能体的宏放置推理
-2. [MeetingToM: Evaluating Multimodal LLMs on Theory-of-Mind Reasoning in Multi-Party Meetings](/202607/22/2607.19235v1-meetingtom-evaluating-multimodal-llms-on-theory-of-mind-reasoning-in-multi-party-meetings)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：评估多模态大模型心智推理能力的基准
-3. [OmniReasoner: Thinking with Long Audio-Video via Native Tool Use](/202607/22/2607.19339v1-omnireasoner-thinking-with-long-audio-video-via-native-tool-use)  
-   标签：评分：9.0/10、query:mm-reasoning
-   evidence：面向长音频-视频多模态推理的工具使用框架
-4. [ExpertVerse: A General-Purpose Benchmark for Expert-Level Reasoning in Knowledge-Intensive Visual Synthesis](/202607/22/2607.19341v1-expertverse-a-general-purpose-benchmark-for-expert-level-reasoning-in-knowledge-intensive-visual-synthesis)  
+1. [Pailitao-MMSearch: Building Native E-Commerce Multimodal Search Foundation](/202607/23/2607.17499v1-pailitao-mmsearch-building-native-e-commerce-multimodal-search-foundation)  
    标签：评分：8.0/10、query:mm-reasoning
-   evidence：面向知识密集型视觉合成中专家级推理的基准
+   evidence：提出具有推理能力的原生电商多模态搜索系统
+2. [Relay-Bench: Evaluating LLMs on Multi-Domain Reasoning Chains](/202607/23/2607.18438v1-relay-bench-evaluating-llms-on-multi-domain-reasoning-chains)  
+   标签：评分：8.0/10、query:mm-reasoning
+   evidence：在多域基准中评估视觉推理能力
 
 ### 速读区论文标签
-1. [GMoT: Gated Motion-Aware Tokenization for Fine-Grained Micro-Gesture Video Reasoning with Multimodal LLMs](/202607/22/2607.16322v1-gmot-gated-motion-aware-tokenization-for-fine-grained-micro-gesture-video-reasoning-with-multimodal-llms)  
+1. [Querying Multimodal Scientific Papers with AI: Practices and Preferences Across Blind, Low-Vision, and Sighted Scientists](/202607/23/2607.18514v1-querying-multimodal-scientific-papers-with-ai-practices-and-preferences-across-blind-low-vision-and-sighted-scientists)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：微手势视频推理与运动感知标记化
-2. [TAP-RAG: Task-Aware Policy Control for Long-Document Multimodal Question Answering](/202607/22/2607.18917v1-tap-rag-task-aware-policy-control-for-long-document-multimodal-question-answering)  
+   evidence：研究基于AI的多模态科学论文查询，涉及视觉问答
+2. [Efficient Chain-of-Modality Reasoning via Progressive Compression for Spoken Language Models](/202607/23/2607.19932v1-efficient-chain-of-modality-reasoning-via-progressive-compression-for-spoken-language-models)  
    标签：评分：7.0/10、query:mm-reasoning
-   evidence：长文档多模态问答与任务感知RAG
-3. [An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counterfactual Reasoning Evaluation](/202607/22/2607.17269v1-an-explicit-world-model-based-on-data-first-ontology-daoql-multimodal-storage-validation-and-counterfactual-reasoning-evaluation)  
+   evidence：为口语语言模型提出链式模态推理框架
+3. [Computational Humor with Multimodal LLMs: Methods, Datasets, Evaluation, and Challenges](/202607/23/2607.19011v1-computational-humor-with-multimodal-llms-methods-datasets-evaluation-and-challenges)  
    标签：评分：6.0/10、query:mm-reasoning
-   evidence：基于数据优先本体论的显式世界模型，支持多模态存储和反事实推理
+   evidence：综述了需要多模态推理的幽默理解
+4. [Silent Failures in Multimodal Agentic Search:A Diagnostic Taxonomy and Cross-Judge Evaluation](/202607/23/2607.19793v1-silent-failures-in-multimodal-agentic-searcha-diagnostic-taxonomy-and-cross-judge-evaluation)  
+   标签：评分：6.0/10、query:mm-reasoning
+   evidence：多模态代理搜索故障的诊断分类
+5. [Multimodal Large Language Models for Remote Sensing Image Understanding: Domain-Specific or General-Purpose?](/202607/23/2607.20284v1-multimodal-large-language-models-for-remote-sensing-image-understanding-domain-specific-or-general-purpose)  
+   标签：评分：6.0/10、query:mm-reasoning
+   evidence：调查和评估MLLM在遥感中的多模态推理能力
 
 
 <div class="dpr-home-promo-card">
